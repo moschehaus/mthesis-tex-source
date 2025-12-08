@@ -1,0 +1,74 @@
+name: Build LaTeX document
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - '**.tex'
+      - '**.bib'
+      - 'figures/**'
+      - 'preamble/**'
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Create build directories
+        run: |
+          mkdir -p build/chapters/dodatky
+          mkdir -p build/preamble/{debug,environments,general,hacks,layout,math,misc,references,user}
+      
+      - name: Create .latexmkrc
+        run: |
+          cat > .latexmkrc << 'EOF'
+          $pdflatex = 'lualatex -synctex=1 -interaction=nonstopmode -shell-escape %O %S';
+          $pdf_mode = 1;
+          $out_dir = 'build';
+          $bibtex = 'biber %O %B';
+          $max_repeat = 5;
+          $continuous = 0;
+          EOF
+      
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          compiler: latexmk
+          args: -pdf
+          working_directory: .
+      
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: build/*.pdf
+      
+      - name: Copy index.html to build directory
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: |
+          BUILD_DATE=$(date +'%d. %m. %Y')
+          sed "s/YYYY-MM-DD/${BUILD_DATE}/g" index.html > build/index.html
+      
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          destination_dir: .
+          keep_files: false
+          
+      - name: Release PDF (on tag push)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/*.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
