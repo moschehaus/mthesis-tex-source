@@ -1,8 +1,3 @@
-\newcommand*{\TeXturedVERSION}{1.5.0} %% TeXtured 2025-08-06
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% NOTE: If you find any issues or have any suggestions, please open %%
-%%       an Issue on GitHub: https://github.com/jdujava/TeXtured     %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Enable built-in LaTeX support for PDF/A compliance (must be before `\documentclass`)
 \DocumentMetadata{lang=en, pdfversion=1.7, pdfstandard=A-2u}
@@ -12,7 +7,6 @@
 \documentclass[12pt,a4paper]{report}                      % single-side (electronic)
 % \documentclass[12pt,a4paper,openright,twoside]{report}  % two-sided (for printing)
 
-%% Set some toggle flags to control some of the document properties
 \input{preamble/toggles}
 % \FANCYfalse % disable some of the more fancy stylistic choices
 %% NOTE: Comment out the following lines for the final version
@@ -24,49 +18,31 @@
 %% Preamble - data, packages, macros, and more
 \input{preamble/main}
 
-%% Only uncommented files are included (faster compilation)
-%% NOTE: If no files are uncommented, all files are included
-\includeonlysmart{
-    % frontmatter/title,
-    % frontmatter/declaration,
-    % frontmatter/dedication,
-    % frontmatter/information,
-    % chapters/Introduction,
-    % chapters/QuickSummary,
-    % chapters/Notation,
-    % chapters/Design,
-    % chapters/Usage,
-    % chapters/Features,
-    % chapters/Tips,
-    % chapters/Summary,
-    % chapters/Appendix,
-}
-
+\usepackage{subfiles}
 \begin{document}
 
 \frontmatter
-\include{frontmatter/title}
-% \include{frontmatter/declaration}
-% \include{frontmatter/dedication}
-% \include{frontmatter/information}
+\subfile{frontmatter/title}
+\subfile{frontmatter/declaration}
+\subfile{frontmatter/dedication}
+\subfile{frontmatter/information}
 
 \contentsandlists
 
-\include{chapters/Introduction}
-\include{chapters/QuickSummary}
-\include{chapters/Notation}
+\subfile{chapters/introduction}
 
 \mainmatter
-\include{chapters/Design}
-\include{chapters/Usage}
-\include{chapters/Features}
-\include{chapters/Tips}
+
+\subfile{chapters/mtn_wvs}
+\subfile{chapters/sph}
+\subfile{chapters/trixi}
+\subfile{chapters/voronoi}
 
 \backmatter
-\include{chapters/Summary}
+\subfile{chapters/summary}
 
 \appendix
-\include{chapters/Appendix}
+\subfile{chapters/appendix}
 
 \references
 
