@@ -2420,15 +2420,6 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">preamble/bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">Dujava2022</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">MaresTemplate</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">Dujava2025</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">TeXtured</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">MaresTemplate</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">TeXtured</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">TeXtured</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">TODO</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">ITTtemplate</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

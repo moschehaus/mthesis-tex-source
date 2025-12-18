@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.2)  18 DEC 2025 01:39
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.2)  18 DEC 2025 15:24
  system commands enabled.
 **main.tex
 (./main.tex
@@ -1933,31 +1933,31 @@ File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 Package: hologo 2021-11-16 v1.15 A logo collection with bookmark support (HO)
 )
 (./preamble/user/math.tex)))
+(/opt/texlive/texdir/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/import/import.sty
+Package: import 2020/04/01  v 6.2
+))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 45.
- (./build/main.aux (./build/frontmatter/title.aux)
-(./build/chapters/Introduction.aux) (./build/chapters/QuickSummary.aux)
-(./build/chapters/Notation.aux) (./build/chapters/Design.aux)
-(./build/chapters/Usage.aux) (./build/chapters/Features.aux)
-(./build/chapters/Tips.aux) (./build/chapters/Summary.aux)
-(./build/chapters/Appendix.aux))
+h' as default language. on input line 22.
+ (./build/main.aux)
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
-
-(/opt/texlive/texdir/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
+ (/opt/texlive/texdir/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count605
 \scratchdimen=\dimen426
@@ -1982,13 +1982,13 @@ e
 Package microtype Info: Patching varwidth to enable character protrusion.
 \MT@vwid@leftmargin=\dimen428
 \MT@vwid@rightmargin=\dimen429
-LaTeX Info: Redefining \microtypecontext on input line 45.
-Package microtype Info: Applying patch `item' on input line 45.
-Package microtype Info: Applying patch `toc' on input line 45.
-Package microtype Info: Applying patch `eqnum' on input line 45.
-Package microtype Info: Applying patch `footnote' on input line 45.
-Package microtype Info: Applying patch `verbatim' on input line 45.
-LaTeX Info: Redefining \microtypesetup on input line 45.
+LaTeX Info: Redefining \microtypecontext on input line 22.
+Package microtype Info: Applying patch `item' on input line 22.
+Package microtype Info: Applying patch `toc' on input line 22.
+Package microtype Info: Applying patch `eqnum' on input line 22.
+Package microtype Info: Applying patch `footnote' on input line 22.
+Package microtype Info: Applying patch `verbatim' on input line 22.
+LaTeX Info: Redefining \microtypesetup on input line 22.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2010,11 +2010,11 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 45.
+or `english'. on input line 22.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 45.
+Package hyperref Info: Link coloring OFF on input line 22.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/zref/zref-hyperref.sty
 Package: zref-hyperref 2025-06-08 v2.36 Module hyperref for zref (HO)
@@ -2025,14 +2025,14 @@ Package zref Info: New property: anchor on input line 56.
 Package zref-clever Info: Loaded 'english' language file.
 
 \c@zc@appendix=\count611
-Package zref Info: New property: subeq on input line 45.
+Package zref Info: New property: subeq on input line 22.
 
 Package zref-clever Info: Loaded support for 'amsmath' package.
 
 
 Package zref-clever Info: Loaded support for 'mathtools' package.
 
-Package zref Info: New property: subref on input line 45.
+Package zref Info: New property: subref on input line 22.
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
 *geometry* verbose mode - [ preamble ] result:
@@ -2083,9 +2083,17 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
-(./build/main.bbl
+(./build/main.bbl)
+Package biblatex Info: Reference section=0 on input line 22.
+Package biblatex Info: Reference segment=0 on input line 22.
+<<sRGB.icc>> (./frontmatter/title.tex
+<./frontmatter/img/MFF-logo.pdf, id=36, 506.46214pt x 156.49466pt>
+File: ./frontmatter/img/MFF-logo.pdf Graphic file (type pdf)
+<use ./frontmatter/img/MFF-logo.pdf>
+Package luatex.def Info: ./frontmatter/img/MFF-logo.pdf  used on input line 7.
+(luatex.def)             Requested size: 577.58841pt x 178.47977pt.
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
+(microtype)             `lmss' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2098,659 +2106,91 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-))
-Package biblatex Info: Reference section=0 on input line 45.
-Package biblatex Info: Reference segment=0 on input line 45.
-<<sRGB.icc>>
-\openout2 = frontmatter/title.aux
-
-(./frontmatter/title.tex
-<./frontmatter/img/MFF-logo.pdf, id=36, 506.46214pt x 156.49466pt>
-File: ./frontmatter/img/MFF-logo.pdf Graphic file (type pdf)
-<use ./frontmatter/img/MFF-logo.pdf>
-Package luatex.def Info: ./frontmatter/img/MFF-logo.pdf  used on input line 5.
-(luatex.def)             Requested size: 577.58841pt x 178.47977pt.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-Overfull \hbox (205.11324pt too wide) in paragraph at lines 38--47
+)
+Overfull \hbox (97.74684pt too wide) in paragraph at lines 39--48
  [] |
  []
 
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
 
 [1
 
-
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./frontmatter
-/img/MFF-logo.pdf>])
-(/opt/texlive/texdir/texmf-dist/tex/latex/tex-gyre/t1qzc.fd
+/img/MFF-logo.pdf>]) (./frontmatter/declaration.tex
+
+[2
+
+]) (./frontmatter/dedication.tex) (./frontmatter/information.tex
+
+[3
+
+])
+
+[4
+
+] (/opt/texlive/texdir/texmf-dist/tex/latex/tex-gyre/t1qzc.fd
 File: t1qzc.fd 2009/09/25 v1.2 font definition file for T1/qzc
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `qzc' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (./build/main.toc
-Underfull \vbox (badness 3364) has occurred while \output is active []
 
-
-
-[2
-
-
-
-])
+(./build/main.toc)
 \tf@toc=\write5
 
 \openout5 = main.toc
-
-
-[3]
-\openout2 = chapters/Introduction.aux
- (./chapters/Introduction.tex
-(/opt/texlive/texdir/texmf-dist/tex/latex/cmbright/ot1cmbr.fd
-File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
-)
-LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <12> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 10.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmbr' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/iwona/omxiwona.fd
-File: omxiwona.fd 2008/07/22 v0.995 font definition file for OMX/iwona (MW)
-))
-
-[4
-
-
-]
-\openout2 = chapters/QuickSummary.aux
- (./chapters/QuickSummary.tex)
+ (./chapters/introduction.tex
 
 [5
 
-
-
-
-]
-\openout2 = chapters/Notation.aux
- (./chapters/Notation.tex
-Chapter N.
-(/opt/texlive/texdir/texmf-dist/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-(/opt/texlive/texdir/texmf-dist/tex/latex/microtype/mt-euf.cfg
-File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
-
-)
-(/opt/texlive/texdir/texmf-dist/tex/latex/psnfss/ot1pzc.fd
-File: ot1pzc.fd 2020/03/25 font definitions for OT1/pzc.
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `pzc' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
+])
 
 [6
 
-
-
-
-]
-\openout2 = chapters/Design.aux
- (./chapters/Design.tex
+] (./chapters/mtn_wvs.tex
 Chapter 1.
-)
+) (./chapters/sph.tex
 
 [1
 
 
-
-
-
 ]
-\openout2 = chapters/Usage.aux
- (./chapters/Usage.tex
 Chapter 2.
-
+) (./chapters/trixi.tex
 
 [2
 
-
-
-
-])
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/cmbright/omscmbrs.fd
-File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
-) [3]
-\openout2 = chapters/Features.aux
-
-(./chapters/Features.tex
+]
 Chapter 3.
+) (./chapters/voronoi.tex
 
+[3
+
+]
+Chapter 4.
+) (./chapters/summary.tex
 
 [4
 
+]) (./chapters/appendix.tex)
+
+LaTeX Warning: Empty bibliography on input line 47.
 
 
 
-]
-Underfull \vbox (badness 1354) has occurred while \output is active []
-
-
-
-[5]
-
-[6]
-
-[7]
-
-[8]
-
-[9]
-
-[10]
-
-[11]
-
-[12])
-
-[13]
-\openout2 = chapters/Tips.aux
- (./chapters/Tips.tex
-Chapter 4.
-
-
-[14
-
-
-
-
-] (/opt/texlive/texdir/texmf-dist/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-
-[15]
-
-[16])
-
-[17]
-\openout2 = chapters/Summary.aux
- (./chapters/Summary.tex)
-
-[18
-
-
-
-
-]
-\openout2 = chapters/Appendix.aux
- (./chapters/Appendix.tex
-Appendix A.
-<./figures/Inkscape/parallel-plate-capacitor.pdf, id=548, 723.70375pt x 835.12p
-t>
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-(./figures/Inkscape/parallel-plate-capacitor.pdf_tex
-<./figures/Inkscape/parallel-plate-capacitor.pdf, id=549, page=1, 723.70375pt x
- 835.12pt>
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf, page 1>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf , page
-1 used on input line 56.
-(luatex.def)             Requested size: 247.54149pt x 285.64458pt.
-)
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-
-(./figures/Inkscape/parallel-plate-capacitor.pdf_tex
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf, page 1>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf , page
-1 used on input line 56.
-(luatex.def)             Requested size: 247.54149pt x 285.64458pt.
-)
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf  used 
-on input line 28.
-(luatex.def)             Requested size: 723.70198pt x 835.11795pt.
-
-(./figures/Inkscape/parallel-plate-capacitor.pdf_tex
-File: ./figures/Inkscape/parallel-plate-capacitor.pdf Graphic file (type pdf)
-<use ./figures/Inkscape/parallel-plate-capacitor.pdf, page 1>
-Package luatex.def Info: ./figures/Inkscape/parallel-plate-capacitor.pdf , page
-1 used on input line 56.
-(luatex.def)             Requested size: 247.54149pt x 285.64458pt.
-)
-<example-image-a.pdf, id=550, 321.2pt x 240.9pt>
-File: example-image-a.pdf Graphic file (type pdf)
-<use example-image-a.pdf>
-Package luatex.def Info: example-image-a.pdf  used on input line 34.
-(luatex.def)             Requested size: 247.54149pt x 185.66264pt.
-File: example-image-a.pdf Graphic file (type pdf)
-<use example-image-a.pdf>
-Package luatex.def Info: example-image-a.pdf  used on input line 34.
-(luatex.def)             Requested size: 247.54149pt x 185.66264pt.
-File: example-image-a.pdf Graphic file (type pdf)
-<use example-image-a.pdf>
-Package luatex.def Info: example-image-a.pdf  used on input line 34.
-(luatex.def)             Requested size: 247.54149pt x 185.66264pt.
-
-
-[19
-
-
-
-
-
-warning  (pdf backend): pop empty color page stack 0
-<./figures/Inkscape/parallel-plate-capacitor.pdf><./figures/Inkscape/parallel-pl
-ate-capacitor.pdf>]
-
-[20</opt/texlive/texdir/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
-<example-image-b.pdf, id=582, 321.2pt x 240.9pt>
-File: example-image-b.pdf Graphic file (type pdf)
-<use example-image-b.pdf>
-Package luatex.def Info: example-image-b.pdf  used on input line 45.
-(luatex.def)             Requested size: 247.54149pt x 185.66264pt.
-
-
-[21
-
-</opt/texlive/texdir/texmf-dist/tex/latex/mwe/example-image-b.pdf>])
-
-[22]
-
-[23
-
-
+[5
 
 ]
 
-Package silence Warning: There were 4 warning(s) and 0 error(s).
-(silence)                I've killed 3 warning(s) and 0 error(s).
+Package silence Warning: There were 3 warning(s) and 0 error(s).
+(silence)                I've killed 1 warning(s) and 0 error(s).
 
-(./build/main.aux (./build/frontmatter/title.aux)
-(./build/chapters/Introduction.aux) (./build/chapters/QuickSummary.aux)
-(./build/chapters/Notation.aux) (./build/chapters/Design.aux)
-(./build/chapters/Usage.aux) (./build/chapters/Features.aux)
-(./build/chapters/Tips.aux) (./build/chapters/Summary.aux)
-(./build/chapters/Appendix.aux))
+(./build/main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -2761,74 +2201,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 62280 strings out of 476291
- 156361,2373549 words of node,token memory allocated
- 37297 words of node memory still in use:
-   672 hlist, 55 vlist, 13 rule, 8 disc, 25 local_par, 4 math, 953 glue, 13 kern
-, 25 penalty, 685 glyph, 2966 attribute, 87 glue_spec, 2966 attribute_list, 2 wr
-ite, 1894 pdf_literal, 178 pdf_colorstack nodes
-   avail lists: 1:10,2:6661,3:3978,4:545,5:429,6:156,7:6253,8:66,9:1992,10:14,11
-:403
- 82325 multiletter control sequences out of 65536+600000
- 251 fonts using 19029895 bytes
- 109i,27n,166p,1192b,3410s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
-tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/opt/texlive/te
-xdir/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/opt/texlive/texdir/texmf-dist
-/fonts/enc/dvips/lm/lm-mathsy.enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvip
-s/lm/lm-rm.enc}</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmmonolt
-10-bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans10-bo
-ldoblique.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans12-
-oblique.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromanslan
-t10-bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman12-
-italic.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans8-regu
-lar.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromanslant10-
-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans10-re
-gular.otf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/opt/t
-exlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texlive/texdir/t
-exmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/texdir/texmf-dist/fonts/open
-type/public/lm/lmmono8-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentyp
-e/public/lm/lmromanslant12-regular.otf></opt/texlive/texdir/texmf-dist/fonts/ope
-ntype/public/lm/lmmono12-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opent
-ype/public/lm/lmroman8-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentyp
-e/public/lm/lmroman10-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype
-/public/lm/lmsans10-bold.otf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/tex
--gyre/q-ec.enc}</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmmono10
--regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman12-
-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans12-re
-gular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman12-bol
-d.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman17-regular
-.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.o
-tf></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-</opt/texlive/texdir/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></opt/tex
-live/texdir/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></opt/texlive/texdi
-r/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></opt/texlive/texdir/texmf
--dist/fonts/type1/public/hfbright/hfbrmb10.pfb></opt/texlive/texdir/texmf-dist/f
-onts/type1/public/hfbright/hfbrmi10.pfb></opt/texlive/texdir/texmf-dist/fonts/ty
-pe1/public/hfbright/hfbrsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/pub
-lic/lm/lmbx10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbx12.p
-fb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/texlive
-/texdir/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/texlive/texdir/texmf-d
-ist/fonts/type1/public/lm/lmmi12.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
-/public/lm/lmmi7.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi8
-.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/tex
-live/texdir/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/texlive/texdir/texm
-f-dist/fonts/type1/public/lm/lmr12.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
-e1/public/lm/lmr7.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr8
-.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmss12.pfb></opt/texl
-ive/texdir/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></opt/texlive/texdir/tex
-mf-dist/fonts/type1/public/lm/lmsso8.pfb></opt/texlive/texdir/texmf-dist/fonts/t
-ype1/public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/
-lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/
-texlive/texdir/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></opt/texlive/texdir/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/texlive/texdir/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/texlive/texdir/te
-xmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb></opt/texlive/texdir/texmf-dist/f
-onts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on main.pdf (29 pages, 892539 bytes).
+ 59214 strings out of 476291
+ 125086,2373549 words of node,token memory allocated
+ 2986 words of node memory still in use:
+   47 hlist, 5 vlist, 13 rule, 4 math, 61 glue, 13 kern, 1 glyph, 223 attribute,
+ 84 glue_spec, 223 attribute_list, 2 write, 118 pdf_literal, 34 pdf_colorstack n
+odes
+   avail lists: 1:4,2:602,3:245,4:90,5:104,6:50,7:1532,8:4,9:440,10:6,11:87
+ 79719 multiletter control sequences out of 65536+600000
+ 114 fonts using 8516423 bytes
+ 109i,13n,121p,1192b,1089s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}</opt/texlive/
+texdir/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></opt/texlive/t
+exdir/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></opt/texlive/tex
+dir/texmf-dist/fonts/opentype/public/lm/lmromanslant12-regular.otf></opt/texlive
+/texdir/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></opt/texlive/t
+exdir/texmf-dist/fonts/opentype/public/lm/lmsans12-oblique.otf></opt/texlive/tex
+dir/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></opt/texlive/texdir/t
+exmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></opt/texlive/texdir/tex
+mf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></opt/texlive/texdir/texm
+f-dist/fonts/opentype/public/lm/lmsans12-regular.otf></opt/texlive/texdir/texmf-
+dist/fonts/opentype/public/lm/lmroman12-bold.otf></opt/texlive/texdir/texmf-dist
+/fonts/opentype/public/lm/lmroman17-regular.otf></opt/texlive/texdir/texmf-dist/
+fonts/opentype/public/lm/lmsans17-regular.otf></opt/texlive/texdir/texmf-dist/fo
+nts/type1/public/tex-gyre/qzcmi.pfb>
+Output written on main.pdf (11 pages, 250301 bytes).
 
-PDF statistics: 1048 PDF objects out of 1200 (max. 8388607)
- 437 compressed objects within 5 object streams
- 148 named destinations out of 1000 (max. 131072)
- 630 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 241 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 131072)
+ 278 words of extra memory for PDF output out of 10000 (max. 100000000)
 
