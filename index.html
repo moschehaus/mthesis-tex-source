@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Thesis - Kamil Belan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+        }
+
+        .version {
+            color: #6b6b6b;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            background: #ffffff;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #1a1a1a;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .btn:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .info {
+            padding: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            text-align: center;
+            color: #6b6b6b;
+            font-size: 0.9rem;
+        }
+
+        .info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .info a:hover {
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .pdf-viewer {
+                height: 400px;
+            }
+
+            .pdf-container {
+                height: 400px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1a1a;
+                color: #e5e5e5;
+            }
+
+            .header {
+                background: #242424;
+                border-bottom: 1px solid #3a3a3a;
+            }
+
+            .header h1 {
+                color: #e5e5e5;
+            }
+
+            .version {
+                color: #a0a0a0;
+            }
+
+            .pdf-viewer {
+                border: 1px solid #3a3a3a;
+                background: #242424;
+            }
+
+            .pdf-container {
+                border: 1px solid #3a3a3a;
+                background: #242424;
+            }
+
+            .btn {
+                background: #242424;
+                color: #e5e5e5;
+                border: 1px solid #e5e5e5;
+            }
+
+            .btn:hover {
+                background: #e5e5e5;
+                color: #1a1a1a;
+            }
+
+            .info {
+                background: #242424;
+                border: 1px solid #3a3a3a;
+                color: #a0a0a0;
+            }
+
+            .info a {
+                color: #e5e5e5;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            .info a:hover {
+                border-bottom: 2px solid #e5e5e5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Master Thesis - Kamil Belan</h1>
+        <p class="version">verze <span id="build-date">18. 12. 2025</span></p>
+    </div>
+
+    <div class="container">
+        <div class="pdf-container">
+            <embed class="pdf-embed" src="main.pdf#toolbar=1&navpanes=1&scrollbar=1" type="application/pdf">
+        </div>
+
+        <div class="buttons">
+            <a href="main.pdf" download class="btn">
+                <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
+                </svg>
+                Stáhnout PDF
+            </a>
+            <a href="main.pdf" target="_blank" class="btn">
+                <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                </svg>
+                Otevřít v nové záložce
+            </a>
+        </div>
+
+        <div class="info">
+            <p><strong>Tento dokument se automaticky aktualizuje při každé změně v repozitáři.</strong></p>
+            <p>
+                <a href="https://github.com/moschehaus/mthesis-tex-source" target="_blank">
+                    Zobrazit zdrojový kód na GitHubu
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
