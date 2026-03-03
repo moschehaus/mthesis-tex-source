@@ -2,8 +2,39 @@
 \contentsline {chapter}{Contents}{v}{chapter*.5}%
 \contentsline {chapter}{Introduction}{vi}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Flows around a topography}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}SPH}{2}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Trixi}{3}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Voronoi}{4}{chapter.4}%
-\contentsline {chapter}{Summary and Outlook}{5}{chapter*.7}%
+\contentsline {section}{\numberline {1.1}Physical description}{1}{section*.7}%
+\contentsline {subsection}{Observed phenomeona}{1}{subsection*.8}%
+\contentsline {subsection}{Euler equations}{1}{subsection*.9}%
+\contentsline {subsection}{Thermodynamics}{1}{subsection*.10}%
+\contentsline {subsection}{Hydrostatic balance}{1}{subsection*.11}%
+\contentsline {section}{\numberline {1.2}Buoyancy oscillations}{1}{section*.12}%
+\contentsline {subsection}{Stratification}{1}{subsection*.13}%
+\contentsline {subsection}{Potential temperature}{1}{subsection*.14}%
+\contentsline {section}{\numberline {1.3}Mathematical modelling of atmospheric flows}{1}{section*.15}%
+\contentsline {subsection}{Initial and boundary conditions}{1}{subsection*.16}%
+\contentsline {subsection}{Discretization}{1}{subsection*.17}%
+\contentsline {subsection}{Well-balancing}{2}{subsection*.18}%
+\contentsline {chapter}{\numberline {2}SPH}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of SPH}{3}{section*.19}%
+\contentsline {subsection}{Pros and cons}{3}{subsection*.20}%
+\contentsline {subsection}{Uses}{3}{subsection*.21}%
+\contentsline {section}{\numberline {2.2}Cornerstones of SPH}{3}{section*.22}%
+\contentsline {subsection}{Partition}{3}{subsection*.23}%
+\contentsline {subsection}{Kernel interpolation}{3}{subsection*.24}%
+\contentsline {subsection}{Differential operators}{3}{subsection*.25}%
+\contentsline {section}{\numberline {2.3}SPH formulations}{3}{section*.26}%
+\contentsline {subsection}{WCSPH}{3}{subsection*.27}%
+\contentsline {subsection}{Hopkins}{3}{subsection*.28}%
+\contentsline {subsubsection}{Pressure - entropy}{3}{subsection*.28}%
+\contentsline {subsubsection}{Pressure - potential temperature}{4}{equation.2.3}%
+\contentsline {subsection}{Comparison of the formulations}{5}{subsection*.29}%
+\contentsline {section}{\numberline {2.4}Additional techniques}{5}{section*.30}%
+\contentsline {subsection}{Packing algorithm}{5}{subsection*.31}%
+\contentsline {subsection}{Adaptive smoothing length}{5}{subsection*.32}%
+\contentsline {subsection}{Initial configuration}{5}{subsection*.33}%
+\contentsline {chapter}{\numberline {3}Trixi}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Finite Volume Method}{6}{section*.34}%
+\contentsline {chapter}{\numberline {4}Voronoi}{7}{chapter.4}%
+\contentsline {chapter}{Summary and Outlook}{8}{chapter*.35}%
+\contentsline {chapter}{References}{9}{appendix*.36}%
 \contentsfinish 

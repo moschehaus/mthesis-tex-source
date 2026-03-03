@@ -16,5 +16,56 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
+           family={Hopkins},
+           familyi={H\bibinitperiod},
+           given={Philip\bibnamedelima F.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{9251bd9f553e5b7cc3385d67595804fe}
+      \strng{fullhash}{9251bd9f553e5b7cc3385d67595804fe}
+      \strng{fullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
+      \strng{bibnamehash}{9251bd9f553e5b7cc3385d67595804fe}
+      \strng{authorbibnamehash}{9251bd9f553e5b7cc3385d67595804fe}
+      \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
+      \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
+      \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian – guaranteeing manifest conservation – in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the “standard” approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the “∇h” terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle “weights”) and method of determining smoothing lengths. We then specify this to a “pressure-entropy formulation” which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& “blob” tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different “flavors” of SPH.}
+      \field{day}{1}
+      \field{eprintclass}{astro-ph}
+      \field{eprinttype}{arXiv}
+      \field{issn}{0035-8711, 1365-2966}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{title}{A {{General Class}} of {{Lagrangian Smoothed Particle Hydrodynamics Methods}} and {{Implications}} for {{Fluid Mixing Problems}}}
+      \field{urlday}{8}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/mnras/sts210
+      \endverb
+      \verb{eprint}
+      \verb 1206.5006
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Documents/Zotero_Library/Hopkins - 2013 - A General Class of Lagrangian Smoothed Particle Hydrodynamics Methods and Implications for Fluid Mix.pdf
+      \endverb
+      \keyw{Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Instrumentation and Methods for Astrophysics,Physics - Computational Physics,Physics - Fluid Dynamics}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
