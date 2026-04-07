@@ -33,7 +33,21 @@
 %% TeXtured logo
 \newcommand*{\TeXtured}{\texorpdfstring{\textsf{\TeX{}tured}}{TeXtured}}
 
+
 \usepackage{hologo} % Provides *TeX logos (for example `\hologo{pdfLaTeX}`)
+\usepackage{xspace}
+
+%% Latin abbreviations
+% Always-comma forms (American academic style)
+\newcommand{\eg}{e.g.,\xspace}        % exempli gratia  — non-exhaustive example
+\newcommand{\ie}{i.e.,\xspace}        % id est          — clarification/restatement
+% No trailing comma
+\newcommand{\cf}{cf.\xspace}          % confer          — compare/see also
+\newcommand{\viz}{viz.\xspace}        % videlicet       — namely (exhaustive list)
+\newcommand{\nb}{n.b.\xspace}         % nota bene       — note well (footnotes)
+\newcommand{\vs}{vs.\xspace}          % versus          — comparison
+\newcommand{\passim}{passim\xspace}   % passim          — scattered throughout a work
+\newcommand{\etal}{et~al.\xspace}     % et alii         — and others (use in running text)
  %% User macros
 \DeclareMathOperator{\sym}{sym}
 \DeclareMathOperator{\asym}{asym}
