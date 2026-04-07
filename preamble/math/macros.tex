@@ -100,8 +100,7 @@
 \NewDocumentCommand{\Ric}{O{}}{\IfBlankTF{#1}{\bmrm{Ric}}{\tens{\bmrm{Ric}}{#1}}}
 \NewDocumentCommand{\Rscalar}{}{\mathcal{R}}
 
-%% Override `physics` package command `\dd` to optionally use bold `d`
-\RenewDocumentCommand{\dd}{s O{} m}{
+\NewDocumentCommand{\dd}{s O{} m}{
     \mathinner{
         \IfBooleanTF{#1}{\bm{\mathrm{d}}}{\mathrm{d}}^{\mspace{-1mu}#2}#3
     }
@@ -135,6 +134,32 @@
         }}
 }
 % \RenewDocumentCommand{\dAlembertian}{s}{\mathord{\raisemath{-0.05ex}{\oldsquare}}}
+
+%% Ordinary derivative (replaces physics package \dv)
+%% Usage:
+%% \dv{f}{x}   -> df/dx
+%% \dv{}{x}    -> d/dx  (operator form)
+%% \dv[2]{f}{x} -> d^2f / dx^2  (higher order)
+\NewDocumentCommand{\dv}{O{} m m}{%
+    \IfBlankTF{#1}{%
+        \frac{\mathrm{d} #2}{\mathrm{d} #3}%
+    }{%
+        \frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}%
+    }%
+}
+
+%% Partial derivative
+%% Usage:
+%% \pdv{f}{x}    -> ∂f/∂x
+%% \pdv{}{x}     -> ∂/∂x  (operator form)
+%% \pdv[2]{f}{x} -> ∂²f/∂x²  (higher order)
+\NewDocumentCommand{\pdv}{O{} m m}{%
+    \IfBlankTF{#1}{%
+        \frac{\partial #2}{\partial #3}%
+    }{%
+        \frac{\partial^{#1} #2}{\partial #3^{#1}}%
+    }%
+}
 
 %%% Tweaking of math index positioning, spacing, etc.
 %%% (also definitions of new arrows, etc.)
@@ -299,4 +324,36 @@
         \IfValueT{#3}{\node[label node, gray, anchor=south] at (N.north){#3};}
         \draw[strike out, #1]  (N.south west) -- (N.north east);
     }
+}
+
+
+%% Trace macro
+\DeclareMathOperator{\trace}{tr}
+
+%% Vectors typesetting
+\newcommand{\vb}[1]{\mathbf{#1}}
+
+%% Differential operators
+\NewDocumentCommand{\grad}{}{\nabla}
+
+%% Vector calculus operators
+% Clear the default division symbol to redefine \div
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+\NewDocumentCommand{\divergence}{}{\nabla \cdot}
+
+% Curl operators
+\DeclareMathOperator{\curl}{curl}
+\NewDocumentCommand{\curlop}{}{\nabla \times}
+
+\usepackage{accents}
+
+%% Large, properly spaced time derivative dots
+%% Relies on your custom \scalemath and \raisemath macros
+\NewDocumentCommand{\tdot}{m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}}}}{#1}%
+}
+
+\NewDocumentCommand{\tddot}{m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}\mspace{-3mu}\bm{\cdot}}}}{#1}%
 }

@@ -11,8 +11,9 @@
 \usepackage[bbgreekl]{mathbbol}
 \usepackage{bm}         % boldface math via `\bm`
 
+
 %% Some notation used in physics
-\usepackage{physics}
+%\usepackage{physics}
 
 % \usepackage{tensor}     % tensor indices
 \usepackage{tensind}    % tensor indices
@@ -26,14 +27,16 @@
 \usepackage{siunitx}
 %% TODO: customize font style propagation
 \sisetup{
-    range-phrase = {--},            % en-dash as number range separator
-    range-units = single,           % print unit only once at the end
-    exponent-product = {\cdot},     % default is `\times`
-    per-mode = symbol,              % use `/` for per
-    uncertainty-mode = separate,    % use `±` for uncertainties
-    % table-align-uncertainty = false,
-    % table-alignment-mode = format,
-    % table-number-alignment = center,
+	%list-final-separator = { ~a~ },
+	%list-pair-separator = { ~a~ },
+	range-phrase = {--},            % en-dash as number range separator
+	range-units = single,           % print unit only once at the end
+	exponent-product = {\cdot},     % default is `\times`
+	per-mode = symbol,              % use `/` for per
+	uncertainty-mode = separate,    % use `±` for uncertainties
+	% table-align-uncertainty = false,
+	% table-alignment-mode = format,
+	% table-number-alignment = center,
 }
 
 
@@ -58,3 +61,11 @@
 
 %% TODO: fix/adapt a lot of stuff after the new release
 \usepackage{eqnlines} % modern framework for typesetting single- and multi-line equations
+
+% Workaround: eqnlines v1.0.1 bug with \DocumentMetadata + pdflatex
+% \l__math_collected_bool must be set GLOBALLY — v1.0.1's local set doesn't survive \everydisplay
+% Remove once eqnlines v1.0.2+ is released. Report: https://github.com/nbeisert/latex-pkg-nb
+\ExplSyntaxOn
+\AddToHook{env/equations/begin}{\bool_gset_true:N \l__math_collected_bool}
+\ExplSyntaxOff
+

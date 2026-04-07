@@ -36,12 +36,11 @@
 
 \subsubsection{Pressure - entropy}
 \label{sec:HOPKINS_PE}
-Recall that the entropy of an isentropic flow of an ideal gas has the form
+Recall that the entropy of an isentropic flow of an ideal gas has the form\sidenote{This is a test side note.}
 
 \begin{equations}[single,*]
 \eta = \eta_0 + c_v \log\left(\frac{P}{\rho^{\gamma}}\right)
 \end{equations}
-
 and $\eta = \, \text{const} \,.$ We see that the quantity $A$ defined as \autocite{hopkinsGeneralClassLagrangian2013}
 
 \begin{equations}[single,*]
@@ -60,21 +59,18 @@ The choice
 	\label{eq:x_PE}
 	x_i = m_i A_i^{\frac{1}{\gamma}},
 \end{equations}
-
 gives the pressure $P_i$ as
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:P_PE}
 	P_i = \left(\sum_{j=1}^N m_j A_j^{\frac{1}{\gamma}} w_{ij}(h_i)\right)^{\gamma}
 \end{equations}
-
 and the evolution equations as
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:v_PE}
 	\dv{\vb{v}_i}{t} = - \sum_{j=1}^N m_j \left(A_i A_j\right)^{\frac{1}{\gamma}}\left(\frac{f_{i}P_i}{P_{i}^{\frac{2}{\gamma}}} \nabla_i w_{ij}\left(h_i\right) + \frac{f_{j}P_j}{P^{\frac{2}{\gamma}}_{j}} \nabla_i w_{ij}\left(h_j\right)\right),
 \end{equations}
-
 with
 
 \begin{equations}[single,*]
@@ -82,7 +78,7 @@ with
 	f_{i} =  \left(1 + \frac{h_i}{2 n_i} \pdv{n_i}{h_i}\right)^{-1}
 \end{equations}
 
-\subsubsection{Pressure - potential temperature}
+\subsubsection{Pressure -- potential temperature}
 \label{sec:HOPKINS_theta}
 
 Recall the \emph{potential temperature} $\theta$
@@ -90,13 +86,11 @@ Recall the \emph{potential temperature} $\theta$
 \begin{equations}[single,*]
 \theta = T \left(\frac{P_0}{P}\right)^{\frac{R}{c_p}},
 \end{equations}
-
-where $T$ is the gas's \textcolor{gray}{thermodynamic} temperature, and $P_0$ is the reference pressure.\footnote{Potential temperature is the thermodynamic temperature the air parcel would possess if \emph{adiabatically} moved from the thermodynamic state $\left(T, P\right)$ to the state $\left(\theta, P_0\right).$} Using the thermal state equation
+where $T$ is the gas's \textcolor{gray}{thermodynamic} temperature, and $P_0$ is the reference pressure. \sidenote{Potential temperature is the thermodynamic temperature the air parcel would possess if \emph{adiabatically} moved from the thermodynamic state $\left(T, P\right)$ to the state $\left(\theta, P_0\right)$.} Using the thermal state equation
 
 \begin{equations}[single,*]
 P = R \rho T,
 \end{equations}
-
 together with the fact 
 
 \begin{equations}[single,*]
@@ -165,5 +159,7 @@ with \ref{eq:f_PE} unchanged
 
 \subsection{Initial configuration}
 \label{sec:INITIAL_CONFIG}
+
+
 
 \end{document}
