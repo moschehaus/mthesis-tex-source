@@ -1,8 +1,10 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\chapternotnumbered{Introduction} \label{chap:Introduction}
 
-The goal of this thesis is to investigate the use of certain numerical methods in simulating atmospheric flows around topography, the so-called \emph{orographic flows.} The text is structured as follows:
+\chapternotnumbered{Introduction}
+\label{chap:Introduction}
+
+The goal of this thesis is to investigate the use of certain numerical methods in simulating atmospheric flows around topography, the so-called \emph{orographic flows}. The text is structured as follows:
 
 \begin{compactenum}
 	\item chapter \Cref{chap:FLOWS} provides an introduction to the physics of \emph{orographic flows};
@@ -13,14 +15,19 @@ The goal of this thesis is to investigate the use of certain numerical methods i
 
 \section*{Motivation}
 
-\subsection{Katabatic winds}
-\label{sec:katabatic-winds}
+Earth's atmosphere is one of the most thoroughly studied and well-described natural systems. With the development of computer architecture, a great effort has been made to complete the \emph{experimental} data with the \emph{predictive} abilities of computational modelling. The need for effective and reliable predictive power is naturally well-founded -- many processes in the atmosphere have a massive influence on the lives of Earth's inhabitants.
 
-The influence of topography in atmospheric flow is great.
+One example of such a process is orographic flow -- an atmospheric flow of air mass over topography. Such flows are fairly common in nature and most importantly they give rise to effects of high relevance in atmospheric dynamics \& weather forecasting, such as
 
-\subsection{Internal gravity waves}
-\label{sec:internal-gws}
+\begin{compactenum}
+	\item downslope windstorms;
+	\item \textcolor{gray}{atmospheric} internal gravity waves\sidenotemark;
+	\item clear air turbulence.
+\end{compactenum}
 
+\sidenotetext{Note the distinction between \emph{gravitational waves} -- disturbances of \emph{space-time} studied in the general theory of relativity, and \emph{gravity waves} -- disturbances of \emph{a fluid} studied mainly in meteorology and oceanology. To make this distinction even more evident, the name \emph{internal} gravity waves is sometimes used in the literature.}
+
+The ability to obtain accurate and reliable \emph{numerical} solutions to such flows is thus highly \emph{practically relevant. \sidenotemark} \sidenotetext{And scientifically relevant also: the study of orographic flows and mainly internal gravity waves is an active field in the atmospheric science community.} In this work, we aim to explore the suitability of SPH and SILVA for this task.
 
 
 \end{document}

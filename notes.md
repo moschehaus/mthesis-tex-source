@@ -16,3 +16,6 @@
 ## SILVA
 
 ## Results
+
+# Dictionary
+- *corrugation* - a line or fold on the surface of something: 
