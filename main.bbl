@@ -126,6 +126,279 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Sutherland - 2010 - Internal gravity waves.pdf
       \endverb
     \endentry
+    \entry{varelaEfectoFoehnFohn2013}{artwork}{}{}
+      \name{author}{1}{}{%
+        {{hash=ca4325f0db0ee33e69bb2e4da534cdaf}{%
+           family={Varela},
+           familyi={V\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \strng{fullhash}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \strng{fullhashraw}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \strng{bibnamehash}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \strng{authorbibnamehash}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \strng{authornamehash}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \strng{authorfullhash}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \strng{authorfullhashraw}{ca4325f0db0ee33e69bb2e4da534cdaf}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{month}{7}
+      \field{title}{Efecto {{Foehn}} ({{Föhn}})}
+      \field{urlday}{15}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/moschehaus/Zotero/storage/S8QCTT2Z/Varela - 2013 - Efecto Foehn (Föhn).jpg
+      \endverb
+      \verb{urlraw}
+      \verb https://www.flickr.com/photos/artberri/9404934478/
+      \endverb
+      \verb{url}
+      \verb https://www.flickr.com/photos/artberri/9404934478/
+      \endverb
+    \endentry
+    \entry{teixeiraPhysicsOrographicGravity2014}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=01aabc65474646b2d518d4f310777160}{%
+           family={Teixeira},
+           familyi={T\bibinitperiod},
+           given={Miguel\bibnamedelimb A.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{01aabc65474646b2d518d4f310777160}
+      \strng{fullhash}{01aabc65474646b2d518d4f310777160}
+      \strng{fullhashraw}{01aabc65474646b2d518d4f310777160}
+      \strng{bibnamehash}{01aabc65474646b2d518d4f310777160}
+      \strng{authorbibnamehash}{01aabc65474646b2d518d4f310777160}
+      \strng{authornamehash}{01aabc65474646b2d518d4f310777160}
+      \strng{authorfullhash}{01aabc65474646b2d518d4f310777160}
+      \strng{authorfullhashraw}{01aabc65474646b2d518d4f310777160}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The drag and momentum fluxes produced by gravity waves generated in flow over orography are reviewed, focusing on adiabatic conditions without phase transitions or radiation effects, and steady mean incoming flow. The orographic gravity wave drag is first introduced in its simplest possible form, for inviscid, linearized, non-rotating flow with the Boussinesq and hydrostatic approximations, and constant wind and static stability. Subsequently, the contributions made by previous authors (primarily using theory and numerical simulations) to elucidate how the drag is affected by additional physical processes are surveyed. These include the effect of orography anisotropy, vertical wind shear, total and partial critical levels, vertical wave reflection and resonance, non-hydrostatic effects and trapped lee waves, rotation and nonlinearity. Frictional and boundary layer effects are also briefly mentioned. A better understanding of all of these aspects is important for guiding the improvement of drag parametrization schemes.}
+      \field{day}{11}
+      \field{issn}{2296-424X}
+      \field{journaltitle}{Frontiers in Physics}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{shortjournal}{Front. Phys.}
+      \field{title}{The Physics of Orographic Gravity Wave Drag}
+      \field{urlday}{15}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fphy.2014.00043
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Teixeira - 2014 - The physics of orographic gravity wave drag.pdf
+      \endverb
+      \keyw{Coriolis Force,drag,momentum flux,mountain waves,Nonhydrostatic effects,nonlinearity,stratification,Wind shear}
+    \endentry
+    \entry{smithInfluenceMountainsAtmosphere1979}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=262a793265d9ced4e8f534422caa8a32}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Ronald\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{262a793265d9ced4e8f534422caa8a32}
+      \strng{fullhash}{262a793265d9ced4e8f534422caa8a32}
+      \strng{fullhashraw}{262a793265d9ced4e8f534422caa8a32}
+      \strng{bibnamehash}{262a793265d9ced4e8f534422caa8a32}
+      \strng{authorbibnamehash}{262a793265d9ced4e8f534422caa8a32}
+      \strng{authornamehash}{262a793265d9ced4e8f534422caa8a32}
+      \strng{authorfullhash}{262a793265d9ced4e8f534422caa8a32}
+      \strng{authorfullhashraw}{262a793265d9ced4e8f534422caa8a32}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in {{Geophysics}}}
+      \field{isbn}{978-0-12-018821-5}
+      \field{langid}{english}
+      \field{title}{The {{Influence}} of {{Mountains}} on the {{Atmosphere}}}
+      \field{urlday}{15}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1979}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/S0065-2687(08)60262-9
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/1979 - The Influence of Mountains on the Atmosphere.pdf;/home/moschehaus/Zotero/storage/CXP9M8M6/S0065268708602629.html
+      \endverb
+    \endentry
+    \entry{frittsGravityWaveDynamics2003}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=06a4ee819ac11ee0191421ca0195f8ae}{%
+           family={Fritts},
+           familyi={F\bibinitperiod},
+           given={David\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=9f7a8fe87b1ec00f00134141c2e2e3cc}{%
+           family={Alexander},
+           familyi={A\bibinitperiod},
+           given={M.\bibnamedelimi Joan},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{fullhash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{fullhashraw}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{bibnamehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authorbibnamehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authornamehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authorfullhash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authorfullhashraw}{145cdb773fd53fa763a25acbfa6f8674}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Atmospheric gravity waves have been a subject of intense research activity in recent years because of their myriad effects and their major contributions to atmospheric circulation, structure, and variability. Apart from occasionally strong lower-atmospheric effects, the major wave influences occur in the middle atmosphere, between {$\sim$} 10 and 110 km altitudes because of decreasing density and increasing wave amplitudes with altitude. Theoretical, numerical, and observational studies have advanced our understanding of gravity waves on many fronts since the review by Fritts [1984a] ; the present review will focus on these more recent contributions. Progress includes a better appreciation of gravity wave sources and characteristics, the evolution of the gravity wave spectrum with altitude and with variations of wind and stability, the character and implications of observed climatologies, and the wave interaction and instability processes that constrain wave amplitudes and spectral shape. Recent studies have also expanded dramatically our understanding of gravity wave influences on the large-scale circulation and the thermal and constituent structures of the middle atmosphere. These advances have led to a number of parameterizations of gravity wave effects which are enabling ever more realistic descriptions of gravity wave forcing in large-scale models. There remain, nevertheless, a number of areas in which further progress is needed in refining our understanding of and our ability to describe and predict gravity wave influences in the middle atmosphere. Our view of these unknowns and needs is also offered.}
+      \field{issn}{8755-1209, 1944-9208}
+      \field{journaltitle}{Reviews of Geophysics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{shortjournal}{Reviews of Geophysics}
+      \field{title}{Gravity Wave Dynamics and Effects in the Middle Atmosphere}
+      \field{urlday}{15}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1029/2001RG000106
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Fritts and Alexander - 2003 - Gravity wave dynamics and effects in the middle atmosphere.pdf
+      \endverb
+    \endentry
+    \entry{doyleIntercomparisonTREXMountainwave2011}{article}{}{}
+      \name{author}{15}{}{%
+        {{hash=842f819cdff22ab9ef784102224399c3}{%
+           family={Doyle},
+           familyi={D\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=49332c955285d9e814c2075edf0d37e9}{%
+           family={Gaberšek},
+           familyi={G\bibinitperiod},
+           given={Saša},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ab4bac70b80cc5e7901ae1a246365d9f}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Qingfang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=c685f0a2b340bc0c39816304b5cf5c7e}{%
+           family={Bernardet},
+           familyi={B\bibinitperiod},
+           given={Ligia},
+           giveni={L\bibinitperiod}}}%
+        {{hash=59340f4bf231186d21e56d3774c8070a}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={John\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=4aa53d2623aa8ab18bce41737010a8ad}{%
+           family={Dörnbrack},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a00f04620cc6d74945722fefb6076a67}{%
+           family={Filaus},
+           familyi={F\bibinitperiod},
+           given={Elmar},
+           giveni={E\bibinitperiod}}}%
+        {{hash=632b1dc5eddc920d6b27f4c2360ccb99}{%
+           family={Grubišić},
+           familyi={G\bibinitperiod},
+           given={Vanda},
+           giveni={V\bibinitperiod}}}%
+        {{hash=edf763225ae93d282bea4d134f80a5d4}{%
+           family={Kirshbaum},
+           familyi={K\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a8365f92fb149f7322b195b9babc0f76}{%
+           family={Knoth},
+           familyi={K\bibinitperiod},
+           given={Oswald},
+           giveni={O\bibinitperiod}}}%
+        {{hash=02beae41136ef6f69fff8bfe2f81cb3f}{%
+           family={Koch},
+           familyi={K\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a55066f8915f2b638197c5223322845a}{%
+           family={Schmidli},
+           familyi={S\bibinitperiod},
+           given={Juerg},
+           giveni={J\bibinitperiod}}}%
+        {{hash=87231639206b83a71b1c1d171568d1a9}{%
+           family={Stiperski},
+           familyi={S\bibinitperiod},
+           given={Ivana},
+           giveni={I\bibinitperiod}}}%
+        {{hash=35e819cb757575603a789637c4fe40de}{%
+           family={Vosper},
+           familyi={V\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=90080c7a01a52c1bbf055309abbfeaec}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Shiyuan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{93f7f9a08d04e8e1d73d61a70f56d613}
+      \strng{fullhash}{910a66205f0a69568327ae64f38d00a7}
+      \strng{fullhashraw}{910a66205f0a69568327ae64f38d00a7}
+      \strng{bibnamehash}{910a66205f0a69568327ae64f38d00a7}
+      \strng{authorbibnamehash}{910a66205f0a69568327ae64f38d00a7}
+      \strng{authornamehash}{93f7f9a08d04e8e1d73d61a70f56d613}
+      \strng{authorfullhash}{910a66205f0a69568327ae64f38d00a7}
+      \strng{authorfullhashraw}{910a66205f0a69568327ae64f38d00a7}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Monthly Weather Review}
+      \field{title}{An Intercomparison of T-{{REX}} Mountain-Wave Simulations and Implications for Mesoscale Predictability}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1175/MWR-D-10-05042.1
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Doyle et al. - 2011 - An intercomparison of t-REX mountain-wave simulations and implications for mesoscale predictability.pdf
+      \endverb
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
@@ -142,8 +415,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian -- guaranteeing manifest conservation -- in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the ``standard'' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the ``∇h'' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle ``weights'') and method of determining smoothing lengths. We then specify this to a ``pressure-entropy formulation'' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& ``blob'' tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different ``flavors'' of SPH.}

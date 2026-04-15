@@ -537,7 +537,9 @@ INPUT ./figures/oro_flows/clouds.pdf
 INPUT ./figures/oro_flows/clouds.pdf
 INPUT ./figures/oro_flows/clouds.pdf
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmsans8-regular.luc
-INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc
+INPUT ./figures/oro_flows/fohn.pdf
+INPUT ./figures/oro_flows/fohn.pdf
+INPUT ./figures/oro_flows/fohn.pdf
 INPUT ./chapters/sph.tex
 INPUT ./chapters/sph.tex
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc
@@ -554,6 +556,7 @@ INPUT ./build/main.aux
 INPUT ./build/main.run.xml
 OUTPUT build/main.run.xml
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb
+INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbsy7.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
