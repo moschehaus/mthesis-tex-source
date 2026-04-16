@@ -176,12 +176,51 @@ and since $\frac{\gamma -1}{\gamma} = \frac{c_p - c_V}{c_V} \frac{c_V}{c_p} = \f
 \theta = T\left(\frac{p_0}{p}\right)^{\frac{R}{c_p}}.
 \end{equations}
 
-The quantity $\theta$ is called the \emph{potential temperature}. Let us summarize its meaning: it is the thermodynamic temperature an ideal gas (like \emph{dry air}) would possess if \emph{adiabatically} moved from the thermodynamic state $(T, p)$ to the state $(\theta, p_0).$
+The quantity $\theta$ is called the \emph{potential temperature}. Let us summarize its meaning: it is the thermodynamic temperature an ideal gas (like \emph{dry air}) would possess if \emph{adiabatically} moved from the thermodynamic state $(T, p)$ to the state $(\theta, p_0).$ In meteorological context, the reference pressure $p_0$ is always taken to be $p_0 = \qty{1013.25}{\hecto \pascal},$ \ie atmospheric pressure at sea level. Potential temperature is especially useful, since it is \emph{conserved} under \emph{isentropic flows}. Indeed, under the isentropic constraint from \Cref{eq:ENTROPY} it follows
 
+\begin{equations}[single,*]
+	\text{const} \, = \eta =  \eta_{\text{ref}} + c_V \log\left(\frac{R \theta}{\rho^{\gamma-1}}\right),
+\end{equations}
+
+and so 
+
+\begin{equations}[single,*]
+	\theta = \frac{\rho_0^{\gamma - 1}}{R}\exp\left(\frac{\eta - \eta_{\text{ref}}}{c_V}\right).
+\end{equations}
+
+The right-hand side contains only constants, so we see
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:THETA-CONSTANT}
+\theta = \, \text{const},
+\end{equations}
+
+and in particular
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:THETA-ADVECTED}
+\tdot{\theta} = 0.
+\end{equations}
+
+\emph{Under isentropic flows, $\theta$ is conserved.}
+
+\subsubsection{Complete system }
+\label{sec:SYSTEM}
+Let us summarize the governing equations, describing \emph{solely} the flow of inviscid dry air
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:GOVERNING-SYSTEM}
+\dot{\rho} + \rho \div \vb{v} &= 0, \\
+\rho \tdot{\vb{v}} &= - \grad p + \rho \vb{g}, \\
+\tdot{\theta} &= 0,\\
+p(\rho, T) &= R \rho T.
+\end{equations}
 
 
 \subsubsection{Hydrostatic balance}
 \label{sec:HYDROSTATICS}
+
+Let us look for \emph{stationary solutions of} the system \Cref{eq:GOVERNING-SYSTEM}. Choosing an inertial frame of reference $\left(\vb{e}_x, \vb{e}_z\right)$ such that $\vb{g} = g \vb{e}_z$ and denoting $\vb{v} = u \vb{e}_x + w \vb{e}_z$.
 
 \subsection{Mountain waves}
 \label{sec:MTN-WVS}
