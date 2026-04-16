@@ -88,7 +88,10 @@ where $\symvgrad = \sym \grad \vb{v}$ and $\lambda, \mu$ being the viscosity coe
 \cstress = - p \identityM,
 \end{equations}
 
-where $p$ is the thermodynamic pressure and $\identityM$ is the identity matrix. This modelling choice is standard in the field of internal gravity waves modelling \autocite{teixeiraPhysicsOrographicGravity2014,smithInfluenceMountainsAtmosphere1979,frittsGravityWaveDynamics2003,doyleIntercomparisonTREXMountainwave2011}.
+where $p$ is the thermodynamic pressure and $\identityM$ is the identity matrix. This constitutive asumption is standard in the field of internal gravity waves modelling \autocite{teixeiraPhysicsOrographicGravity2014,smithInfluenceMountainsAtmosphere1979,frittsGravityWaveDynamics2003,doyleIntercomparisonTREXMountainwave2011}. 
+
+While it is standard to neglect bulk and shear viscosity, \ie, the \emph{molecular viscosity}, some attention should be payed to turbulence and the \textcolor{gray}{effective} \emph{eddy viscosity} frequently used in its modelling \autocite[p.~5]{smagorinskyGENERALCIRCULATIONEXPERIMENTS1963}\autocite[p.~93]{popeTurbulentFlows2000}. When dealing with internal gravity waves however, the Reynolds number of the flow is so great that even the effective eddy viscous forces are unimportant \autocite[p.~30]{sutherlandInternalGravityWaves2010}.
+
 
 \subsubsection{Thermodynamics}
 \label{sec:THERMODYNAMICS}
