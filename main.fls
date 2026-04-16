@@ -540,9 +540,11 @@ INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmsans8-regul
 INPUT ./figures/oro_flows/fohn.pdf
 INPUT ./figures/oro_flows/fohn.pdf
 INPUT ./figures/oro_flows/fohn.pdf
-INPUT ./chapters/sph.tex
-INPUT ./chapters/sph.tex
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc
+INPUT ./chapters/modelling.tex
+INPUT ./chapters/modelling.tex
+INPUT ./chapters/sph.tex
+INPUT ./chapters/sph.tex
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/voronoi.tex

@@ -7,36 +7,37 @@
 \contentsline {subsubsection}{Internal gravity waves}{1}{subsection*.9}%
 \contentsline {subsubsection}{Downslope windstorms}{1}{figure.caption.10}%
 \contentsline {subsubsection}{Clear-air turbulence}{2}{figure.caption.11}%
-\contentsline {subsection}{Governing equations}{3}{subsection*.12}%
+\contentsline {subsection}{Governing equations}{2}{subsection*.12}%
 \contentsline {subsubsection}{Mechanics}{3}{subsection*.12}%
-\contentsline {subsubsection}{Thermodynamics}{4}{equation.1.5}%
-\contentsline {subsubsection}{Hydrostatic balance}{4}{equation.1.5}%
-\contentsline {subsection}{Mountain waves}{4}{subsection*.13}%
-\contentsline {subsubsection}{Stratification}{5}{subsection*.13}%
-\contentsline {subsubsection}{Potential temperature}{5}{subsection*.13}%
-\contentsline {section}{\numberline {1.2}Mathematical modelling of atmospheric flows}{5}{section*.14}%
-\contentsline {subsection}{Initial and boundary conditions}{5}{subsection*.15}%
-\contentsline {subsection}{Discretization}{5}{subsection*.16}%
-\contentsline {subsection}{Well-balancing}{5}{subsection*.17}%
-\contentsline {chapter}{\numberline {2}SPH}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Overview of SPH}{6}{section*.18}%
-\contentsline {subsection}{Pros and cons}{6}{subsection*.19}%
-\contentsline {subsection}{Uses}{6}{subsection*.20}%
-\contentsline {section}{\numberline {2.2}Cornerstones of SPH}{6}{section*.21}%
-\contentsline {subsection}{Partition}{6}{subsection*.22}%
-\contentsline {subsection}{Kernel interpolation}{6}{subsection*.23}%
-\contentsline {subsection}{Differential operators}{6}{subsection*.24}%
-\contentsline {section}{\numberline {2.3}SPH formulations}{6}{section*.25}%
-\contentsline {subsection}{WCSPH}{6}{subsection*.26}%
-\contentsline {subsection}{Hopkins}{6}{subsection*.27}%
-\contentsline {subsubsection}{Pressure - entropy}{6}{subsection*.27}%
-\contentsline {subsubsection}{Pressure -- potential temperature}{7}{equation.2.3}%
-\contentsline {section}{\numberline {2.4}Additional techniques}{8}{section*.28}%
-\contentsline {subsection}{Packing algorithm}{8}{subsection*.29}%
-\contentsline {subsection}{Adaptive smoothing length}{8}{subsection*.30}%
-\contentsline {subsection}{Initial configuration}{8}{subsection*.31}%
-\contentsline {chapter}{\numberline {3}Experiments}{9}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Voronoi}{10}{chapter.4}%
-\contentsline {chapter}{Summary and Outlook}{11}{chapter*.32}%
-\contentsline {chapter}{References}{12}{appendix*.33}%
+\contentsline {subsubsection}{Thermodynamics}{4}{equation.1.6}%
+\contentsline {subsubsection}{Potential temperature}{5}{equation.1.9}%
+\contentsline {subsubsection}{Hydrostatic balance}{6}{equation.1.10}%
+\contentsline {subsection}{Mountain waves}{6}{subsection*.13}%
+\contentsline {subsubsection}{Stratification}{6}{subsection*.13}%
+\contentsline {subsubsection}{Buoyancy oscillations }{6}{subsection*.13}%
+\contentsline {subsubsection}{Linear wave theory}{7}{figure.caption.14}%
+\contentsline {chapter}{\numberline {2}Mathematical modelling of atmospheric flows}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Initial and boundary conditions}{8}{section*.16}%
+\contentsline {section}{\numberline {2.2}Well-balancing}{8}{section*.17}%
+\contentsline {chapter}{\numberline {3}SPH}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview of SPH}{9}{section*.18}%
+\contentsline {subsection}{Pros and cons}{9}{subsection*.19}%
+\contentsline {subsection}{Uses}{9}{subsection*.20}%
+\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{9}{section*.21}%
+\contentsline {subsection}{Partition}{9}{subsection*.22}%
+\contentsline {subsection}{Kernel interpolation}{9}{subsection*.23}%
+\contentsline {subsection}{Differential operators}{9}{subsection*.24}%
+\contentsline {section}{\numberline {3.3}SPH formulations}{9}{section*.25}%
+\contentsline {subsection}{WCSPH}{9}{subsection*.26}%
+\contentsline {subsection}{Hopkins}{9}{subsection*.27}%
+\contentsline {subsubsection}{Pressure - entropy}{9}{subsection*.27}%
+\contentsline {subsubsection}{Pressure -- potential temperature}{10}{equation.3.3}%
+\contentsline {section}{\numberline {3.4}Additional techniques}{11}{section*.28}%
+\contentsline {subsection}{Packing algorithm}{11}{subsection*.29}%
+\contentsline {subsection}{Adaptive smoothing length}{11}{subsection*.30}%
+\contentsline {subsection}{Initial configuration}{11}{subsection*.31}%
+\contentsline {chapter}{\numberline {4}Experiments}{12}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Voronoi}{13}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{14}{chapter*.32}%
+\contentsline {chapter}{References}{15}{appendix*.33}%
 \contentsfinish 
