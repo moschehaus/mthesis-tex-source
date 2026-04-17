@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  17 APR 2026 16:34
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  17 APR 2026 17:15
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2422,7 +2422,7 @@ Overfull \hbox (17.807pt too wide) in paragraph at lines 248--249
 [8]
 
 [9]
-Overfull \hbox (35.16469pt too wide) in paragraph at lines 313--314
+Overfull \hbox (35.16469pt too wide) in paragraph at lines 328--329
 []\TU/lmr/m/n/12 and also to mo-ti-vate the use of some tech-niques used in [][
 ][][][]. |
  []
@@ -2430,23 +2430,25 @@ Overfull \hbox (35.16469pt too wide) in paragraph at lines 313--314
 
 
 [10]
-Overfull \hbox (9.17104pt too wide) in paragraph at lines 404--405
+Overfull \hbox (9.17104pt too wide) in paragraph at lines 419--420
  [][] |
  []
 
 ) (./chapters/modelling.tex
 
 [11]
+
+[12]
 Chapter 2.
 ) (./chapters/sph.tex
 
-[12
+[13
 
 ]
 Chapter 3.
 
 
-[13
+[14
 
 ]
 Overfull \hbox (3.4041pt too wide) detected at line 106
@@ -2456,23 +2458,23 @@ Overfull \hbox (3.4041pt too wide) detected at line 106
 
 
 
-[14]
+[15]
 
-LaTeX Warning: Reference `eq:f_PE' on page 15 undefined on input line 144.
+LaTeX Warning: Reference `eq:f_PE' on page 16 undefined on input line 144.
 
 ) (./chapters/experiments.tex
 
-[15]
+[16]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[16
+[17
 
 ]
 Chapter 5.
 )
 
-[17
+[18
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2510,25 +2512,25 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[18
-
-
-]
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-
 [19
 
+
 ]
 
-[20] (./build/main.aux)
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
+
+[20
+
+]
+
+[21] (./build/main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2543,18 +2545,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 62332 strings out of 475512
- 156359,2848258 words of node,token memory allocated
+ 62334 strings out of 475512
+ 156360,2848258 words of node,token memory allocated
  38391 words of node memory still in use:
    321 hlist, 34 vlist, 16 rule, 251 disc, 23 local_par, 70 math, 810 glue, 192 
 kern, 92 penalty, 72 margin_kern, 2641 glyph, 927 attribute, 110 glue_spec, 927 
 attribute_list, 4 write, 414 pdf_literal, 4 pdf_start_link, 4 pdf_end_link, 6 pd
 f_action, 80 pdf_colorstack nodes
-   avail lists: 1:10,2:4440,3:3239,4:405,5:458,6:144,7:7569,8:86,9:1206,10:16,11
-:513,12:1
- 83321 multiletter control sequences out of 65536+600000
+   avail lists: 1:28,2:4220,3:3014,4:381,5:468,6:140,7:7196,8:86,9:1134,10:16,11
+:455,12:1
+ 83320 multiletter control sequences out of 65536+600000
  145 fonts using 11300535 bytes
- 109i,18n,121p,4410b,3696s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,19n,121p,4410b,3696s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
 tf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf
 >{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/texd
@@ -2588,10 +2590,10 @@ e/texdir/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-
 dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
 /public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre
 /qzcmi.pfb>
-Output written on main.pdf (26 pages, 4662602 bytes).
+Output written on main.pdf (27 pages, 4664697 bytes).
 
-PDF statistics: 823 PDF objects out of 1000 (max. 8388607)
- 383 compressed objects within 4 object streams
- 153 named destinations out of 1000 (max. 131072)
+PDF statistics: 829 PDF objects out of 1000 (max. 8388607)
+ 388 compressed objects within 4 object streams
+ 156 named destinations out of 1000 (max. 131072)
  534 words of extra memory for PDF output out of 10000 (max. 100000000)
 
