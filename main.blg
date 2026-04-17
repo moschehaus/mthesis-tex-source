@@ -1,18 +1,18 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'build/main.blg'
-[87] biber:340> INFO - === Fri Apr 17, 2026, 17:15:18
-[102] Biber.pm:420> INFO - Reading 'build/main.bcf'
-[176] Biber.pm:994> INFO - Found 12 citekeys in bib section 0
-[188] Biber.pm:4463> INFO - Processing section 0
-[199] Biber.pm:4654> INFO - Looking for bibtex file 'preamble/bibliography.bib' for section 0
-[203] bibtex.pm:1713> INFO - LaTeX decoding ...
-[323] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
-[439] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[439] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[439] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[439] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[450] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
-[456] bbl.pm:779> INFO - Output to build/main.bbl
-[456] Biber.pm:131> WARN - ISBN '978-0-511-78031-8 978-1-316-18472-1' in entry 'sutherlandInternalGravityWaves2010' is invalid - run biber with '--validate_datamodel' for details.
-[456] Biber.pm:131> WARN - ISBN '978-0-521-59125-6 978-0-521-59886-6' in entry 'popeTurbulentFlows2000' is invalid - run biber with '--validate_datamodel' for details.
-[456] Biber.pm:133> INFO - WARNINGS: 2
+[74] biber:340> INFO - === Fri Apr 17, 2026, 21:21:22
+[87] Biber.pm:420> INFO - Reading 'build/main.bcf'
+[154] Biber.pm:994> INFO - Found 12 citekeys in bib section 0
+[166] Biber.pm:4463> INFO - Processing section 0
+[176] Biber.pm:4654> INFO - Looking for bibtex file 'preamble/bibliography.bib' for section 0
+[181] bibtex.pm:1713> INFO - LaTeX decoding ...
+[287] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
+[388] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[388] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[389] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[389] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[399] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
+[404] bbl.pm:779> INFO - Output to build/main.bbl
+[405] Biber.pm:131> WARN - ISBN '978-0-511-78031-8 978-1-316-18472-1' in entry 'sutherlandInternalGravityWaves2010' is invalid - run biber with '--validate_datamodel' for details.
+[405] Biber.pm:131> WARN - ISBN '978-0-521-59125-6 978-0-521-59886-6' in entry 'popeTurbulentFlows2000' is invalid - run biber with '--validate_datamodel' for details.
+[405] Biber.pm:133> INFO - WARNINGS: 2
