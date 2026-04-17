@@ -241,21 +241,28 @@ with $\rho_0 = \rho(z = 0)$ being the boundary condition that has to be specifie
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:HYDROSTATIC}
-\rho(z) &= \rho_0 \exp\left(- \frac{g}{RT}z\right),\\
-p(z) &= p_0 \exp\left(- \frac{g}{RT}z \right),\\
-\theta(z) &= T \exp\left(\frac{g}{T c_p} z\right),\\
+\rho(z) &= \rho_0 \exp\left(- \frac{z}{H_s}\right),\\
+p(z) &= p_0 \exp\left(- \frac{z}{H_s} \right),\\
+\theta(z) &= T \exp\left(\frac{R}{c_p}\frac{z}{H_s}\right),\\
 T &= \, \text{const},\\
 \vb{v} &= \vb{0}.
 \end{equations}
 
-where $p_0 = R T \rho_0.$ This static solution to the Euler system \Cref{eq:GOVERNING-SYSTEM} is referred to as the \emph{hydrostatic balance}. In our numerical simulations, the hydrostatic balance will serve as an initial state. Note that the solution has been obtained in the case of an \emph{isothermal} atmosphere, which of course is a considerable simplification -- our Earth's atmosphere is \emph{not isothermal.} It is nevertheless advantageous to depart from the isothermal hydrostatic assumption, take it as a \emph{background} atmospheric state, and treat deviations from it as \emph{perturbations.}
+where $p_0 = R T \rho_0, H_s = \frac{RT}{g}$ is the scale height of an isothermal atmosphere. This static solution to the Euler system \Cref{eq:GOVERNING-SYSTEM} is referred to as the \emph{hydrostatic balance}. In our numerical simulations, the hydrostatic balance will serve as an initial state. Note that the solution has been obtained in the case of an \emph{isothermal} atmosphere, which of course is a considerable simplification -- our Earth's atmosphere is \emph{not isothermal.} It is nevertheless advantageous to depart from the isothermal hydrostatic assumption, take it as a \emph{background} atmospheric state, and treat deviations from it as \emph{perturbations.}
 
+\subsection{Boussinesq approximation}
+\label{sec:BOUSSINESQ}
+
+In the study of atmospheric gravity waves, yet another significant approximation is often made. We have discussed that a suitable system of equations describing the dynamics of a \textcolor{gray}{dry ideal} gas is the \emph{compressible} Euler system \Cref{eq:GOVERNING-SYSTEM}. The compressible Euler system is, to a sufficient degree, a physically consistent model, which has been proven throughout the history of science numerous times by solid comparison with experimental data. For instance, the Euler system is capable of predicting the existence of \emph{acoustic waves} with correct propagation speeds. 
+The atmosphere is however such a complicated system that one would like to devise a simplification of the Euler system. The simplification should be such that the resulting system \emph{captures} the phenomena we are interested in -- internal gravity waves -- but \emph{filters} out at least some\sidenote{Rossby waves...} of the phenomena we are not interested in -- acoustic waves. In this section, a set of simplified governing equations that filters out the propagation of acoustic waves will be derived. 
+
+\autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013} 
 
 \section{Mountain waves}
 \label{sec:MTN-WVS}
 
-So far, our exploration of internal gravity waves has been rather formal; the goal of this section is to show that the system of governing equations \Cref{eq:GOVERNING-SYSTEM} allows for solutions in the form of \emph{waves.}
-The reader should be disclosed that the goal of this thesis lies in the development \emph{numerical methods} -- not in meteorology. The following derivations will thus lack some mathematical rigor\sidenote{Mainly in the sense we assume sufficient regularity (differentiability and integrability) of the functions.} and few steps will be skipped completely. Our objective here is to mainly present that our model is in fact capable of capturing \emph{mountain waves}\sidenote{Keep in mind we have made quite a few (although common) simplifications along the way
+So far, our exploration of internal gravity waves has been rather formal; the goal of this section is to show that the system of governing equations \Cref{eq:GOVERNING-SYSTEM} allows for solutions in the form of \emph{waves.}\sidenote{Nappo reminds us to stay aware of the limitations of the linear theory: \textbf{quotation:} \autocite[p.~30]{nappoIntroductionAtmosphericGravity2013} \textit{"However, the possibility of waves is not a sufficient condition for waves".} There are certain cases when linear theory predicts the emergence of waves, yet in the real \emph{nonlinear} world, there are none - and vice versa.\autocite[p.~30]{nappoIntroductionAtmosphericGravity2013}. } 
+The reader should be disclosed that the goal of this thesis lies in the development \emph{numerical methods} -- not in meteorology. The following derivations will thus lack some mathematical rigor\sidenote{Mainly in the sense we assume a priori sufficient regularity (differentiability and integrability) of the functions.} and few steps will be skipped completely. Our objective here is to mainly present that our model is in fact capable of capturing \emph{mountain waves}\sidenote{Keep in mind we have made quite a few (although common) simplifications along the way
 
 \begin{compactitem}
 	\item not tracking any phase changes (\ie precipitation);
@@ -269,7 +276,7 @@ and also to motivate the use of some techniques used in \Cref{sec:EXTRA}.
 \subsection{Stratification}
 \label{sec:STRATIFICATION}
 
-Taking a look at the relations describing hydrostatic balance \Cref{eq:HYDROSTATIC}, we see that density, pressure and potential temperature are functions of the \emph{altitude only}, in particular they are constant on the horizontal planes. Physical quantities dependent of altitude are said to be \emph{stratified}.
+Taking a look at the relations describing hydrostatic balance \Cref{eq:HYDROSTATIC}, we see that density, pressure and potential temperature are functions of the \emph{altitude only}. In particular, they are constant on the horizontal planes. Physical quantities dependent of altitude are said to be \emph{stratified}.
 
 In the case of isothermal hydrostatic balance, it also holds
 
