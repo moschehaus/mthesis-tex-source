@@ -267,34 +267,49 @@ The atmosphere is however such a complicated system that one would like to devis
 Consider the following splitting of our field variables $\rho$ and $p$
 
 \begin{equations}[columns,*]
-	\rho &= \rho_0 + \rho_{1},
+	\rho &= \rho_0 + \rho_{1},\\
 	p &= p_0 + p_1.
 \end{equations}
 
 In both cases, the variable with the subscript zero stands for a \emph{background} \textcolor{gray}{mean} value, whereas the variable with the subscript one stands for the \emph{perturbation} from that background value. Assuming that the background pressure and density solve the hydrostatic \Cref{eq:HYDROSTATIC-P}, that is 
 
 \begin{equations}[columns,*]
-	\vb{e}_z\partial_{z} p_0 = \rho_0 \vb{g},\\
 	p_0\left(t, \vb{x}\right) = p_0\left(z\right),
+	\vb{e}_z\partial_{z} p_0 = \rho_0 \vb{g},\\
 \end{equations}
 
-the Euler equations \Cref{eq:GOVERNING-SYSTEM}
+the Euler system \Cref{eq:GOVERNING-SYSTEM}
 
 \begin{equations}[columns,*]
-	\tdot{\rho_0} + \tdot{\rho_1} +  \rho_0 \div \vb{v} +  \rho_1 \div \vb{v} &= 0,\\
+	\tdot{\rho_0} + \tdot{\rho_1} + \left(\rho_0 + \rho_1\right)\div \vb{v} &= 0,\\
 	\left(\rho_0 + \rho_1\right)\tdot{\vb{v}} &= - \vb{e}_z \partial_{z} p_0 - \grad p_1 + \rho_0 \vb{g} + \rho_1 \vb{g}, \\
 \end{equations}
 
 can be simplified to 
 
 \begin{equations}[columns,*]
-	\tdot{\rho_0} + \tdot{\rho_1} +  \rho_0 \div \vb{v} +  \rho_1 \div \vb{v} &= 0,\\
-	\left(\rho_0 + \rho_1\right)\tdot{\vb{v}} &= - \grad p_1 +  \rho_1 \vb{g}, \\
+	\tdot{\rho_0} + \tdot{\rho_1} + \left(\rho_0 + \rho_1\right)\div \vb{v} &= 0,\\
+	\left(\rho_0 + \rho_1\right)\tdot{\vb{v}} = - \grad p_1 +  \rho_1 \vb{g}. \\
 \end{equations}
 
+Upon dividing by $\rho_0$, we arrive at
+
+\begin{equations}[columns,*]
+	\left(1 + \frac{\rho_1}{\rho_0}\right)\div \vb{v} &= \frac{\tdot{\rho_0}}{\rho_0} + \frac{\tdot{\rho_1}}{\rho_0}, \\
+	\left(1 + \frac{\rho_1}{\rho_0}\right) \tdot{\vb{v}} &= - \frac{1}{\rho_0} \grad p_1 + \frac{\rho_1}{\rho_0} \vb{g}.
+\end{equations}
+
+At this point, the so-called \emph{Boussinesq approximation} \autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013}  is introduced
+
+\begin{compactenum}
+	\item the density variations affect the buoyancy term $\frac{\rho_1}{\rho_0} \vb{g}$ substantially more then the inertial term $\frac{\rho_1}{\rho_{0}}\tdot{\vb{v}}$
+	\item Second item.
+\end{compactenum}
 
 
-\autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013} 
+
+
+
 
 \section{Mountain waves}
 \label{sec:MTN-WVS}
