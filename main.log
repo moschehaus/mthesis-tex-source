@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  18 APR 2026 19:48
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  18 APR 2026 21:34
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2499,13 +2499,13 @@ Overfull \hbox (14.19803pt too wide) in paragraph at lines 11--12
 ; |
  []
 
-<./figures/oro_flows/clouds.pdf, id=270, 1110.0672pt x 832.5504pt>
+<./figures/oro_flows/clouds.pdf, id=274, 1110.0672pt x 832.5504pt>
 File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/clouds.pdf>
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 27.
 
 (luatex.def)             Requested size: 320.0pt x 239.99791pt.
-<./figures/oro_flows/fohn.pdf, id=274, 3886.52pt x 2601.72pt>
+<./figures/oro_flows/fohn.pdf, id=278, 3886.52pt x 2601.72pt>
 File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/fohn.pdf>
 Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 41.
@@ -2567,17 +2567,17 @@ Overfull \hbox (17.807pt too wide) in paragraph at lines 244--245
 [8]
 
 [9]
-Underfull \hbox (badness 3240) in paragraph at lines 314--314
+Underfull \hbox (badness 3240) in paragraph at lines 313--313
 \TU/lmr/m/n/12 buoy-ancy driven flows. Lord
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 314--314
+Underfull \hbox (badness 2343) in paragraph at lines 313--313
 \TU/lmr/m/n/12 Rayleigh fa-mously used Boussi-
  []
 
 
-Overfull \hbox (3.28014pt too wide) in paragraph at lines 314--315
+Overfull \hbox (3.28014pt too wide) in paragraph at lines 313--314
 []\TU/lmr/m/n/12 At this point, the so-called \TU/lmr/m/sl/12 Boussi-nesq ap-pro
 x-i-ma-tion[][] [][][][][][]|
  []
@@ -2585,7 +2585,7 @@ x-i-ma-tion[][] [][][][][][]|
 
 
 [10]
-Overfull \hbox (30.31953pt too wide) in paragraph at lines 338--339
+Overfull \hbox (30.31953pt too wide) in paragraph at lines 337--338
 []\TU/lmr/m/n/12 Us-ing these scal-ing re-la-tions, the bal-ance of mass [][][]
 [][]|
  []
@@ -2593,7 +2593,7 @@ Overfull \hbox (30.31953pt too wide) in paragraph at lines 338--339
 
 
 [11]
-Overfull \hbox (35.16469pt too wide) in paragraph at lines 378--379
+Overfull \hbox (35.16469pt too wide) in paragraph at lines 375--376
 []\TU/lmr/m/n/12 and also to mo-ti-vate the use of some tech-niques used in [][
 ][][][]. |
  []
@@ -2601,23 +2601,43 @@ Overfull \hbox (35.16469pt too wide) in paragraph at lines 378--379
 
 
 [12]
-Overfull \hbox (9.17104pt too wide) in paragraph at lines 469--470
+
+Package zref-clever Warning: Reference format option 'Name-sg' undefined for
+(zref-clever)                type 'sidenote' on line 415.
+
+
+
+[13]
+warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
+i.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
+i.2'
+
+Underfull \hbox (badness 1910) in paragraph at lines 469--469
+[]$[][]$ \TU/lmr/m/n/12 No-tice that the planar-wave
+ []
+
+
+
+[14]
+Overfull \hbox (9.17104pt too wide) in paragraph at lines 542--543
  [][] |
  []
 
 ) (./chapters/modelling.tex
 
-[13]
+[15]
 Chapter 2.
 ) (./chapters/sph.tex
 
-[14
+[16
 
 ]
 Chapter 3.
 
 
-[15
+[17
 
 ]
 Overfull \hbox (3.4041pt too wide) detected at line 106
@@ -2627,23 +2647,23 @@ Overfull \hbox (3.4041pt too wide) detected at line 106
 
 
 
-[16]
+[18]
 
-LaTeX Warning: Reference `eq:f_PE' on page 17 undefined on input line 144.
+LaTeX Warning: Reference `eq:f_PE' on page 19 undefined on input line 144.
 
 ) (./chapters/experiments.tex
 
-[17]
+[19]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[18
+[20
 
 ]
 Chapter 5.
 )
 
-[19
+[21
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2681,7 +2701,7 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[20
+[22
 
 
 ]
@@ -2695,7 +2715,7 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[21
+[23
 
 ]
 
@@ -2704,8 +2724,8 @@ See the caption package documentation for explanation.
 
 
 
-[22]
-runsystem(latexminted cleantemp  --timestamp 20260418194828Z FAD58DE7366495DB465
+[24]
+runsystem(latexminted cleantemp  --timestamp 20260418213444Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2722,16 +2742,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67049 strings out of 475512
+ 67137 strings out of 475512
  156364,2848258 words of node,token memory allocated
- 49057 words of node memory still in use:
-   373 hlist, 42 vlist, 16 rule, 338 disc, 30 local_par, 84 math, 1030 glue, 255
- kern, 124 penalty, 102 margin_kern, 3584 glyph, 1004 attribute, 115 glue_spec, 
-1004 attribute_list, 4 write, 414 pdf_literal, 4 pdf_start_link, 4 pdf_end_link,
+ 56245 words of node memory still in use:
+   404 hlist, 48 vlist, 16 rule, 401 disc, 33 local_par, 94 math, 1169 glue, 299
+ kern, 137 penalty, 119 margin_kern, 4250 glyph, 1032 attribute, 115 glue_spec, 
+1032 attribute_list, 4 write, 414 pdf_literal, 4 pdf_start_link, 4 pdf_end_link,
  6 pdf_action, 86 pdf_colorstack nodes
-   avail lists: 1:9,2:5233,3:3764,4:461,5:438,6:142,7:7383,8:86,9:1415,10:20,11:
-524,12:1
- 87936 multiletter control sequences out of 65536+600000
+   avail lists: 1:10,2:5233,3:3764,4:461,5:692,6:144,7:6893,8:86,9:1548,10:20,11
+:419,12:1
+ 88004 multiletter control sequences out of 65536+600000
  145 fonts using 11300535 bytes
  109i,19n,121p,4410b,3698s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -2767,10 +2787,10 @@ e/texdir/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-
 dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
 /public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre
 /qzcmi.pfb>
-Output written on main.pdf (28 pages, 4685114 bytes).
+Output written on main.pdf (30 pages, 4698990 bytes).
 
-PDF statistics: 864 PDF objects out of 1000 (max. 8388607)
- 413 compressed objects within 5 object streams
- 167 named destinations out of 1000 (max. 131072)
- 526 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 903 PDF objects out of 1000 (max. 8388607)
+ 446 compressed objects within 5 object streams
+ 187 named destinations out of 1000 (max. 131072)
+ 534 words of extra memory for PDF output out of 10000 (max. 100000000)
 
