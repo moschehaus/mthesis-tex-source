@@ -505,13 +505,13 @@ Next, the \emph{planar-wave ansatz} is assumed for the perturbed quantites\siden
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:PLANAR-ANSATZ}
-u_1\left(t, x, z\right) &= \tilde{u}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
-w_1\left(t, x, z\right) &= \tilde{w}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
-\rho_1\left(t, x, z\right) &= \tilde{\rho}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
-p_1\left(t, x, z\right) &= \tilde{p}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+u_1\left(t, x, z\right) &= \tilde{u}(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+w_1\left(t, x, z\right) &= \tilde{w}(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+\rho_1\left(t, x, z\right) &= \tilde{\rho}(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+p_1\left(t, x, z\right) &= \tilde{p}(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
 \end{equations}
 
-where the quantites with tildas are \textcolor{gray}{complex} amplitudes, $\omega$ is the wave frequency and $k$ is the wave vector. Plugging \Cref{eq:PLANAR-ANSATZ} into \Cref{eq:APPROX}, the following \emph{algebraic equations} are obtained:\sidenote{Notice that the planar-wave ansatz produced from the original system of partial differential equations a system of algebraic equations. This approach is very similar to the technique of Fourier transform.}
+where the quantites with tildas are \textcolor{gray}{complex} amplitudes, $\omega$ is the wave frequency and $k$ is the wave vector. Plugging \Cref{eq:PLANAR-ANSATZ} into \Cref{eq:APPROX}, the following system of \emph{algebro-differential equations} are obtained:\sidenote{Notice that the planar-wave ansatz produced from the original system of partial differential equations a system of algebro\textcolor{gray}{-differential} equations. This approach is very similar to the technique of Fourier transform.}
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:ALG}
@@ -527,7 +527,7 @@ It is useful to set $\Omega = \omega - u_0 k$ as a type of \emph{reduced frequen
 \dv{\rho_0}{z} = - \frac{\rho_0}{g}N^{2},
 \end{equations}
 
-due to the application of the Boussinesq approximation and the derived expression \Cref{eq:BV-BOUSSINESQ}. All in all, the system \Cref{eq:ALG} can be rewride to the form
+due to the application of the Boussinesq approximation and the derived expression \Cref{eq:BV-BOUSSINESQ}. All in all, the system \Cref{eq:ALG} can be rewritten to the form
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:ALG1}
@@ -537,6 +537,58 @@ due to the application of the Boussinesq approximation and the derived expressio
 \I \Omega \tilde{\rho} -\tilde{w} \frac{\rho_0}{g}N^{2} &= 0.
 \end{equations}
 
+We do not carry out the computations in detail, as it consists of rather uninteresting yet time-consuming algebraic manipulation. To retain credibility, we only outline the process and reference the kind reader to \autocite[p.~34]{nappoIntroductionAtmosphericGravity2013} for further details.
+
+\begin{compactenum}
+\item observe that all equations in \Cref{eq:ALG1} contain the complex amplitude of the vertical velocity perturbation $\tilde{w}$;
+\item the system \Cref{eq:ALG1} is rewritten as a single ODE for $\tilde{w}(z)$ of second order;
+\item the substitution
+	\begin{equations}[single,!,numberline=all]
+		\label{eq:W-HAT}
+		\hat{w}(z) = \tilde{w}\exp\left(-\frac{z}{2 H_s}\right),
+	\end{equations}
+	is made
+\item rewrite the second order ODE for $\tilde{w}(z)$ as a second order ODE for $\hat{z}.$
+\end{compactenum}
+
+After the proposed manipulation, we arrive at 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:TAYLOR-GOLDSTEIN}
+\hat{w}'' + \left(\frac{N^{2}}{\left(c- u_0\right)^{2}} + \frac{u_0''}{c - u_0} - \frac{1}{H_s}\frac{u_0'}{c-u_0} - \frac{1}{4 H_s^{2}} - k^{2}\right)\hat{w} = 0,
+\end{equations}
+
+where $c = \frac{\omega}{k} = \frac{\Omega}{k} + u_0$ is the phase speed of the wave. The equation \Cref{eq:TAYLOR-GOLDSTEIN} is called the \emph{Taylor-Goldstein} equation. 
+Observe the structure of th Taylor-Goldstein equation in a \emph{special case} when the bracketed term on the left-hand side is constant and equal to $m^{2} \in \C$, that is
+
+\begin{equations}[single,*]
+\left(\frac{N^{2}}{\left(c- u_0\right)^{2}} + \frac{u_0''}{c - u_0} - \frac{1}{H_s}\frac{u_0'}{c-u_0} - \frac{1}{4 H_s^{2}} - k^{2}\right) = m^{2}.
+\end{equations}
+
+In this case, the T-G \Cref{eq:TAYLOR-GOLDSTEIN} equation becomes
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SIMPLE-TAYLOR}
+\hat{w}'' + m^{2} \hat{w} = 0,
+\end{equations}
+
+with the known solutions
+
+\begin{equations}[single,*]
+	\hat{w}(z) = C_{+} \exp\left(\I m z\right) + C_{-} \exp\left(-\I m z\right).
+\end{equations}
+
+Coming back to the physical velocity perturbation using \Cref{eq:PLANAR-ANSATZ} and \Cref{eq:W-HAT}, we obtain
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:W-1-SOLUTION}
+w_1(t, x, z) = \hat{w}(z) \exp\left(\frac{z}{2H_s}\right) \exp\left(\I\left(kx - \omega t\right)\right).
+\end{equations}
+
+If $m$ is a real number, then \Cref{eq:W-1-SOLUTION} describes a planar wave propagating in the $\vb{e}_x$ direction with the \emph{horizontal} wave number $k$, frequency $\omega$, whose vertical amplitude oscillates harmonically with the \emph{vertical} wave number $m$ in the $\vb{e}_z$ direction. This solution is reffered to as a \emph{propagating gravity wave.} \autocite[p.~35]{nappoIntroductionAtmosphericGravity2013} 
+
+If $m$ is \emph{not a real number}\sidenote{If $m$ has a nonzero imaginary part, then $m = \Re m + \I \Im m$, and so $\exp(\pm\I mz) = \exp(\pm \I\Re m \. z) \exp(\mp \Im m \. z)$.}, the solution is still a planar wave propagating in the direction of $\vb{e}_x,$ but the vertical amplitude of the velocity perturbation is exponentially damped; it can be shown that these waves do \emph{not} vertically transport energy and as such are called \emph{evanescent gravity waves.
+} \autocite[p.~35]{nappoIntroductionAtmosphericGravity2013} 
 
 \subsection{Flow over a periodic corrugation}
 \label{sec:FLOW-CORRUGATION}

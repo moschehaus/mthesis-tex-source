@@ -51,6 +51,10 @@
 \NewDocumentCommand{\I}{}{\mathring{\imath}}
 \NewDocumentCommand{\E}{s}{\IfBooleanTF{#1}{\mathrm{e}}{\mathinner{\mathrm{e}}}}
 
+%% Real and imaginary parts
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
 %% Big O notation
 \NewDocumentCommand{\bigO}{m}{\mathcal{O}\!\left(#1\right)}
 
