@@ -640,6 +640,54 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/nph-iarticle_query.pdf
       \endverb
     \endentry
+    \entry{klempUpperBoundaryCondition1983}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f461c400485a98e460321cb5215b7a59}{%
+           family={Klemp},
+           familyi={K\bibinitperiod},
+           given={Joseph\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=cbd3f98db952dd6b2aa064dd3ac2c5a1}{%
+           family={Durran},
+           familyi={D\bibinitperiod},
+           given={Dale\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{074dd8740e406eb3dfe50513833bcef4}
+      \strng{fullhash}{074dd8740e406eb3dfe50513833bcef4}
+      \strng{fullhashraw}{074dd8740e406eb3dfe50513833bcef4}
+      \strng{bibnamehash}{074dd8740e406eb3dfe50513833bcef4}
+      \strng{authorbibnamehash}{074dd8740e406eb3dfe50513833bcef4}
+      \strng{authornamehash}{074dd8740e406eb3dfe50513833bcef4}
+      \strng{authorfullhash}{074dd8740e406eb3dfe50513833bcef4}
+      \strng{authorfullhashraw}{074dd8740e406eb3dfe50513833bcef4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A radiative upper boundary condition is proposed for numerical mesoscale models which allows vertically propagating internal gravity waves to pass out of the computational domain with minimal reflection. In this formulation, the pressure along the upper boundary is determined from the Fourier transform of the vertical velocity at that boundary. This boundary condition can easily be incorporated in a wide variety of models and requires little additional computation. The radiation boundary condition is derived from the linear, hydrostatic, Boussinesq equations of motion, neglecting Coriolis effects. However, tests of this radiation boundary condition in the presence of nonhydrostatic, Coriolis, nonlinear and non-Boussinesq effects suggest that it would be effective in many mesoscale modeling applications.}
+      \field{day}{1}
+      \field{issn}{1520-0493, 0027-0644}
+      \field{journaltitle}{Monthly Weather Review}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{title}{An {{Upper Boundary Condition Permitting Internal Gravity Wave Radiation}} in {{Numerical Mesoscale Models}}}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1983}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0493(1983)111<0430:AUBCPI>2.0.CO;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Klemp and Durran - 1983 - An Upper Boundary Condition Permitting Internal Gravity Wave Radiation in Numerical Mesoscale Models.pdf
+      \endverb
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
@@ -656,8 +704,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian -- guaranteeing manifest conservation -- in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the ``standard'' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the ``∇h'' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle ``weights'') and method of determining smoothing lengths. We then specify this to a ``pressure-entropy formulation'' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& ``blob'' tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different ``flavors'' of SPH.}
