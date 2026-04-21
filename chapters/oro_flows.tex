@@ -490,7 +490,7 @@ When the initial displacement from the equilibrium state of the air parcel is ca
 \subsection{The Taylor-Goldstein equation}
 \label{sec:TAYLOR-GOLDSTEIN}
 
-As usual, let us equip a two-dimensional domain with the coordinate system $\left(\vb{e}_x, \vb{e}_z\right).$ Denote the velocity field by $\vb{v} = u \vb{e}_x + w \vb{e}_z$ and introduce the splitting
+As usual, let us equip a two-dimensional domain with the coordinate system $\left(\vb{e}_x, \vb{e}_z\right)$. Denote the velocity field by $\vb{v} = u \vb{e}_x + w \vb{e}_z$ and introduce the splitting
 
 \begin{equations}[columns,*]
 	u\left(t, x, z\right) &= u_0(z) + u_1(t, x, z), \\
@@ -499,7 +499,7 @@ As usual, let us equip a two-dimensional domain with the coordinate system $\lef
 	p\left(t, x, z\right) &= p_0(z) + p_1(t, x, z). \\
 \end{equations}
 
-We exploit some approximations, namely \begin{inparaenum} \item the background state is hydrostatic, \item the Boussinesq approximation \end{inparaenum}. Under these the governing equations \Cref{eq:BOUSSINESQ-MOMENTUM} read as
+We invoke the following approximations \begin{inparaenum} \item the background state is hydrostatic, \item the Boussinesq approximation \end{inparaenum}. Under these the governing equations \Cref{eq:BOUSSINESQ-MOMENTUM} read as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:APPROX}
@@ -509,7 +509,7 @@ We exploit some approximations, namely \begin{inparaenum} \item the background s
 \partial_t \rho_1 + u_0 \partial_x \rho_1 + w_1 \dv{\rho_0}{z} &= 0.
 \end{equations}
 
-Next, the \emph{planar-wave ansatz} is assumed for the perturbed quantities
+Next, we perform the \emph{planar-wave ansatz} for the perturbed quantities
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:PLANAR-ANSATZ}
@@ -519,7 +519,7 @@ w_1\left(t, x, z\right) &= \tilde{w}(z; \omega, k)\exp\left(\I\left(kx - \omega 
 p_1\left(t, x, z\right) &= \tilde{p}(z; k, \omega)\exp\left(\I\left(kx - \omega t\right)\right), \\
 \end{equations}
 
-where the quantities with tildes are \textcolor{gray}{complex} amplitudes, $\omega$ is the wave frequency and $k$ is the horizontal wavenumber; note that $\omega, k$ are free to choose. To stress this, we add the $\omega, k$ as parameters of the complex amplitudes. \sidenote{The ansatz \Cref{eq:PLANAR-ANSATZ} can be thought of as performing a \emph{Fourier transform} in $x$ and $t$ and restricting to a single $(k, \omega)$ component, \ie a single mode. The transform turns $\partial_{x} \mapsto \I k$ and $\partial_t \mapsto −\I \omega$, reducing the PDE system to a coupled system of ODEs (some degenerating to algebraic relations) in z alone.} Plugging \Cref{eq:PLANAR-ANSATZ} into \Cref{eq:APPROX}, the following system of equations is obtained:
+where the quantities with tildes are \textcolor{gray}{complex} amplitudes, $\omega$ is the wave frequency and $k$ is the horizontal wavenumber; note that $\omega, k$ are free to choose. To stress this, we add the $\omega, k$ as parameters of the complex amplitudes.\sidenote{The ansatz \Cref{eq:PLANAR-ANSATZ} can be thought of as performing a \emph{Fourier transform} in $x$ and $t$ and restricting to a single $(k, \omega)$ component, \ie a single mode. The transform turns $\partial_{x} \mapsto \I k$ and $\partial_t \mapsto −\I \omega$, reducing the PDE system to a coupled system of ODEs (some degenerating to algebraic relations) in z alone.} Inserting \Cref{eq:PLANAR-ANSATZ} into \Cref{eq:APPROX}, the following system of equations is obtained:
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:ALG}
@@ -529,13 +529,13 @@ where the quantities with tildes are \textcolor{gray}{complex} amplitudes, $\ome
 \I\left(\omega - u_0 k\right)\tilde{\rho} + \tilde{w} \dv{\rho_0}{z}  &= 0.
 \end{equations}
 
-It is useful to set $\Omega = \omega - u_0 k$ as a type of \emph{reduced frequency.}\sidenote{It is in fact a frequency of the wave relative to the air flow.} Moreover, the \emph{Brunt–Väisälä} frequency can be introduced in the last equation
+Denote $\Omega = \omega - u_0 k$ as a type of \emph{reduced frequency.}\sidenote{In fact $\Omega$ is the frequency of the wave relative to the air flow.} Moreover, the \emph{Brunt–Väisälä} frequency can be introduced in the last equation
 
 \begin{equations}[single,*]
 \dv{\rho_0}{z} = - \frac{\rho_0}{g}N^{2},
 \end{equations}
 
-owing to the deployed Boussinesq approximation and the derived expression \Cref{eq:BV-BOUSSINESQ}. All in all, the system \Cref{eq:ALG} can be rewritten to the form
+owing to the employed Boussinesq approximation and the derived expression \Cref{eq:BV-BOUSSINESQ}. All in all, the system \Cref{eq:ALG} can be rewritten to the form
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:ALG1}
@@ -545,18 +545,18 @@ owing to the deployed Boussinesq approximation and the derived expression \Cref{
 \I \Omega \tilde{\rho} -\tilde{w} \frac{\rho_0}{g}N^{2} &= 0.
 \end{equations}
 
-We do not carry out the computations in detail, as it consists of rather uninteresting and time-consuming algebraic manipulation. To retain credibility, we only outline the process and reference the kind reader to \autocite[p.~34]{nappoIntroductionAtmosphericGravity2013} for further details.
+We do not carry out the computations in detail, as it consists of algebraic manipulations mainly, and only outline the process. Further details can be found in \autocite[p.~34]{nappoIntroductionAtmosphericGravity2013}. 
 
 \begin{compactenum}
-\item observe that all equations in \Cref{eq:ALG1} contain the complex amplitude of the vertical velocity perturbation $\tilde{w}$;
-\item the system \Cref{eq:ALG1} is rewritten as a single ODE for $\tilde{w}(z; \omega, k)$ of second order;
-\item the substitution
+\item Observe that all equations in \Cref{eq:ALG1} contain the complex amplitude of the vertical velocity perturbation $\tilde{w}$;
+\item rewrite the system \Cref{eq:ALG1} as a single ODE for $\tilde{w}(z; \omega, k)$ of second order;
+\item employ the substitution
 	\begin{equations}[single,!,numberline=all]
 		\label{eq:W-HAT}
-		\hat{w}(z; \omega, k) = \tilde{w}\left(z; \omega, k\right)\exp\left(-\frac{z}{2 H_s}\right),
+		\hat{w}(z; \omega, k) = \tilde{w}\left(z; \omega, k\right)\exp\left(-\frac{z}{2 H_s}\right);
 	\end{equations}
-	is made
-\item rewrite the second order ODE in $z$ for $\tilde{w}(z; \omega ,k)$ as a second order ODE for $\hat{w}(z; \omega, k).$
+	
+\item rewrite the second order ODE in $z$ for $\tilde{w}(z; \omega ,k)$ as a second order ODE for $\hat{w}(z; \omega, k)$.
 \end{compactenum}
 
 After the proposed manipulation, we arrive at 
@@ -567,7 +567,7 @@ After the proposed manipulation, we arrive at
 \end{equations}
 
 where $c = \frac{\omega}{k} = \frac{\Omega}{k} + u_0$ is the phase speed of the wave. The equation \Cref{eq:TAYLOR-GOLDSTEIN} is called the \emph{Taylor-Goldstein} equation. 
-Observe the structure of th Taylor-Goldstein equation in a \emph{special case} when the bracketed term on the left-hand side is constant and equal to $m^{2} \in \C$, that is
+Observe the structure of the Taylor-Goldstein equation in a \emph{special case} when the bracketed term on the left-hand side is constant and equal to $m^{2} \in \C$, that is
 
 \begin{equations}[single,*]
 \left(\frac{N^{2}}{\left(c- u_0\right)^{2}} + \frac{u_0''}{c - u_0} - \frac{1}{H_s}\frac{u_0'}{c-u_0} - \frac{1}{4 H_s^{2}} - k^{2}\right) = m^{2}.
@@ -586,7 +586,9 @@ with the known solutions
 	\hat{w}(z; k, \omega) = C_{+} \exp\left(\I m z\right) + C_{-} \exp\left(-\I m z\right).
 \end{equations}
 
-Coming back to the physical space, the velocity perturbation can be reconstructed from the single-mode profile $\hat{w}\left(z; \omega, k\right)$ and the substitution \Cref{eq:W-HAT} using the Fourier transform\sidenote{We define the Fourier transform as 
+Coming back to the physical space, the velocity perturbation can be reconstructed from the single-mode profile $\hat{w}\left(z; \omega, k\right)$ and the substitution \Cref{eq:W-HAT} using the \textcolor{gray}{inverse} Fourier transform.\sidenote{Since the Taylor Goldstein equation is linear and the background profile is homogeneous in $t$ and $x$ \textcolor{gray}{(since it is hydrostatic)}, the Fourier transform can informally be thought of as \enquote{summing over all modes $\left(\omega, k\right)$.}}
+
+To clarify our convention, we define the Fourier transform as
 
 \begin{equations}[single,*]
 	\hat{f}(k) = \int_{-\infty}^{\infty}f(x)\exp(-\I kx) \dd{x},
@@ -595,25 +597,25 @@ Coming back to the physical space, the velocity perturbation can be reconstructe
 and the inverse Fourier transform as
 \begin{equations}[single,*]
 	f(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\hat{f}(k) \exp(\I kx) \dd{k}.
-\end{equations}}
-\sidenote{Since the Taylor Goldstein equation is linear and the background profile is homogeneous in $t$ and $x$ \textcolor{gray}{(it is hydrostatic)}, the Fourier transform can informally be thought of as \enquote{summing over all modes $\left(\omega, k\right)$.}}
+\end{equations}
+
+The physical velocity perturbation thus reads as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:W-1-SOLUTION}
 w_1(t, x, z) =\frac{1}{(2 \pi)^2}\int_{-\infty}^\infty \int_{-\infty}^{\infty} \hat{w}(z; \omega, k) \exp\left(\frac{z}{2H_s}\right) \exp\left(\I\left(kx - \omega t\right)\right) \dd{\omega} \dd{k}.
 \end{equations}
 
-If $m$ is a real number, then \Cref{eq:W-1-SOLUTION} describes a planar wave propagating in the $\vb{e}_x$ direction with the \emph{horizontal} wavenumber $k$, frequency $\omega$, whose vertical amplitude oscillates harmonically with the \emph{vertical} wavenumber $m$ in the $\vb{e}_z$ direction. This solution is referred to as a \emph{propagating gravity wave.} \autocite[p.~35]{nappoIntroductionAtmosphericGravity2013} 
+If $m$ is a real number, then \Cref{eq:W-1-SOLUTION} describes a planar wave propagating in the $\vb{e}_x$ direction with the \emph{horizontal} wavenumber $k$, frequency $\omega$, whose vertical amplitude oscillates harmonically with the \emph{vertical} wavenumber $m$ in the $\vb{e}_z$ direction. This solution is known as a \emph{propagating gravity wave.} \autocite[p.~35]{nappoIntroductionAtmosphericGravity2013} 
 
-If $m$ is \emph{not a real number}\sidenote{If $m$ has a nonzero imaginary part, then $m = \Re m + \I \Im m$, and so $\exp(\pm\I mz) = \exp(\pm \I\Re m \. z) \exp(\mp \Im m \. z)$.}, the solution is still a planar wave propagating in the direction of $\vb{e}_x,$ but the vertical amplitude of the velocity perturbation is exponentially damped; it can be shown that these waves do \emph{not} vertically transport energy and as such are called \emph{evanescent gravity waves.
-} \autocite[p.~35]{nappoIntroductionAtmosphericGravity2013} 
+If $m$ is \emph{not a real number}\sidenote{If $m$ has a nonzero imaginary part, then $m = \Re m + \I \Im m$, and so $\exp(\pm\I mz) = \exp(\pm \I\Re m \. z) \exp(\mp \Im m \. z)$.}, the solution is still a planar wave propagating in the direction of $\vb{e}_x$, but the vertical amplitude of the velocity perturbation is exponentially damped; it can be shown that these waves do \emph{not} vertically transport energy and as such are called \emph{evanescent gravity waves.} \autocite[p.~35]{nappoIntroductionAtmosphericGravity2013} 
 
 \subsection{Flow over a periodic corrugation}
 \label{sec:FLOW-CORRUGATION}
 
-In the previous section \Cref{sec:TAYLOR-GOLDSTEIN}, we have derived \textcolor{gray}{under common simplifications} the "wave equation for gravity waves", \ie the Taylor-Goldstein equation. The T-G equations  governs the vertical perturbation of the velocity field, but we have not clarified the \emph{source} of any perturbations whatsoever; \nb up to this point, the mountain terrain has not yet entered any of our consideration. At last, we will show that the mountain terrain can in fact \emph{generate} propagating gravity waves.
+In the previous section \Cref{sec:TAYLOR-GOLDSTEIN}, we have derived \textcolor{gray}{under common simplifications} the \enquote{wave equation for gravity waves}, \ie the Taylor-Goldstein equation. The T-G equations governs the vertical perturbation of the velocity field, but we have not clarified the \emph{source} of any perturbations whatsoever; \nb up to this point, the mountain terrain has not yet entered any of our consideration. At last, we will show that the mountain terrain can in fact \emph{generate} propagating gravity waves.
 
-Real physical topography is complicated. Our exposition to the mountain wave theory will be restricted to the case of a mere \emph{surface corrugation}, moreover a \emph{periodic one} with height many orders of magnitude lower than the typical atmospherical scales. It is evident that such assumptions are massively restrictive and won't be able to describe real complex orographic flows. Realize that however we are dealing with a \emph{linear theory}, \ie small perturbations of the flow field. If one considers real structured topographical profiles of substantial height, the linear theory is beyond its verge of applicability. 
+Real physical topography is complicated. Our analysis of the mountain wave \emph{theory} in thi section will be restricted to the case of a mere \emph{surface corrugation}, moreover a \emph{periodic one} with height many orders of magnitude lower than typical atmospheric scales. Such assumptions are massively restrictive and will not be able to describe real complex orographic flows. Realize, however, that we are dealing with a \emph{linear theory}, \ie small perturbations of the flow field. If one considers real structured topographical profiles of substantial height, the linear theory ceases to be applicable.
 
 Assume a constant horizontal flow $u_0 \vb{e}_x, u_0 >0$ constant, in the $\vb{e}_x$ direction interacting with a corrugation, profile of which is given as
 
@@ -622,18 +624,18 @@ Assume a constant horizontal flow $u_0 \vb{e}_x, u_0 >0$ constant, in the $\vb{e
 h(x) = H \cos\left(k_s x\right), \;\rightsquigarrow\; h(x) =H \exp(\I k_s x)
 \end{equations}
 
-where $H > 0$ is the height of the corrugation and $k_s = \frac{2 \pi}{\lambda_s}$ is related to the spatial period of the corrugation peaks. As usual, we compute with complex numbers and at the end restrict ourselves to their real parts. The Taylor-Goldstein equation \Cref{eq:TAYLOR-GOLDSTEIN} reads as
+where $H > 0$ is the height of the corrugation and $k_s = \frac{2 \pi}{\lambda_s}$ is related to the spatial period of the corrugation peaks, \ie $k_s$ is the \enquote{corrugation wavenumber}. As usual, we proceed with complex numbers and at the end of the computation restrict ourselves to their real parts. The Taylor-Goldstein equation \Cref{eq:TAYLOR-GOLDSTEIN} reads as
 
 \begin{equations}[single,*]
-\hat{w}'' + \left(\frac{N^{2}}{\left(c- u_0\right)^{2}} + \frac{u_0''}{c - u_0} - \frac{1}{H_s}\frac{u_0'}{c-u_0} - \frac{1}{4 H_s^{2}} - k^{2}\right)\hat{w} = 0,
+\hat{w}'' + \left(\frac{N^{2}}{\left(c- u_0\right)^{2}} + \frac{u_0''}{c - u_0} - \frac{1}{H_s}\frac{u_0'}{c-u_0} - \frac{1}{4 H_s^{2}} - k^{2}\right)\hat{w} = 0.
 \end{equations}
 
-with the following realizations and assumptions to be addressed, all of them springing from observed properties of mountain waves \autocite[p.~36]{nappoIntroductionAtmosphericGravity2013} 
+Observed properties of mountain waves support the following assumptions \autocite[p.~36]{nappoIntroductionAtmosphericGravity2013} 
 
 \begin{itemize}
-	\item since $u_0$ is constant, $u_0' = 0 = u_0''$;
-	\item the Brunt–Väisälä frequency $N$ is assumed to be constant;
 	\item for sufficiently short horizontal wavelengths $k$ it holds $\frac{1}{4H_s^{2}} \ll k^{2}$ and the term is dropped.
+	\item the Brunt–Väisälä frequency $N$ is assumed to be constant;
+	\item since $u_0$ is constant, $u_0' = 0 = u_0''$;
 \end{itemize}
 
 Under these approximations, the Taylor Goldstein equation yields
@@ -642,14 +644,14 @@ Under these approximations, the Taylor Goldstein equation yields
 \hat{w}'' +\left(\frac{N^{2}}{\left(c - u_0\right)^{2}} - k^{2} \right)\hat{w} = 0.
 \end{equations}
 
-Real life observed mountain waves are \emph{stationary} relative to the ground \autocite[p.~58]{nappoIntroductionAtmosphericGravity2013}, meaning $\omega = 0$ and so $\Omega = - k u_0$. This realization gives us the Taylor Goldstein equation in the form
+Moreover, real life observed mountain waves are \emph{stationary} relative to the ground \autocite[p.~58]{nappoIntroductionAtmosphericGravity2013}, meaning $\omega = 0$ and so $\Omega = - k u_0$. This realization gives us the Taylor Goldstein equation in the form
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:T-G-surrogation}
 \hat{w}'' + \left(\frac{N^{2}}{u_0^{2}} - k^{2}\right)\hat{w} = 0.
 \end{equations}
 
-Since $N^{2}, u_0^{2}$ are constants, \Cref{eq:T-G-surrogation} is the equation of a \emph{linear harmonic oscillator} with the vertical wavenumber\sidenote{In the case of the harmonic oscillator, the variable is usually time, so the \enquote{period coefficient} is the angular frequency $\omega$. Since our variable is the coordinate $z$, we prefer to call the coefficient vertical wavenumber.}
+Since $N^{2}, u_0^{2}$ are constants, \Cref{eq:T-G-surrogation} is the equation of a \emph{linear harmonic oscillator} with the vertical wavenumber\sidenote{In the case of the harmonic oscillator, the variable is usually time, so the \enquote{periodicity coefficient} is the angular frequency $\omega$. Since our variable is the coordinate $z$, we prefer to call the coefficient vertical wavenumber.}
 
 \begin{equations}[single,*]
 m^{2} = \frac{N^{2}}{u_0^{2}} - k^{2}.
@@ -661,16 +663,16 @@ The general solution of \Cref{eq:T-G-surrogation} has the form
 \hat{w}(z; 0, k) = C_{+}\exp\left(\I m z\right) + C_{-}\exp\left(-\I m z\right),
 \end{equations}
 
-where $C_{+}, C_{-} \in \R$ are constants to be determined using the boundary conditions. If $C_{+}$ were to be nonzero, it would mean that some gravity waves are propagating downward, resulting in \emph{energy propagating downward}. Since the top of the domain could in theory be the whole outter atmosphere,nonzero $C_{+}$ would allow to \eg the space to influence our experiment; that we consider unphysical\sidenote{This assumption must therefore contain an assumption of no wave reflections at the upper boundary.}, and thus set $C_{+} \equiv 0.$ \autocite[p.~97]{smithInfluenceMountainsAtmosphere1979} This \enquote{boundary condition} is reffered to as the \emph{radiation condition.} \autocite[p.~62]{nappoIntroductionAtmosphericGravity2013}\autocite{klempUpperBoundaryCondition1983}. The numerical treatment of the radiation condition will be the main topic of section \todo{ADD}.
+where $C_{+}, C_{-} \in \R$ are constants to be determined using the boundary conditions. If $C_{+}$ were nonzero, it would correspond to gravity waves propagating downward, \ie \emph{energy propagating downward}. Since the top of the domain can in principle extend to the whole outer atmosphere, a nonzero $C_{+}$ would amount to allowing energy to arrive from infinity\sidenote{This assumption consequently entails the absence of wave reflections at the upper boundary.} ---something we consider unphysical--- and thus we set $C_{+} \equiv 0$. \autocite[p.~97]{smithInfluenceMountainsAtmosphere1979} This \enquote{boundary condition} is known as the \emph{radiation condition.} \autocite[p.~62]{nappoIntroductionAtmosphericGravity2013}\autocite{klempUpperBoundaryCondition1983}. The numerical treatment of the radiation condition will be the main topic of section \todo{ADD}.
 
-As for $C_{-},$ we see that 
+As for $C_{-}$, we see that 
 
 \begin{equations}[single,!, numberline=all]
 	\label{eq:C-}
 	C_- = \eval{\hat{w}\left(z; 0, k\right)}_{z = 0},
 \end{equations}
 
-which motivates our need to study the bottom boundary condition.\emph{Realize this chapter is a mere presentation, whose goal is to provide some insight into the physics mainly. A well-posed problem should have the boundary conditions stated in its description.} In agreement with the notation used in the section \Cref{sec:TAYLOR-GOLDSTEIN}, we are denoting the solution of the T-G equation as $\hat{w}\left(z; \omega, k\right)$, so in the case of mountain waves $\omega = 0,$ thus we denote the solution as $\hat{w}\left(z; 0, k\right).$
+which motivates our need to study the bottom boundary condition.\sidenote{This chapter aims to provide some insight into the physics mainly. A well-posed problem should have the boundary conditions stated in its description.} In agreement with the notation used in the section \Cref{sec:TAYLOR-GOLDSTEIN}, we are denoting the solution of the T-G equation as $\hat{w}\left(z; \omega, k\right)$, so for mountain waves with $\omega = 0$ we denote the solution as $\hat{w}\left(z; 0, k\right)$.
 
 At the bottom boundary, \ie at the mountain surface, it is most natural to assume the \emph{no-penetration}, also known as the \emph{free-slip} boundary condition 
 
@@ -702,14 +704,14 @@ and thus our bottom boundary condition is
 	\eval{w_1(t, x, z)}_{z = h(x)} = h'(x) u_0, t > 0.
 \end{equations}
 
-At this point, another important assumption \textcolor{gray}{, \ie simplification,} of the linear theory has to be made\autocite[p.~96]{smithInfluenceMountainsAtmosphere1979}\autocite[p.~63]{nappoIntroductionAtmosphericGravity2013}: we assume the bottom boundary condition \emph{not at the mountain surface} $z = h(x),$ but rather \emph{at the line} $z = 0,$ \ie on the flat ground. In some sense, this is a statement about the height of the corrugation being small. The bottom boundary condition we will use thus is
+At this point, another important  simplification of the linear theory is needed \autocite[p.~96]{smithInfluenceMountainsAtmosphere1979}\autocite[p.~63]{nappoIntroductionAtmosphericGravity2013}: we impose the bottom boundary condition \emph{not at the mountain surface} $z = h(x)$, but \emph{at the line} $z = 0$, \ie on the flat ground. This is justified under the assumption that corrugation height is small. The bottom boundary condition we will use thus reads
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:BOTTOM-BC}
-\eval{w_1\left(t, x, z\right)}_{z = 0} = h'(x) u_0, t > 0.
+\eval{w_1\left(t, x, z\right)}_{z = 0} = u_0 h'(x), t > 0.
 \end{equations}
 
-To find $C_{-},$ \Cref{eq:C-} we need to apply the Fourier transform 
+To find $C_{-}$, \Cref{eq:C-} we need to apply the Fourier transform 
 
 \begin{equations}[single,*]
 	\eval{\hat{w}\left(z; 0, k\right)}_{z = 0} = \int_{-\infty}^{\infty}u_0 h'(x) \exp\left(-\I kx\right)\dd{x},
@@ -730,9 +732,9 @@ thanks to the fact that inverse Fourier transform of $1$ is the Dirac's delta di
 We have thus obtained $C_- = - 2 \pi \I k_s H u_0 \delta\left(k + k_s\right),$ and so the velocity has the form \Cref{eq:W-1-SOLUTION}
 
 \begin{equations}[columns,*]
-	w_1\left(t, x, z\right) &= \Re\frac{1}{2 \pi} \int_{-\infty}^{\infty}C_{-}\exp\left(-\I mz\right) \exp\left(\I kx\right) \delta\left(k + k_s\right)\dd{k} = \\
-				&= \Re\frac{-\I}{2 \pi} 2\pi k_s H u_0 \int_{-\infty}^{\infty}\exp\left(-\I \left(mz - kx\right)\right) \delta\left(k + k_s\right)\dd{k} = \\
-				&= -\Re{\I k_s H u_0\exp\left(-\I\left(m_s z + k_s x\right)\right)} \\
+	w_1\left(t, x, z\right) &= \Re\left(\frac{1}{2 \pi} \int_{-\infty}^{\infty}C_{-}\exp\left(-\I mz\right) \exp\left(\I kx\right) \delta\left(k + k_s\right)\dd{k}\right) = \\
+				&= \Re\left(\frac{-\I}{2 \pi} 2\pi k_s H u_0 \int_{-\infty}^{\infty}\exp\left(-\I \left(mz - kx\right)\right) \delta\left(k + k_s\right)\dd{k}\right) = \\
+				&= -\Re\left(\I k_s H u_0\exp\left(-\I\left(m_s z + k_s x\right)\right)\right) \\
 				&= - u_0 k_s H \sin\left(m_s z + k_s x\right),
 \end{equations}
 
@@ -749,12 +751,13 @@ is the vertical wavenumber. The solution we have obtained
 	w_1\left(t, x, z\right) =  - u_0 k_s H \sin\left(m_sz + k_s x\right),
 \end{equations}
 
-is a monochromatic sinusoidal propagating gravity wave.
+is a monochromatic sinusoidal \emph{propagating gravity wave.} The solution is plotted in figure \Cref{fig:PROPAGATING}. Notice the phase front tilts upstream with altitude --- a sign of vertical energy propagation.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{propagating}
 	\caption{The velocity perturbation field $w_1$ of a mountain wave.}
 	\label{fig:PROPAGATING}
 \end{figure}
+
 \end{document}
 
