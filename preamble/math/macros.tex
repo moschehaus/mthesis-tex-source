@@ -60,10 +60,22 @@
 
 %%% Various fields and number sets
 \newcommand*{\R}{\mathbb{R}}
+\newcommand*{\Rplus}{\mathbb{R}^{+}}
+\newcommand*{\Rplusnought}{\mathbb{R}^{+}_{0}}
 \newcommand*{\Z}{\mathbb{Z}}
 \newcommand*{\C}{\mathbb{C}}
 \newcommand*{\F}{\mathbb{F}}
 \newcommand*{\N}{\mathbb{N}}
+
+%%% Function spaces
+\newcommand*{\Loneloc}[1]{L^{1}_{\mathrm{loc}}(#1)}
+\NewDocumentCommand{\Czero}{g}{\IfValueTF{#1}{C(#1)}{C}}
+\NewDocumentCommand{\Cone}{g}{\IfValueTF{#1}{C^{1}(#1)}{C^{1}}}
+\NewDocumentCommand{\Ctwo}{g}{\IfValueTF{#1}{C^{2}(#1)}{C^{2}}}
+\NewDocumentCommand{\Cinf}{g}{\IfValueTF{#1}{C^{\infty}(#1)}{C^{\infty}}}
+
+%%% SPH operators
+\newcommand*{\sphc}[1]{[#1]_{c}}
 
 %% Group/Representation Theory
 \DeclareMathOperator{\Hom}{Hom}

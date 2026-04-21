@@ -16,7 +16,7 @@ This chapter presents the main numerical method used --- the \emph{Smoothed Part
 
 Smoothed Particle Hydrodynamics (SPH) is a general use numerical method first used in astrophysical stellar models \autocite{gingoldSmoothedParticleHydrodynamics1977}. The authors required a solution to a grid resolution problem arising with their use of the finite difference method (FDM).\sidenote{They argued that the treatment of highly distorted continuum would require an extremely fine grid, hence substantial computational cost \autocite[p.~1]{gingoldSmoothedParticleHydrodynamics1977}.} The method has found use in a variety of fields, \viz free-surface flows \autocite{monaghanSimulatingFreeSurface1994a}, solid mechanics \autocite{liberskySmoothParticleHydrodynamics1991}, geomechanics \autocite{buiLagrangianMeshfreeParticles2008}, and is still successfully used in astrophysics \autocite{springelSimulationsFormationEvolution2005}. 
 
-SPH is a particle (Lagrangian) method.\sidenote{In this sense grid/mesh methods such as the \begin{inparaenum} \item finite difference method; \item finite element method; \item finite volume method; \item discontinuous Galerkin method, \end{inparaenum} are called Eulerian, since they approximate the evolution in the \emph{current, deformed} configuration. SPH, being a particle method, traces the evolution in the \emph{reference} configuration, and so particle methods are also called Lagrangian.}   The continuum is partitioned into arbitrary \emph{material points}, in this context referred to as \emph{particles}, and basic physical properties such as density, velocity, entropy, and energy are assigned to them. Their mutual interaction is then prescribed,\sidenote{The interaction cannot be arbitrary. To capture the physics correctly, the interaction must in fact root in the discretization of the governing equations.} and the state of each particle is advanced in time. 
+SPH is a particle (Lagrangian) method.\sidenote{In this sense grid/mesh methods such as the \begin{inparaenum} \item finite difference method; \item finite element method; \item finite volume method; \item discontinuous Galerkin method, \end{inparaenum} are called \emph{Eulerian}, since they approximate the evolution in the \emph{current, deformed} configuration. Particle methods like \begin{inparaenum} \item SPH; \item MPS (moving particle semi-implicit method) \autocite{koshizukaMovingParticleSemiImplicitMethod1996}; \item DPD (dissipative particle dynamics) \autocite{hoogerbruggeSimulatingMicroscopicHydrodynamic1992} \end{inparaenum} trace the evolution in the \emph{reference} configuration, and so particle methods are also called \emph{Lagrangian}.}   The continuum is partitioned into arbitrary \emph{material points}, in this context referred to as \emph{particles}, and basic physical properties such as density, velocity, entropy, and energy are assigned to them. Their mutual interaction is then prescribed,\sidenote{The interaction cannot be arbitrary. To capture the physics correctly, the interaction must in fact root in the discretization of the governing equations.} and the state of each particle is advanced in time. 
 We stress that \emph{SPH particles} are \emph{not} \textcolor{gray}{elementary} particles in the microscopic sense --- they are typically macroscopic fluid elements. Nonetheless, some intuition from the mechanics of point particles carries over naturally to SPH, as we shall see.
 
 In what follows, we introduce the theoretical foundations of SPH and the specific formulation developed in this work.
@@ -24,8 +24,33 @@ In what follows, we introduce the theoretical foundations of SPH and the specifi
 \section{Cornerstones of SPH}
 \label{sec:CORNERSTONES}
 
+In this section, we outline the standard approach to SPH discretization.
+
 \subsection{Kernel interpolation}
-\label{sec:INTERPOLATIOn}
+\label{sec:INTERPOLATION}
+
+Let $\Omega \subset \R^d, d = 2, 3$ be the continuous medium and $\Phi: \Rplusnought \times \Omega \to \R$ an arbitrary scalar valued field, \eg density. Suppose further that $\forall t \in \Rplusnought$ the mapping $\vb{x} \mapsto \Phi(t, \vb{x})$ is in $\Loneloc{\Omega}$, then
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:DIRAC-PROPERTY}
+\Phi\left(t, \vb{x}\right) = \left(\Phi \star \delta\right)\left(t, \vb{x}\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)\delta\left(\vb{x} - \vb{x'}\right)\dd{\vb{x'}},
+\end{equations}
+
+holds for almost all $\vb{x} \in \Omega$. A common assumption in the SPH literature is to assume $\vb{x} \mapsto \Phi\left(t, \vb{x}\right) \in \Czero{\Omega},$ and so the equality \Cref{eq:DIRAC-PROPERTY} holds pointwise in $\Omega$. To make the presentation simpler, throughout we always assume sufficient regularity of all quantities involved and do not pursue measure-theoretic rigor.
+
+The main point of departure of the SPH method is to replace the Dirac delta distribution in \Cref{eq:DIRAC-PROPERTY} by an \emph{interpolation kernel} $w_h: \Omega \to \R$ \autocite[p.~305]{violeauFluidMechanicsSPH2012}, \ie
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:CONT-INTERPOLATION}
+\sphc{\Phi}\left(t, \vb{x}\right)\coloneq \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\vb{x} - \vb{x'}\right)\dd{\vb{x}'}.
+\end{equations}
+
+The map $\Phi \mapsto \sphc{\Phi}$ is called \emph{continuous interpolation}.
+
+- properties of the kernel \autocite[p.~32]{liuSmoothedParticleHydrodynamics2004}
+- approximation properties 
+- possible choices : Gaussian kernels, $M_n$ splines
+- our choice 
 
 \subsection{Particle paradigm}
 \label{sec:PARTICLES}
