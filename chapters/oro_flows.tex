@@ -33,9 +33,9 @@ We begin by describing orographic flows from the point of physics, providing not
 \subsection{Downslope windstorms}
 \label{sec:downslope-windstorms}
 
-Under specific atmospheric conditions, air carried by a flow over a mountain obstacle can undergo a sever transformation: descending at the lee side as warm, dry and violent gusts of air. These types of winds are called \begin{inparaenum} \item chinook in North America; \item f\"ohn in Europe. \end{inparaenum}. Note that downslope windstorms are far from being a meteorological curiosity: they can manifest as gusts of hurricane-level force \autocite[p.~307]{sutherlandInternalGravityWaves2010}, posing a great threat to the inhabitants and infrastructure of nearby regions.
+Under specific atmospheric conditions, air carried by a flow over a mountain obstacle can undergo a severe transformation: descending at the lee side as warm, dry and violent gusts of air. These types of winds are called \begin{inparaenum} \item chinook in North America; \item f\"ohn in Europe. \end{inparaenum} Note that downslope windstorms are far from being a meteorological curiosity: they can manifest as gusts of hurricane-level force \autocite[p.~307]{sutherlandInternalGravityWaves2010}, posing a great threat to the inhabitants and infrastructure of nearby regions.
 
-Research suggests that \textcolor{gray}{nonlinear} mountain wave dynamics is essential in the development of downslope windstorms \autocite{clarkCriticalLevelReflection1984}\autocite{durranAnotherLookDownslope1986} \autocite{clarkEvolutionStabilityFiniteAmplitude1977}, although the explanation of this phenomena requires a consistent treatment of a variety of mechanisms.
+Research suggests that \textcolor{gray}{nonlinear} mountain wave dynamics is essential in the development of downslope windstorms \autocite{clarkCriticalLevelReflection1984,durranAnotherLookDownslope1986,clarkEvolutionStabilityFiniteAmplitude1977}, although the explanation of this phenomenon requires a consistent treatment of a variety of mechanisms.
 \begin{itemize}
 	\item resonance of mountain waves \autocite{clarkCriticalLevelReflection1984};
 	\item dissipative hydraulic transition between supercritical and subcritical flow regimes \autocite{durranAnotherLookDownslope1986};
@@ -52,7 +52,7 @@ Both mechanisms are inherently nonlinear and coupled: wave breaking aloft create
 \subsection{Clear-air turbulence}
 \label{sec:CAT}
 
-As mentioned, IGWs serve as an important mechanism of energy transfer across layers of the atmosphere. If particular conditions are met, it can happen that the wave propagating upwards grows in amplitude. Breakdown of these waves aloft can produce a specific kind of turbulence known as \emph{clear-air turbulance.} This turbulence is seriously dangerous to aerial transport, as its presence is not accompanied by any visual cues, hence the name \autocite[p.~58]{nappoIntroductionAtmosphericGravity2013}. A model that accurately captures mountain wave propagation \emph{could} aid in forecasting regions of CAT.\sidenote{Our model does not include any \emph{turbulence parametrisation}, \ie it cannot capture CAT directly. Clear-air turbulence can nonetheless emerge at regions of gravity wave breaking \autocite[p.~6]{frittsGravityWaveDynamics2003}, so robust modelling of gravity waves is a sensible first step toward handling CAT.} 
+As mentioned, IGWs serve as an important mechanism of energy transfer across layers of the atmosphere. If particular conditions are met, it can happen that the wave propagating upwards grows in amplitude. Breakdown of these waves aloft can produce a specific kind of turbulence known as \emph{clear-air turbulence.} This turbulence is seriously dangerous to aerial transport, as its presence is not accompanied by any visual cues, hence the name \autocite[p.~58]{nappoIntroductionAtmosphericGravity2013}. A model that accurately captures mountain wave propagation \emph{could} aid in forecasting regions of CAT.\sidenote{Our model does not include any \emph{turbulence parametrisation}, \ie it cannot capture CAT directly. Clear-air turbulence can nonetheless emerge at regions of gravity wave breaking \autocite[p.~6]{frittsGravityWaveDynamics2003}, so robust modelling of gravity waves is a sensible first step toward handling CAT.} 
 
 
 \section{Governing equations}
@@ -314,7 +314,7 @@ Now we introduce an approximation based on \emph{order-of-magnitude analysis.}\s
 \frac{\lambda_z}{H_s} = \epsilon \ll 1.
 \end{equations}
 
-At this point, we introduce the so-called \emph{Boussinesq approximation}\sidenote{Joseph Valentin Boussinesq introduced his approximaton to tackle buoyancy driven flows. Lord Rayleigh famously used Boussinesq's approximation for his analysis of Bénard cells in the problem of thermal convection of fluids---the \emph{Rayeleigh - Bénard} thermal convection.} \autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013}; we assume that
+At this point, we introduce the so-called \emph{Boussinesq approximation}\sidenote{Joseph Valentin Boussinesq introduced his approximaton to tackle buoyancy driven flows. Lord Rayleigh famously used Boussinesq's approximation for his analysis of Bénard cells in the problem of thermal convection of fluids---the \emph{Rayleigh - Bénard} thermal convection.} \autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013}; we assume that
 
 \begin{compactenum}
 \item the ratio of the density variation $\rho_1$ and the background density $\rho_0$ is of order $\epsilon$, \begin{equations}[single,*]
@@ -615,7 +615,7 @@ If $m$ is \emph{not a real number}\sidenote{If $m$ has a nonzero imaginary part,
 
 In the previous section \Cref{sec:TAYLOR-GOLDSTEIN}, we have derived \textcolor{gray}{under common simplifications} the \enquote{wave equation for gravity waves}, \ie the Taylor-Goldstein equation. The T-G equations governs the vertical perturbation of the velocity field, but we have not clarified the \emph{source} of any perturbations whatsoever; \nb up to this point, the mountain terrain has not yet entered any of our consideration. At last, we will show that the mountain terrain can in fact \emph{generate} propagating gravity waves.
 
-Real physical topography is complicated. Our analysis of the mountain wave \emph{theory} in thi section will be restricted to the case of a mere \emph{surface corrugation}, moreover a \emph{periodic one} with height many orders of magnitude lower than typical atmospheric scales. Such assumptions are massively restrictive and will not be able to describe real complex orographic flows. Realize, however, that we are dealing with a \emph{linear theory}, \ie small perturbations of the flow field. If one considers real structured topographical profiles of substantial height, the linear theory ceases to be applicable.
+Real physical topography is complicated. Our analysis of the mountain wave \emph{theory} in this section will be restricted to the case of a mere \emph{surface corrugation}, moreover a \emph{periodic one} with height many orders of magnitude lower than typical atmospheric scales. Such assumptions are massively restrictive and will not be able to describe real complex orographic flows. Realize, however, that we are dealing with a \emph{linear theory}, \ie small perturbations of the flow field. If one considers real structured topographical profiles of substantial height, the linear theory ceases to be applicable.
 
 Assume a constant horizontal flow $u_0 \vb{e}_x, u_0 >0$ constant, in the $\vb{e}_x$ direction interacting with a corrugation, profile of which is given as
 
