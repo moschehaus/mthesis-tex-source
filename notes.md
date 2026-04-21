@@ -1,21 +1,2 @@
-# Chapters
-
-## Introduction
-- **fix the list**
-
-### Katabatic winds
-- *include figures*
-
-### IGWs
-- *include figures*
-
-## Flows
-
-## SPH
-
-## SILVA
-
-## Results
-
-# Dictionary
-- *corrugation* - a line or fold on the surface of something: 
+1. Motivating the Full Compressible Euler System You must explicitly state why you are ultimately abandoning the Boussinesq approximation. The Boussinesq approximation assumes density is constant except when coupled with gravity, which means it is only quantitatively valid when the vertical scale of motion is less than the atmospheric scale height (approximately 8 km). In the real atmosphere, air density decreases significantly with altitude. This non-Boussinesq effect causes the amplitude of upward-propagating gravity waves to grow exponentially. This amplification eventually leads to wave steepening, saturation, wave breaking, and the generation of clear air turbulence (CAT). By pointing this out, you brilliantly justify why your model requires the full compressible Euler equations—you need compressibility to capture the wave amplification and deep atmospheric dynamics that a Boussinesq model fundamentally ignores.
+2. Motivating Terrain-Following Coordinates You must also explain why the linearized bottom boundary condition (applied at z=0) is insufficient for your ultimate goals. Linear boundary conditions are technically restricted to mountains with extremely small aspect ratios (height-to-width). However, the nonlinearity of the terrain boundary condition has a first-order effect on the resulting flow. Implementing a true nonlinear lower boundary condition results in a marked asymmetry in the vertical velocity field over the mountain, which linear theory completely misses. Furthermore, the intense downslope windstorms and high-drag states you wish to discuss are fundamentally nonlinear processes tied to finite-amplitude terrain, wave steepening, and flow blocking. By explaining that linear theory at a flat boundary fails to capture these crucial asymmetric and high-drag effects, you perfectly justify your implementation of a terrain-following coordinate system.
