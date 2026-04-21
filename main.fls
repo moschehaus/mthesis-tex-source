@@ -560,6 +560,7 @@ INPUT ./figures/oro_flows/fohn.pdf
 INPUT ./figures/oro_flows/fohn.pdf
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc
+INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
 INPUT ./figures/oro_flows/propagating.pdf
 INPUT ./figures/oro_flows/propagating.pdf
 INPUT ./figures/oro_flows/propagating.pdf

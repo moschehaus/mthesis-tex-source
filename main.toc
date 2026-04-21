@@ -19,26 +19,31 @@
 \contentsline {subsection}{Flow over a periodic corrugation}{18}{subsection*.24}%
 \contentsline {chapter}{\numberline {2}Mathematical modelling of atmospheric flows}{23}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Initial and boundary conditions}{23}{section*.26}%
-\contentsline {section}{\numberline {2.2}Well-balancing}{23}{section*.27}%
-\contentsline {chapter}{\numberline {3}SPH}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Overview of SPH}{24}{section*.28}%
-\contentsline {subsection}{Pros and cons}{24}{subsection*.29}%
-\contentsline {subsection}{Uses}{24}{subsection*.30}%
-\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{24}{section*.31}%
-\contentsline {subsection}{Partition}{24}{subsection*.32}%
+\contentsline {subsubsection}{Radiation condition}{23}{section*.26}%
+\contentsline {subsection}{Terrain-following coordinates}{23}{subsection*.27}%
+\contentsline {section}{\numberline {2.2}Well-balancing}{23}{section*.28}%
+\contentsline {chapter}{\numberline {3}Smoothed Particle Hydrodynamics}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Method overview}{24}{section*.29}%
+\contentsline {subsection}{Pros and cons}{24}{subsection*.30}%
+\contentsline {subsection}{Uses}{24}{subsection*.31}%
+\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{24}{section*.32}%
 \contentsline {subsection}{Kernel interpolation}{24}{subsection*.33}%
-\contentsline {subsection}{Differential operators}{24}{subsection*.34}%
-\contentsline {section}{\numberline {3.3}SPH formulations}{24}{section*.35}%
-\contentsline {subsection}{WCSPH}{24}{subsection*.36}%
-\contentsline {subsection}{Hopkins}{24}{subsection*.37}%
-\contentsline {subsubsection}{Pressure - entropy}{24}{subsection*.37}%
-\contentsline {subsubsection}{Pressure -- potential temperature}{25}{equation.3.3}%
-\contentsline {section}{\numberline {3.4}Additional techniques}{26}{section*.38}%
-\contentsline {subsection}{Packing algorithm}{26}{subsection*.39}%
-\contentsline {subsection}{Adaptive smoothing length}{26}{subsection*.40}%
-\contentsline {subsection}{Initial configuration}{26}{subsection*.41}%
-\contentsline {chapter}{\numberline {4}Experiments}{27}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Voronoi}{28}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{29}{chapter*.42}%
-\contentsline {chapter}{References}{30}{appendix*.43}%
+\contentsline {subsection}{Particle paradigm}{24}{subsection*.34}%
+\contentsline {subsection}{Differential operators}{24}{subsection*.35}%
+\contentsline {section}{\numberline {3.3}SPH formulations}{24}{section*.36}%
+\contentsline {subsection}{Classical SPH}{24}{subsection*.37}%
+\contentsline {subsection}{Hamiltonian formulation}{24}{subsection*.38}%
+\contentsline {subsection}{Density-free formulations}{24}{subsection*.39}%
+\contentsline {subsubsection}{Pressure-entropy}{24}{subsection*.39}%
+\contentsline {subsubsection}{Pressure-potential temperature}{25}{equation.3.3}%
+\contentsline {section}{\numberline {3.4}Implementation specifics}{27}{section*.40}%
+\contentsline {subsection}{Boundary conditions}{27}{subsection*.41}%
+\contentsline {subsubsection}{Inflow \& Outflow}{27}{subsection*.41}%
+\contentsline {subsubsection}{Free-slip}{27}{subsection*.41}%
+\contentsline {subsection}{Adaptive smoothing length}{27}{subsection*.42}%
+\contentsline {subsection}{Particle placement}{27}{subsection*.43}%
+\contentsline {chapter}{\numberline {4}Experiments}{28}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Voronoi}{29}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{30}{chapter*.44}%
+\contentsline {chapter}{References}{31}{appendix*.45}%
 \contentsfinish 

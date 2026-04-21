@@ -816,6 +816,165 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Klemp and Durran - 1983 - An Upper Boundary Condition Permitting Internal Gravity Wave Radiation in Numerical Mesoscale Models.pdf
       \endverb
     \endentry
+    \entry{kappeliWellbalancedFiniteVolume2016a}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=308a40102a1effe50504bf1d3e20e8a7}{%
+           family={Käppeli},
+           familyi={K\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cf6175868a36df58c12a4f225404732a}{%
+           family={Mishra},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc9b273458976597148f480df882fcd3}
+      \strng{fullhash}{dc9b273458976597148f480df882fcd3}
+      \strng{fullhashraw}{dc9b273458976597148f480df882fcd3}
+      \strng{bibnamehash}{dc9b273458976597148f480df882fcd3}
+      \strng{authorbibnamehash}{dc9b273458976597148f480df882fcd3}
+      \strng{authornamehash}{dc9b273458976597148f480df882fcd3}
+      \strng{authorfullhash}{dc9b273458976597148f480df882fcd3}
+      \strng{authorfullhashraw}{dc9b273458976597148f480df882fcd3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0004-6361, 1432-0746}
+      \field{journaltitle}{Astronomy \& Astrophysics}
+      \field{month}{3}
+      \field{shortjournal}{A\&A}
+      \field{shorttitle}{A Well-Balanced Finite Volume Scheme for the {{Euler}} Equations with Gravitation}
+      \field{title}{A Well-Balanced Finite Volume Scheme for the {{Euler}} Equations with Gravitation: {{The}} Exact Preservation of Hydrostatic Equilibrium with Arbitrary Entropy Stratification}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1051/0004-6361/201527815
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Käppeli and Mishra - 2016 - A well-balanced finite volume scheme for the Euler equations with gravitation The exact preservatio.pdf
+      \endverb
+    \endentry
+    \entry{artianoStructurePreservingHighOrderMethods2025}{online}{}{}
+      \name{author}{4}{}{%
+        {{hash=0edc7b2b85f05dc2f5fab55444be947f}{%
+           family={Artiano},
+           familyi={A\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a8365f92fb149f7322b195b9babc0f76}{%
+           family={Knoth},
+           familyi={K\bibinitperiod},
+           given={Oswald},
+           giveni={O\bibinitperiod}}}%
+        {{hash=44c4157669522571c221c38ae6eb5616}{%
+           family={Spichtinger},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1e8c6e67fa2863e4f390eeef9dd633e7}{%
+           family={Ranocha},
+           familyi={R\bibinitperiod},
+           given={Hendrik},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{fullhash}{3757e43e19224817d902ae6f751837fb}
+      \strng{fullhashraw}{3757e43e19224817d902ae6f751837fb}
+      \strng{bibnamehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authorbibnamehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authornamehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authorfullhash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authorfullhashraw}{3757e43e19224817d902ae6f751837fb}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We develop structure-preserving numerical methods for the compressible Euler equations, employing potential temperature as a prognostic variable. We construct three numerical fluxes designed to ensure the conservation of entropy and total energy within the discontinuous Galerkin framework on general curvilinear meshes. Furthermore, we introduce a generalization for the kinetic energy preservation property and total energy conservation in the presence of a gravitational potential term. To this end, we adopt a flux-differencing approach for the discretization of the source term, treated as non-conservative product. We present well-balanced schemes for different constant background states for both formulations (total energy and potential temperature) on curvilinear meshes. Finally, we validate the methods by comparing the potential temperature formulation with the traditional Euler equations formulation across a range of classical atmospheric scenarios.}
+      \field{day}{21}
+      \field{eprintclass}{math}
+      \field{eprinttype}{arXiv}
+      \field{month}{9}
+      \field{note}{Comment: Reproducibility repository: https://github.com/MarcoArtiano/2025\_structure\_potential\_temperature}
+      \field{pubstate}{prepublished}
+      \field{title}{Structure-{{Preserving High-Order Methods}} for the {{Compressible Euler Equations}} in {{Potential Temperature Formulation}} for {{Atmospheric Flows}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2509.10311
+      \endverb
+      \verb{eprint}
+      \verb 2509.10311
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Artiano et al. - 2025 - Structure-Preserving High-Order Methods for the Compressible Euler Equations in Potential Temperatur.pdf;/home/moschehaus/Zotero/storage/K2M2C6N9/2509.html
+      \endverb
+      \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics}
+    \endentry
+    \entry{chertockWellbalancedNumericalMethod2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=3bd0b25bef552eb14a7efbac615bed48}{%
+           family={Chertock},
+           familyi={C\bibinitperiod},
+           given={Alina},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ad20998e1057bfeb80356100a951b491}{%
+           family={Kurganov},
+           familyi={K\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4f134c73b070610b7d8d7553d5e2a345}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=934a0c3e849405255facd8113ba785b3}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \strng{fullhash}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \strng{fullhashraw}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \strng{bibnamehash}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \strng{authorbibnamehash}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \strng{authornamehash}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \strng{authorfullhash}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \strng{authorfullhashraw}{f0baf5dea238f529bafc2bb62ca4dd00}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We are interested in simulating gravitationally stratified atmospheric flows governed by the compressible Euler equations in irregular domains. In such simulations, one of the challenges arises when the computations are conducted on a Cartesian grid. The use of regular rectangular grids that intersect with the irregular boundaries leads to the generation of arbitrarily small and highly distorted computational cells adjacent to the boundaries of the domain. The appearance of such cells may affect both the stability and efficiency of the numerical method and therefore require special attention. In order to overcome this difficulty, we introduce a structured quadrilateral mesh, which is designed for the irregular domain at hand, and solve the studied atmospheric flow equations using a second-order central-upwind scheme. In addition, the resulting numerical method is developed to provide a well-balanced discretization of the underlying system. The latter is achieved by rewriting the governing equations in terms of equilibrium variables representing perturbations of the physically relevant equilibrium. The proposed method is tested in a number of numerical experiments, including the buoyant bubble rising and interacting with an (zeppelin) obstacle and the Lee wave generation due to topography. The obtained numerical results demonstrate high resolution and robustness of the proposed computational approach.}
+      \field{issn}{00963003}
+      \field{journaltitle}{Applied Mathematics and Computation}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{Applied Mathematics and Computation}
+      \field{title}{Well-Balanced Numerical Method for Atmospheric Flow Equations with Gravity}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.amc.2022.127587
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Chertock et al. - 2023 - Well-balanced numerical method for atmospheric flow equations with gravity.pdf
+      \endverb
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
@@ -832,8 +991,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian -- guaranteeing manifest conservation -- in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the ``standard'' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the ``∇h'' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle ``weights'') and method of determining smoothing lengths. We then specify this to a ``pressure-entropy formulation'' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& ``blob'' tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different ``flavors'' of SPH.}
@@ -864,6 +1023,7 @@
       \keyw{Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Instrumentation and Methods for Astrophysics,Physics - Computational Physics,Physics - Fluid Dynamics}
     \endentry
   \enddatalist
+  \missing{kappeliWellbalancedMethodsComputational2022a}
 \endrefsection
 \endinput
 

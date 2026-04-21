@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 16:55
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 17:54
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2383,6 +2383,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                kappeliWellbalancedMethodsComputational2022a
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
 )
 Package biblatex Info: Reference section=0 on input line 23.
 Package biblatex Info: Reference segment=0 on input line 23.
@@ -2498,7 +2506,7 @@ Underfull \hbox (badness 1874) in paragraph at lines 28--28
 
 ] (./chapters/oro_flows.tex
 Chapter 1.
-<./figures/oro_flows/clouds.pdf, id=274, 1110.0672pt x 832.5504pt>
+<./figures/oro_flows/clouds.pdf, id=283, 1110.0672pt x 832.5504pt>
 File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/clouds.pdf>
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
@@ -2510,7 +2518,7 @@ Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
 
 
 ]
-<./figures/oro_flows/fohn.pdf, id=299, 3886.52pt x 2601.72pt>
+<./figures/oro_flows/fohn.pdf, id=308, 3886.52pt x 2601.72pt>
 File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/fohn.pdf>
 Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 46.
@@ -2615,10 +2623,18 @@ Underfull \hbox (badness 5175) in paragraph at lines 411--411
 
 
 [12]
-Overfull \hbox (13.29378pt too wide) in paragraph at lines 420--421
-[]\TU/lmr/m/n/12 and to mo-ti-vate the use of some tech-niques used in [][][][]
-[]. |
- []
+
+LaTeX Warning: Hyper reference `sec:EXTRA' on page 13 undefined on input line 4
+20.
+
+
+LaTeX Warning: Reference `sec:EXTRA' on page 13 undefined on input line 420.
+
+
+LaTeX Warning: Reference `sec:EXTRA' on page 13 undefined on input line 420.
+
+
+LaTeX Warning: Reference `sec:EXTRA' on page 13 undefined on input line 420.
 
 
 Overfull \hbox (58.46544pt too wide) in paragraph at lines 425--426
@@ -2710,7 +2726,7 @@ Overfull \hbox (30.80154pt too wide) detected at line 739
 
 
 [21]
-<./figures/oro_flows/propagating.pdf, id=611, 677.53125pt x 376.40625pt>
+<./figures/oro_flows/propagating.pdf, id=620, 677.53125pt x 376.40625pt>
 File: ./figures/oro_flows/propagating.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/propagating.pdf>
 Package luatex.def Info: ./figures/oro_flows/propagating.pdf  used on input lin
@@ -2720,6 +2736,15 @@ e 757.
 
 [22<./figures/oro_flows/propagating.pdf>]
 Chapter 2.
+
+LaTeX Warning: Citation 'kappeliWellbalancedMethodsComputational2022a' on page 
+23 undefined on input line 26.
+
+
+Overfull \hbox (95.02267pt too wide) in paragraph at lines 26--27
+[]\TU/lmr/m/n/12 FVM ex-am-ple [][][][][][][] |
+ []
+
 ) (./chapters/sph.tex
 
 [23
@@ -2731,7 +2756,7 @@ Chapter 3.
 [24
 
 ]
-Overfull \hbox (3.4041pt too wide) detected at line 106
+Overfull \hbox (3.4041pt too wide) detected at line 109
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
@@ -2740,21 +2765,23 @@ Overfull \hbox (3.4041pt too wide) detected at line 106
 
 [25]
 
-LaTeX Warning: Reference `eq:f_PE' on page 26 undefined on input line 144.
+LaTeX Warning: Reference `eq:f_PE' on page 26 undefined on input line 147.
 
-) (./chapters/experiments.tex
 
-[26]
+
+[26]) (./chapters/experiments.tex
+
+[27]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[27
+[28
 
 ]
 Chapter 5.
 )
 
-[28
+[29
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2792,18 +2819,9 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[29
-
-
-]
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-
 [30
 
+
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
@@ -2811,15 +2829,24 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[31]
+[31
+
+]
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
+
+[32]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[32]
-runsystem(latexminted cleantemp  --timestamp 20260421165513Z FAD58DE7366495DB465
+[33]
+runsystem(latexminted cleantemp  --timestamp 20260421175438Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2836,57 +2863,58 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 66990 strings out of 475512
- 195455,2848258 words of node,token memory allocated
- 65719 words of node memory still in use:
+ 67084 strings out of 475512
+ 195512,2848258 words of node,token memory allocated
+ 65729 words of node memory still in use:
    533 hlist, 61 vlist, 16 rule, 424 disc, 37 local_par, 129 math, 1372 glue, 36
-9 kern, 165 penalty, 138 margin_kern, 4671 glyph, 1522 attribute, 115 glue_spec,
- 1522 attribute_list, 8 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_link
-, 9 pdf_action, 112 pdf_colorstack nodes
-   avail lists: 1:9,2:6919,3:4778,4:589,5:701,6:139,7:7155,8:107,9:1694,10:24,11
-:412,12:2
- 87791 multiletter control sequences out of 65536+600000
- 145 fonts using 11300535 bytes
+9 kern, 165 penalty, 138 margin_kern, 4671 glyph, 1523 attribute, 115 glue_spec,
+ 1523 attribute_list, 8 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_link
+, 10 pdf_action, 112 pdf_colorstack nodes
+   avail lists: 1:12,2:6925,3:4778,4:589,5:701,6:152,7:7161,8:107,9:1694,10:24,1
+1:412,12:3
+ 87879 multiletter control sequences out of 65536+600000
+ 146 fonts using 11432223 bytes
  109i,19n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
 tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/te
 xdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</opt/texlive/texdir/texmf-dist
-/fonts/opentype/public/lm/lmroman12-italic.otf>{/opt/texlive/texdir/texmf-dist/f
-onts/enc/dvips/lm/lm-mathsy.enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/
-lm/lm-mathex.enc}</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans
-8-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmmono8-r
-egular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman8-reg
-ular.otf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}</opt
-/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></opt/
-texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></opt/te
-xlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromanslant12-regular.otf></op
-t/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></opt/
-texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans12-oblique.otf></opt/te
-xlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></opt/texlive
-/texdir/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></opt/texlive/t
-exdir/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></opt/texlive/te
-xdir/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></opt/texlive/texd
-ir/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></opt/texlive/texdir/t
-exmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></opt/texlive/texdir/te
-xmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></opt/texlive/texdir/texm
-f-dist/fonts/type1/public/bbold-type1/bbold10.pfb></opt/texlive/texdir/texmf-dis
-t/fonts/type1/public/lm/lmbsy7.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/p
-ublic/lm/lmbx12.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmex10
-.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/texl
-ive/texdir/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></opt/texlive/texdir/texm
-f-dist/fonts/type1/public/lm/lmmi6.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
-e1/public/lm/lmmi8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr
-12.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/texl
-ive/texdir/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/texlive/texdir/texmf-
-dist/fonts/type1/public/lm/lmr8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/
-public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy6
-.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/texli
-ve/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/texliv
-e/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on main.pdf (38 pages, 8264919 bytes).
+/fonts/opentype/public/lm/lmroman6-bold.otf></opt/texlive/texdir/texmf-dist/font
+s/opentype/public/lm/lmroman12-italic.otf>{/opt/texlive/texdir/texmf-dist/fonts/
+enc/dvips/lm/lm-mathsy.enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm
+-mathex.enc}</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans8-reg
+ular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmmono8-regula
+r.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.
+otf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}</opt/texl
+ive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></opt/texli
+ve/texdir/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></opt/texlive
+/texdir/texmf-dist/fonts/opentype/public/lm/lmromanslant12-regular.otf></opt/tex
+live/texdir/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></opt/texli
+ve/texdir/texmf-dist/fonts/opentype/public/lm/lmsans12-oblique.otf></opt/texlive
+/texdir/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></opt/texlive/texd
+ir/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></opt/texlive/texdir
+/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></opt/texlive/texdir/
+texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></opt/texlive/texdir/te
+xmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></opt/texlive/texdir/texmf-
+dist/fonts/opentype/public/lm/lmroman17-regular.otf></opt/texlive/texdir/texmf-d
+ist/fonts/opentype/public/lm/lmsans17-regular.otf></opt/texlive/texdir/texmf-dis
+t/fonts/type1/public/bbold-type1/bbold10.pfb></opt/texlive/texdir/texmf-dist/fon
+ts/type1/public/lm/lmbsy7.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public
+/lm/lmbx12.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmex10.pfb>
+</opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/texlive/t
+exdir/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></opt/texlive/texdir/texmf-dis
+t/fonts/type1/public/lm/lmmi6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/pu
+blic/lm/lmmi8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr12.pf
+b></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/texlive/t
+exdir/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/texlive/texdir/texmf-dist/
+fonts/type1/public/lm/lmr8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publi
+c/lm/lmsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy6.pfb>
+</opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/texlive/te
+xdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/texlive/tex
+dir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
+Output written on main.pdf (39 pages, 8275926 bytes).
 
-PDF statistics: 1084 PDF objects out of 1200 (max. 8388607)
- 603 compressed objects within 7 object streams
- 223 named destinations out of 1000 (max. 131072)
- 534 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1124 PDF objects out of 1200 (max. 8388607)
+ 617 compressed objects within 7 object streams
+ 229 named destinations out of 1000 (max. 131072)
+ 550 words of extra memory for PDF output out of 10000 (max. 100000000)
 
