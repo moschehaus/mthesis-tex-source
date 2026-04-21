@@ -5,10 +5,10 @@
 \contentsline {section}{\numberline {1.1}Observed phenomena}{1}{section*.8}%
 \contentsline {subsection}{Internal gravity waves}{1}{subsection*.9}%
 \contentsline {subsection}{Downslope windstorms}{1}{subsection*.11}%
-\contentsline {subsection}{Clear-air turbulence}{3}{subsection*.13}%
+\contentsline {subsection}{Clear-air turbulence}{2}{subsection*.13}%
 \contentsline {section}{\numberline {1.2}Governing equations}{3}{section*.14}%
 \contentsline {subsection}{Mechanics}{3}{subsection*.15}%
-\contentsline {subsection}{Thermodynamics}{4}{subsection*.16}%
+\contentsline {subsection}{Thermodynamics}{5}{subsection*.16}%
 \contentsline {subsubsection}{Potential temperature}{5}{equation.1.9}%
 \contentsline {subsection}{Hydrostatic balance}{7}{subsection*.17}%
 \contentsline {subsection}{Boussinesq approximation}{8}{subsection*.18}%

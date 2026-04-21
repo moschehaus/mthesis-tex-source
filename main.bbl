@@ -126,6 +126,133 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Sutherland - 2010 - Internal gravity waves.pdf
       \endverb
     \endentry
+    \entry{clarkCriticalLevelReflection1984}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=133b815f69289887efc66936c7a96262}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={T.\bibnamedelimi L.},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=8f51873c65751d1c7126b579f42a22bd}{%
+           family={Peltier},
+           familyi={P\bibinitperiod},
+           given={W.\bibnamedelimi R.},
+           giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{fullhash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{fullhashraw}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{bibnamehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authorbibnamehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authornamehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authorfullhash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authorfullhashraw}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We examine the evolution of a field of internal waves launched by stratified flow over symmetric topography in mean flows which reverse direction at some height above the surface. With the gradient Richardson number at this ``critical level'' in the undisturbed flow restricted to values greater than 0.25, the nonlinear interaction in the region is such that the surface strongly reflects large amplitude internal waves incident upon it. When the critical level is located near certain discrete heights above the ground the incident and reflected waves interfere constructively and the wave amplitude in the low levels is resonantly enhanced by a large factor. These results are related to our previous analyses of the process by which breaking internal waves are able to induce intense downslope windstorms.}
+      \field{day}{1}
+      \field{issn}{0022-4928, 1520-0469}
+      \field{journaltitle}{Journal of the Atmospheric Sciences}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{Critical {{Level Reflection}} and the {{Resonant Growth}} of {{Nonlinear Mountain Waves}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1984}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0469(1984)041<3122:CLRATR>2.0.CO;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark and Peltier - 1984 - Critical Level Reflection and the Resonant Growth of Nonlinear Mountain Waves.pdf
+      \endverb
+    \endentry
+    \entry{durranAnotherLookDownslope1986}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=cbd3f98db952dd6b2aa064dd3ac2c5a1}{%
+           family={Durran},
+           familyi={D\bibinitperiod},
+           given={Dale\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{fullhash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{fullhashraw}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{bibnamehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authorbibnamehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authornamehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authorfullhash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authorfullhashraw}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \field{extraname}{1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{Journal of the Atmospheric Sciences}
+      \field{shorttitle}{Another {{Look}} at {{Downslope Windstorms}}. {{Part I}}}
+      \field{title}{Another {{Look}} at {{Downslope Windstorms}}. {{Part I}}: {{The Development}} of {{Analogs}} to {{Supercritical Flow}} in an {{Infinitely Deep}}, {{Continuously Stratified Fluid}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0469(1986)043<2527:aladwp>2.0.co;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Durran - 1986 - Another Look at Downslope Windstorms. Part I The Development of Analogs to Supercritical Flow in an.pdf
+      \endverb
+    \endentry
+    \entry{clarkEvolutionStabilityFiniteAmplitude1977}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=133b815f69289887efc66936c7a96262}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={T.\bibnamedelimi L.},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=8f51873c65751d1c7126b579f42a22bd}{%
+           family={Peltier},
+           familyi={P\bibinitperiod},
+           given={W.\bibnamedelimi R.},
+           giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{fullhash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{fullhashraw}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{bibnamehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authorbibnamehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authornamehash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authorfullhash}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \strng{authorfullhashraw}{4732e9f07ed4bb19ffea2205d9a2f38b}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Atmospheric Sciences}
+      \field{title}{On the {{Evolution}} and {{Stability}} of {{Finite-Amplitude Mountain Waves}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0469(1977)034<1715:oteaso>2.0.co;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark and Peltier - 1977 - On the Evolution and Stability of Finite-Amplitude Mountain Waves.pdf
+      \endverb
+    \endentry
     \entry{varelaEfectoFoehnFohn2013}{artwork}{}{}
       \name{author}{1}{}{%
         {{hash=ca4325f0db0ee33e69bb2e4da534cdaf}{%
@@ -142,8 +269,8 @@
       \strng{authornamehash}{ca4325f0db0ee33e69bb2e4da534cdaf}
       \strng{authorfullhash}{ca4325f0db0ee33e69bb2e4da534cdaf}
       \strng{authorfullhashraw}{ca4325f0db0ee33e69bb2e4da534cdaf}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{27}
@@ -165,6 +292,51 @@
       \verb https://www.flickr.com/photos/artberri/9404934478/
       \endverb
     \endentry
+    \entry{frittsGravityWaveDynamics2003}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=06a4ee819ac11ee0191421ca0195f8ae}{%
+           family={Fritts},
+           familyi={F\bibinitperiod},
+           given={David\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=9f7a8fe87b1ec00f00134141c2e2e3cc}{%
+           family={Alexander},
+           familyi={A\bibinitperiod},
+           given={M.\bibnamedelimi Joan},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{fullhash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{fullhashraw}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{bibnamehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authorbibnamehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authornamehash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authorfullhash}{145cdb773fd53fa763a25acbfa6f8674}
+      \strng{authorfullhashraw}{145cdb773fd53fa763a25acbfa6f8674}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Atmospheric gravity waves have been a subject of intense research activity in recent years because of their myriad effects and their major contributions to atmospheric circulation, structure, and variability. Apart from occasionally strong lower-atmospheric effects, the major wave influences occur in the middle atmosphere, between {$\sim$} 10 and 110 km altitudes because of decreasing density and increasing wave amplitudes with altitude. Theoretical, numerical, and observational studies have advanced our understanding of gravity waves on many fronts since the review by Fritts [1984a] ; the present review will focus on these more recent contributions. Progress includes a better appreciation of gravity wave sources and characteristics, the evolution of the gravity wave spectrum with altitude and with variations of wind and stability, the character and implications of observed climatologies, and the wave interaction and instability processes that constrain wave amplitudes and spectral shape. Recent studies have also expanded dramatically our understanding of gravity wave influences on the large-scale circulation and the thermal and constituent structures of the middle atmosphere. These advances have led to a number of parameterizations of gravity wave effects which are enabling ever more realistic descriptions of gravity wave forcing in large-scale models. There remain, nevertheless, a number of areas in which further progress is needed in refining our understanding of and our ability to describe and predict gravity wave influences in the middle atmosphere. Our view of these unknowns and needs is also offered.}
+      \field{issn}{8755-1209, 1944-9208}
+      \field{journaltitle}{Reviews of Geophysics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{shortjournal}{Reviews of Geophysics}
+      \field{title}{Gravity Wave Dynamics and Effects in the Middle Atmosphere}
+      \field{urlday}{15}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1029/2001RG000106
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Fritts and Alexander - 2003 - Gravity wave dynamics and effects in the middle atmosphere.pdf
+      \endverb
+    \endentry
     \entry{teixeiraPhysicsOrographicGravity2014}{article}{}{}
       \name{author}{1}{}{%
         {{hash=01aabc65474646b2d518d4f310777160}{%
@@ -184,8 +356,8 @@
       \strng{authornamehash}{01aabc65474646b2d518d4f310777160}
       \strng{authorfullhash}{01aabc65474646b2d518d4f310777160}
       \strng{authorfullhashraw}{01aabc65474646b2d518d4f310777160}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The drag and momentum fluxes produced by gravity waves generated in flow over orography are reviewed, focusing on adiabatic conditions without phase transitions or radiation effects, and steady mean incoming flow. The orographic gravity wave drag is first introduced in its simplest possible form, for inviscid, linearized, non-rotating flow with the Boussinesq and hydrostatic approximations, and constant wind and static stability. Subsequently, the contributions made by previous authors (primarily using theory and numerical simulations) to elucidate how the drag is affected by additional physical processes are surveyed. These include the effect of orography anisotropy, vertical wind shear, total and partial critical levels, vertical wave reflection and resonance, non-hydrostatic effects and trapped lee waves, rotation and nonlinearity. Frictional and boundary layer effects are also briefly mentioned. A better understanding of all of these aspects is important for guiding the improvement of drag parametrization schemes.}
@@ -229,8 +401,8 @@
       \strng{authornamehash}{262a793265d9ced4e8f534422caa8a32}
       \strng{authorfullhash}{262a793265d9ced4e8f534422caa8a32}
       \strng{authorfullhashraw}{262a793265d9ced4e8f534422caa8a32}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in {{Geophysics}}}
@@ -248,51 +420,6 @@
       \endverb
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/1979 - The Influence of Mountains on the Atmosphere.pdf;/home/moschehaus/Zotero/storage/CXP9M8M6/S0065268708602629.html
-      \endverb
-    \endentry
-    \entry{frittsGravityWaveDynamics2003}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=06a4ee819ac11ee0191421ca0195f8ae}{%
-           family={Fritts},
-           familyi={F\bibinitperiod},
-           given={David\bibnamedelima C.},
-           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=9f7a8fe87b1ec00f00134141c2e2e3cc}{%
-           family={Alexander},
-           familyi={A\bibinitperiod},
-           given={M.\bibnamedelimi Joan},
-           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{145cdb773fd53fa763a25acbfa6f8674}
-      \strng{fullhash}{145cdb773fd53fa763a25acbfa6f8674}
-      \strng{fullhashraw}{145cdb773fd53fa763a25acbfa6f8674}
-      \strng{bibnamehash}{145cdb773fd53fa763a25acbfa6f8674}
-      \strng{authorbibnamehash}{145cdb773fd53fa763a25acbfa6f8674}
-      \strng{authornamehash}{145cdb773fd53fa763a25acbfa6f8674}
-      \strng{authorfullhash}{145cdb773fd53fa763a25acbfa6f8674}
-      \strng{authorfullhashraw}{145cdb773fd53fa763a25acbfa6f8674}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Atmospheric gravity waves have been a subject of intense research activity in recent years because of their myriad effects and their major contributions to atmospheric circulation, structure, and variability. Apart from occasionally strong lower-atmospheric effects, the major wave influences occur in the middle atmosphere, between {$\sim$} 10 and 110 km altitudes because of decreasing density and increasing wave amplitudes with altitude. Theoretical, numerical, and observational studies have advanced our understanding of gravity waves on many fronts since the review by Fritts [1984a] ; the present review will focus on these more recent contributions. Progress includes a better appreciation of gravity wave sources and characteristics, the evolution of the gravity wave spectrum with altitude and with variations of wind and stability, the character and implications of observed climatologies, and the wave interaction and instability processes that constrain wave amplitudes and spectral shape. Recent studies have also expanded dramatically our understanding of gravity wave influences on the large-scale circulation and the thermal and constituent structures of the middle atmosphere. These advances have led to a number of parameterizations of gravity wave effects which are enabling ever more realistic descriptions of gravity wave forcing in large-scale models. There remain, nevertheless, a number of areas in which further progress is needed in refining our understanding of and our ability to describe and predict gravity wave influences in the middle atmosphere. Our view of these unknowns and needs is also offered.}
-      \field{issn}{8755-1209, 1944-9208}
-      \field{journaltitle}{Reviews of Geophysics}
-      \field{langid}{english}
-      \field{month}{3}
-      \field{shortjournal}{Reviews of Geophysics}
-      \field{title}{Gravity Wave Dynamics and Effects in the Middle Atmosphere}
-      \field{urlday}{15}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{year}{2003}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1029/2001RG000106
-      \endverb
-      \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Fritts and Alexander - 2003 - Gravity wave dynamics and effects in the middle atmosphere.pdf
       \endverb
     \endentry
     \entry{doyleIntercomparisonTREXMountainwave2011}{article}{}{}
@@ -384,8 +511,8 @@
       \strng{authornamehash}{93f7f9a08d04e8e1d73d61a70f56d613}
       \strng{authorfullhash}{910a66205f0a69568327ae64f38d00a7}
       \strng{authorfullhashraw}{910a66205f0a69568327ae64f38d00a7}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Monthly Weather Review}
@@ -496,8 +623,8 @@
       \strng{authornamehash}{8f57bb65308f3d73b5310349ae662afd}
       \strng{authorfullhash}{8f57bb65308f3d73b5310349ae662afd}
       \strng{authorfullhashraw}{8f57bb65308f3d73b5310349ae662afd}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The atmosphere and ocean are two of the most important components of the climate system, and fluid dynamics is central to our understanding of both. This book provides a unified and comprehensive treatment of the field that blends classical results with modern interpretations. It takes the reader seamlessly from the basics to the frontiers of knowledge, from the equations of motion to modern theories of the general circulation of the atmosphere and ocean. These concepts are illustrated throughout the book with observations and numerical examples. As well as updating existing chapters, this full-color second edition includes new chapters on tropical dynamics, El Niño, the stratosphere and gravity waves. Supplementary resources are provided online, including figures from the book and problem sets, making this new edition an ideal resource for students in the atmospheric, oceanic and climate sciences, as well as in applied mathematics and engineering.}
@@ -542,8 +669,8 @@
       \strng{authornamehash}{e67c392dd276adb9ddd2cc8307ae5a35}
       \strng{authorfullhash}{e67c392dd276adb9ddd2cc8307ae5a35}
       \strng{authorfullhashraw}{e67c392dd276adb9ddd2cc8307ae5a35}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{Fifth edition}
@@ -576,8 +703,9 @@
       \strng{authornamehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
       \strng{authorfullhash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
       \strng{authorfullhashraw}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-4419-6411-3 978-1-4419-6412-0}
@@ -617,8 +745,8 @@
       \strng{authornamehash}{c411ee10cb4a8ecd700a9998c410037b}
       \strng{authorfullhash}{c411ee10cb4a8ecd700a9998c410037b}
       \strng{authorfullhashraw}{c411ee10cb4a8ecd700a9998c410037b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0004-637X, 1538-4357}
@@ -704,8 +832,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian -- guaranteeing manifest conservation -- in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the ``standard'' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the ``∇h'' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle ``weights'') and method of determining smoothing lengths. We then specify this to a ``pressure-entropy formulation'' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& ``blob'' tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different ``flavors'' of SPH.}

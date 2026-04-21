@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 00:03
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 14:40
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2486,7 +2486,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./chapters/introduction.tex)
+ (./chapters/introduction.tex
+Underfull \hbox (badness 1874) in paragraph at lines 28--28
+[]$[][]$ \TU/lmr/m/n/12 Note the dis-tinc-tion be-tween
+ []
+
+)
 
 [6
 
@@ -2499,21 +2504,27 @@ File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
 
 (luatex.def)             Requested size: 320.0pt x 239.99791pt.
-<./figures/oro_flows/fohn.pdf, id=278, 3886.52pt x 2601.72pt>
-File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
-<use ./figures/oro_flows/fohn.pdf>
-Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 40.
-(luatex.def)             Requested size: 320.0pt x 214.1761pt.
 
 
 [1
 
 
 ]
+<./figures/oro_flows/fohn.pdf, id=299, 3886.52pt x 2601.72pt>
+File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
+<use ./figures/oro_flows/fohn.pdf>
+Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 46.
+(luatex.def)             Requested size: 320.0pt x 214.1761pt.
 
-[2<./figures/oro_flows/clouds.pdf><./figures/oro_flows/fohn.pdf>]
+Underfull \hbox (badness 1888) in paragraph at lines 55--55
+[]$[][]$ \TU/lmr/m/n/12 Our model does not in-clude
+ []
 
-[3]
+
+
+[2<./figures/oro_flows/clouds.pdf>]
+
+[3<./figures/oro_flows/fohn.pdf>]
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.1'
 
@@ -2530,7 +2541,7 @@ i.2'
 [4]
 
 [5]
-Overfull \hbox (20.97786pt too wide) in paragraph at lines 161--162
+Overfull \hbox (20.97786pt too wide) in paragraph at lines 167--168
 []\TU/lmr/m/n/12 where we have used the ther-mal equa-tion of state [][][][][]|
 
  []
@@ -2538,7 +2549,7 @@ Overfull \hbox (20.97786pt too wide) in paragraph at lines 161--162
 
 
 [6]
-Overfull \hbox (27.31322pt too wide) in paragraph at lines 214--215
+Overfull \hbox (27.31322pt too wide) in paragraph at lines 220--221
 []\TU/lmr/m/n/12 Let us look for \TU/lmr/m/sl/12 sta-tion-ary so-lu-tions of \T
 U/lmr/m/n/12 the sys-tem [][][][][]|
  []
@@ -2546,12 +2557,12 @@ U/lmr/m/n/12 the sys-tem [][][][][]|
 
 
 [7]
-Overfull \hbox (5.02425pt too wide) in paragraph at lines 243--244
+Overfull \hbox (5.02425pt too wide) in paragraph at lines 249--250
 \TU/lmr/m/n/12 spec-i-fied. Us-ing the ther-mal equa-tion of state [][][][][]|
  []
 
 
-Overfull \hbox (17.807pt too wide) in paragraph at lines 243--244
+Overfull \hbox (17.807pt too wide) in paragraph at lines 249--250
 \TU/lmr/m/n/12 and the def-i-ni-tion of the po-ten-tial tem-per-a-ture [][][][]
 [],|
  []
@@ -2561,25 +2572,25 @@ Overfull \hbox (17.807pt too wide) in paragraph at lines 243--244
 [8]
 
 [9]
-Underfull \hbox (badness 3240) in paragraph at lines 312--312
+Overfull \hbox (2.84831pt too wide) in paragraph at lines 311--312
+[]\TU/lmr/m/n/12 Now we in-tro-duce an ap-prox-i-ma-tion based on \TU/lmr/m/sl/
+12 order-of-magnitude|
+ []
+
+
+Underfull \hbox (badness 3240) in paragraph at lines 317--317
 \TU/lmr/m/n/12 buoy-ancy driven flows. Lord
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 312--312
+Underfull \hbox (badness 2343) in paragraph at lines 317--317
 \TU/lmr/m/n/12 Rayleigh fa-mously used Boussi-
- []
-
-
-Overfull \hbox (3.28014pt too wide) in paragraph at lines 312--313
-[]\TU/lmr/m/n/12 At this point, the so-called \TU/lmr/m/sl/12 Boussi-nesq ap-pro
-x-i-ma-tion[][] [][][][][][]|
  []
 
 
 
 [10]
-Overfull \hbox (30.31953pt too wide) in paragraph at lines 336--337
+Overfull \hbox (30.31953pt too wide) in paragraph at lines 341--342
 []\TU/lmr/m/n/12 Us-ing these scal-ing re-la-tions, the bal-ance of mass [][][]
 [][]|
  []
@@ -2587,16 +2598,32 @@ Overfull \hbox (30.31953pt too wide) in paragraph at lines 336--337
 
 
 [11]
+Overfull \hbox (32.2133pt too wide) in paragraph at lines 367--368
+\TU/lmr/m/n/12 nesq ap-prox-i-ma-tion for the po-ten-tial tem-per-a-ture [][][]
+[][].|
+ []
+
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 400.
+(zref-clever)                type 'sidenote' on line 405.
+
+
+Underfull \hbox (badness 5175) in paragraph at lines 411--411
+\TU/lmr/m/n/12 of the lim-i-ta-tions of the lin-
+ []
 
 
 
 [12]
-Overfull \hbox (35.16469pt too wide) in paragraph at lines 415--416
-[]\TU/lmr/m/n/12 and also to mo-ti-vate the use of some tech-niques used in [][
-][][][]. |
+Overfull \hbox (13.29378pt too wide) in paragraph at lines 420--421
+[]\TU/lmr/m/n/12 and to mo-ti-vate the use of some tech-niques used in [][][][]
+[]. |
+ []
+
+
+Overfull \hbox (58.46544pt too wide) in paragraph at lines 425--426
+\TU/lmr/m/n/12 Look-ing at the re-la-tions de-scrib-ing hy-dro-static bal-ance 
+[][][][][],|
  []
 
 
@@ -2604,23 +2631,24 @@ Overfull \hbox (35.16469pt too wide) in paragraph at lines 415--416
 [13]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 455.
+(zref-clever)                type 'sidenote' on line 460.
 
 
-
-[14]
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.1'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.2'
+
+
+[14]
 Missing character: There is no − (U+2212) in font rm-lmr12!
 
 
 [15]
 
 [16]
-Overfull \hbox (47.34712pt too wide) detected at line 599
+Overfull \hbox (47.34712pt too wide) detected at line 604
 []$\OML/lmm/m/it/12 w[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; x; z\OT1/lmr/m/n/12
  ) = [] [][] [][] []\OML/lmm/m/it/12 w\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z\OT1/l
 mr/m/n/12 ; \OML/lmm/m/it/12 !; k\OT1/lmr/m/n/12 ) [][][] [][][] [] [] \OML/lmm
@@ -2628,19 +2656,19 @@ mr/m/n/12 ; \OML/lmm/m/it/12 !; k\OT1/lmr/m/n/12 ) [][][] [][][] [] [] \OML/lmm
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 603--603
+Underfull \hbox (badness 2600) in paragraph at lines 608--608
 []$[][]$ \TU/lmr/m/n/12 If $\OML/lmm/m/it/12 m$ \TU/lmr/m/n/12 has a nonzero ima
 g-i-
  []
 
 
-Underfull \hbox (badness 1308) in paragraph at lines 603--603
+Underfull \hbox (badness 1308) in paragraph at lines 608--608
 \TU/lmr/m/n/12 nary part, then $\OML/lmm/m/it/12 m \OT1/lmr/m/n/12 = [] \OML/lm
 m/m/it/12 m \OT1/lmr/m/n/12 +
  []
 
 
-Underfull \hbox (badness 4120) in paragraph at lines 603--603
+Underfull \hbox (badness 4120) in paragraph at lines 608--608
 []\OML/lmm/m/it/12 { [] m$\TU/lmr/m/n/12 , and so $[]\OT1/lmr/m/n/12 (\OMS/lmsy
 /m/n/12 []\OML/lmm/m/it/12 {mz\OT1/lmr/m/n/12 ) =
  []
@@ -2650,41 +2678,40 @@ Underfull \hbox (badness 4120) in paragraph at lines 603--603
 [17]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 609.
+(zref-clever)                type 'sidenote' on line 614.
 
 
 
 [18]
 
+Package zref-clever Warning: Reference format option 'Name-sg' undefined for
+(zref-clever)                type 'sidenote' on line 673.
+
+
+
 [19]
 
-Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 668.
-
-
-
 [20]
-Overfull \hbox (59.28891pt too wide) detected at line 717
+Overfull \hbox (59.28891pt too wide) detected at line 722
 []$[][][][] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@[]\OML/lmm/m/it/12 {k[]Hu[] [
 ][] [][][] [] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 2\OML/lmm/m
 /it/12 []{k[]Hu[][][];$ |
  []
 
 
-Overfull \hbox (16.96814pt too wide) detected at line 732
+Overfull \hbox (16.96814pt too wide) detected at line 737
 []|
  []
 
-
-
-[21]
-<./figures/oro_flows/propagating.pdf, id=600, 677.53125pt x 376.40625pt>
+<./figures/oro_flows/propagating.pdf, id=604, 677.53125pt x 376.40625pt>
 File: ./figures/oro_flows/propagating.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/propagating.pdf>
 Package luatex.def Info: ./figures/oro_flows/propagating.pdf  used on input lin
-e 750.
+e 755.
 (luatex.def)             Requested size: 320.0pt x 177.78397pt.
 ) (./chapters/modelling.tex
+
+[21]
 
 [22<./figures/oro_flows/propagating.pdf>]
 Chapter 2.
@@ -2769,14 +2796,15 @@ Package biblatex Warning: No driver for 'artwork'.
 (biblatex)                Using fallback driver on input line 51.
 
 
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
 
 [30
 
 ]
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
 
 [31]
 
@@ -2786,7 +2814,7 @@ See the caption package documentation for explanation.
 
 
 [32]
-runsystem(latexminted cleantemp  --timestamp 20260421000318Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260421144056Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2803,18 +2831,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 66955 strings out of 475512
- 195462,2848258 words of node,token memory allocated
- 63266 words of node memory still in use:
-   516 hlist, 66 vlist, 19 rule, 412 disc, 37 local_par, 130 math, 1332 glue, 38
-1 kern, 160 penalty, 126 margin_kern, 4585 glyph, 1319 attribute, 115 glue_spec,
- 1319 attribute_list, 6 write, 488 pdf_literal, 5 pdf_start_link, 5 pdf_end_link
-, 7 pdf_action, 96 pdf_colorstack nodes
-   avail lists: 1:11,2:6648,3:5189,4:613,5:635,6:137,7:7522,8:107,9:1831,10:21,1
-1:383,12:1
- 87760 multiletter control sequences out of 65536+600000
+ 66986 strings out of 475512
+ 195455,2848258 words of node,token memory allocated
+ 66318 words of node memory still in use:
+   569 hlist, 68 vlist, 19 rule, 415 disc, 38 local_par, 132 math, 1394 glue, 40
+1 kern, 171 penalty, 130 margin_kern, 4638 glyph, 1569 attribute, 115 glue_spec,
+ 1569 attribute_list, 8 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_link
+, 9 pdf_action, 112 pdf_colorstack nodes
+   avail lists: 1:12,2:6919,3:4778,4:589,5:642,6:139,7:7155,8:107,9:1694,10:24,1
+1:412,12:2
+ 87787 multiletter control sequences out of 65536+600000
  145 fonts using 11300535 bytes
- 109i,19n,121p,4410b,3698s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,19n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
 tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/te
 xdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</opt/texlive/texdir/texmf-dist
@@ -2850,10 +2878,10 @@ public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy6
 .pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/texli
 ve/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/texliv
 e/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on main.pdf (38 pages, 8376403 bytes).
+Output written on main.pdf (38 pages, 8382500 bytes).
 
-PDF statistics: 1056 PDF objects out of 1200 (max. 8388607)
- 589 compressed objects within 6 object streams
- 219 named destinations out of 1000 (max. 131072)
+PDF statistics: 1083 PDF objects out of 1200 (max. 8388607)
+ 602 compressed objects within 7 object streams
+ 223 named destinations out of 1000 (max. 131072)
  534 words of extra memory for PDF output out of 10000 (max. 100000000)
 
