@@ -45,15 +45,15 @@ The main point of departure of the SPH method is to replace the Dirac delta dist
 \sphc{\Phi}\left(t, \vb{x}\right)\coloneq \left(\Phi \star w_h\right)\left(t, \vb{x}\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\vb{x} - \vb{x'}\right)\dd{\vb{x}'}.
 \end{equations}
 
-The map $\Phi \mapsto \sphc{\Phi}$ is called \emph{continuous interpolation}. Certainly, the interpolation kernel $w_{h}$ cannot be arbitrary. We aim to approximate the function $\Phi$ by its continuous interpolation $\sphc{\Phi}$, that is
+The mapping $\Phi \mapsto \sphc{\Phi}$ is called \emph{continuous interpolation}. Certainly, the interpolation kernel $w_{h}$ cannot be arbitrary. We aim to approximate the function $\Phi$ by its continuous interpolation $\sphc{\Phi}$, that is
 
 \begin{equations}[single,*]
 	\Phi\left(t, \vb{x}\right) \approx \sphc{\Phi}\left(t, \vb{x}\right) = \int_{\Omega}\Phi\left(t, \vb{x}'\right)w_h\left(\vb{x} - \vb{x'}\right)\dd{\vb{x}'}.
 \end{equations}
 
-To obtain a good approximation, the kernel must satisfy \autocite[p.~60]{liuSmoothedParticleHydrodynamics2004}
+To obtain a good approximation, the kernel must satisfy \autocite[p.~60]{liuSmoothedParticleHydrodynamics2004} the conditions written out in \Cref{tab:kernel-properties}.
 
-\begin{table}[htbp]
+\begin{table}[H]
 	\centering
 	\caption{Properties of the interpolation kernel $w_h$.}
 	\label{tab:kernel-properties}
@@ -87,24 +87,33 @@ In our application, we deployed the $\Ctwo$ Wendland polynomial kernels \autocit
 \begin{equations}[single,!,numberline=all]
 	\label{eq:WENDLAND-KERNEL}
 	w_h\left(q\right) = \begin{cases} \frac{7}{4 \pi h^{2}}\left(1 - \frac{q}{2}\right)^4\left(2q + 1\right),& 0 \leq q \leq 2, \\
-		0,& q > 2.
+		0,& q > 2,
 	\end{cases}, q = \frac{\abs{\vb{r}}}{h}.
 \end{equations}
 
-It is evident that for the Wendland kernel \Cref{eq:WENDLAND-KERNEL}, $w_h\left(\frac{\vb{r}}{h}\right)$ for $\abs{\vb{r}} \leq 2 h$, meaning $4 h = \diam \supp w_h$.
+The graph of the Wendland kernel is plotted in \Cref{fig:KERNEL}. It is evident that for the Wendland kernel \Cref{eq:WENDLAND-KERNEL}, $w_h\left(\frac{\vb{r}}{h}\right) = 0 $ for $\abs{\vb{r}} \leq 2 h$, meaning $4 h = \diam \supp w_h$ and we call $h$ the \emph{smoothing length}\sidenote{As opposed to \enquote{smoothing radius}, which might be confusing.}
 
-Under the conditions \Cref{tab:kernel-properties} on the interpolation kernel $w_h$, it can be shown\sidenote{The derivation is a straightforward application of the Taylor's expansion.}\autocite[p.~307]{violeauFluidMechanicsSPH2012} 
+\begin{figure}[htbp]
+	\includegraphics[width=\linewidth]{kernel}
+	\caption{Wendland quintic kernel, $h = 1$.}
+	\label{fig:KERNEL}
+\end{figure}
+
+Under the conditions \Cref{tab:kernel-properties} on the interpolation kernel $w_h$, it can be shown\sidenote{The derivation is a straightforward application of the Taylor's expansion.} \autocite[p.~307]{violeauFluidMechanicsSPH2012} 
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:C-APPROX}
-\sphc{\Phi}\left(t, \vb{x}\right) = \Phi\left(t, \vb{x}\right) + \bigO{h^{2}},
+\sphc{\Phi}\left(t, \vb{x}\right) = \Phi\left(t, \vb{x}\right) + \bigO{h^{2}}.
 \end{equations}
 
-where
+This approximation property evidently heavily influences the numerical accuracy of the method. A more involved discussion of SPH accuracy and consistency will be presented in chapter
 
+%% TODO: dopsat chapter s presnosti
 
 \subsection{Particle paradigm}
 \label{sec:PARTICLES}
+
+
 
 \subsection{Differential operators}
 \label{sec:DIFF_OPS}
