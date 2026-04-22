@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  22 APR 2026 21:41
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  22 APR 2026 22:16
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2791,20 +2791,24 @@ File: ./figures/sph/kernel.pdf Graphic file (type pdf)
 Package luatex.def Info: ./figures/sph/kernel.pdf  used on input line 97.
 (luatex.def)             Requested size: 320.0pt x 137.14073pt.
 
+Package zref-clever Warning: Reference format option 'Name-sg' undefined for
+(zref-clever)                type 'sidenote' on line 109.
+
+
 
 [26<./figures/sph/kernel.pdf>]
-Overfull \hbox (31.2965pt too wide) detected at line 129
+Overfull \hbox (31.2965pt too wide) detected at line 128
 []$\OT1/lmr/m/n/12 [][][][] = [][] [][]\OML/lmm/m/it/12 w[][][] [] \OMS/lmsy/
 m/n/12  [] \OT1/lmr/m/n/12 [][]\OML/lmm/m/it/12 w[][][]V[];$ |
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
 []$[][]$ \TU/lmr/m/n/12 De-ploy-ing tech-niques from
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 147--147
+Underfull \hbox (badness 1590) in paragraph at lines 146--146
 \TU/lmr/m/n/12 Fourier anal-y-sis and the Euler-
  []
 
@@ -2819,22 +2823,25 @@ i.2'
 
 
 [28]
+Underfull \vbox (badness 1655) has occurred while \output is active []
+
+
 
 [29]
-Overfull \hbox (3.4041pt too wide) detected at line 263
+
+[30]
+Overfull \hbox (3.4041pt too wide) detected at line 274
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
 
-[30]
+[31]
 
-LaTeX Warning: Reference `eq:f_PE' on page 31 undefined on input line 301.
+LaTeX Warning: Reference `eq:f_PE' on page 32 undefined on input line 312.
 
-
-
-[31]) (./chapters/experiments.tex
+) (./chapters/experiments.tex
 
 [32]
 Chapter 4.
@@ -2915,7 +2922,7 @@ See the caption package documentation for explanation.
 
 
 [40]
-runsystem(latexminted cleantemp  --timestamp 20260422214112Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260422221621Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2932,16 +2939,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67457 strings out of 475512
- 244388,2848258 words of node,token memory allocated
- 90446 words of node memory still in use:
+ 67461 strings out of 475512
+ 244387,2848258 words of node,token memory allocated
+ 90574 words of node memory still in use:
    748 hlist, 81 vlist, 16 rule, 591 disc, 47 local_par, 153 math, 1850 glue, 47
-3 kern, 220 penalty, 197 margin_kern, 6358 glyph, 2290 attribute, 115 glue_spec,
- 2290 attribute_list, 12 write, 1006 pdf_literal, 12 pdf_start_link, 12 pdf_end_
+3 kern, 220 penalty, 197 margin_kern, 6358 glyph, 2322 attribute, 115 glue_spec,
+ 2322 attribute_list, 12 write, 1006 pdf_literal, 12 pdf_start_link, 12 pdf_end_
 link, 3 pdf_dest, 14 pdf_action, 152 pdf_colorstack nodes
-   avail lists: 1:13,2:6956,3:4778,4:589,5:598,6:173,7:7418,8:109,9:1694,10:32,1
+   avail lists: 1:14,2:6956,3:4778,4:589,5:598,6:173,7:7418,8:109,9:1694,10:32,1
 1:421,12:5
- 88170 multiletter control sequences out of 65536+600000
+ 88174 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -2983,10 +2990,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (47 pages, 10696614 bytes).
+Output written on main.pdf (47 pages, 10699474 bytes).
 
-PDF statistics: 1346 PDF objects out of 1440 (max. 8388607)
- 800 compressed objects within 8 object streams
+PDF statistics: 1351 PDF objects out of 1440 (max. 8388607)
+ 804 compressed objects within 9 object streams
  281 named destinations out of 1000 (max. 131072)
  574 words of extra memory for PDF output out of 10000 (max. 100000000)
 

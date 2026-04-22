@@ -26,15 +26,16 @@
 \contentsline {section}{\numberline {3.1}Method overview}{24}{section*.30}%
 \contentsline {section}{\numberline {3.2}Cornerstones of SPH}{24}{section*.31}%
 \contentsline {subsection}{Kernel interpolation}{25}{subsection*.32}%
-\contentsline {subsection}{Particle paradigm}{27}{subsection*.35}%
+\contentsline {subsection}{Particle approximation}{27}{subsection*.35}%
 \contentsline {subsection}{Accuracy of SPH}{28}{subsection*.36}%
 \contentsline {subsection}{Differential operators}{29}{subsection*.37}%
-\contentsline {section}{\numberline {3.3}SPH formulations}{29}{section*.38}%
-\contentsline {subsection}{Classical SPH}{29}{subsection*.39}%
-\contentsline {subsection}{Hamiltonian formulation}{29}{subsection*.40}%
-\contentsline {subsection}{Density-free formulations}{29}{subsection*.41}%
-\contentsline {subsubsection}{Pressure-entropy}{29}{subsection*.41}%
-\contentsline {subsubsection}{Pressure-potential temperature}{30}{equation.3.13}%
+\contentsline {subsubsection}{Gradient of a scalar field}{29}{subsection*.37}%
+\contentsline {section}{\numberline {3.3}SPH formulations}{30}{section*.38}%
+\contentsline {subsection}{Classical SPH}{30}{subsection*.39}%
+\contentsline {subsection}{Hamiltonian formulation}{30}{subsection*.40}%
+\contentsline {subsection}{Density-free formulations}{30}{subsection*.41}%
+\contentsline {subsubsection}{Pressure-entropy}{30}{subsection*.41}%
+\contentsline {subsubsection}{Pressure-potential temperature}{31}{equation.3.13}%
 \contentsline {section}{\numberline {3.4}Implementation specifics}{32}{section*.42}%
 \contentsline {subsection}{Extrapolating boundary conditions}{32}{subsection*.43}%
 \contentsline {subsubsection}{Inflow \& Outflow}{32}{subsection*.43}%
