@@ -561,13 +561,16 @@ INPUT ./figures/oro_flows/fohn.pdf
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
-INPUT ./figures/oro_flows/propagating.pdf
-INPUT ./figures/oro_flows/propagating.pdf
-INPUT ./figures/oro_flows/propagating.pdf
+INPUT ./figures/oro_flows/wave.pdf
+INPUT ./figures/oro_flows/wave.pdf
+INPUT ./figures/oro_flows/wave.pdf
 INPUT ./chapters/modelling.tex
 INPUT ./chapters/modelling.tex
 INPUT ./chapters/sph.tex
 INPUT ./chapters/sph.tex
+INPUT ./figures/sph/kernel.pdf
+INPUT ./figures/sph/kernel.pdf
+INPUT ./figures/sph/kernel.pdf
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/voronoi.tex
@@ -590,6 +593,7 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
+INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr6.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr7.pfb
