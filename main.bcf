@@ -2482,7 +2482,14 @@
     <bcf:citekey order="50" intorder="1">hoogerbruggeSimulatingMicroscopicHydrodynamic1992</bcf:citekey>
     <bcf:citekey order="51" intorder="1">violeauFluidMechanicsSPH2012</bcf:citekey>
     <bcf:citekey order="52" intorder="1">liuSmoothedParticleHydrodynamics2004</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">monaghanSmoothedParticleHydrodynamics2005</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">monaghanExtrapolatingSplinesInterpolation1985</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">liuSmoothedParticleHydrodynamics2004</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">wendlandPiecewisePolynomialPositive1995</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">dehnenNewKernelsSPH2012</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">wendlandPiecewisePolynomialPositive1995</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">violeauFluidMechanicsSPH2012</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

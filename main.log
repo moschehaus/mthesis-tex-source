@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 22:06
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  22 APR 2026 11:10
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2762,33 +2762,59 @@ warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.3'
 
 ]
+Overfull \hbox (12.13925pt too wide) in paragraph at lines 54--55
+[]\TU/lmr/m/n/12 To ob-tain a good ap-prox-i-ma-tion, the ker-nel must sat-isfy [][][][][][] |
+ []
+
+
+Overfull \hbox (137.53735pt too wide) in paragraph at lines 60--73
+ [][] |
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 85--85
+[]$[][]$ \TU/lmr/m/n/12 In the class of pos-i-tive def-i-
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 85--85
+\TU/lmr/m/n/12 smooth-ness and di-men-sion, the
+ []
+
+
 
 [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [26]
-Overfull \hbox (3.4041pt too wide) detected at line 142
+
+[27]
+Overfull \hbox (3.4041pt too wide) detected at line 193
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 27 undefined on input line 180.
-
-
-
-[27]) (./chapters/experiments.tex
 
 [28]
+
+LaTeX Warning: Reference `eq:f_PE' on page 29 undefined on input line 231.
+
+) (./chapters/experiments.tex
+
+[29]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[29
+[30
 
 ]
 Chapter 5.
 )
 
-[30
+[31
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2826,18 +2852,9 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[31
-
-
-]
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-
 [32
 
+
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
@@ -2845,17 +2862,28 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[33]
+[33
+
+]
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
 
 [34]
+
+[35]
+
+[36]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[35]
-runsystem(latexminted cleantemp  --timestamp 20260421220605Z FAD58DE7366495DB465
+[37]
+runsystem(latexminted cleantemp  --timestamp 20260422111041Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2872,21 +2900,21 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67227 strings out of 475512
+ 67344 strings out of 475512
  195454,2848258 words of node,token memory allocated
- 78041 words of node memory still in use:
-   650 hlist, 67 vlist, 16 rule, 504 disc, 40 local_par, 135 math, 1619 glue, 41
-3 kern, 196 penalty, 166 margin_kern, 5474 glyph, 1934 attribute, 115 glue_spec,
- 1934 attribute_list, 11 write, 858 pdf_literal, 10 pdf_start_link, 10 pdf_end_l
-ink, 3 pdf_dest, 12 pdf_action, 136 pdf_colorstack nodes
-   avail lists: 1:12,2:6944,3:4778,4:589,5:658,6:170,7:7406,8:108,9:1694,10:27,1
-1:438,12:5
- 87997 multiletter control sequences out of 65536+600000
+ 82472 words of node memory still in use:
+   689 hlist, 71 vlist, 16 rule, 535 disc, 42 local_par, 139 math, 1702 glue, 42
+8 kern, 203 penalty, 177 margin_kern, 5759 glyph, 2102 attribute, 115 glue_spec,
+ 2102 attribute_list, 12 write, 932 pdf_literal, 11 pdf_start_link, 11 pdf_end_l
+ink, 3 pdf_dest, 13 pdf_action, 144 pdf_colorstack nodes
+   avail lists: 1:15,2:6952,3:4778,4:589,5:643,6:175,7:7414,8:109,9:1694,10:28,1
+1:412,12:6
+ 88103 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
- 109i,19n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
-tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/te
-xdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</opt/texlive/texdir/texmf-dist
+tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texliv
+e/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</opt/texlive/texdir/texmf-dist
 /fonts/opentype/public/lm/lmroman6-bold.otf></opt/texlive/texdir/texmf-dist/font
 s/opentype/public/lm/lmroman12-italic.otf>{/opt/texlive/texdir/texmf-dist/fonts/
 enc/dvips/lm/lm-mathsy.enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm
@@ -2908,22 +2936,24 @@ dist/fonts/opentype/public/lm/lmroman17-regular.otf></opt/texlive/texdir/texmf-d
 ist/fonts/opentype/public/lm/lmsans17-regular.otf></opt/texlive/texdir/texmf-dis
 t/fonts/type1/public/bbold-type1/bbold10.pfb></opt/texlive/texdir/texmf-dist/fon
 ts/type1/public/lm/lmbsy7.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public
-/lm/lmbx12.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmex10.pfb>
-</opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/texlive/t
-exdir/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></opt/texlive/texdir/texmf-dis
-t/fonts/type1/public/lm/lmmi6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/pu
-blic/lm/lmmi8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr12.pf
-b></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/texlive/t
-exdir/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/texlive/texdir/texmf-dist/
-fonts/type1/public/lm/lmr8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publi
-c/lm/lmsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy6.pfb>
-</opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/texlive/te
-xdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/texlive/tex
-dir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on main.pdf (42 pages, 8299171 bytes).
+/lm/lmbx12.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><
+/opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/texlive/te
+xdir/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/texlive/texdir/texmf-dist
+/fonts/type1/public/lm/lmmi12.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/pu
+blic/lm/lmmi6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi7.pf
+b></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/texlive/
+texdir/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/texlive/texdir/texmf-dis
+t/fonts/type1/public/lm/lmr6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/pub
+lic/lm/lmr7.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr8.pfb><
+/opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texlive/te
+xdir/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/
+fonts/type1/public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publi
+c/tex-gyre/qzcmi.pfb>
+Output written on main.pdf (44 pages, 8335777 bytes).
 
-PDF statistics: 1207 PDF objects out of 1440 (max. 8388607)
- 688 compressed objects within 7 object streams
- 254 named destinations out of 1000 (max. 131072)
+PDF statistics: 1257 PDF objects out of 1440 (max. 8388607)
+ 742 compressed objects within 8 object streams
+ 265 named destinations out of 1000 (max. 131072)
  566 words of extra memory for PDF output out of 10000 (max. 100000000)
 
