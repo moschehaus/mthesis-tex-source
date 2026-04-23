@@ -226,7 +226,9 @@ The naive discretization \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to appr
 \divergence{\vb{F}} &= \frac{1}{\rho}\divergence{\left(\rho \vb{F}\right)} - \frac{1}{\rho}\vb{F} \cdot \grad \rho,
 \end{equations}
 
-valid for a nonzero continuously differentiable function $\rho$.\sidenote{The notation is suggestive --- in what follows, $\rho$ will indeed be the density. % HACK: is this correct?} We can improve our approximation by discretizing in the following manner
+valid for a nonzero continuously differentiable function $\rho$.\sidenote{The notation is suggestive --- in what follows, $\rho$ will indeed be the density.} We can improve our approximation by discretizing in the following manner
+
+% HACK: is this correct?
 
 \begin{equations}[columns,*]
 \grad_i \Phi_i &= \frac{1}{\rho_i} \grad_i \left(\rho_i \Phi_i\right) - \frac{\Phi_i}{\rho_i} \grad_i\left(\rho_i\right) \approx \\ 
