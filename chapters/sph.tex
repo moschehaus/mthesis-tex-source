@@ -218,11 +218,11 @@ However, this is not a unique way to discretise the differential operators --- a
 	\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) = 0 &\neq \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij}V_j = \sum_{j=1}^N \vb{e}_x \cdot \grad_i w_{ij}V_j.
 \end{equations}
 
-The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To account for constant fields, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
+The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To refine the approach, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:IDENTITIES}
-\grad \Phi &= \frac{1}{\phi} \grad\left(\phi \Phi\right) - \frac{\Phi}{\phi}\grad \phi, \\
+\grad \Phi &= \phi \grad\left(\frac{\Phi}{\phi}\right) + \frac{\Phi}{\phi}\grad \phi, \\
 \divergence{\vb{F}} &= \frac{1}{\phi}\divergence{\left(\phi \vb{F}\right)} - \frac{1}{\phi}\vb{F} \cdot \grad \phi,
 \end{equations}
 
@@ -231,9 +231,10 @@ valid for a nonzero continuously differentiable function $\phi$.\sidenote{In wha
 % HACK: is this correct?
 
 \begin{equations}[columns,*]
-\grad_i \Phi_i &= \frac{1}{\phi_i} \grad_i \left(\phi_i \Phi_i\right) - \frac{\Phi_i}{\phi_i} \grad_i\left(\phi_i\right) \approx \\ 
-	       &\approx \frac{1}{\phi_i} \sum_{j=1}^N \phi_j \Phi_j \grad_i w_{ij} V_j - \frac{\Phi_i}{\phi_i} \sum_{j=1}^N \phi_j \grad_i w_{ij} V_j =\\
-	       &= \frac{1}{\phi_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right)\phi_j \grad_i w_{ij}V_j,
+	\grad_i \Phi_i &= \phi_i \grad_i \left(\frac{\Phi_i}{\phi_i}\right) + \frac{\Phi_i}{\phi_i} \grad_i\left(\phi_i\right) \approx \\ 
+		       &\approx \phi_i \sum_{j=1}^N \frac{\Phi_j}{\phi_j} \grad_i w_{ij} V_j + \frac{\Phi_i}{\phi_i} \sum_{j=1}^N \phi_j \grad_i w_{ij} V_j =\\
+		       &= \phi_i \sum_{j=1}^N \frac{\Phi_j}{\phi_j^{2}} \phi_j \grad_i w_{ij} V_j + \phi_i \sum_{j=1}^N \frac{\Phi_i}{\phi_i^{2}}\phi_j \grad_i w_{ij}V_j = \\
+	       &= \phi_i \sum_{j=1}^N \left(\frac{\Phi_i}{\phi_i^{2}} + \frac{\Phi_j}{\phi_j^{2}}\right)\grad_i w_{ij}\phi_j V_j,
 \end{equations}
 
 and 
@@ -241,16 +242,16 @@ and
 \begin{equations}[columns,*]
 \grad_i \cdot \vb{F}_i &= \frac{1}{\phi_i} \grad_i \cdot \left(\phi_i \vb{F}_i\right) - \frac{1}{\phi_i} \vb{F}_i \cdot \grad_i \phi_i \approx \\
                        &\approx \frac{1}{\phi_i} \sum_{j=1}^N \phi_j \vb{F}_j \cdot \grad_i w_{ij} V_j - \frac{1}{\phi_i} \vb{F}_i \cdot \sum_{j=1}^N \phi_j \grad_i w_{ij} V_j =\\
-		       &= \frac{1}{\phi_i} \sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i\right) \phi_j  \cdot \grad_i w_{ij} V_j.
+		       &= \frac{1}{\phi_i} \sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i\right)  \cdot \grad_i w_{ij} \phi_j V_j.
 \end{equations}
 
-Evidently, thanks to the $\Phi_j - \Phi_i$ and $\vb{F}_j - \vb{F}_i$ terms respectively, this discretisation correctly vanishes for constant fields. 
+Thanks to the $\vb{F}_j - \vb{F}_i$ term in the approximate divergence operator, we see that the discretised divergence operator correctly vanishes for constant fields. The alternate discretised gradient operator does \emph{not vanish} for constant fields, however it possesses a symmetric property in the summands, which will be prove useful in the following section.
 
 All in all, the discretisation
 
 \begin{equations}[columns,!,numberline=all]
-\grad \Phi\left(t, \vb{x}_i\right) &\approx \frac{1}{\phi_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right) \phi_j \grad_i w_{ij} V_j ,\label{eq:IMPROVED-GRAD} \\
-\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \frac{1}{\phi_i}\sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i \right)\phi_j \cdot \grad_i w_{ij}V_j, \label{eq:IMPROVED-DIV}
+\grad_i \Phi\left(t, \vb{x}_j\right) &\approx \phi_i \sum_{j=1}^N \left(\frac{\Phi_i}{\phi_i^{2}} + \frac{\Phi_j}{\phi_j^{2}}\right)\phi_j\grad_i w_{ij}\phi _jV_j, \label{eq:IMPROVED-GRAD} \\
+\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \frac{1}{\phi_i}\sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i \right) \cdot \grad_i w_{ij} \phi_j V_j, \label{eq:IMPROVED-DIV}
 \end{equations}
 
 will be preferred in the section \Cref{sec:WCSPH}.
@@ -265,7 +266,7 @@ In this section, we will focus on different possibilities of discretising the Eu
 \subsection{Classical SPH}
 \label{sec:WCSPH}
 
-Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:IMPROVED-GRAD} and divergence operators \Cref{eq:IMPROVED-DIV} and choose the auxillary field $\varphi$ as the density $\rho$.  the balance of momentum and the continuity equation
+Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:IMPROVED-GRAD} and divergence operators \Cref{eq:IMPROVED-DIV} and choose the auxiliary field $\varphi$ as the density $\rho$. Then the balance of momentum and the continuity equation
 
 \begin{equations}[columns,*]
 	\tdot{\rho} &= - \rho\left(\divergence{\vb{v}}\right),\\
@@ -275,17 +276,59 @@ Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:I
 can be recast to the form
 
 \begin{equations}[columns,*]
-	\dv{\rho_i}{t} &= - \frac{\rho_i}{\rho_i} \sum_{j=1}^N \left(\vb{v}_j - \vb{v}_i\right)\rho_j \cdot \grad_i w_{ij}V_j = \sum_{j=1}^N \left(\vb{v}_i - \vb{v}_j\right)m_j \cdot \grad_i w_{ij},\\
-	\dv{\vb{v_i}}{t} &= -\frac{1}{\rho_i^{2}}\sum_{j=1}^N\left(p_j - p_i\right) \grad_i w_{ij V_j} + \vb{g} = \sum_{j=1}^N \left(\frac{p_i}{\rho_i} - \frac{p_j}{\rho_i}\right)m_i + \vb{g},
+	\dv{\rho_i}{t} &= - \frac{\rho_i}{\rho_i} \sum_{j=1}^N \left(\vb{v}_j - \vb{v}_i\right) \cdot \grad_i w_{ij} \rho_j V_j = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right)\cdot \grad_i w_{ij},\\
+	\dv{\vb{v_i}}{t} &= -\frac{1}{\rho_i} \rho_i \sum_{j=1}^N\left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j}^{2}\right)\rho_j V_j \grad_i w_{ij} = \sum_{j=1}^N m_j\left(\frac{p_i}{\rho_i}^{2} + \frac{p_j}{\rho_j}^{2}\right)\grad_i w_{ij},
 \end{equations}
 
-where we have used the fact $\rho_i = \frac{m_i}{V_i}$. Since $\rho_i = \rho_i(t)$ is a function of the time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_i(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_i\right)$ at a fixed \emph{material} point $\vb{x}_i$.}
-To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. In consistency with our application in atmospheric dynamics, we deploy the thermal equation of an \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_i} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
+where we have used the fact $\rho_i = \frac{m_i}{V_i}$. Since $\rho_i = \rho_i(t)$ is a function of time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_i(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_i\right)$ at a fixed \emph{material} point $\vb{x}_i$.}
+
+Notice the structure of the discretised balance of linear momentum. If we denote
+
+\begin{equations}[columns,*]
+	\vb{F}_{j \to i} &\coloneq - m_i m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right)\grad_i w_{ij}, \\
+	\vb{F}_i &\coloneq m_i \vb{g},
+\end{equations}
+
+then we can write
+
+\begin{equations}[columns,*]
+	m_i \dv{\vb{v}_i}{t} &= - m_i \sum_{j=1}^N m_j\left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right)\grad_i w_{ij} + \vb{g} = \\
+			     &= - \sum_{j=1}^N m_i m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right) \grad_i w_{ij} + \vb{g} = \sum_{j=1}^N \vb{F}_{j \to i} + \vb{F}_i.
+\end{equations}
+
+We see that $\vb{F}_{j \to i}$ is the \emph{internal} pressure force through which the particle $j$ acts on the particle $i$ and $\vb{F}_i$ is the gravity force acting on the particle $i$, \ie an \emph{external} force acting on the particle $i$. Moreover, observe that it holds
+
+\begin{equations}[single,*]
+\vb{F}_{j \to i} = - m_i m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right)\grad_i w_{ij} = m_j m_i  \left(\frac{p_j}{\rho_j^{2}}+ \frac{p_i}{\rho_i^{2}}\right) \grad_j w_{ji} = - \vb{F}_{i \to j},
+\end{equations}
+
+where we have used $w_{ij} = w_{ji}, \grad_i w_{ij} = - \grad_j w_{ij}$, both due to the radial symmetry of $w_h$.\sidenote{Recall that $w_{ij} = w_h\left(\abs{\vb{r}_i - \vb{r}_j}\right)$.} Therefore,
+
+\begin{equations}[single,*]
+\vb{F}_{j \to i} = - \vb{F}_{i \to j},
+\end{equations}
+
+and we have recovered \emph{Newton's third law} at the \emph{discrete level.} In an isolated system, \ie in the absence of external forces, Newton's third law implies the \emph{conservation of total linear momentum.}\sidenote{The total momentum of the isolated system reads as \begin{equations}[single,*]
+\sum_{i=1}^N m_i \vb{v}_i,
+\end{equations}
+and so
+\begin{equations}[columns,*]
+	\dv{t} \sum_{i=1}^N m_i \vb{v}_i &= \sum_{i=1}^N m_i \dv{\vb{v}_i}{t} =\\ 
+	&=\sum_{i=1}^N \sum_{j=1}^N \vb{F}_{j \to i} =  \sum_{j=1}^N \sum_{i=1}^N \vb{F}_{i \to j} =\\
+	&=- \sum_{i=1}^N \sum_{j=1}^N \vb{F}_{j \to i},
+\end{equations}
+where we used Newton's second law in the absence of external forces. In total, we thus see it must hold
+\begin{equations}[single,*]
+	\dv{t} \sum_{i=1}^N m_i \vb{v}_i \equiv \vb{0},
+\end{equations}
+therefore, the total momentum is conserved.}
+
+To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we deploy the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_i} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:CLASSICAL-SPH}
-\dv{\rho_i}{t} &= \sum_{j=1}^N \left(\vb{v}_i - \vb{v}_j\right) m_j \cdot \grad_i w_{ij},\\
-\dv{\vb{v}_i}{t} &= \sum_{j=1}^N\left(\frac{p_i}{\rho_i} - \frac{p_j}{\rho_i}\right)m_i + \vb{g}, \\
+\dv{\rho_i}{t} &= \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right) \cdot \grad_i w_{ij},\\
+\dv{\vb{v}_i}{t} &= - \sum_{j=1}^N m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_i^{2}}\right) + \vb{g}, \\
 p_i\left(\rho_i, T_i\right) &= R \rho_i T_i, \\
 \theta_i &= \, \text{const}.
 \end{equations}

@@ -153,14 +153,24 @@
 
 %% Ordinary derivative (replaces physics package \dv)
 %% Usage:
-%% \dv{f}{x}   -> df/dx
-%% \dv{}{x}    -> d/dx  (operator form)
+%% \dv{t}       -> d/dt  (operator form)
+%% \dv{f}{x}    -> df/dx
 %% \dv[2]{f}{x} -> d^2f / dx^2  (higher order)
-\NewDocumentCommand{\dv}{O{} m m}{%
-    \IfBlankTF{#1}{%
-        \frac{\mathrm{d} #2}{\mathrm{d} #3}%
+\NewDocumentCommand{\dv}{O{} m g}{%
+    \IfNoValueTF{#3}{%
+        % One mandatory arg: operator form d/dt
+        \IfBlankTF{#1}{%
+            \frac{\mathrm{d}}{\mathrm{d} #2}%
+        }{%
+            \frac{\mathrm{d}^{#1}}{\mathrm{d} #2^{#1}}%
+        }%
     }{%
-        \frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}%
+        % Two mandatory args: df/dx
+        \IfBlankTF{#1}{%
+            \frac{\mathrm{d} #2}{\mathrm{d} #3}%
+        }{%
+            \frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}%
+        }%
     }%
 }
 
