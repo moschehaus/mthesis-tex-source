@@ -31,28 +31,30 @@
 \contentsline {subsection}{Differential operators}{29}{subsection*.37}%
 \contentsline {subsubsection}{Gradient of a scalar field}{29}{subsection*.37}%
 \contentsline {subsubsection}{Divergence of a vector field}{30}{equation.3.13}%
-\contentsline {subsubsection}{Improved discretisation}{30}{equation.3.13}%
-\contentsline {section}{\numberline {3.3}SPH formulations}{32}{section*.38}%
-\contentsline {subsection}{Classical SPH}{32}{subsection*.39}%
-\contentsline {subsection}{Hamiltonian formulation}{34}{subsection*.40}%
-\contentsline {subsubsection}{Poisson brackets}{34}{subsection*.40}%
-\contentsline {subsubsection}{SPH discretisation}{36}{inparaenumi.2}%
-\contentsline {subsubsection}{Classical SPH as a Hamiltonian system}{36}{inparaenumi.2}%
-\contentsline {subsubsection}{Symplectic integrators}{36}{inparaenumi.2}%
-\contentsline {subsection}{Density-free formulations}{36}{subsection*.41}%
-\contentsline {subsubsection}{Pressure-entropy}{36}{subsection*.41}%
+\contentsline {section}{\numberline {3.3}SPH formulations}{30}{section*.38}%
+\contentsline {section}{\numberline {3.4}Classical SPH}{30}{section*.39}%
+\contentsline {subsection}{Improved discretisation}{30}{subsection*.40}%
+\contentsline {subsubsection}{Discrete balance of linear momentum}{32}{equation.3.19}%
+\contentsline {subsubsection}{Discrete balance of mass}{32}{equation.3.19}%
+\contentsline {section}{\numberline {3.5}Hamiltonian formulation}{34}{section*.41}%
+\contentsline {subsection}{Poisson brackets}{34}{subsection*.42}%
+\contentsline {subsection}{SPH discretisation}{36}{subsection*.43}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{36}{subsection*.44}%
+\contentsline {subsection}{Symplectic integrators}{36}{subsection*.45}%
+\contentsline {section}{\numberline {3.6}Density-free formulations}{36}{section*.46}%
+\contentsline {subsubsection}{Pressure-entropy}{36}{section*.46}%
 \contentsline {subsubsection}{Pressure-potential temperature}{37}{equation.3.31}%
-\contentsline {section}{\numberline {3.4}Implementation specifics}{38}{section*.42}%
-\contentsline {subsection}{Extrapolating boundary conditions}{38}{subsection*.43}%
-\contentsline {subsubsection}{Inflow \& Outflow}{38}{subsection*.43}%
-\contentsline {subsubsection}{Free-slip}{38}{subsection*.43}%
-\contentsline {subsection}{Adaptive smoothing length}{38}{subsection*.44}%
-\contentsline {subsection}{Particle placement}{38}{subsection*.45}%
-\contentsline {chapter}{\numberline {4}Experiments}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{39}{section*.46}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{39}{section*.47}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{39}{section*.48}%
-\contentsline {chapter}{\numberline {5}Voronoi}{40}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{41}{chapter*.49}%
-\contentsline {chapter}{References}{42}{appendix*.50}%
+\contentsline {section}{\numberline {3.7}Implementation specifics}{39}{section*.47}%
+\contentsline {subsection}{Extrapolating boundary conditions}{39}{subsection*.48}%
+\contentsline {subsubsection}{Inflow \& Outflow}{39}{subsection*.48}%
+\contentsline {subsubsection}{Free-slip}{39}{subsection*.48}%
+\contentsline {subsection}{Adaptive smoothing length}{39}{subsection*.49}%
+\contentsline {subsection}{Particle placement}{39}{subsection*.50}%
+\contentsline {chapter}{\numberline {4}Experiments}{40}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{40}{section*.51}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{40}{section*.52}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{40}{section*.53}%
+\contentsline {chapter}{\numberline {5}Voronoi}{41}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{42}{chapter*.54}%
+\contentsline {chapter}{References}{43}{appendix*.55}%
 \contentsfinish 
