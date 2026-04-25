@@ -39,16 +39,18 @@
 \contentsline {section}{\numberline {3.5}Hamiltonian formulation}{34}{section*.43}%
 \contentsline {subsection}{Poisson brackets}{34}{subsection*.44}%
 \contentsline {subsection}{SPH discretisation}{36}{subsection*.45}%
-\contentsline {subsection}{Classical SPH as a Hamiltonian system}{37}{subsection*.46}%
-\contentsline {subsection}{Symplectic integrators}{37}{subsection*.47}%
-\contentsline {section}{\numberline {3.6}Density-free formulations}{37}{section*.48}%
-\contentsline {subsubsection}{Pressure-entropy}{37}{section*.48}%
-\contentsline {subsubsection}{Pressure-potential temperature}{38}{equation.3.33}%
-\contentsline {section}{\numberline {3.7}Implementation specifics}{39}{section*.49}%
-\contentsline {subsection}{Extrapolating boundary conditions}{39}{subsection*.50}%
-\contentsline {subsubsection}{Inflow \& Outflow}{39}{subsection*.50}%
-\contentsline {subsubsection}{Free-slip}{39}{subsection*.50}%
-\contentsline {subsection}{Adaptive smoothing length}{39}{subsection*.51}%
+\contentsline {subsubsection}{SPH bracket}{36}{equation.3.30}%
+\contentsline {subsubsection}{SPH energy functional}{37}{equation.3.34}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{38}{subsection*.46}%
+\contentsline {subsection}{Symplectic integrators}{38}{subsection*.47}%
+\contentsline {section}{\numberline {3.6}Density-free formulations}{38}{section*.48}%
+\contentsline {subsubsection}{Pressure-entropy}{38}{section*.48}%
+\contentsline {subsubsection}{Pressure-potential temperature}{39}{equation.3.39}%
+\contentsline {section}{\numberline {3.7}Implementation specifics}{40}{section*.49}%
+\contentsline {subsection}{Extrapolating boundary conditions}{40}{subsection*.50}%
+\contentsline {subsubsection}{Inflow \& Outflow}{40}{subsection*.50}%
+\contentsline {subsubsection}{Free-slip}{40}{subsection*.50}%
+\contentsline {subsection}{Adaptive smoothing length}{40}{subsection*.51}%
 \contentsline {subsection}{Particle placement}{40}{subsection*.52}%
 \contentsline {chapter}{\numberline {4}Experiments}{41}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Stationary problems}{41}{section*.53}%
