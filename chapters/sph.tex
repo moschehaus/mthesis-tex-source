@@ -420,9 +420,9 @@ Let $\Omega \subset \R^d, d = 2, 3$ be the region occupied by the continuum. Den
 
 \begin{equations}[single,*]
 \chi_i\left(\vb{X}\right) = \begin{cases}
-  \frac{1}{V_i}, &\vb{X} \in \Omega_i,\\
+	\frac{1}{V_i}, \vb{X} &\in \Omega_i,\\
   0,  \vb{X} &\notin \Omega_i
-\end{cases}.
+\end{cases}, V_i = \int_{\Omega_i} \dd{\vb{X}},
 \end{equations}
 we can define the \emph{SPH position} $\vb{x}_i\left(t\right)$ as
 
@@ -440,27 +440,66 @@ and the \emph{SPH momentum} $\vb{M}_i\left(t, \vb{X}\right)$ as
 
 Naturally, the SPH positions and momenta $\left(\vb{x}_i, \vb{M}_i\right)$ will replace the state variables $\left(\vb{x}, \vb{M}\right)$ of the continuum mechanics, and so we will refer to them as the SPH state variables.
 
+\subsubsection{SPH bracket}
+\label{sec:SPH-bracket}
+
 Let $F\left(\vb{x}_i, \vb{M}_i\right), G\left(\vb{x}_i, \vb{M}_i\right)$ be two arbitrary \textcolor{gray}{sufficiently regular} functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as 
 
-\begin{equations}[lines,*]
+% FIX: HERE ARE a, b, FOR PARTICLES
+% TODO: Think what to use for parcticles
+\begin{equations}[lines]
+\label{eq:TERM}
 \pbr[L]{F}{G} = \int\left(\fdv{F}{x^i}\fdv{G}{M_i} - \fdv{F}{M_i} \fdv{G}{x^i}\right)\dd{\vb{X}} = \\ = \sum_{a,b}\int\left(\left(\pdv{F}{x_a^j} \fdv{x^j_a}{x^i} + \pdv{F}{M_{b,j}}\fdv{M_{b,j}}{x^i}\right)\left(\pdv{G}{M_{b,j}}\fdv{M_{b,j}}{M_i} + \pdv{G}{x^j_a}\fdv{x^j_a}{M_i}\right)\right)\dd{\vb{X}} + \\ - \sum_{a,b} \int\left(\left(\pdv{F}{M_{b,j}} \fdv{M_{b,j}}{M_i} + \pdv{F}{x_a^j} \fdv{x_a^j}{M_i}\right)\left(\pdv{G}{x^j_a} \fdv{x_a^j}{x^i} + \pdv{G}{M_{b,j}} \fdv{M_{b, j}}{x_i}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
+Our goal is to simplify \Cref{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_i, \vb{M}_i$. The procedure requires the evaluation of the functional derivatives of $x^j_a, M_{b,j}$ w.r.t $M_i, x^i$, which is a straightforward computation using the definitions \Cref{eq:SPH-momentum}, \Cref{eq:SPH-position}, but rather a lengthy one and such it will be skipped. It can however be found in 
+% TODO: LINK TO BACHELOR
 
+The expression \Cref{eq:TERM} can be rewritten to obtain
 
+\begin{equations}[single,*] 
+	\pbr[L]{F\left(\vb{x}_a, \vb{M}_a\right)}{G\left(\vb{x}_a, \vb{M}_a\right)} = \sum_{a}\left(\pdv{F}{x^{i_a}\pdv{G}{M_{a,i}}} - \pdv{F}{M_{a,i}}\pdv{G}{x^i_a}\right).
+\end{equations}
+
+It is hence natural to define the \emph{SPH bracket} for any two functionals $F\left(\vb{x}_a, \vb{M}_a\right), G\left(\vb{x}_a, \vb{M}_a\right)$ of the SPH state variables through.
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-bracket}
+\pbr[SPH]{F\left(\vb{x}_a, \vb{M}_a\right)}{G\left(\vb{x}_a, \vb{M}_a\right)} \coloneq \sum_{a}\left(\pdv{F}{x^i_a}\pdv{G}{M_{a,i}} - \pdv{F}{M_{a,i}}\pdv{G}{x^i_a}\right),
+\end{equations}
+
+\subsubsection{SPH energy functional}
+\label{sec:SPH-functional}
 % NOTE: ENERGY
 
- For brevity of notation, in the following we will explicitely write only $\eL = \eL(\rhoL)$, even though the energy can depend on other quantites, such as entropy. Using the transformation of density and the extensivity of the internal energy, we see that
+Now we aim to rewrite \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH state variables. We begin with the definition of the Lagrangian density of the particle 
+
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-lagrangian-density}
+\rhoL_a = \frac{m_a}{V_a},
+\end{equations}
+
+where
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-mass}
+m_a = \int_{\Omega}\rhoL\left(\vb{X}\right) \chi_a\left(\vb{X}\right)\dd{\vb{X}}.
+\end{equations}
+
+Assume the density can be expressed\sidenote{\todo{IMPROVE} This assumption is basic in continuum thermodynamics.} as a function of density $\rhoL$, and entropy $\entropyL$. $\eL = \eL(\rhoL, \entropyL)$. Using the transformation of density and the extensively of the internal energy, we see that
 
 
 \begin{equations}[single,*]
 \eL\left(\vb{X}\right) =  e\left(\rhoL\left(\vb{X}\right)\right) = e\left(J\left(\vb{X}\right) \rho\left(\vb{x}\left(\vb{X}\right)\right)\right) = J\left(\vb{X}\right) e\left(\rho\left(\vb{x}\left(\vb{X}\right)\right)\right),
 \end{equations}
 
-where $J = \det \grad \pmb{\chi}$ and the notational shortuct $\vb{x}\left(\vb{X}\right)$ as usual means $ \vb{x}\left(\vb{X}\right)= \pmb{\chi}\left(t, \vb{X}\right)$.\sidenote{Recall that for brevity we are not explicitly writing the time dependence of the considered quantities.} 
+where $J = \det \grad \pmb{\chi}$ and the notational shortcut $\vb{x}\left(\vb{X}\right)$ as usual means $ \vb{x}\left(\vb{X}\right)= \pmb{\chi}\left(t, \vb{X}\right)$.\sidenote{Recall that for brevity we are not explicitly writing the time dependence of the considered quantities.} 
 
 \subsection{Classical SPH as a Hamiltonian system}
 \label{sec:HAMILTONIAN-SYSTEM}
+
+%TODO: WHAT SYSTEM DO WE USE? NO INVOLVEMENT OF DENSITY
 
 \subsection{Symplectic integrators}
 \label{sec:INTEGRATORS}
