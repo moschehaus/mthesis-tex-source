@@ -41,11 +41,11 @@
 \contentsline {subsection}{SPH discretisation}{37}{subsection*.45}%
 \contentsline {subsubsection}{SPH bracket}{38}{equation.3.31}%
 \contentsline {subsubsection}{SPH energy functional}{39}{equation.3.35}%
-\contentsline {subsection}{Classical SPH as a Hamiltonian system}{39}{subsection*.46}%
-\contentsline {subsection}{Symplectic integrators}{39}{subsection*.47}%
-\contentsline {section}{\numberline {3.5}Density-free formulations}{39}{section*.48}%
-\contentsline {subsubsection}{Pressure-entropy}{39}{section*.48}%
-\contentsline {subsubsection}{Pressure-potential temperature}{40}{equation.3.40}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{40}{subsection*.46}%
+\contentsline {subsection}{Symplectic integrators}{40}{subsection*.47}%
+\contentsline {section}{\numberline {3.5}Density-free formulations}{40}{section*.48}%
+\contentsline {subsubsection}{Pressure-entropy}{40}{section*.48}%
+\contentsline {subsubsection}{Pressure-potential temperature}{41}{equation.3.40}%
 \contentsline {section}{\numberline {3.6}Implementation specifics}{42}{section*.49}%
 \contentsline {subsection}{Extrapolating boundary conditions}{42}{subsection*.50}%
 \contentsline {subsubsection}{Inflow \& Outflow}{42}{subsection*.50}%

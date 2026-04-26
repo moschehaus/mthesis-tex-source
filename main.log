@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  26 APR 2026 20:17
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  26 APR 2026 21:00
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2912,12 +2912,17 @@ i.2'
 
 
 [37]
-Overfull \hbox (48.38885pt too wide) detected at line 488
+Overfull \hbox (30.38855pt too wide) in paragraph at lines 484--485
+\TU/lmr/m/n/12 of the SPH state vari-ables [][][][][], [][][][][]|
+ []
+
+
+Overfull \hbox (48.38885pt too wide) detected at line 489
 []$\OT1/lmr/m/n/12 = [] [][][] [] +$ |
  []
 
 
-Overfull \hbox (41.37474pt too wide) detected at line 488
+Overfull \hbox (41.37474pt too wide) detected at line 489
 []$\OMS/lmsy/m/n/12 ^^@ [] [][][] [] \OML/lmm/m/it/12 :$ |
  []
 
@@ -2950,11 +2955,12 @@ Overfull \hbox (0.63048pt too wide) detected at line 650
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 41 undefined on input line 652.
 
+[41]
 
+LaTeX Warning: Reference `eq:f_PE' on page 42 undefined on input line 652.
 
-[41]) (./chapters/experiments.tex
+) (./chapters/experiments.tex
 
 [42]
 Chapter 4.
@@ -3035,7 +3041,7 @@ See the caption package documentation for explanation.
 
 
 [50]
-runsystem(latexminted cleantemp  --timestamp 20260426201736Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260426210059Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3052,7 +3058,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67693 strings out of 475512
+ 67694 strings out of 475512
  244318,2848258 words of node,token memory allocated
  87160 words of node memory still in use:
    869 hlist, 101 vlist, 30 rule, 530 disc, 51 local_par, 179 math, 1786 glue, 5
@@ -3061,7 +3067,7 @@ Here is how much of LuaTeX's memory you used:
 nk, 3 pdf_dest, 12 pdf_action, 124 pdf_colorstack nodes
    avail lists: 1:15,2:6962,3:4778,4:591,5:614,6:188,7:7424,8:109,9:1694,10:34,1
 1:487,12:6
- 88346 multiletter control sequences out of 65536+600000
+ 88347 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3103,10 +3109,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (57 pages, 10769077 bytes).
+Output written on main.pdf (57 pages, 10769696 bytes).
 
-PDF statistics: 1537 PDF objects out of 1728 (max. 8388607)
- 938 compressed objects within 10 object streams
+PDF statistics: 1538 PDF objects out of 1728 (max. 8388607)
+ 939 compressed objects within 10 object streams
  341 named destinations out of 1000 (max. 131072)
  630 words of extra memory for PDF output out of 10000 (max. 100000000)
 
