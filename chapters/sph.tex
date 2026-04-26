@@ -112,34 +112,34 @@ This approximation property evidently heavily influences the numerical accuracy 
 \subsection{Particle approximation}
 \label{sec:PARTICLES}
 
-Let $\Omega \subset \R^d, d = 2, 3$ be a continuous medium, which we partition into $N \in \N$ particles with coordinates $\{\vb{x}_i\}_{i=1}^N \subset \R^{dN}$. Denote by $V_i$ some \emph{estimator} of the particle volume, \eg
+Let $\Omega \subset \R^d, d = 2, 3$ be a continuous medium, which we partition into $N \in \N$ particles with coordinates $\{\vb{x}_{\alpha}\}_{\alpha=1}^N \subset \R^{dN}$. Denote by $V_{\alpha}$ some \emph{estimator} of the particle volume, \eg
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:MASS-DENSITY}
-V_i = \frac{\rho_i}{m_i},
+V_{\alpha} = \frac{\rho_{\alpha}}{m_{\alpha}},
 \end{equations}
 
-with $\rho_i$ being the particles density and $m_i$ its mass. The choice \Cref{eq:MASS-DENSITY} is clearly \emph{not a unique} choice of the volume estimator; the freedom of choice will be invoked in 
+with $\rho_{\alpha}$ being the particles density and $m_{\alpha}$ its mass. The choice \Cref{eq:MASS-DENSITY} is clearly \emph{not a unique} choice of the volume estimator; the freedom of choice will be invoked in 
 % TODO: dodelat referenci
-	Using this particle partition, we simplify the continuous interpolation \Cref{eq:CONT-INTERPOLATION} by deploying a quadrature rule. Let $\vb{x}_i$ be the position of an arbitrary particle, then we approximate
+	Using this particle partition, we simplify the continuous interpolation \Cref{eq:CONT-INTERPOLATION} by deploying a quadrature rule. Let $\vb{x}_{\alpha}$ be the position of an arbitrary particle, then we approximate
 
 \begin{equations}[single,*]
-	\sphc{\Phi}\left(t, \vb{x}_i\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\abs{\vb{x}_i - \vb{x}'}\right)\dd{\vb{x}'} \approx \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right)w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j, 
+	\sphc{\Phi}\left(t, \vb{x}_{\alpha}\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}'}\right)\dd{\vb{x}'} \approx \sum_{\beta=1}^N \Phi\left(t, \vb{x}_{\beta}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)V_{\beta}, 
 \end{equations}
-that is, we approximate the integration by a \emph{quadrature rule} with nodes $\{\vb{x}_j\}_{j=1}^N$ and weights $\{V_j\}_{j=1}^N$. This procedure can be thought of as introducing a \emph{discrete interpolation} operator $\Phi\left(t, \vb{x}_i\right) \mapsto \sphd{\Phi}\left(t, \vb{x}_i\right)$ given as
+that is, we approximate the integration by a \emph{quadrature rule} with nodes $\{\vb{x}_{\beta}\}_{\beta=1}^N$ and weights $\{V_{\beta}\}_{\beta=1}^N$. This procedure can be thought of as introducing a \emph{discrete interpolation} operator $\Phi\left(t, \vb{x}_{\alpha}\right) \mapsto \sphd{\Phi}\left(t, \vb{x}_{\alpha}\right)$ given as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:DISC-INTERPOLATION}
-\sphd{\Phi}\left(t, \vb{x}_{i}\right) \coloneq \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right) w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j \equiv \sum_{j=1}^N \Phi_j w_{ij}V_j,
+\sphd{\Phi}\left(t, \vb{x}_{\alpha}\right) \coloneq \sum_{\beta=1}^N \Phi\left(t, \vb{x}_{\beta}\right) w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)V_{\beta} \equiv \sum_{\beta=1}^N \Phi_{\beta} w_{\alpha \beta}V_{\beta},
 \end{equations}
 
-where we have adopted the notation $\Phi_j \coloneq \Phi\left(t, \vb{x}_j\right),$ $w_{ij} \coloneq w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)$. The quantity $\Phi_j$ can be naturally interpreted as the quantity $\Phi$, \ie density, of the particle $\vb{x}_j$. It should be clarified that $\Phi_j = \Phi_j(t)$ is still a function of time.
+where we have adopted the notation $\Phi_{\beta} \coloneq \Phi\left(t, \vb{x}_{\beta}\right),$ $w_{\alpha \beta} \coloneq w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)$. The quantity $\Phi_{\beta}$ can be naturally interpreted as the quantity $\Phi$, \ie density, of the particle $\vb{x}_{\beta}$. It should be clarified that $\Phi_{\beta} = \Phi_{\beta}(t)$ is still a function of time.
 Notice also that since the kernel $w_h$ has a compact support, in practice the sum in \Cref{eq:DISC-INTERPOLATION} typically does \emph{not} consist of $N$ summands.\sidenote{Note well, if it were the case, all particles would have to be located within each other's support radius, \ie very closely. In SPH, extreme proximity gives rise to a serious instability issue known as \emph{tensile instability} \Cref{sec:INSTABILITY}.}
 
 Having introduced the \emph(discrete) interpolation, we deploy it to approximate the \emph{continuous} interpolation
 
 \begin{equations}[single,*]
-	\sphc{\Phi}\left(t, \vb{x}_i\right) \approx \sphd{\Phi}\left(t, \vb{x}_i\right),
+	\sphc{\Phi}\left(t, \vb{x}_{\alpha}\right) \approx \sphd{\Phi}\left(t, \vb{x}_{\alpha}\right),
 \end{equations}
 
 and one would immediately be interested in the quality of the approximation. It turns out that an involved discrete approximation error is a complicated \emph{open} problem \autocite[p.~3]{vacondioGrandChallengesSmoothed2021a}\autocite{quinlanTruncationErrorMeshfree2006}. The main difficulty lies in the fact that the error analysis depends on the particle positions \textcolor{gray}(that change in time). 
@@ -181,24 +181,24 @@ This section employs the presented particle approximation framework to discretis
 \subsubsection{Gradient of a scalar field}
 \label{sec:GRADIENT}
 
-The gradient of a differentiable scalar field $\Phi\left(t, \vb{x}\right)$ at particle $\vb{x}_i$ can be in the nature of \Cref{eq:DISC-INTERPOLATION} approximated as
+The gradient of a differentiable scalar field $\Phi\left(t, \vb{x}\right)$ at particle $\vb{x}_{\alpha}$ can be in the nature of \Cref{eq:DISC-INTERPOLATION} approximated as
 
 \begin{equations}[columns]
-	\grad_i \Phi\left(t, \vb{x}_i\right) &\approx \sphd{\grad_i \Phi}\left(t, \vb{x}_i\right) = \sum_{j=1}^N \grad_i\left(\Phi\left(t, \vb{x}_j\right)w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)\right)V_j =\\
-						    &= \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right)\grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j =\\
-						    &=\sum_{j=1}^N \Phi_j \grad_i w_{ij} V_j,\label{eq:GRAD}
+	\grad_{\alpha} \Phi\left(t, \vb{x}_{\alpha}\right) &\approx \sphd{\grad_{\alpha} \Phi}\left(t, \vb{x}_{\alpha}\right) = \sum_{\beta=1}^N \grad_{\alpha}\left(\Phi\left(t, \vb{x}_{\beta}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)\right)V_{\beta} =\\
+						    &= \sum_{\beta=1}^N \Phi\left(t, \vb{x}_{\beta}\right)\grad_{\alpha} w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)V_{\beta} =\\
+						    &=\sum_{\beta=1}^N \Phi_{\beta} \grad_{\alpha} w_{\alpha \beta} V_{\beta},\label{eq:GRAD}
 \end{equations}
 
-since $\Phi\left(t, \vb{x}_j\right)$ is independent of $\vb{x}_i$,
+since $\Phi\left(t, \vb{x}_{\beta}\right)$ is independent of $\vb{x}_{\alpha}$,
 
 \subsubsection{Divergence of a vector field}
 \label{sec:DIVERGENCE}
 
-The discrete divergence of a continuously differentiable vector field $\vb{F}\left(t, \vb{x}\right)$ at a particle $\vb{x}_i$ is defined as
+The discrete divergence of a continuously differentiable vector field $\vb{F}\left(t, \vb{x}\right)$ at a particle $\vb{x}_{\alpha}$ is defined as
 
 \begin{equations}[columns,*]
-	\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \sphd{\grad_i \cdot \vb{F}}\left(t, \vb{x}_i\right) = \sum_{j=1}^N\left(\grad_i \Big(\vb{F}\left(t, \vb{x}_j\right)w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)\Big)V_j\right) = \\
-						     &= \sum_{j=1}^N \vb{F}\left(t, \vb{x}_j\right) \cdot \grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right) V_j = \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij} V_j.
+	\grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) &\approx \sphd{\grad_{\alpha} \cdot \vb{F}}\left(t, \vb{x}_{\alpha}\right) = \sum_{\beta=1}^N\left(\grad_{\alpha} \Big(\vb{F}\left(t, \vb{x}_{\beta}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)\Big)V_{\beta}\right) = \\
+						     &= \sum_{\beta=1}^N \vb{F}\left(t, \vb{x}_{\beta}\right) \cdot \grad_{\alpha} w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right) V_{\beta} = \sum_{\beta=1}^N \vb{F}_{\beta} \cdot \grad_{\alpha} w_{\alpha\beta} V_{\beta}.
 \end{equations}
 
 \section{Classical SPH}
@@ -215,15 +215,15 @@ In this and the following sections, we will focus on different ways to discretis
 In the previous, we have derived discrete versions of the $\gradop$ and $\div$ operators 
 
 \begin{equations}[columns,!,numberline=all]
-\grad \Phi\left(t, \vb{x}_i\right) &\approx \sum_{j=1}^N \Phi_j \grad_i w_{ij}V_j,\label{eq:NAIVE-GRAD} \\
-\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij}V_j. \label{eq:NAIVE-DIV}
+\grad \Phi\left(t, \vb{x}_{\alpha}\right) &\approx \sum_{\beta=1}^N \Phi_{\beta} \grad_{\alpha} w_{\alpha\beta}V_{\beta},\label{eq:NAIVE-GRAD} \\
+\grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) &\approx \sum_{\beta=1}^N \vb{F}_{\beta} \cdot \grad_{\alpha} w_{\alpha\beta}V_{\beta}. \label{eq:NAIVE-DIV}
 \end{equations}
 
 However, this is not a unique way to discretise the differential operators --- and particularly \emph{not a good one} either. To demonstrate, take the constant fields $\Phi\left(t, \vb{x}\right) = 1, \vb{F}\left(t, \vb{x}\right) = \vb{e}_x,$ then
 
 \begin{equations}[columns,*]
-	\grad_i \Phi\left(t, \vb{x}_i\right) = 0 &\neq \sum_{j=1}^N \Phi_j \grad_i w_{ij}V_j = \sum_{j=1}^N \grad_i w_{ij}V_j, \\
-	\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) = 0 &\neq \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij}V_j = \sum_{j=1}^N \vb{e}_x \cdot \grad_i w_{ij}V_j.
+	\grad_{\alpha} \Phi\left(t, \vb{x}_{\alpha}\right) = 0 &\neq \sum_{\beta=1}^N \Phi_{\beta} \grad_{\alpha} w_{\alpha\beta}V_{\beta} = \sum_{\beta=1}^N \grad_{\alpha} w_{\alpha\beta}V_{\beta}, \\
+	\grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) = 0 &\neq \sum_{\beta=1}^N \vb{F}_{\beta} \cdot \grad_{\alpha} w_{\alpha\beta}V_{\beta} = \sum_{\beta=1}^N \vb{e}_x \cdot \grad_{\alpha} w_{\alpha\beta}V_{\beta}.
 \end{equations}
 
 The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To refine the approach, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
@@ -237,27 +237,27 @@ The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to appr
 valid for a nonzero continuously differentiable function $\phi$.\sidenote{In what follows, $\phi$ will be the density $\rho$.} We can improve our approximation by discretising in the following manner
 
 \begin{equations}[columns,*]
-	\grad_i \Phi_i &= \phi_i \grad_i \left(\frac{\Phi_i}{\phi_i}\right) + \frac{\Phi_i}{\phi_i} \grad_i\left(\phi_i\right) \approx \\ 
-		       &\approx \phi_i \sum_{j=1}^N \frac{\Phi_j}{\phi_j} \grad_i w_{ij} V_j + \frac{\Phi_i}{\phi_i} \sum_{j=1}^N \phi_j \grad_i w_{ij} V_j =\\
-		       &= \phi_i \sum_{j=1}^N \frac{\Phi_j}{\phi_j^{2}} \phi_j \grad_i w_{ij} V_j + \phi_i \sum_{j=1}^N \frac{\Phi_i}{\phi_i^{2}}\phi_j \grad_i w_{ij}V_j = \\
-	       &= \phi_i \sum_{j=1}^N \left(\frac{\Phi_i}{\phi_i^{2}} + \frac{\Phi_j}{\phi_j^{2}}\right)\grad_i w_{ij}\phi_j V_j,
+	\grad_{\alpha} \Phi_{\alpha} &= \phi_{\alpha} \grad_{\alpha} \left(\frac{\Phi_{\alpha}}{\phi_{\alpha}}\right) + \frac{\Phi_{\alpha}}{\phi_{\alpha}} \grad_{\alpha}\left(\phi_{\alpha}\right) \approx \\
+		       &\approx \phi_{\alpha} \sum_{\beta=1}^N \frac{\Phi_{\beta}}{\phi_{\beta}} \grad_{\alpha} w_{\alpha\beta} V_{\beta} + \frac{\Phi_{\alpha}}{\phi_{\alpha}} \sum_{\beta=1}^N \phi_{\beta} \grad_{\alpha} w_{\alpha\beta} V_{\beta} =\\
+		       &= \phi_{\alpha} \sum_{\beta=1}^N \frac{\Phi_{\beta}}{\phi_{\beta}^{2}} \phi_{\beta} \grad_{\alpha} w_{\alpha\beta} V_{\beta} + \phi_{\alpha} \sum_{\beta=1}^N \frac{\Phi_{\alpha}}{\phi_{\alpha}^{2}}\phi_{\beta} \grad_{\alpha} w_{\alpha\beta}V_{\beta} = \\
+	       &= \phi_{\alpha} \sum_{\beta=1}^N \left(\frac{\Phi_{\alpha}}{\phi_{\alpha}^{2}} + \frac{\Phi_{\beta}}{\phi_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta}\phi_{\beta} V_{\beta},
 \end{equations}
 
 and 
 
 \begin{equations}[columns,*]
-\grad_i \cdot \vb{F}_i &= \frac{1}{\phi_i} \grad_i \cdot \left(\phi_i \vb{F}_i\right) - \frac{1}{\phi_i} \vb{F}_i \cdot \grad_i \phi_i \approx \\
-                       &\approx \frac{1}{\phi_i} \sum_{j=1}^N \phi_j \vb{F}_j \cdot \grad_i w_{ij} V_j - \frac{1}{\phi_i} \vb{F}_i \cdot \sum_{j=1}^N \phi_j \grad_i w_{ij} V_j =\\
-		       &= \frac{1}{\phi_i} \sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i\right)  \cdot \grad_i w_{ij} \phi_j V_j.
+\grad_{\alpha} \cdot \vb{F}_{\alpha} &= \frac{1}{\phi_{\alpha}} \grad_{\alpha} \cdot \left(\phi_{\alpha} \vb{F}_{\alpha}\right) - \frac{1}{\phi_{\alpha}} \vb{F}_{\alpha} \cdot \grad_{\alpha} \phi_{\alpha} \approx \\
+                       &\approx \frac{1}{\phi_{\alpha}} \sum_{\beta=1}^N \phi_{\beta} \vb{F}_{\beta} \cdot \grad_{\alpha} w_{\alpha\beta} V_{\beta} - \frac{1}{\phi_{\alpha}} \vb{F}_{\alpha} \cdot \sum_{\beta=1}^N \phi_{\beta} \grad_{\alpha} w_{\alpha\beta} V_{\beta} =\\
+		       &= \frac{1}{\phi_{\alpha}} \sum_{\beta=1}^N \left(\vb{F}_{\beta} - \vb{F}_{\alpha}\right)  \cdot \grad_{\alpha} w_{\alpha\beta} \phi_{\beta} V_{\beta}.
 \end{equations}
 
-Thanks to the $\vb{F}_j - \vb{F}_i$ term in the approximate divergence operator, we see that the discretised divergence operator correctly vanishes for constant fields. The alternate discretised gradient operator does \emph{not vanish} for constant fields, however, it possesses a symmetric property in the summands, which will prove useful in what follows.
+Thanks to the $\vb{F}_{\beta} - \vb{F}_{\alpha}$ term in the approximate divergence operator, we see that the discretised divergence operator correctly vanishes for constant fields. The alternate discretised gradient operator does \emph{not vanish} for constant fields, however, it possesses a symmetric property in the summands, which will prove useful in what follows.
 
 All in all, the discretisation
 
 \begin{equations}[columns,!,numberline=all]
-\grad_i \Phi\left(t, \vb{x}_j\right) &\approx \phi_i \sum_{j=1}^N \left(\frac{\Phi_i}{\phi_i^{2}} + \frac{\Phi_j}{\phi_j^{2}}\right)\phi_j\grad_i w_{ij}\phi _jV_j, \label{eq:IMPROVED-GRAD} \\
-\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \frac{1}{\phi_i}\sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i \right) \cdot \grad_i w_{ij} \phi_j V_j, \label{eq:IMPROVED-DIV}
+\grad_{\alpha} \Phi\left(t, \vb{x}_{\alpha}\right) &\approx \phi_{\alpha} \sum_{\beta=1}^N \left(\frac{\Phi_{\alpha}}{\phi_{\alpha}^{2}} + \frac{\Phi_{\beta}}{\phi_{\beta}^{2}}\right)\phi_{\beta}\grad_{\alpha} w_{\alpha\beta}\phi_{\beta}V_{\beta}, \label{eq:IMPROVED-GRAD} \\
+\grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) &\approx \frac{1}{\phi_{\alpha}}\sum_{\beta=1}^N \left(\vb{F}_{\beta} - \vb{F}_{\alpha} \right) \cdot \grad_{\alpha} w_{\alpha\beta} \phi_{\beta} V_{\beta}, \label{eq:IMPROVED-DIV}
 \end{equations}
 
 will be preferred.
@@ -273,26 +273,26 @@ Using the improved divergence operators \Cref{eq:IMPROVED-DIV} with the auxiliar
 can be rewritten as
 
 \begin{equations}[columns,*]
-	\dv{\rho_i}{t} &= - \frac{\rho_i}{\rho_i} \sum_{j=1}^N \left(\vb{v}_j - \vb{v}_i\right) \cdot \grad_i w_{ij} \rho_j V_j = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right)\cdot \grad_i w_{ij},
+	\dv{\rho_{\alpha}}{t} &= - \frac{\rho_{\alpha}}{\rho_{\alpha}} \sum_{\beta=1}^N \left(\vb{v}_{\beta} - \vb{v}_{\alpha}\right) \cdot \grad_{\alpha} w_{\alpha\beta} \rho_{\beta} V_{\beta} = \sum_{\beta=1}^N m_{\beta} \left(\vb{v}_{\alpha} - \vb{v}_{\beta}\right)\cdot \grad_{\alpha} w_{\alpha\beta},
 \end{equations}
 
-where we have used \emph{a possible definition} of the particle's density $\rho_i = \frac{m_i}{V_i}$. The discrete balance of mass
+where we have used \emph{a possible definition} of the particle's density $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. The discrete balance of mass
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:DISCR-MASS}
-\dv{\rho_i}{t} = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right)\cdot \grad_i w_{ij}, 
+\dv{\rho_{\alpha}}{t} = \sum_{\beta=1}^N m_{\beta} \left(\vb{v}_{\alpha} - \vb{v}_{\beta}\right)\cdot \grad_{\alpha} w_{\alpha\beta},
 \end{equations}
 
-is thus a system of $N$ ordinary differential equations, whose solution yields the densities $\rho_i$. 
+is thus a system of $N$ ordinary differential equations, whose solution yields the densities $\rho_{\alpha}$. 
 
 This is not the only way we can obtain the densities. An \emph{alternative} formulation defines the density directly as a kernel sum: notice that the properties of the interpolation kernel $w_h$ \Cref{tab:kernel-properties} allow us to interpret the sum
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-density-sum}
-\rho_i = \sum_{j=1}^N m_j w_{ij},
+\rho_{\alpha} = \sum_{\beta=1}^N m_{\beta} w_{\alpha\beta},
 \end{equations}
 
-as a \emph{weighted average} of the particle masses.\sidenote{The closer the particles are to the particle $\vb{x}_i$, the larger the weight.} With this approach, we replace the need to \textcolor{gray}{numerically} solve the ODEs \Cref{eq:DISCR-MASS} by a summation procedure.\sidenote{Recall again that in practice, sums including an interpolation kernel \emph{do not} have $N$ nonzero summands, as $w_h$ is compactly supported.} This approach becomes particularly useful in formulations where the density field is not the primary quantity of interest; for diagnostic purposes, one can recover the densities at an arbitrary integration step with a single sum rather than solving for the densities all along. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable integrator, numerical simulations of isentropic flows in this formulation are \emph{time-reversible}.
+as a \emph{weighted average} of the particle masses.\sidenote{The closer the particles are to the particle $\vb{x}_{\alpha}$, the larger the weight.} With this approach, we replace the need to \textcolor{gray}{numerically} solve the ODEs \Cref{eq:DISCR-MASS} by a summation procedure.\sidenote{Recall again that in practice, sums including an interpolation kernel \emph{do not} have $N$ nonzero summands, as $w_h$ is compactly supported.} This approach becomes particularly useful in formulations where the density field is not the primary quantity of interest; for diagnostic purposes, one can recover the densities at an arbitrary integration step with a single sum rather than solving for the densities all along. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable integrator, numerical simulations of isentropic flows in this formulation are \emph{time-reversible}.
 
 Note that the two presented formulations are \emph{not equivalent} --- in general, they result in different densities.
 
@@ -308,77 +308,77 @@ Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:I
 can be recast to the form
 
 \begin{equations}[columns,*]
-	\dv{\vb{v_i}}{t} &= -\frac{1}{\rho_i} \rho_i \sum_{j=1}^N\left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j}^{2}\right)\rho_j V_j \grad_i w_{ij} = \sum_{j=1}^N m_j\left(\frac{p_i}{\rho_i}^{2} + \frac{p_j}{\rho_j}^{2}\right)\grad_i w_{ij},
+	\dv{\vb{v_{\alpha}}}{t} &= -\frac{1}{\rho_{\alpha}} \rho_{\alpha} \sum_{\beta=1}^N\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}}^{2}\right)\rho_{\beta} V_{\beta} \grad_{\alpha} w_{\alpha\beta} = \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}}^{2} + \frac{p_{\beta}}{\rho_{\beta}}^{2}\right)\grad_{\alpha} w_{\alpha\beta},
 \end{equations}
 
-where we have used the fact $\rho_i = \frac{m_i}{V_i}$. Since $\rho_i = \rho_i(t)$ is a function of time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_i(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_i\right)$ at a fixed \emph{material} point $\vb{x}_i$.}
+where we have used the fact $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. Since $\rho_{\alpha} = \rho_{\alpha}(t)$ is a function of time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_{\alpha}(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_{\alpha}\right)$ at a fixed \emph{material} point $\vb{x}_{\alpha}$.}
 
 Notice the structure of the discretised balance of linear momentum. If we denote
 
 \begin{equations}[columns,*]
-	\vb{F}_{j \to i} &\coloneq - m_i m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right)\grad_i w_{ij}, \\
-	\vb{F}_i &\coloneq m_i \vb{g},
+	\vb{F}_{\beta \to \alpha} &\coloneq - m_{\alpha} m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta}, \\
+	\vb{F}_{\alpha} &\coloneq m_{\alpha} \vb{g},
 \end{equations}
 
 then we can write
 
 \begin{equations}[columns,*]
-	m_i \dv{\vb{v}_i}{t} &= - m_i \sum_{j=1}^N m_j\left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right)\grad_i w_{ij} + \vb{g} = \\
-			     &= - \sum_{j=1}^N m_i m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right) \grad_i w_{ij} + \vb{g} = \sum_{j=1}^N \vb{F}_{j \to i} + \vb{F}_i.
+	m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= - m_{\alpha} \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta} + \vb{g} = \\
+			     &= - \sum_{\beta=1}^N m_{\alpha} m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right) \grad_{\alpha} w_{\alpha\beta} + \vb{g} = \sum_{\beta=1}^N \vb{F}_{\beta \to \alpha} + \vb{F}_{\alpha}.
 \end{equations}
 
-We see that $\vb{F}_{j \to i}$ is the \emph{internal} pressure force through which the particle $j$ acts on the particle $i$ and $\vb{F}_i$ is the gravity force acting on the particle $i$, \ie an \emph{external} force acting on the particle $i$. Moreover, observe that it holds
+We see that $\vb{F}_{\beta \to \alpha}$ is the \emph{internal} pressure force through which the particle $\beta$ acts on the particle $\alpha$ and $\vb{F}_{\alpha}$ is the gravity force acting on the particle $\alpha$, \ie an \emph{external} force acting on the particle $\alpha$. Moreover, observe that it holds
 
 \begin{equations}[single,*]
-\vb{F}_{j \to i} = - m_i m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j^{2}}\right)\grad_i w_{ij} = m_j m_i  \left(\frac{p_j}{\rho_j^{2}}+ \frac{p_i}{\rho_i^{2}}\right) \grad_j w_{ji} = - \vb{F}_{i \to j},
+\vb{F}_{\beta \to \alpha} = - m_{\alpha} m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta} = m_{\beta} m_{\alpha}  \left(\frac{p_{\beta}}{\rho_{\beta}^{2}}+ \frac{p_{\alpha}}{\rho_{\alpha}^{2}}\right) \grad_{\beta} w_{\beta\alpha} = - \vb{F}_{\alpha \to \beta},
 \end{equations}
 
-where we have used $w_{ij} = w_{ji}, \grad_i w_{ij} = - \grad_j w_{ij}$, both due to the radial symmetry of $w_h$.\sidenote{Recall that $w_{ij} = w_h\left(\abs{\vb{r}_i - \vb{r}_j}\right)$.} Therefore,
+where we have used $w_{\alpha\beta} = w_{\beta\alpha}, \grad_{\alpha} w_{\alpha\beta} = - \grad_{\beta} w_{\alpha\beta}$, both due to the radial symmetry of $w_h$.\sidenote{Recall that $w_{\alpha\beta} = w_h\left(\abs{\vb{r}_{\alpha} - \vb{r}_{\beta}}\right)$.} Therefore,
 
 \begin{equations}[single,*]
-\vb{F}_{j \to i} = - \vb{F}_{i \to j},
+\vb{F}_{\beta \to \alpha} = - \vb{F}_{\alpha \to \beta},
 \end{equations}
 
 and we have recovered \emph{Newton's third law} at the \emph{discrete level.} In an isolated system, \ie in the absence of external forces, Newton's third law implies the \emph{conservation of total linear momentum.}\sidenote{The total momentum of the isolated system reads as \begin{equations}[single,*]
-\sum_{i=1}^N m_i \vb{v}_i,
+\sum_{\alpha=1}^N m_{\alpha} \vb{v}_{\alpha},
 \end{equations}
 and so
 \begin{equations}[columns,*]
-	\dv{t} \sum_{i=1}^N m_i \vb{v}_i &= \sum_{i=1}^N m_i \dv{\vb{v}_i}{t} =\\ 
-	&=\sum_{i=1}^N \sum_{j=1}^N \vb{F}_{j \to i} =  \sum_{j=1}^N \sum_{i=1}^N \vb{F}_{i \to j}\\
-	&=- \sum_{i=1}^N \sum_{j=1}^N \vb{F}_{j \to i},
+	\dv{t} \sum_{\alpha=1}^N m_{\alpha} \vb{v}_{\alpha} &= \sum_{\alpha=1}^N m_{\alpha} \dv{\vb{v}_{\alpha}}{t} =\\
+	&=\sum_{\alpha=1}^N \sum_{\beta=1}^N \vb{F}_{\beta \to \alpha} =  \sum_{\beta=1}^N \sum_{\alpha=1}^N \vb{F}_{\alpha \to \beta}\\
+	&=- \sum_{\alpha=1}^N \sum_{\beta=1}^N \vb{F}_{\beta \to \alpha},
 \end{equations}
 where we used Newton's second law in the absence of external forces. In total, we thus see it must hold
 \begin{equations}[single,*]
-	\dv{t} \sum_{i=1}^N m_i \vb{v}_i \equiv \vb{0},
+	\dv{t} \sum_{\alpha=1}^N m_{\alpha} \vb{v}_{\alpha} \equiv \vb{0},
 \end{equations}
 therefore, the total momentum is conserved.} This conservation property would \emph{not hold} had we used the naive discrete gradient \Cref{eq:NAIVE-GRAD} instead of the improved form \Cref{eq:IMPROVED-GRAD}.
 
 \subsection{Complete system}
 \label{sec:CLASSIC-COMPLETE}
 
-To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we deploy the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_i} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
+To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we deploy the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_{\alpha}} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:CLASSICAL-SPH}
-\dv{\vb{v}_i}{t} &= - \sum_{j=1}^N m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_i^{2}}\right) + \vb{g}, \\
-p_i\left(\rho_i, T_i\right) &= R \rho_i T_i, \\
-\theta_i &= \, \text{const},
+\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\alpha}^{2}}\right) + \vb{g}, \\
+p_{\alpha}\left(\rho_{\alpha}, T_{\alpha}\right) &= R \rho_{\alpha} T_{\alpha}, \\
+\theta_{\alpha} &= \, \text{const},
 \end{equations}
 
 together with an equation for density \Cref{eq:DISCR-MASS}
 
 \begin{equations}[single,*]
-\dv{\rho_i}{t} = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right) \cdot \grad_i w_{ij},
+\dv{\rho_{\alpha}}{t} = \sum_{\beta=1}^N m_{\beta} \left(\vb{v}_{\alpha} - \vb{v}_{\beta}\right) \cdot \grad_{\alpha} w_{\alpha\beta},
 \end{equations}
 
 or \Cref{eq:SPH-density-sum}
 
 \begin{equations}[single,*]
-\rho_i = \sum_{j=1}^N m_j w_{ij}.
+\rho_{\alpha} = \sum_{\beta=1}^N m_{\beta} w_{\alpha\beta}.
 \end{equations}
 
-In the above equations, the index $i \in \{1, \dots, N\}$ runs over all particles.
+In the above equations, the index $\alpha \in \{1, \dots, N\}$ runs over all particles.
 
 \section{Hamiltonian formulation}
 \label{sec:HAMILTON}
@@ -400,11 +400,17 @@ The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechan
 The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, \ie distributions representing the Fréchet differential. For a concise introduction, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}.
 
 In what follows, we will for brevity of notation omit the dependence of $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ on $\left(t, \vb{X}\right)$ and simply write $\vb{x}, \vb{M}$. One can check that the mapping $\left(F, G\right) \mapsto \pbr[L]{F}{G}$ is in fact a skew-symmetric bilinear form that satisfies the Jacobi identity and Leibniz rule.\sidenote{A bilinear form is skew symmetric provided
-	$\pbr[L]{F}{G} = - \pbr[L]{G}{F}$,
-	Jacobi identity the property
-	$\pbr[L]{F}{\pbr[L]{G}{H}} + \textrm{cycl.} = 0$,
+	\begin{equations}[single,*]
+	\pbr[L]{F}{G} = - \pbr[L]{G}{F},
+	\end{equations}
+	Jacobi identity is the property
+	\begin{equations}[single,*]
+	\pbr[L]{F}{\pbr[L]{G}{H}} + \textrm{cycl.} = 0,
+	\end{equations}
 	and Leibniz rule holds when
-	$\pbr[L]{FG,H} = F\pbr[L]{G}{H} + \pbr[L]{F}{H}G$.
+	\begin{equations}[single,*]
+	\pbr[L]{FG}{H} = F\pbr[L]{G}{H} + \pbr[L]{F}{H}G.
+	\end{equations}
 }
 
 Given an Fréchet differentiable functional $F = F\left(t, \vb{x}, \vb{M}\right)$, its evolution in time is given by \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020} 
@@ -414,87 +420,87 @@ Given an Fréchet differentiable functional $F = F\left(t, \vb{x}, \vb{M}\right)
 \tdot{F} = \partial_t F + \pbr[L]{F}{\totenL},
 \end{equations}
 
-where $\totenL$ is the functional of total energy expressed using the Lagrangian state variables $\vb{x}\left(\vb{X}\right), \vb{M}\left(\vb{x}\right)$.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.} In particualr, for a functional $F\left(\vb{x}, \vb{M}\right)$ that explicitly does not depend on time, we can calculate using the chain rule
+where $\totenL$ is the functional of total energy expressed using the Lagrangian state variables $\vb{x}, \vb{M}$.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.} In particular, for a functional $F\left(\vb{x}, \vb{M}\right)$ that explicitly does not depend on time, we can calculate using the chain rule
 
 \begin{equations}[single,*]
-	\tdot{F}\left(\vb{x}, \vb{M}\right) = \int\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}},
+	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}},
 \end{equations}
 
 on the other hand \Cref{eq:TIME-EVOL} dictates
 
 \begin{equations}[single,*]
-	\tdot{F}\left(\vb{x}, \vb{M}\right) = \int\left(\fdv{F}{x^i} \fdv{\totenL}{M_i} - \fdv{F}{M_i} \fdv{\totenL}{x^i}\right)\dd{\vb{X}},
+	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint\left(\fdv{F}{x^i} \fdv{\totenL}{M_i} - \fdv{F}{M_i} \fdv{\totenL}{x^i}\right)\dd{\vb{X}},
 \end{equations}
 
-since $F$ were arbitrary, we conclude that it must hold
+since $F$ were arbitrary, we conclude \autocite[p.~3]{pavelkaHamiltonianContinuumMechanics2020}that it must hold
 
 \begin{equations}[columns,!,numberline=all]
 \partial_t x^i\left(t, \vb{X}\right) &= \fdv{\totenL}{M_i\left(t, \vb{X}\right)},\label{eq:HAMILTON-POSITION}\\
 \partial_t M_i\left(t, \vb{X}\right) &= -\fdv{\totenL}{x^i\left(t, \vb{X}\right)}\label{eq:HAMILTON-MOMENTA}.
 \end{equations}
 
-The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require the knowledge of the total energy of the continuum in the Lagrangiam frame. In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rhoL$ and the internal energy $\eL$, \ie so on a general level we can write
+The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require the knowledge of the total energy of the continuum expressed using the Lagrangian state variables.
+
+In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rhoL$ and the internal energy $\eL$, \ie so on a general level we can write
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGRANGIAN-ENERGY}
-\totenL = \int\left(\frac{\abs{M}^{2}}{2\rhoL} + \eL\left(\vb{X}\right)\right)\dd{\vb{X}}.
+\totenL = \bigint\left(\frac{\abs{M}^{2}}{2\rhoL} + \eL\left(\vb{X}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
-Let us summarize briefly and hence provide a map of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} Obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. 
+We briefly summarize the structure of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} To obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. The SPH bracket and energy are obtained by reduction and approximation of their continuum counterparts respectively.
 
 \subsection{SPH discretisation}
 \label{sec:SPH-discretisation}
 
-Let $\Omega \subset \R^d, d = 2, 3$ be the region occupied by the continuum. Denote $\{\Omega_i\}_{i=1}^N, N \in \N$ a pairwise disojint \textcolor{gray}{finite} partiton of $\Omega$, \ie $\Omega = \bigcup_{i=1}^N \Omega_j$, $\Omega_i \cap \Omega_j = \emptyset$ for $i \neq j$. The sets $\Omega_i$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_i$, 
+Let $\Omega \subset \R^d, d = 2, 3$ be the region occupied by the continuum. Denote $\{\Omega_{\alpha}\}_{\alpha=1}^N, N \in \N$ a pairwise disjoint \textcolor{gray}{finite} partition of $\Omega$, \ie $\Omega = \bigcup_{\alpha=1}^N \Omega_{\beta}$, $\Omega_{\alpha} \cap \Omega_{\beta} = \emptyset$ for $\alpha \neq \beta$. The sets $\Omega_{\alpha}$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_{\alpha}$,
 
 \begin{equations}[single,*]
-\chi_i\left(\vb{X}\right) = \begin{cases}
-	\frac{1}{V_i}, \vb{X} &\in \Omega_i,\\
-  0,  \vb{X} &\notin \Omega_i
-\end{cases}, V_i = \int_{\Omega_i} \dd{\vb{X}},
+\chi_{\alpha}\left(\vb{X}\right) = \begin{cases}
+	\frac{1}{V_{\alpha}}, \vb{X} &\in \Omega_{\alpha},\\
+  0,  \vb{X} &\notin \Omega_{\alpha}
+\end{cases}, V_{\alpha} = \int_{\Omega_{\alpha}} \dd{\vb{X}},
 \end{equations}
-we can define the \emph{SPH position} $\vb{x}_i\left(t\right)$ as
+we can define the \emph{SPH position} $\vb{x}_{\alpha}\left(t\right)$ as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-position}
-\vb{x}_i(t) = \int_{\Omega}\vb{x}\left(t, \vb{X}\right) \chi_i\left(\vb{X}\right)\dd{\vb{X}},
+\vb{x}_{\alpha}(t) = \int_{\Omega}\vb{x}\left(t, \vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}},
 \end{equations}
 
-and the \emph{SPH momentum} $\vb{M}_i\left(t, \vb{X}\right)$ as
+and the \emph{SPH momentum} $\vb{M}_{\alpha}\left(t, \vb{X}\right)$ as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-momentum}
-\vb{M}_i\left(t\right) = \int_{\Omega}\vb{M}\left(t, \vb{X}\right)\chi_i\left(\vb{X}\right)\dd{\vb{X}}.
+\vb{M}_{\alpha}\left(t\right) = \int_{\Omega}\vb{M}\left(t, \vb{X}\right)\chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
 \end{equations}
 
-Naturally, the SPH positions and momenta $\left(\vb{x}_i, \vb{M}_i\right)$ will replace the state variables $\left(\vb{x}, \vb{M}\right)$ of the continuum mechanics, and so we will refer to them as the SPH state variables.
+Naturally, the SPH positions and momenta $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ will replace the state variables $\left(\vb{x}, \vb{M}\right)$ of the continuum mechanics, and so we will refer to them as the SPH state variables.
 
 \subsubsection{SPH bracket}
 \label{sec:SPH-bracket}
 
-Let $F\left(\vb{x}_i, \vb{M}_i\right), G\left(\vb{x}_i, \vb{M}_i\right)$ be two arbitrary \textcolor{gray}{sufficiently regular} functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as 
+Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary \textcolor{gray}{sufficiently regular} functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as
 
-% FIX: HERE ARE a, b, FOR PARTICLES
-% TODO: Think what to use for parcticles
 \begin{equations}[lines]
 \label{eq:TERM}
-\pbr[L]{F}{G} = \int\left(\fdv{F}{x^i}\fdv{G}{M_i} - \fdv{F}{M_i} \fdv{G}{x^i}\right)\dd{\vb{X}} = \\ = \sum_{a,b}\int\left(\left(\pdv{F}{x_a^j} \fdv{x^j_a}{x^i} + \pdv{F}{M_{b,j}}\fdv{M_{b,j}}{x^i}\right)\left(\pdv{G}{M_{b,j}}\fdv{M_{b,j}}{M_i} + \pdv{G}{x^j_a}\fdv{x^j_a}{M_i}\right)\right)\dd{\vb{X}} + \\ - \sum_{a,b} \int\left(\left(\pdv{F}{M_{b,j}} \fdv{M_{b,j}}{M_i} + \pdv{F}{x_a^j} \fdv{x_a^j}{M_i}\right)\left(\pdv{G}{x^j_a} \fdv{x_a^j}{x^i} + \pdv{G}{M_{b,j}} \fdv{M_{b, j}}{x_i}\right)\right)\dd{\vb{X}}.
+\pbr[L]{F}{G} = \int\left(\fdv{F}{x^i}\fdv{G}{M_i} - \fdv{F}{M_i} \fdv{G}{x^i}\right)\dd{\vb{X}} = \\ = \sum_{\alpha,\beta}\int\left(\left(\pdv{F}{x_{\alpha}^j} \fdv{x^j_{\alpha}}{x^i} + \pdv{F}{M_{\beta,j}}\fdv{M_{\beta,j}}{x^i}\right)\left(\pdv{G}{M_{\beta,j}}\fdv{M_{\beta,j}}{M_i} + \pdv{G}{x^j_{\alpha}}\fdv{x^j_{\alpha}}{M_i}\right)\right)\dd{\vb{X}} + \\ - \sum_{\alpha,\beta} \int\left(\left(\pdv{F}{M_{\beta,j}} \fdv{M_{\beta,j}}{M_i} + \pdv{F}{x_{\alpha}^j} \fdv{x_{\alpha}^j}{M_i}\right)\left(\pdv{G}{x^j_{\alpha}} \fdv{x_{\alpha}^j}{x^i} + \pdv{G}{M_{\beta,j}} \fdv{M_{\beta, j}}{x_i}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
-Our goal is to simplify \Cref{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_i, \vb{M}_i$. The procedure requires the evaluation of the functional derivatives of $x^j_a, M_{b,j}$ w.r.t $M_i, x^i$, which is a straightforward computation using the definitions \Cref{eq:SPH-momentum}, \Cref{eq:SPH-position}, but rather a lengthy one and such it will be skipped. It can however be found in 
+Our goal is to simplify \Cref{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$. The procedure requires the evaluation of the functional derivatives of $x^j_{\alpha}, M_{\beta,j}$ w.r.t $M_i, x^i$, which is a straightforward computation using the definitions \Cref{eq:SPH-momentum}, \Cref{eq:SPH-position}, but rather a lengthy one and such it will be skipped. It can however be found in 
 % TODO: LINK TO BACHELOR
 
 The expression \Cref{eq:TERM} can be rewritten to obtain
 
-\begin{equations}[single,*] 
-	\pbr[L]{F\left(\vb{x}_a, \vb{M}_a\right)}{G\left(\vb{x}_a, \vb{M}_a\right)} = \sum_{a}\left(\pdv{F}{x^{i_a}\pdv{G}{M_{a,i}}} - \pdv{F}{M_{a,i}}\pdv{G}{x^i_a}\right).
+\begin{equations}[single,*]
+	\pbr[L]{F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)}{G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)} = \sum_{\alpha}\left(\pdv{F}{x^{i}_{\alpha}}\pdv{G}{M_{\alpha,i}} - \pdv{F}{M_{\alpha,i}}\pdv{G}{x^i_{\alpha}}\right).
 \end{equations}
 
-It is hence natural to define the \emph{SPH bracket} for any two functionals $F\left(\vb{x}_a, \vb{M}_a\right), G\left(\vb{x}_a, \vb{M}_a\right)$ of the SPH state variables through.
+It is hence natural to define the \emph{SPH bracket} for any two functionals $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ of the SPH state variables through.
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-bracket}
-\pbr[SPH]{F\left(\vb{x}_a, \vb{M}_a\right)}{G\left(\vb{x}_a, \vb{M}_a\right)} \coloneq \sum_{a}\left(\pdv{F}{x^i_a}\pdv{G}{M_{a,i}} - \pdv{F}{M_{a,i}}\pdv{G}{x^i_a}\right),
+\pbr[SPH]{F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)}{G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)} \coloneq \sum_{\alpha}\left(\pdv{F}{x^i_{\alpha}}\pdv{G}{M_{\alpha,i}} - \pdv{F}{M_{\alpha,i}}\pdv{G}{x^i_{\alpha}}\right),
 \end{equations}
 
 \subsubsection{SPH energy functional}
@@ -506,14 +512,14 @@ Now we aim to rewrite \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH state vari
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-lagrangian-density}
-\rhoL_a = \frac{m_a}{V_a},
+\rhoL_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}},
 \end{equations}
 
 where
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-mass}
-m_a = \int_{\Omega}\rhoL\left(\vb{X}\right) \chi_a\left(\vb{X}\right)\dd{\vb{X}}.
+m_{\alpha} = \int_{\Omega}\rhoL\left(\vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
 \end{equations}
 
 Assume the density can be expressed\sidenote{\todo{IMPROVE} This assumption is basic in continuum thermodynamics.} as a function of density $\rhoL$, and entropy $\entropyL$. $\eL = \eL(\rhoL, \entropyL)$. Using the transformation of density and the extensively of the internal energy, we see that
@@ -559,25 +565,25 @@ The choice
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:x_PE}
-	x_i = m_i A_i^{\frac{1}{\gamma}},
+	x_{\alpha} = m_{\alpha} A_{\alpha}^{\frac{1}{\gamma}},
 \end{equations}
-gives the pressure $P_i$ as
+gives the pressure $P_{\alpha}$ as
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:P_PE}
-	P_i = \left(\sum_{j=1}^N m_j A_j^{\frac{1}{\gamma}} w_{ij}(h_i)\right)^{\gamma}
+	P_{\alpha} = \left(\sum_{\beta=1}^N m_{\beta} A_{\beta}^{\frac{1}{\gamma}} w_{\alpha\beta}(h_{\alpha})\right)^{\gamma}
 \end{equations}
 and the evolution equations as
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:v_PE}
-	\dv{\vb{v}_i}{t} = - \sum_{j=1}^N m_j \left(A_i A_j\right)^{\frac{1}{\gamma}}\left(\frac{f_{i}P_i}{P_{i}^{\frac{2}{\gamma}}} \nabla_i w_{ij}\left(h_i\right) + \frac{f_{j}P_j}{P^{\frac{2}{\gamma}}_{j}} \nabla_i w_{ij}\left(h_j\right)\right),
+	\dv{\vb{v}_{\alpha}}{t} = - \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{\frac{1}{\gamma}}\left(\frac{f_{\alpha}P_{\alpha}}{P_{\alpha}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}P_{\beta}}{P^{\frac{2}{\gamma}}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right),
 \end{equations}
 with
 
 \begin{equations}[single,*]
 	\label{eq:f_PE}
-	f_{i} =  \left(1 + \frac{h_i}{2 n_i} \pdv{n_i}{h_i}\right)^{-1}
+	f_{\alpha} =  \left(1 + \frac{h_{\alpha}}{2 n_{\alpha}} \pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1}
 \end{equations}
 
 \subsubsection{Pressure-potential temperature}
@@ -626,27 +632,27 @@ Rewriting \ref{eq:x_PE} using \ref{eq:theta_A} we obtain
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:x_Ptheta}
-x_i = \frac{m_i}{\tilde{\theta}_0} \theta_i.
+x_{\alpha} = \frac{m_{\alpha}}{\tilde{\theta}_0} \theta_{\alpha}.
 \end{equations}
 
 Using this quantity the pressure \ref{eq:P_PE} can then be expressed as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:P_Ptheta}
-P_i = \left(\sum_{j=1}^N \frac{m_j}{\tilde{\theta_0}} \theta_j w_{ij}\left(h_i\right)\right)^{\gamma}.
+P_{\alpha} = \left(\sum_{\beta=1}^N \frac{m_{\beta}}{\tilde{\theta_0}} \theta_{\beta} w_{\alpha\beta}\left(h_{\alpha}\right)\right)^{\gamma}.
 \end{equations}
 
 From \ref{eq:v_PE} we obtain
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:v_Ptheta}
-\dv{\vb{v}_i}{t} = - \sum_{j=1}^N m_j \frac{\theta_i \theta_j}{\tilde{\theta}_0^{2}}\left(\frac{f_{i}P_i}{P_i^{\frac{2}{\gamma}}} \nabla_i w_{ij}\left(h_i\right) + \frac{f_{j}P_j}{P_j^{\frac{2}{\gamma}}} \nabla_i w_{ij}\left(h_j\right)\right),
+\dv{\vb{v}_{\alpha}}{t} = - \sum_{\beta=1}^N m_{\beta} \frac{\theta_{\alpha} \theta_{\beta}}{\tilde{\theta}_0^{2}}\left(\frac{f_{\alpha}P_{\alpha}}{P_{\alpha}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}P_{\beta}}{P_{\beta}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right),
 \end{equations}
 
 with \ref{eq:f_PE} unchanged
 \begin{equations}[single,!,numberline=all]
 \label{eq:f_Ptheta}
-	f_{i} =  \left(1 + \frac{h_i}{2 n_i} \pdv{n_i}{h_i}\right)^{-1}.
+	f_{\alpha} =  \left(1 + \frac{h_{\alpha}}{2 n_{\alpha}} \pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1}.
 \end{equations}
 
 \section{Implementation specifics}
