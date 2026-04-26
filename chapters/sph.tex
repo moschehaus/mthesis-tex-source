@@ -388,13 +388,13 @@ The conservation property we discovered in the previous section aligns with our 
 \subsection{Poisson brackets}
 \label{sec:BRACKETS}
 
-Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, configuration manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, configuration manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Eulerian momentum density per Lagrangian volume.. The mappings $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ will be called the \emph{Lagrangian state variables}.
+Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X} \in \Omega_0$ the elements of the Lagrangian, \ie reference, configuration manifold $\Omega_0$ and by $\vb{x}$ the elements of the Eulerian, \ie current, configuration manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Eulerian momentum density per Lagrangian volume.. The mappings $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ will be called the \emph{Lagrangian state variables}.
 
 The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary Fréchet differentiable functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGR-BRACKET}
-\pbr[L]{F}{G} \coloneq \bigint\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right)\dd{\vb{X}}.
+\pbr[L]{F}{G} \coloneq \bigint_{\Omega_0}\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
 The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, \ie distributions representing the Fréchet differential. For a concise introduction, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}.
@@ -423,13 +423,13 @@ Given an Fréchet differentiable functional $F = F\left(t, \vb{x}, \vb{M}\right)
 where $\totenL$ is the functional of total energy expressed using the Lagrangian state variables $\vb{x}, \vb{M}$.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.} In particular, for a functional $F\left(\vb{x}, \vb{M}\right)$ that explicitly does not depend on time, we can calculate using the chain rule
 
 \begin{equations}[single,*]
-	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}},
+	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint_{\Omega_0}\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}},
 \end{equations}
 
 on the other hand \Cref{eq:TIME-EVOL} dictates
 
 \begin{equations}[single,*]
-	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint\left(\fdv{F}{x^i} \fdv{\totenL}{M_i} - \fdv{F}{M_i} \fdv{\totenL}{x^i}\right)\dd{\vb{X}},
+	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint_{\Omega_0}\left(\fdv{F}{x^i} \fdv{\totenL}{M_i} - \fdv{F}{M_i} \fdv{\totenL}{x^i}\right)\dd{\vb{X}},
 \end{equations}
 
 since $F$ were arbitrary, we conclude \autocite[p.~3]{pavelkaHamiltonianContinuumMechanics2020}that it must hold
@@ -441,38 +441,39 @@ since $F$ were arbitrary, we conclude \autocite[p.~3]{pavelkaHamiltonianContinuu
 
 The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require the knowledge of the total energy of the continuum expressed using the Lagrangian state variables.
 
-In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rhoL$ and the internal energy $\eL$, \ie so on a general level we can write
+In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$ and the internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the Lagrangian energy functional, we transform to Lagrangian variables using the Jacobian $J\left(\vb{X}\right) = \det \grad \pmb{\chi}\left(\vb{X}\right)$
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGRANGIAN-ENERGY}
-\totenL = \bigint\left(\frac{\abs{M}^{2}}{2\rhoL} + \eL\left(\vb{X}\right)\right)\dd{\vb{X}}.
+\totenL = \bigint_{\Omega_0}\left(\frac{\abs{\vb{M}}^{2}}{2\rho_0} + Je\left(\rho\left(\vb{x}\left(\vb{X}\right)\right)\right), \eta\left(\vb{x}\left(\vb{X}\right)\right)\right)\dd{\vb{X}}.
 \end{equations}
+
 
 We briefly summarize the structure of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} To obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. The SPH bracket and energy are obtained by reduction and approximation of their continuum counterparts respectively.
 
 \subsection{SPH discretisation}
 \label{sec:SPH-discretisation}
 
-Let $\Omega \subset \R^d, d = 2, 3$ be the region occupied by the continuum. Denote $\{\Omega_{\alpha}\}_{\alpha=1}^N, N \in \N$ a pairwise disjoint \textcolor{gray}{finite} partition of $\Omega$, \ie $\Omega = \bigcup_{\alpha=1}^N \Omega_{\beta}$, $\Omega_{\alpha} \cap \Omega_{\beta} = \emptyset$ for $\alpha \neq \beta$. The sets $\Omega_{\alpha}$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_{\alpha}$,
+Denote $\{\Omega_{\alpha}\}_{\alpha=1}^N, N \in \N$ a pairwise disjoint \textcolor{gray}{finite} partition of the reference manifold $\Omega_0$, \ie $\Omega_0 = \bigcup_{\alpha=1}^N \Omega_{\beta}$, $\Omega_{\alpha} \cap \Omega_{\beta} = \emptyset$ for $\alpha \neq \beta$. The sets $\Omega_{\alpha}$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_{\alpha}$,
 
 \begin{equations}[single,*]
 \chi_{\alpha}\left(\vb{X}\right) = \begin{cases}
-	\frac{1}{V_{\alpha}}, \vb{X} &\in \Omega_{\alpha},\\
-  0,  \vb{X} &\notin \Omega_{\alpha}
+	\frac{1}{V_{\alpha}}, &\vb{X} \in \Omega_{\alpha},\\
+	0,  &\vb{X} \notin \Omega_{\alpha}
 \end{cases}, V_{\alpha} = \int_{\Omega_{\alpha}} \dd{\vb{X}},
 \end{equations}
 we can define the \emph{SPH position} $\vb{x}_{\alpha}\left(t\right)$ as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-position}
-\vb{x}_{\alpha}(t) = \int_{\Omega}\vb{x}\left(t, \vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}},
+\vb{x}_{\alpha}(t) = \int_{\Omega_0}\vb{x}\left(t, \vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}},
 \end{equations}
 
 and the \emph{SPH momentum} $\vb{M}_{\alpha}\left(t, \vb{X}\right)$ as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-momentum}
-\vb{M}_{\alpha}\left(t\right) = \int_{\Omega}\vb{M}\left(t, \vb{X}\right)\chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
+\vb{M}_{\alpha}\left(t\right) = \int_{\Omega_0}\vb{M}\left(t, \vb{X}\right)\chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
 \end{equations}
 
 Naturally, the SPH positions and momenta $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ will replace the state variables $\left(\vb{x}, \vb{M}\right)$ of the continuum mechanics, and so we will refer to them as the SPH state variables.
@@ -480,7 +481,7 @@ Naturally, the SPH positions and momenta $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}
 \subsubsection{SPH bracket}
 \label{sec:SPH-bracket}
 
-Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary \textcolor{gray}{sufficiently regular} functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as
+Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary Fréchet differentiable functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as
 
 \begin{equations}[lines]
 \label{eq:TERM}
@@ -488,7 +489,6 @@ Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb
 \end{equations}
 
 Our goal is to simplify \Cref{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$. The procedure requires the evaluation of the functional derivatives of $x^j_{\alpha}, M_{\beta,j}$ w.r.t $M_i, x^i$, which is a straightforward computation using the definitions \Cref{eq:SPH-momentum}, \Cref{eq:SPH-position}, but rather a lengthy one and such it will be skipped. It can however be found in 
-% TODO: LINK TO BACHELOR
 
 The expression \Cref{eq:TERM} can be rewritten to obtain
 
