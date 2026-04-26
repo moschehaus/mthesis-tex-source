@@ -31,33 +31,32 @@
 \contentsline {subsection}{Differential operators}{29}{subsection*.37}%
 \contentsline {subsubsection}{Gradient of a scalar field}{29}{subsection*.37}%
 \contentsline {subsubsection}{Divergence of a vector field}{30}{equation.3.13}%
-\contentsline {section}{\numberline {3.3}SPH formulations}{30}{section*.38}%
-\contentsline {section}{\numberline {3.4}Classical SPH}{30}{section*.39}%
-\contentsline {subsection}{Improved discretisation}{30}{subsection*.40}%
-\contentsline {subsection}{Discrete balance of mass}{32}{subsection*.41}%
-\contentsline {subsection}{Discrete balance of linear momentum}{33}{subsection*.42}%
-\contentsline {subsection}{Complete system}{34}{subsection*.43}%
-\contentsline {section}{\numberline {3.5}Hamiltonian formulation}{35}{section*.44}%
-\contentsline {subsection}{Poisson brackets}{35}{subsection*.45}%
-\contentsline {subsection}{SPH discretisation}{37}{subsection*.46}%
+\contentsline {section}{\numberline {3.3}Classical SPH}{30}{section*.38}%
+\contentsline {subsection}{Improved discretisation}{30}{subsection*.39}%
+\contentsline {subsection}{Discrete balance of mass}{32}{subsection*.40}%
+\contentsline {subsection}{Discrete balance of linear momentum}{33}{subsection*.41}%
+\contentsline {subsection}{Complete system}{34}{subsection*.42}%
+\contentsline {section}{\numberline {3.4}Hamiltonian formulation}{35}{section*.43}%
+\contentsline {subsection}{Poisson brackets}{35}{subsection*.44}%
+\contentsline {subsection}{SPH discretisation}{37}{subsection*.45}%
 \contentsline {subsubsection}{SPH bracket}{38}{equation.3.31}%
 \contentsline {subsubsection}{SPH energy functional}{39}{equation.3.35}%
-\contentsline {subsection}{Classical SPH as a Hamiltonian system}{39}{subsection*.47}%
-\contentsline {subsection}{Symplectic integrators}{39}{subsection*.48}%
-\contentsline {section}{\numberline {3.6}Density-free formulations}{39}{section*.49}%
-\contentsline {subsubsection}{Pressure-entropy}{39}{section*.49}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{39}{subsection*.46}%
+\contentsline {subsection}{Symplectic integrators}{39}{subsection*.47}%
+\contentsline {section}{\numberline {3.5}Density-free formulations}{39}{section*.48}%
+\contentsline {subsubsection}{Pressure-entropy}{39}{section*.48}%
 \contentsline {subsubsection}{Pressure-potential temperature}{40}{equation.3.40}%
-\contentsline {section}{\numberline {3.7}Implementation specifics}{42}{section*.50}%
-\contentsline {subsection}{Extrapolating boundary conditions}{42}{subsection*.51}%
-\contentsline {subsubsection}{Inflow \& Outflow}{42}{subsection*.51}%
-\contentsline {subsubsection}{Free-slip}{42}{subsection*.51}%
-\contentsline {subsection}{Adaptive smoothing length}{42}{subsection*.52}%
-\contentsline {subsection}{Particle placement}{42}{subsection*.53}%
+\contentsline {section}{\numberline {3.6}Implementation specifics}{42}{section*.49}%
+\contentsline {subsection}{Extrapolating boundary conditions}{42}{subsection*.50}%
+\contentsline {subsubsection}{Inflow \& Outflow}{42}{subsection*.50}%
+\contentsline {subsubsection}{Free-slip}{42}{subsection*.50}%
+\contentsline {subsection}{Adaptive smoothing length}{42}{subsection*.51}%
+\contentsline {subsection}{Particle placement}{42}{subsection*.52}%
 \contentsline {chapter}{\numberline {4}Experiments}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{43}{section*.54}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{43}{section*.55}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{43}{section*.56}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{43}{section*.53}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{43}{section*.54}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{43}{section*.55}%
 \contentsline {chapter}{\numberline {5}Voronoi}{44}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{45}{chapter*.57}%
-\contentsline {chapter}{References}{46}{appendix*.58}%
+\contentsline {chapter}{Summary and Outlook}{45}{chapter*.56}%
+\contentsline {chapter}{References}{46}{appendix*.57}%
 \contentsfinish 

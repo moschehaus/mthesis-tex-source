@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  26 APR 2026 18:48
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  26 APR 2026 19:41
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2085,7 +2085,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldsans'
 \symsflettersbold=\mathgroup11
 \symstmry=\mathgroup12
 ) (./preamble/math/macros.tex
-LaTeX Font Info:    Redeclaring math symbol \setminus on input line 272.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 275.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/ytableau/ytableau.sty
 Package: ytableau 2021/06/12 v1.4 Many-featured Young tableaux and Young diagra
@@ -2500,7 +2500,7 @@ Underfull \hbox (badness 1874) in paragraph at lines 28--28
 
 ] (./chapters/oro_flows.tex
 Chapter 1.
-<./figures/oro_flows/clouds.pdf, id=332, 1110.0672pt x 832.5504pt>
+<./figures/oro_flows/clouds.pdf, id=328, 1110.0672pt x 832.5504pt>
 File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/clouds.pdf>
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
@@ -2514,7 +2514,7 @@ Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
 ]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 40.
-<./figures/oro_flows/fohn.pdf, id=357, 3886.52pt x 2601.72pt>
+<./figures/oro_flows/fohn.pdf, id=353, 3886.52pt x 2601.72pt>
 File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/fohn.pdf>
 Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 46.
@@ -2722,7 +2722,7 @@ Overfull \hbox (30.80154pt too wide) detected at line 739
 
 
 [21]
-<./figures/oro_flows/wave.pdf, id=669, 677.53125pt x 376.40625pt>
+<./figures/oro_flows/wave.pdf, id=665, 677.53125pt x 376.40625pt>
 File: ./figures/oro_flows/wave.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/wave.pdf>
 Package luatex.def Info: ./figures/oro_flows/wave.pdf  used on input line 757.
@@ -2782,7 +2782,7 @@ Underfull \hbox (badness 1748) in paragraph at lines 85--85
 \TU/lmr/m/n/12 smooth-ness and di-men-sion, the
  []
 
-<./figures/sph/kernel.pdf, id=787, 1053.9375pt x 451.6875pt>
+<./figures/sph/kernel.pdf, id=783, 1053.9375pt x 451.6875pt>
 File: ./figures/sph/kernel.pdf Graphic file (type pdf)
 <use ./figures/sph/kernel.pdf>
 Package luatex.def Info: ./figures/sph/kernel.pdf  used on input line 97.
@@ -2832,25 +2832,25 @@ Overfull \hbox (8.26665pt too wide) detected at line 202
  []
 
 
-
-[30]
-Overfull \hbox (21.08592pt too wide) in paragraph at lines 231--232
+Overfull \hbox (21.08592pt too wide) in paragraph at lines 229--230
 []\TU/lmr/m/n/12 The naive dis-creti-sa-tion [][][][][], [][][][][]|
  []
 
 
 
+[30]
+
 [31]
 
 [32]
-Overfull \hbox (22.51028pt too wide) detected at line 316
+Overfull \hbox (22.51028pt too wide) detected at line 312
 []|
  []
 
 
 
 [33]
-Overfull \hbox (27.22913pt too wide) detected at line 338
+Overfull \hbox (27.22913pt too wide) detected at line 334
 []$\OT1/lmr/bx/n/12 F[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 
 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OML/lmm/m
 /it/12 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OM
@@ -2858,7 +2858,7 @@ S/lmsy/m/n/12 ^^@\OT1/lmr/bx/n/12 F[]\OML/lmm/m/it/12 ;$ |
  []
 
 
-Overfull \hbox (22.38239pt too wide) detected at line 359
+Overfull \hbox (22.38239pt too wide) detected at line 355
 []|
  []
 
@@ -2867,14 +2867,23 @@ Overfull \hbox (22.38239pt too wide) detected at line 359
 [34]
 
 [35]
-Overfull \hbox (119.98482pt too wide) detected at line 422
-[]$[][][] \OT1/lmr/m/n/12 + [][][] + [][][] = 0$ |
+Underfull \hbox (badness 10000) in paragraph at lines 408--408
+\TU/lmr/m/n/12 Ja-cobi iden-tity the prop-erty
  []
 
 
-Overfull \hbox (18.57204pt too wide) detected at line 422
-[]$[][][]\OML/lmm/m/it/12 F[][][] \OT1/lmr/m/n/12 + [][][]\OML/lmm/m/it/12 G;$ 
-|
+Underfull \hbox (badness 3954) in paragraph at lines 408--408
+[][][] \OT1/lmr/m/n/12 + [] = 0$\TU/lmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 408--408
+\TU/lmr/m/n/12 and Leib-niz rule holds when
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--408
+[][][]\OML/lmm/m/it/12 F[][][] \OT1/lmr/m/n/12 +
  []
 
 
@@ -2894,17 +2903,17 @@ i.2'
 
 
 [37]
-Overfull \hbox (39.37775pt too wide) detected at line 498
+Overfull \hbox (39.37775pt too wide) detected at line 482
 []$\OT1/lmr/m/n/12 = [] [][][] [] +$ |
  []
 
 
-Overfull \hbox (32.36363pt too wide) detected at line 498
+Overfull \hbox (32.36363pt too wide) detected at line 482
 []$\OMS/lmsy/m/n/12 ^^@ [] [][][] [] \OML/lmm/m/it/12 :$ |
  []
 
 
-Overfull \hbox (1.69026pt too wide) detected at line 514
+Overfull \hbox (1.69026pt too wide) detected at line 498
 []$[][][] [][]\OT1/lmr/m/n/12 = [][][]\OML/lmm/m/it/12 ;$ |
  []
 
@@ -2913,7 +2922,7 @@ Overfull \hbox (1.69026pt too wide) detected at line 514
 [38]
 
 [39]
-Overfull \hbox (3.4041pt too wide) detected at line 624
+Overfull \hbox (3.4041pt too wide) detected at line 608
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
@@ -2922,7 +2931,7 @@ Overfull \hbox (3.4041pt too wide) detected at line 624
 
 [40]
 
-LaTeX Warning: Reference `eq:f_PE' on page 41 undefined on input line 662.
+LaTeX Warning: Reference `eq:f_PE' on page 41 undefined on input line 646.
 
 
 
@@ -3007,7 +3016,7 @@ See the caption package documentation for explanation.
 
 
 [50]
-runsystem(latexminted cleantemp  --timestamp 20260426184832Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260426194119Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3024,16 +3033,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67694 strings out of 475512
+ 67692 strings out of 475512
  195450,2848258 words of node,token memory allocated
- 85182 words of node memory still in use:
-   892 hlist, 101 vlist, 31 rule, 513 disc, 48 local_par, 173 math, 1720 glue, 5
-06 kern, 200 penalty, 188 margin_kern, 5771 glyph, 2200 attribute, 115 glue_spec
-, 2200 attribute_list, 11 write, 784 pdf_literal, 9 pdf_start_link, 9 pdf_end_li
-nk, 3 pdf_dest, 12 pdf_action, 118 pdf_colorstack nodes
-   avail lists: 1:15,2:6962,3:4778,4:589,5:619,6:191,7:7424,8:109,9:1733,10:34,1
-1:503,12:6
- 88344 multiletter control sequences out of 65536+600000
+ 86782 words of node memory still in use:
+   860 hlist, 101 vlist, 26 rule, 530 disc, 49 local_par, 177 math, 1768 glue, 5
+10 kern, 213 penalty, 197 margin_kern, 5962 glyph, 2180 attribute, 115 glue_spec
+, 2180 attribute_list, 11 write, 784 pdf_literal, 9 pdf_start_link, 9 pdf_end_li
+nk, 3 pdf_dest, 12 pdf_action, 124 pdf_colorstack nodes
+   avail lists: 1:16,2:6962,3:4778,4:589,5:561,6:191,7:7424,8:109,9:1720,10:34,1
+1:486,12:6
+ 88345 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3075,10 +3084,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (57 pages, 10769447 bytes).
+Output written on main.pdf (57 pages, 10768654 bytes).
 
-PDF statistics: 1544 PDF objects out of 1728 (max. 8388607)
- 941 compressed objects within 10 object streams
- 344 named destinations out of 1000 (max. 131072)
- 638 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1535 PDF objects out of 1728 (max. 8388607)
+ 936 compressed objects within 10 object streams
+ 341 named destinations out of 1000 (max. 131072)
+ 630 words of extra memory for PDF output out of 10000 (max. 100000000)
 
