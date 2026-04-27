@@ -338,7 +338,7 @@ where we have used $w_{\alpha\beta} = w_{\beta\alpha}, \grad_{\alpha} w_{\alpha\
 \vb{F}_{\beta \to \alpha} = - \vb{F}_{\alpha \to \beta},
 \end{equations}
 
-and we have recovered \emph{Newton's third law} at the \emph{discrete level.} In an isolated system, \ie in the absence of external forces, Newton's third law implies the \emph{conservation of total linear momentum.}\sidenote{The total momentum of the isolated system reads as \begin{equations}[single,*]
+and we have recovered \emph{Newton's third law} at the \emph{discrete level.} In an isolated system, \ie in the absence of external forces, Newton's third law implies the \emph{conservation of total linear momentum.}\sidenote{The total momentum of the isolated system reads \begin{equations}[single,*]
 \sum_{\alpha=1}^N m_{\alpha} \vb{v}_{\alpha},
 \end{equations}
 and so
@@ -356,7 +356,7 @@ therefore, the total momentum is conserved.} This conservation property would \e
 \subsection{Complete system}
 \label{sec:CLASSIC-COMPLETE}
 
-To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we use the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_{\alpha}} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
+To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we use the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_{\alpha}} = 0$ for the evolution of the potential temperature. Our complete system hence reads 
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:CLASSICAL-SPH}
@@ -387,7 +387,8 @@ The conservation property we discovered in the previous section aligns with our 
 \subsection{Poisson brackets}
 \label{sec:BRACKETS}
 
-To set up the Hamiltonian formulation of SPH, we first review the Hamiltonian framework for continuum mechanics in the Lagrangian frame, which we will then discretise. We denote by $\vb{X} \in \Omega_0$ the elements of the Lagrangian, \ie reference, configuration manifold $\Omega_0$ and by $\vb{x}$ the elements of the Eulerian, \ie current, configuration manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism\sidenote{Technically, $\forall t \in \Rplusnought$ the map $\pmb{\chi}\left(t, \cdot\right): \Omega_0 \to \Omega(t)$ is a $C^1$ diffeomorphism. The set $\Omega(t)$ is the current configuration at time $t$.} $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further by $\vb{M}\left(t, \vb{X}\right)$ the Eulerian momentum density per Lagrangian volume.\sidenote{The mentioned momentum is a mixed object: it is the Eulerian momentum expressed using Lagrangian variables per unit Lagrangiam volume. It holds $\vb{M}\left(t, \vb{X}\right) = \rho_0\left(\vb{X}\right)\vb{v}\left(t, \pmb{\chi}\left(t, \vb{X}\right)\right)$, with $\rho_0$ being the reference density.} The mappings $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ will be called the \emph{Lagrangian state variables}.
+To set up the Hamiltonian formulation of SPH, we first review the Hamiltonian framework for continuum mechanics in the Lagrangian frame, which we will then discretise. In contrast to the previous sections, where $\Omega$ denoted simply the region occupied by the continuum and $\vb{x}_{\alpha}$ the particle positions, the Hamiltonian formulation requires careful distinction between the reference and current configurations.
+We denote by $\vb{X} \in \Omega_0$ the elements of the Lagrangian, \ie reference, configuration manifold $\Omega_0$ and by $\vb{x}$ the elements of the Eulerian, \ie current, configuration manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism\sidenote{Technically, $\forall t \in \Rplusnought$ the map $\pmb{\chi}\left(t, \cdot\right): \Omega_0 \to \Omega(t)$ is a $C^1$ diffeomorphism. The set $\Omega(t)$ is the current configuration at time $t$.} $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further by $\vb{M}\left(t, \vb{X}\right)$ the Eulerian momentum density per Lagrangian volume.\sidenote{The mentioned momentum is a mixed object: it is the Eulerian momentum expressed using Lagrangian variables per unit Lagrangiam volume. It holds $\vb{M}\left(t, \vb{X}\right) = \rho_0\left(\vb{X}\right)\vb{v}\left(t, \pmb{\chi}\left(t, \vb{X}\right)\right)$, with $\rho_0$ being the reference density.} The mappings $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ will be called the \emph{Lagrangian state variables}.
 
 The continuum analogue to the canonical Poisson bracket of point-particle Hamiltonian mechanics is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary Fréchet differentiable functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
 
@@ -412,35 +413,39 @@ In what follows, we will for brevity of notation omit the explicit dependence of
 	\end{equations}
 }
 
-Given an Fréchet differentiable functional $F = F\left(t, \vb{x}, \vb{M}\right)$, its evolution in time is given by \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020} 
+Given a Fréchet differentiable functional $F = F\left(t, \vb{x}, \vb{M}\right)$, its evolution in time is given by \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020} 
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:TIME-EVOL}
 \tdot{F} = \partial_t F + \pbr[L]{F}{\totenL},
 \end{equations}
 
-where $\totenL$ is the functional of total energy expressed using the Lagrangian state variables $\vb{x}, \vb{M}$.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.} In particular, for a functional $F\left(\vb{x}, \vb{M}\right)$ that explicitly does not depend on time, we can calculate using the chain rule
+where $\totenL$ is the functional of total energy expressed using the Lagrangian state variables $\vb{x}, \vb{M}$.\sidenote{As an immediate consequence, we see that
+	\begin{equations}[single,*]
+		\tdot{\totenL} = \partial_t \totenL + \pbr[L]{\totenL}{\totenL} = \partial_t \totenL,
+\end{equations}
+the bracket vanishes as it is skew-symmetric. If the system is \emph{autonomous}, \ie $\partial_t \totenL$, we see that the energy is conserved.}\sidenote{To be precise, $E$ is Hamilton's functional, \ie the Hamiltonian.} In particular, for a functional $F\left(\vb{x}, \vb{M}\right)$ that does not depend explicitly on time, we can calculate using the chain rule
 
 \begin{equations}[single,*]
-	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint_{\Omega_0}\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}},
+	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint_{\Omega_0}\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}}.
 \end{equations}
 
-on the other hand \Cref{eq:TIME-EVOL} dictates
+On the other hand, \Cref{eq:TIME-EVOL} dictates
 
 \begin{equations}[single,*]
 	\tdot{F}\left(\vb{x}, \vb{M}\right) = \bigint_{\Omega_0}\left(\fdv{F}{x^i} \fdv{\totenL}{M_i} - \fdv{F}{M_i} \fdv{\totenL}{x^i}\right)\dd{\vb{X}},
 \end{equations}
 
-since $F$ were arbitrary, we conclude \autocite[p.~3]{pavelkaHamiltonianContinuumMechanics2020}that it must hold
+since $F$ was arbitrary, by the fundamental lemma of the calculus of variations we conclude \autocite[p.~3]{pavelkaHamiltonianContinuumMechanics2020} that 
 
 \begin{equations}[columns,!,numberline=all]
 \partial_t x^i\left(t, \vb{X}\right) &= \fdv{\totenL}{M_i\left(t, \vb{X}\right)},\label{eq:HAMILTON-POSITION}\\
-\partial_t M_i\left(t, \vb{X}\right) &= -\fdv{\totenL}{x^i\left(t, \vb{X}\right)}\label{eq:HAMILTON-MOMENTA}.
+\partial_t M_i\left(t, \vb{X}\right) &= -\fdv{\totenL}{x^i\left(t, \vb{X}\right)}.\label{eq:HAMILTON-MOMENTA}
 \end{equations}
 
 The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require the knowledge of the total energy of the continuum expressed using the Lagrangian state variables.
 
-In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$, $\rho_0$ being the reference density, and the \emph{volumetric density} of internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the Lagrangian energy functional, we transform to the Lagrangian frame using the Jacobian $J\left(\vb{X}\right) = \det \grad \pmb{\chi}\left(\vb{X}\right)$
+In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$, $\rho_0$ being the reference density, and the \emph{volumetric density} of internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density per Eulerian volume is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the \emph{Lagrangian} energy functional, we transform to the Lagrangian frame using the Jacobian $J\left(\vb{X}\right) = \det_{\vb{X}} \grad \pmb{\chi}\left(\vb{X}\right)$
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGRANGIAN-ENERGY}
@@ -448,12 +453,12 @@ In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^
 \end{equations}
 
 
-We briefly summarise the structure of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} To obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. The SPH bracket and energy are obtained by reduction and approximation of their continuum counterparts respectively.
+We briefly summarise the structure of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require: \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} To obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. The SPH bracket is obtained by reducing the Lagrangian bracket to the SPH state variables; SPH energy is obtained from the Lagrangian energy via the particle approximation.
 
 \subsection{SPH discretisation}
 \label{sec:SPH-discretisation}
 
-Denote $\{\Omega_{\alpha}\}_{\alpha=1}^N, N \in \N$ a pairwise disjoint \textcolor{gray}{finite} partition of the reference manifold $\Omega_0$, \ie $\Omega_0 = \bigcup_{\alpha=1}^N \Omega_{\beta}$, $\Omega_{\alpha} \cap \Omega_{\beta} = \emptyset$ for $\alpha \neq \beta$. The sets $\Omega_{\alpha}$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_{\alpha}$,\autocite[p.~5]{pavelkaApproachesConservativeSmoothed2025}
+Denote $\{\Omega_{\alpha}\}_{\alpha=1}^N, N \in \N$ a pairwise disjoint \textcolor{gray}{finite} partition of the reference manifold $\Omega_0$, \ie $\Omega_0 = \bigcup_{\alpha=1}^N \Omega_{\alpha}$, $\Omega_{\alpha} \cap \Omega_{\beta} = \emptyset$ for $\alpha \neq \beta$. The sets $\Omega_{\alpha}$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_{\alpha}$,\autocite[p.~5]{pavelkaApproachesConservativeSmoothed2025}
 
 \begin{equations}[single,*]
 \chi_{\alpha}\left(\vb{X}\right) = \begin{cases}
@@ -468,7 +473,7 @@ we can define the \emph{SPH position} $\vb{x}_{\alpha}\left(t\right)$ as
 \vb{x}_{\alpha}(t) = \int_{\Omega_0}\vb{x}\left(t, \vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}},
 \end{equations}
 
-and the \emph{SPH momentum} $\vb{M}_{\alpha}\left(t, \vb{X}\right)$ as
+and the \emph{SPH momentum} $\vb{M}_{\alpha}\left(t\right)$ as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-momentum}
@@ -480,7 +485,7 @@ Naturally, the SPH positions and momenta $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}
 \subsubsection{SPH bracket}
 \label{sec:SPH-bracket}
 
-Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary Fréchet differentiable functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as
+Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary Fréchet differentiable functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics---hence we are allowed to substitute them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads
 
 \begin{equations}[lines,!,numberline=all]
 	\label{eq:TERM}
@@ -512,12 +517,14 @@ and the cross terms $\fdv{x^j_{\alpha}}{M_i}, \fdv{M_{\beta,j}}{x^i}$ are zero, 
 	\pbr[L]{F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)}{G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)} = \sum_{\alpha}\left(\pdv{F}{x^{i}_{\alpha}}\pdv{G}{M_{\alpha,i}} - \pdv{F}{M_{\alpha,i}}\pdv{G}{x^i_{\alpha}}\right).
 \end{equations}
 
-It is hence natural to define the \emph{SPH bracket} for any two functionals $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ of the SPH state variables through.
+It is hence natural to define the \emph{SPH bracket} for any two functionals $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ of the SPH state variables through
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-bracket}
 \pbr[SPH]{F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)}{G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)} \coloneq \sum_{\alpha}\left(\pdv{F}{x^i_{\alpha}}\pdv{G}{M_{\alpha,i}} - \pdv{F}{M_{\alpha,i}}\pdv{G}{x^i_{\alpha}}\right),
 \end{equations}
+
+The SPH bracket is the restriction of the \emph{continuum bracket} to the subspace of functionals depending on the continuum fields \emph{only through} their SPH averages \Cref{eq:SPH-momentum} and \Cref{eq:SPH-position}.
 
 \subsubsection{SPH energy functional}
 \label{sec:SPH-functional}
@@ -529,7 +536,7 @@ Now we aim to rewrite \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH state vari
 m_{\alpha} = \int_{\Omega_{0}}\rho_0\left(\vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
 \end{equations}
 
-To recover the internal energy, we need to introduce the density of the particle in the \emph{Eulerian} frame $\rho_{\alpha}$. This can be done in a familiar way using \autocite[p.~7]{pavelkaApproachesConservativeSmoothed2025} 
+To recover the internal energy, we need to introduce the density of the particle in the \emph{Eulerian} frame $\rho_{\alpha}$. This can be done in a familiar way \Cref{eq:SPH-density-sum} using \autocite[p.~7]{pavelkaApproachesConservativeSmoothed2025} 
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:SPH-density-sum-AGAIN}
@@ -539,46 +546,47 @@ To recover the internal energy, we need to introduce the density of the particle
 Since the transformation of density yields
 
 \begin{equations}[single,*]
-\rho = \frac{\rho_0}{J}, \, \text{\textit{i.e.}} \, J = \frac{\rho_0}{\rho},
+\rho = \frac{\rho_0}{J}, \, \text{i.e.} \, J = \frac{\rho_0}{\rho},
 \end{equations}
 
 we see that
 
 \begin{equations}[single,*]
-	J e\left(\rho, \eta\right) = \frac{\rho_0}{\rho} e,
+	J e\left(\rho, \eta\right) = \frac{\rho_0}{\rho} e.
 \end{equations}
 
-and so in total the direct counterpart to \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH variables is
+The SPH counterpart to \Cref{eq:LAGRANGIAN-ENERGY} is therefore
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-energy}
-\totenSPH = \sum_{\alpha=1}^N\left(\frac{\abs{\vb{M}_{\alpha}}^{2}}{2 m_{\alpha}} + \frac{m_{\alpha}}{V_{\alpha} \rho_a} e\left(\rho_{\alpha}, \eta_{\alpha}\right)\right)V_a = \sum_{\alpha=1}^N\left(\frac{\abs{\vb{M}_{\alpha}}^2}{2 m_{\alpha}} + \frac{m_{\alpha}}{\rho_a}e\left(\rho_{\alpha}, \eta_{\alpha}\right)\right).
+\totenSPH = \sum_{\alpha=1}^N\left(\frac{\abs{\vb{M}_{\alpha}}^{2}}{2 m_{\alpha}} + \frac{m_{\alpha}}{V_{\alpha} \rho_{\alpha}} e\left(\rho_{\alpha}, \eta_{\alpha}\right)V_{\alpha}\right) = \sum_{\alpha=1}^N\left(\frac{\abs{\vb{M}_{\alpha}}^2}{2 m_{\alpha}} + \frac{m_{\alpha}}{\rho_{\alpha}}e\left(\rho_{\alpha}, \eta_{\alpha}\right)\right).
 \end{equations}
 
 \subsection{Classical SPH as a Hamiltonian system}
 \label{sec:HAMILTONIAN-SYSTEM}
 
-We are in position to write down the evolution equation of an arbitrary functional $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ of the SPH variables: if $F$ does not explicitly depend on time we have
+We are in a position to write down the evolution equation of an arbitrary functional $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ of the SPH variables: if $F$ does not explicitly depend on time we have
 
 \begin{equations}[single,*]
-\tdot{F} = \pbr[SPH]{F}{\totenSPH} = \sum_{\alpha=1}^N\left(\pdv{F}{x_{\alpha}^i} \pdv{G}{M_{\alpha, i}}- \pdv{F}{M_{\alpha, i}} \pdv{G}{x_{\alpha}^i}\right).
+\tdot{F} = \pbr[SPH]{F}{\totenSPH} = \sum_{\alpha=1}^N\left(\pdv{F}{x_{\alpha}^i} \pdv{\totenSPH}{M_{\alpha, i}}- \pdv{F}{M_{\alpha, i}} \pdv{\totenSPH}{x_{\alpha}^i}\right).
 \end{equations}
 
-The partial derivative of \Cref{eq:SPH-energy} with respect to the momentum reads as
+The partial derivative of \Cref{eq:SPH-energy} with respect to the momentum reads
 
 \begin{equations}[single,*]
 	\pdv{\totenSPH}{M_{\beta,j}} = \pdv{M_{\beta, j}} \sum_{\gamma=1}^N \left(\frac{\abs{\vb{M}_{\gamma}}^{2}}{2 m_{\gamma}} + \frac{m_{\gamma}}{\rho_{\gamma}}e\right) = \sum_{\gamma=1}^N\sum_{k=1}^d \frac{1}{2 m_{\gamma}} 2 M_{\gamma, k}\delta_{jk} \delta_{\beta \gamma} = \frac{M_{\beta,j}}{m_{\beta}}.
 \end{equations}
 
-The derivative with respect to the position leads to a rather lengthy, but straightforward computation. We only state the resulting form, details can be found in \autocite[p.~8]{pavelkaApproachesConservativeSmoothed2025}:
+The derivative with respect to the position leads to a rather lengthy, but straightforward computation. We only state the resulting form; details can be found in \autocite[p.~8]{pavelkaApproachesConservativeSmoothed2025}:
 
-\begin{equations}[columns,numberline=all]
+% WARNING: WRONG K INDICES - MAYBE add delta?
+\begin{equations}[columns,!,numberline=all]
 	\label{eq:derivative}
 	\grad_{\alpha}\totenSPH &= \sum_{\beta=1}^N\left(m_{\beta} \frac{m_{\alpha}}{\rho_{\alpha}^{2}}\left(- e +  \rho_{\alpha}\pdv{e}{\rho_{\alpha}} + \eta_{\alpha}\pdv{e}{\eta_{\alpha}}\right)\right) \grad_{\alpha} w_{\alpha \beta} + \\
-			&+ \sum_{\beta=1}^N \left(m_{\alpha} \frac{m_{\beta}}{\rho_{\beta}^{2}}\left(- e + \rho_{\beta} \pdv{e}{\rho_{\beta}} + \eta_{\alpha} \pdv{e}{\eta_{\alpha}}\right) \right)\grad_{\alpha} w_{\alpha \beta}.
+			&+ \sum_{\beta=1}^N \left(m_{\alpha} \frac{m_{\beta}}{\rho_{\beta}^{2}}\left(- e + \rho_{\beta} \pdv{e}{\rho_{\beta}} + \eta_{\beta} \pdv{e}{\eta_{\beta}}\right) \right)\grad_{\alpha} w_{\alpha \beta}.
 \end{equations}
 
-The Euler relation\sidenote{Recall that we are dealing volumetric densities of energy and entropy.} \autocite[p.~61]{callenThermodynamicsIntroductionThermostatistics1985} \autocite[p.~42]{pavelkaApproachesConservativeSmoothed2025} 
+The Euler relation\sidenote{Recall that we are dealing with volumetric densities of energy and entropy.} \autocite[p.~61]{callenThermodynamicsIntroductionThermostatistics1985} \autocite[p.~42]{pavelkaApproachesConservativeSmoothed2025} 
 
 \begin{equations}[single,*]
 p = -e + \rho \pdv{e}{\rho} + \eta \pdv{e}{\eta},
@@ -591,46 +599,46 @@ allows us to define the pressure of the particle $\alpha$ as
 p_{\alpha} = -e\left(\rho_{\alpha}, \eta_{\alpha}\right) + \rho_{\alpha} \pdv{e}{\rho_{\alpha}} + \eta_{\alpha}\pdv{e}{\eta_{\alpha}}.
 \end{equations}
 
-Using this definition, the derivative \Cref{eq:derivative} reads as
+Using this definition, the derivative \Cref{eq:derivative} reads 
 
 
 \begin{equations}[single,*]
-	\grad_{\alpha}\totenSPH = \sum_{\beta=1}^N m_{\alpha} m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right).
+	\grad_{\alpha}\totenSPH = \sum_{\beta=1}^N m_{\alpha} m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right) \grad_{\alpha}w_{\alpha \beta}.
 \end{equations}
 
-Computing the time evolution of the SPH state variables itself, \ie the Hamilton canonical equations generated by the SPH bracket are thus
+The Hamilton canonical equations generated by the SPH bracket are thus
 
 \begin{equations}[columns,*]
 \dv{x^i_{\alpha}}{t} &= \pdv{\totenSPH}{M_{\alpha, i}} = \frac{M_{\alpha, i}}{m_{\alpha}},\\
-\dv{M_{\alpha, i}}{t} &= -\pdv{\totenSPH}{x^i_{\alpha}} = - \sum_{\beta=1}^N m_{\alpha} m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right).
+\dv{M_{\alpha, i}}{t} &= -\pdv{\totenSPH}{x^i_{\alpha}} = - \sum_{\beta=1}^N m_{\alpha} m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\pdv{w_{\alpha \beta}}{x^i_{\alpha}}.
 \end{equations}
 
-If we denote $\vb{v}_{\alpha} = \dv{\vb{x}_{\alpha}}{t}$ the Hamilton canonical equations are equivalent to
+If we denote $\vb{v}_{\alpha} \coloneq \dv{\vb{x}_{\alpha}}{t}$ the Hamilton canonical equations are equivalent to
 
 \begin{equations}[columns,*]
 	m_{\alpha} \vb{v}_{\alpha} &= \vb{M}_{\alpha}, \\
-	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right),
+	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right) \grad_{\alpha} w_{\alpha \beta},
 \end{equations}
 
-where the density is given as \Cref{eq:SPH-density-sum-AGAIN}. In total, we have shown that the system
+where the density is given as \Cref{eq:SPH-density-sum-AGAIN}. We have thus shown that the system
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:HAMILTON-SYSTEM}
-	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right), \\
+	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha}w_{\alpha \beta}, \\
 	\rho_{\alpha} &= \sum_{\beta=1}^{N} m_{\beta} w_{\alpha \beta},
 \end{equations}
 
 is symplectic, as it represents the Hamilton equations generated by a \emph{canonical} Poisson bracket \Cref{eq:SPH-bracket}.
 
-Let us evaluate the time derivative of the SPH density $\rho_{\alpha}$ \Cref{eq:SPH-density-sum-AGAIN}
+To check consistency with the classical SPH formulation of \Cref{sec:CLASSIC-COMPLETE}, we now evaluate the time derivative of the SPH density $\rho_{\alpha}$ \Cref{eq:SPH-density-sum-AGAIN}
 \begin{equations}[columns,*]
 	\dv{\rho_{\alpha}}{t} &= \pbr[SPH]{\rho_{\alpha}}{\totenSPH} = \sum_{\beta=1}^N\left(\pdv{\rho_{\alpha}}{x^j_{\beta}} \pdv{\totenSPH}{M_{\beta, j}} - \pdv{\rho_{\alpha}}{M_{\beta, j}} \pdv{\totenSPH}{x^j_{\beta}}\right) = \\ 
 			      &= \sum_{\beta=1}^N \frac{M_{\beta, j}}{m_{\beta}} \pdv{x^{j}_{\beta}} \sum_{\gamma=1}^N m_{\gamma} w_{\alpha \gamma} = \sum_{\beta, \gamma =1}^N \left(\frac{M_{\beta, j}}{m_{\beta}} m_{\gamma}\pdv{w_{\alpha \gamma}}{x^j_{\beta}}\right) = \\ 
-			      &= \sum_{\beta, \gamma = 1}^N \sum_{k=1}^d\left(\frac{M_{\beta, j}}{m_{\beta}} m_{\gamma} w'_{\alpha \gamma}\left(\delta_{\alpha \beta} - \delta_{\gamma \beta}\right)\frac{x^k_{\alpha} - x^k_{\gamma}}{\abs{\vb{x}_{\alpha} - \vb{x}_{\gamma}}}\right) = \\ 
-			      &= \sum_{\gamma=1}^N \left(\frac{M_{\alpha, j}}{m_{\alpha}} - \frac{M_{\gamma, j}}{m_{\gamma}}\right)m_c w'_{\alpha \gamma} \frac{x^j_{\alpha} - x^j_{\gamma}}{\abs{\vb{x}_{\alpha} - \vb{x}_{\gamma}}},
+			      &= \sum_{\beta, \gamma = 1}^N \sum_{k=1}^d \delta^j_k \left(\frac{M_{\beta, j}}{m_{\beta}} m_{\gamma} w'_{\alpha \gamma}\left(\delta_{\alpha \beta} - \delta_{\gamma \beta}\right)\frac{x^k_{\alpha} - x^k_{\gamma}}{\abs{\vb{x}_{\alpha} - \vb{x}_{\gamma}}}\right) = \\ 
+			      &= \sum_{\gamma=1}^N \left(\frac{M_{\alpha, j}}{m_{\alpha}} - \frac{M_{\gamma, j}}{m_{\gamma}}\right)m_{\gamma} w'_{\alpha \gamma} \frac{x^j_{\alpha} - x^j_{\gamma}}{\abs{\vb{x}_{\alpha} - \vb{x}_{\gamma}}},
 \end{equations}
 
-and so if we use the chain rule and $\vb{M}_{\alpha} = m_{\alpha} \vb{v}_{\alpha}$ we find out
+and so if we use the chain rule and $\vb{M}_{\alpha} = m_{\alpha} \vb{v}_{\alpha}$ we find
 
 \begin{equations}[single,*]
 	\dv{\rho_{\alpha}}{t} = \sum_{\beta=1}^N \left(\vb{v}_{\alpha} - \vb{v}_{\beta}\right) m_{\beta} \grad_{\alpha} w_{\alpha \beta},
@@ -638,10 +646,12 @@ and so if we use the chain rule and $\vb{M}_{\alpha} = m_{\alpha} \vb{v}_{\alpha
 
 which is exactly the classical discretisation of the continuity equation \Cref{eq:DISCR-MASS}.
 
-Using the framework of Hamiltonian continuum mechanics, we were thus able to derive the same classical SPH equations as in \Cref{sec:CLASSIC-COMPLETE}. Moreover, we have been able to show that the system \Cref{eq:CLASSICAL-SPH} with the kernel sum density \Cref{eq:SPH-density-sum} is symplectic, as it represents the Hamilton equations generated by a canonical Poisson bracket \Cref{eq:SPH-bracket}. Notice that we \emph{did not} prove the symplecticity of the system \Cref{eq:CLASSICAL-SPH} with the discrete continuity equation \Cref{eq:DISCR-MASS}, as the Poisson bracket is \Cref{eq:SPH-bracket} is canonical in the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$, \emph{not} including $\rho_{\alpha}$. It is possible to show that the referred system is \emph{not symplectic}, but it is Hamiltonian, as it is generated by the \emph{non-canonical} Poisson bracket\autocite[p.~9]{pavelkaApproachesConservativeSmoothed2025} 
+Using the framework of Hamiltonian continuum mechanics, we were thus able to derive the same classical SPH equations as in \Cref{sec:CLASSIC-COMPLETE}. Moreover, we have been able to show that the system \Cref{eq:CLASSICAL-SPH} with the kernel sum density \Cref{eq:SPH-density-sum} is symplectic, as it represents the Hamilton equations generated by a canonical Poisson bracket \Cref{eq:SPH-bracket}. This symplectic structure underlies the time-reversibility result of \autocite{kinclGloballyTimereversibleFluid2023a} cited earlier.
+
+Notice that we \emph{did not} prove the symplecticity of the system \Cref{eq:CLASSICAL-SPH} with the discrete continuity equation \Cref{eq:DISCR-MASS}, as the Poisson bracket \Cref{eq:SPH-bracket} is canonical in the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$, \emph{not} including $\rho_{\alpha}$. It is possible to show that this system is Hamiltonian but \emph{not symplectic}, as it is generated by the \emph{non-canonical} Poisson bracket\autocite[p.~9]{pavelkaApproachesConservativeSmoothed2025} 
 
 \begin{equations}[columns,*]
-	\pbr[SPH]{F}{G} &= \pbr[SPH]{F}{G} + \\ 
+	\pbr[SPH-\rho]{F}{G} &= \pbr[SPH]{F}{G} + \\ 
 +& \sum_{\alpha, \beta=1}^N m_{\beta} \sum_{i=1}^d e^i_{\alpha \beta}\left(\pdv{F}{\rho_{\alpha}}\left(\pdv{G}{M_{\alpha, i}} - \pdv{G}{M_{\beta, i}}\right) - \pdv{G}{\rho_{\alpha}}\left(\pdv{F}{M_{\alpha, i}} - \pdv{F}{M_{\beta, i}}\right)\right),
 \end{equations}
 
@@ -651,17 +661,19 @@ where
 e^i_{\alpha \beta} = \frac{x^i_{\alpha} - x^i_{\beta}}{\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}}.
 \end{equations}
 
+We will not pursue this here.
+
 \subsection{Symplectic integrators}
 \label{sec:INTEGRATORS}
 
-Symplectic systems are of interest because they admit specialised  numerical methods --- \emph{symplectic integrators} --- with favourable long-term conservation properties. In particular, the energy error of a symplectic integrator of order $p$ remains bounded by $\bigO{h^p}$ over exponentially long simulation times \autocite{hairerGeometricNumericalIntegration2006, leimkuhlerSimulatingHamiltonianDynamics2004}. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable symplectic integrator and a correction to the initial conditions, the resulting numerical simulation is \emph{time-reversible}.
+Having established the Hamiltonian/symplectic structure of SPH, we now describe the time integrator used in our simulations. Symplectic systems are of interest because they admit specialised numerical methods --- \emph{symplectic integrators} --- with favourable long-term conservation properties. In particular, the energy error of a symplectic integrator of order $p$ with time step $\Delta t$ remains bounded by $\bigO{\delta t^p}$ over exponentially long simulation times \autocite{hairerGeometricNumericalIntegration2006, leimkuhlerSimulatingHamiltonianDynamics2004}. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable symplectic integrator and a correction to the initial conditions, the resulting numerical simulation is \emph{time-reversible}.
 
-In our simulations, we use the \emph{Störmer--Verlet} method. The Störmer--Verlet method approximates the solution of the system 
+In our simulations, we use the \emph{Störmer--Verlet} method, which approximates the solution of the system 
 \begin{equations}[columns,*]
 	\tdot{\vb{q}} &= \vb{v}, \\
 	\tdot{\vb{v}} &= \vb{f}(\vb{q}),
 \end{equations}
-by the one-step procedure $(\vb{q}_n, \vb{v}_n) \mapsto (\vb{q}_{n+1}, \vb{v}_{n+1})$  defined as
+by the one-step procedure $(\vb{q}_n, \vb{v}_n) \mapsto (\vb{q}_{n+1}, \vb{v}_{n+1})$ defined as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:STORMER-VERLET}
@@ -669,10 +681,10 @@ by the one-step procedure $(\vb{q}_n, \vb{v}_n) \mapsto (\vb{q}_{n+1}, \vb{v}_{n
 \vb{q}_{n+1} &= \vb{q}_n + \Delta t \, \vb{v}_{n+\frac{1}{2}}, \\
 \vb{v}_{n+1} &= \vb{v}_{n+\frac{1}{2}} + \frac{\Delta t}{2} \vb{f}(\vb{q}_{n+1}),
 \end{equations}
-where $\Delta t$ denotes the time step. The method is explicit, of second order, and symplectic for separable Hamiltonians \autocite{Hairer_2003}.
+where $\Delta t$ denotes the time step. The method is explicit, of second order, and symplectic for separable Hamiltonians \autocite{Hairer_2003}. Our SPH Hamiltonian \Cref{eq:SPH-energy} is separable\sidenote{In this sense, separability means that the kinetic energy depends only on the momenta $\vb{M}_{\alpha}$ and the potential energy only on the positions $\vb{x}_{\alpha}$.} in $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$, so Störmer–Verlet is symplectic in our setting.
 
-In the context of SPH, the role of $\vb{q}$ is played by the particle positions $\{\vb{x}_{\alpha}\}_{\alpha=1}^N$, the role of $\vb{v}$ by the velocities $\{\vb{v}_{\alpha}\}_{\alpha=1}^N$, and $\vb{f}$ by the right-hand side of the discrete momentum equation.
-
+	In the context of SPH, the role of $\vb{q}$ is identified with the particle positions $\{\vb{x}_{\alpha}\}_{\alpha=1}^N$, $\vb{v}$ with the velocities $\{\vb{v}_{\alpha}\}_{\alpha=1}^N$, and $\vb{f}$ by the right-hand side of the discrete momentum equation \Cref{eq:HAMILTON-SYSTEM}. 
+	This integrator is used throughout the numerical experiments in \Cref{chap:EXPERIMENTS}.
 \section{Density-free formulations}
 \label{sec:HOPKINS}
 

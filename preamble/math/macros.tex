@@ -226,7 +226,7 @@
 }
 
 %% Scaled-up integral sign (matches tall \left/\right delimiters)
-\NewDocumentCommand{\bigint}{e{_}}{\mathop{\scalemath{1.2}[1.6]{\int}}\nolimits\IfValueT{#1}{_{#1}}\!\!}
+\NewDocumentCommand{\bigint}{e{_}}{\mathop{\scalemath{1.2}[1.6]{\int}}\limits\IfValueT{#1}{_{#1}}\!\!}
 
 %% Exchange \epsilon and \varepsilon
 \NewCommandCopy{\oldepsilon}{\epsilon}
