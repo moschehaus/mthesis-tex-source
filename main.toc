@@ -46,20 +46,21 @@
 \contentsline {subsection}{Classical SPH as a Hamiltonian system}{40}{subsection*.48}%
 \contentsline {subsection}{Symplectic integrators}{43}{subsection*.49}%
 \contentsline {section}{\numberline {3.5}Density-independent formulations}{44}{section*.50}%
-\contentsline {subsubsection}{Pressure-entropy}{45}{section*.50}%
-\contentsline {subsubsection}{Pressure-potential temperature}{46}{equation.3.49}%
-\contentsline {subsection}{Well-balanced SPH}{47}{subsection*.51}%
-\contentsline {section}{\numberline {3.6}Implementation specifics}{48}{section*.52}%
-\contentsline {subsection}{Extrapolating boundary conditions}{48}{subsection*.53}%
-\contentsline {subsubsection}{Inflow \& Outflow}{48}{subsection*.53}%
-\contentsline {subsubsection}{Free-slip}{48}{subsection*.53}%
-\contentsline {subsection}{Adaptive smoothing length}{48}{subsection*.54}%
-\contentsline {subsection}{Particle placement}{48}{subsection*.55}%
-\contentsline {chapter}{\numberline {4}Experiments}{49}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{49}{section*.56}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{49}{section*.57}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{49}{section*.58}%
-\contentsline {chapter}{\numberline {5}Voronoi}{50}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{51}{chapter*.59}%
-\contentsline {chapter}{References}{52}{appendix*.60}%
+\contentsline {subsection}{A general class of Lagrangian SPH methods}{45}{subsection*.51}%
+\contentsline {subsubsection}{Pressure-entropy}{47}{equation.3.51}%
+\contentsline {subsubsection}{Pressure-potential temperature}{48}{equation.3.54}%
+\contentsline {subsection}{Well-balanced SPH}{49}{subsection*.52}%
+\contentsline {section}{\numberline {3.6}Implementation specifics}{49}{section*.53}%
+\contentsline {subsection}{Extrapolating boundary conditions}{49}{subsection*.54}%
+\contentsline {subsubsection}{Inflow \& Outflow}{49}{subsection*.54}%
+\contentsline {subsubsection}{Free-slip}{49}{subsection*.54}%
+\contentsline {subsection}{Adaptive smoothing length}{49}{subsection*.55}%
+\contentsline {subsection}{Particle placement}{49}{subsection*.56}%
+\contentsline {chapter}{\numberline {4}Experiments}{50}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{50}{section*.57}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{50}{section*.58}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{50}{section*.59}%
+\contentsline {chapter}{\numberline {5}Voronoi}{51}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{52}{chapter*.60}%
+\contentsline {chapter}{References}{53}{appendix*.61}%
 \contentsfinish 

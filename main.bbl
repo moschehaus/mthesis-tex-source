@@ -2362,10 +2362,57 @@
       \endverb
       \keyw{Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Instrumentation and Methods for Astrophysics,density free,Physics - Computational Physics,Physics - Fluid Dynamics}
     \endentry
+    \entry{saitohDensityIndependentFormulation2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=dd52e2ce811f9c8321d12d78d12ec931}{%
+           family={Saitoh},
+           familyi={S\bibinitperiod},
+           given={Takayuki\bibnamedelima R.},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=46544c28ea0f756ad66ec1098486386d}{%
+           family={Makino},
+           familyi={M\bibinitperiod},
+           given={Junichiro},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The American Astronomical Society}%
+      }
+      \strng{namehash}{67129baf070b08b8c208f6af2e3ff0c8}
+      \strng{fullhash}{67129baf070b08b8c208f6af2e3ff0c8}
+      \strng{fullhashraw}{67129baf070b08b8c208f6af2e3ff0c8}
+      \strng{bibnamehash}{67129baf070b08b8c208f6af2e3ff0c8}
+      \strng{authorbibnamehash}{67129baf070b08b8c208f6af2e3ff0c8}
+      \strng{authornamehash}{67129baf070b08b8c208f6af2e3ff0c8}
+      \strng{authorfullhash}{67129baf070b08b8c208f6af2e3ff0c8}
+      \strng{authorfullhashraw}{67129baf070b08b8c208f6af2e3ff0c8}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The standard formulation of the smoothed particle hydrodynamics (SPH) assumes that the local density distribution is differentiable. This assumption is used to derive the spatial derivatives of other quantities. However, this assumption breaks down at the contact discontinuity. At the contact discontinuity, the density of the low-density side is overestimated while that of the high-density side is underestimated. As a result, the pressure of the low-density (high-density) side is overestimated (underestimated). Thus, unphysical repulsive force appears at the contact discontinuity, resulting in the effective surface tension. This tension suppresses fluid instabilities. In this paper, we present a new formulation of SPH, which does not require the differentiability of density. Instead of the mass density, we adopt the internal energy density (pressure) and its arbitrary function, which are smoothed quantities at the contact discontinuity, as the volume element used for the kernel integration. We call this new formulation density-independent SPH (DISPH). It handles the contact discontinuity without numerical problems. The results of standard tests such as the shock tube, Kelvin--Helmholtz and Rayleigh--Taylor instabilities, point-like explosion, and blob tests are all very favorable to DISPH. We conclude that DISPH solved most of the known difficulties of the standard SPH, without introducing additional numerical diffusion or breaking the exact force symmetry or energy conservation. Our new SPH includes the formulation proposed by Ritchie \& Thomas as a special case. Our formulation can be extended to handle a non-ideal gas easily.}
+      \field{issn}{0004-637X}
+      \field{journaltitle}{The Astrophysical Journal}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{ApJ}
+      \field{title}{A Density Independent Formulation of {{Smoothed Particle Hydrodynamics}}}
+      \field{urlday}{27}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1088/0004-637X/768/1/44
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Saitoh and Makino - 2013 - A DENSITY-INDEPENDENT FORMULATION OF SMOOTHED PARTICLE HYDRODYNAMICS.pdf
+      \endverb
+      \keyw{density free}
+    \endentry
   \enddatalist
-  \missing{hopkinsGeneralClass2013}
   \missing{hopkinsGeneralClassLagrangian2013}
-  \missing{saitohDensityindependentFormulation2013}
   \missing{springelSimulationsFormationEvolution2005}
 \endrefsection
 \endinput
