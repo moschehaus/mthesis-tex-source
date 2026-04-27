@@ -14,9 +14,9 @@ This chapter presents the main numerical method used --- the \emph{Smoothed Part
 \section{Method overview}
 \label{sec:SPH_OVERVIEW}
 
-Smoothed Particle Hydrodynamics (SPH) is a general use numerical method first used in astrophysical stellar models \autocite{gingoldSmoothedParticleHydrodynamics1977}. The authors required a solution to a grid resolution problem arising with their use of the finite difference method (FDM).\sidenote{They argued that the treatment of highly distorted continuum would require an extremely fine grid, hence substantial computational cost \autocite[p.~1]{gingoldSmoothedParticleHydrodynamics1977}.} The method has found use in a variety of fields, \viz free-surface flows \autocite{monaghanSimulatingFreeSurface1994a}, solid mechanics \autocite{liberskySmoothParticleHydrodynamics1991}, geomechanics \autocite{buiLagrangianMeshfreeParticles2008}, and is still successfully used in astrophysics \autocite{springelSimulationsFormationEvolution2005}. 
+Smoothed Particle Hydrodynamics (SPH) is a general purpose numerical method first used in astrophysical stellar models \autocite{gingoldSmoothedParticleHydrodynamics1977}. The authors sought to overcome a grid-resolution problem arising with their use of the finite difference method (FDM).\sidenote{They argued that the treatment of highly distorted continuum would require an extremely fine grid, hence substantial computational cost \autocite[p.~1]{gingoldSmoothedParticleHydrodynamics1977}.} The method has found use in a variety of fields, \viz free-surface flows \autocite{monaghanSimulatingFreeSurface1994a}, solid mechanics \autocite{liberskySmoothParticleHydrodynamics1991}, geomechanics \autocite{buiLagrangianMeshfreeParticles2008}, and is still successfully used in astrophysics \autocite{springelSimulationsFormationEvolution2005}. 
 
-SPH is a particle (Lagrangian) method.\sidenote{In this sense grid/mesh methods such as the \begin{inparaenum} \item finite difference method; \item finite element method; \item finite volume method; \item discontinuous Galerkin method, \end{inparaenum} are called \emph{Eulerian}, since they approximate the evolution in the \emph{current, deformed} configuration. Particle methods like \begin{inparaenum} \item SPH; \item MPS (moving particle semi-implicit method) \autocite{koshizukaMovingParticleSemiImplicitMethod1996}; \item DPD (dissipative particle dynamics) \autocite{hoogerbruggeSimulatingMicroscopicHydrodynamic1992} \end{inparaenum} trace the evolution in the \emph{reference} configuration, and so particle methods are also called \emph{Lagrangian}.}   The continuum is partitioned into arbitrary \emph{material points}, in this context referred to as \emph{particles}, and basic physical properties such as density, velocity, entropy, and energy are assigned to them. Their mutual interaction is then prescribed,\sidenote{The interaction cannot be arbitrary. To capture the physics correctly, the interaction must in fact root in the discretisation of the governing equations.} and the state of each particle is advanced in time. 
+SPH is a particle (Lagrangian) method.\sidenote{In this sense grid/mesh methods such as the \begin{inparaenum} \item finite difference method; \item finite element method; \item finite volume method; \item discontinuous Galerkin method, \end{inparaenum} are called \emph{Eulerian}, since they approximate the evolution in the \emph{current, deformed} configuration. Particle methods like \begin{inparaenum} \item SPH; \item MPS (moving particle semi-implicit method) \autocite{koshizukaMovingParticleSemiImplicitMethod1996}; \item DPD (dissipative particle dynamics) \autocite{hoogerbruggeSimulatingMicroscopicHydrodynamic1992} \end{inparaenum} trace the evolution in the \emph{reference} configuration, and so particle methods are also called \emph{Lagrangian}.}   The continuum is partitioned into arbitrary \emph{material points}, in this context referred to as \emph{particles}, and basic physical properties such as density, velocity, entropy, and energy are assigned to them. Their mutual interaction is then prescribed,\sidenote{The interaction cannot be arbitrary. To capture the physics correctly, the interaction must in fact be rooted in the discretisation of the governing equations.} and the state of each particle is advanced in time. 
 We stress that \emph{SPH particles} are \emph{not} \textcolor{gray}{elementary} particles in the microscopic sense --- they are typically macroscopic fluid elements. Nonetheless, some intuition from the mechanics of point particles carries over naturally to SPH, as we shall see.
 
 In what follows, we introduce the theoretical foundations of SPH and the specific formulation developed in this work.
@@ -65,14 +65,14 @@ To obtain a good approximation, the kernel must satisfy \autocite[p.~60]{liuSmoo
 		(K2) & monotonicity & $w_h$ is a decreasing function \\
 		(K3) & symmetry & $w_h$ is radial, \ie $w_h\left(\vb{x} - \vb{x}'\right) = w_h\left(\abs{\vb{x} - \vb{x}'}\right)$ \\
 		(K4) & normalization & $\int_{\Omega}w_h\left(\vb{r}\right)\dd{\vb{r}} = 1$ \\
-		(K5) & compact support/decay & $\supp w_h$ is compact or $\lim_{\abs{\vb{r}} \to \infty}w\left(\vb{r}\right) = 0$ sufficiently fast \\
-		(K6) & smoothness & $w_h$ be \emph{sufficiently smooth} \\
+		(K5) & compact support/decay & $\supp w_h$ is compact or $\lim_{\abs{\vb{r}} \to \infty}w_h\left(\vb{r}\right) = 0$ sufficiently fast \\
+		(K6) & smoothness & $w_h$ is \emph{sufficiently smooth} \\
 		(K7) & concentration & $w_h \xrightharpoonup{*} \delta$ as $h \to 0^+$ \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-For compact kernels, $h$ is related to the size of the support radius as $\diam \supp = 2 \kappa h,$ where $\kappa$ is kernel-dependent. If $w_h$ is not compact, \eg for a Gaussian kernel \autocite[p.~8]{monaghanSmoothedParticleHydrodynamics2005} 
+The parameter $h$ entering the kernel properties controls its width. For compact kernels, $h$ is related to the size of the support radius as $\diam \supp = 2 \kappa h,$ where $\kappa$ is kernel-dependent. If $w_h$ is not compact, \eg for a Gaussian kernel \autocite[p.~8]{monaghanSmoothedParticleHydrodynamics2005} 
 
 \begin{equations}[single,*]
 w_h\left(\vb{r}\right) = \frac{1}{\left(h \sqrt{\pi}\right)^{d}}\exp\left(-\frac{\abs{\vb{r}}^{2}}{h^{2}}\right),
@@ -80,9 +80,9 @@ w_h\left(\vb{r}\right) = \frac{1}{\left(h \sqrt{\pi}\right)^{d}}\exp\left(-\frac
 
 $h$ is the characteristic width of the Gaussian.
 
-Common choice for the interpolation kernel are \enquote{bell shaped} functions, such as the Gaussian, B-splines \autocite{monaghanExtrapolatingSplinesInterpolation1985} and other splines. An overview of the commonly used kernels can be found in \autocite[p.~62]{liuSmoothedParticleHydrodynamics2004}. 
+Common choices for the interpolation kernel are \enquote{bell shaped} functions, such as the Gaussian, B-splines \autocite{monaghanExtrapolatingSplinesInterpolation1985} and other splines. An overview of the commonly used kernels can be found in \autocite[p.~62]{liuSmoothedParticleHydrodynamics2004}. 
 
-In our application, we deployed the $\Ctwo$ Wendland polynomial kernels \autocite{wendlandPiecewisePolynomialPositive1995}\autocite{dehnenNewKernelsSPH2012}, \ie a special class of piecewise polynomial positive compactly supported functions.\sidenote{In the class of positive definite compactly supported radial univariate polynomials of prescribed smoothness and dimension, the Wendland functions are of minimal degree and moreover are unique. \autocite{wendlandPiecewisePolynomialPositive1995}} In particular, the quintic Wendland kernel has been used
+In our application, we used the $\Ctwo$ Wendland polynomial kernels \autocite{wendlandPiecewisePolynomialPositive1995}\autocite{dehnenNewKernelsSPH2012}, \ie a special class of piecewise polynomial positive compactly supported functions.\sidenote{In the class of positive definite compactly supported radial univariate polynomials of prescribed smoothness and dimension, the Wendland functions are of minimal degree and moreover are unique. \autocite{wendlandPiecewisePolynomialPositive1995}} Specifically, we used the quintic Wendland kernel 
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:WENDLAND-KERNEL}
@@ -91,7 +91,7 @@ In our application, we deployed the $\Ctwo$ Wendland polynomial kernels \autocit
 	\end{cases}, q = \frac{\abs{\vb{r}}}{h}.
 \end{equations}
 
-The graph of the Wendland kernel is plotted in \Cref{fig:KERNEL}. It is evident that for the Wendland kernel \Cref{eq:WENDLAND-KERNEL}, $w_h\left(\frac{\vb{r}}{h}\right) = 0 $ for $\abs{\vb{r}} \leq 2 h$, meaning $4 h = \diam \supp w_h$ and we call $h$ the \emph{smoothing length}\sidenote{As opposed to \enquote{smoothing radius}, which might be confusing.}
+The graph of the Wendland kernel is plotted in \Cref{fig:KERNEL}. It is evident that for the Wendland kernel \Cref{eq:WENDLAND-KERNEL}, $w_h\left(\frac{\vb{r}}{h}\right) = 0 $ for $\abs{\vb{r}} \geq 2 h$, meaning $4 h = \diam \supp w_h$, \ie $\kappa = 2 $ for this kernel and we call $h$ the \emph{smoothing length}.\sidenote{As opposed to \enquote{smoothing radius}, which might be confused with the support radius $2 h$.}
 
 \begin{figure}[htbp]
 	\includegraphics[width=\linewidth]{kernel}
@@ -99,29 +99,28 @@ The graph of the Wendland kernel is plotted in \Cref{fig:KERNEL}. It is evident 
 	\label{fig:KERNEL}
 \end{figure}
 
-Under the conditions \Cref{tab:kernel-properties} on the interpolation kernel $w_h$, it can be shown\sidenote{The derivation is a straightforward application of the Taylor's expansion.} \autocite[p.~307]{violeauFluidMechanicsSPH2012} 
+Under the conditions \Cref{tab:kernel-properties} on the interpolation kernel $w_h$, it can be shown\sidenote{The derivation is a straightforward application of Taylor's expansion.} \autocite[p.~307]{violeauFluidMechanicsSPH2012} 
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:C-APPROX}
 \sphc{\Phi}\left(t, \vb{x}\right) = \Phi\left(t, \vb{x}\right) + \bigO{h^{2}}.
 \end{equations}
 
-This approximation property evidently heavily influences the numerical accuracy of the method. A more involved discussion of SPH accuracy and consistency will be presented in section \Cref{sec:ACCURACY}.
+This approximation property evidently heavily influences the numerical accuracy of the method. A more involved discussion of SPH accuracy and consistency will be presented in \Cref{sec:ACCURACY}.
 
 
 \subsection{Particle approximation}
 \label{sec:PARTICLES}
 
-Let $\Omega \subset \R^d, d = 2, 3$ be a continuous medium, which we partition into $N \in \N$ particles with coordinates $\{\vb{x}_{\alpha}\}_{\alpha=1}^N \subset \R^{dN}$. Denote by $V_{\alpha}$ some \emph{estimator} of the particle volume, \eg
+Let $\Omega_{0} \subset \R^d, d = 2, 3$ be the \emph{reference configuration} of a continuous medium, which we partition into $N \in \N$ particles with coordinates $\{\vb{x}_{\alpha}\}_{\alpha=1}^N \subset \R^{d}$. Denote by $V_{\alpha}$ some \emph{approximation} of the particle volume, \eg
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:MASS-DENSITY}
-V_{\alpha} = \frac{\rho_{\alpha}}{m_{\alpha}},
+V_{\alpha} = \frac{m_{\alpha}}{\rho_{\alpha}},
 \end{equations}
 
-with $\rho_{\alpha}$ being the particles density and $m_{\alpha}$ its mass. The choice \Cref{eq:MASS-DENSITY} is clearly \emph{not a unique} choice of the volume estimator; the freedom of choice will be invoked in 
-% TODO: dodelat referenci
-	Using this particle partition, we simplify the continuous interpolation \Cref{eq:CONT-INTERPOLATION} by deploying a quadrature rule. Let $\vb{x}_{\alpha}$ be the position of an arbitrary particle, then we approximate
+with $\rho_{\alpha}$ being the particle's density and $m_{\alpha}$ its mass. The choice \Cref{eq:MASS-DENSITY} is clearly \emph{not a unique} choice of the volume estimator; the freedom of choice will be invoked in \Cref{sec:HOPKINS}
+	Using this particle partition, we simplify the continuous interpolation \Cref{eq:CONT-INTERPOLATION} by applying a quadrature rule. Let $\vb{x}_{\alpha}$ be the position of an arbitrary particle, then we approximate
 
 \begin{equations}[single,*]
 	\sphc{\Phi}\left(t, \vb{x}_{\alpha}\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}'}\right)\dd{\vb{x}'} \approx \sum_{\beta=1}^N \Phi\left(t, \vb{x}_{\beta}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)V_{\beta}, 
@@ -133,16 +132,16 @@ that is, we approximate the integration by a \emph{quadrature rule} with nodes $
 \sphd{\Phi}\left(t, \vb{x}_{\alpha}\right) \coloneq \sum_{\beta=1}^N \Phi\left(t, \vb{x}_{\beta}\right) w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)V_{\beta} \equiv \sum_{\beta=1}^N \Phi_{\beta} w_{\alpha \beta}V_{\beta},
 \end{equations}
 
-where we have adopted the notation $\Phi_{\beta} \coloneq \Phi\left(t, \vb{x}_{\beta}\right),$ $w_{\alpha \beta} \coloneq w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)$. The quantity $\Phi_{\beta}$ can be naturally interpreted as the quantity $\Phi$, \ie density, of the particle $\vb{x}_{\beta}$. It should be clarified that $\Phi_{\beta} = \Phi_{\beta}(t)$ is still a function of time.
-Notice also that since the kernel $w_h$ has a compact support, in practice the sum in \Cref{eq:DISC-INTERPOLATION} typically does \emph{not} consist of $N$ summands.\sidenote{Note well, if it were the case, all particles would have to be located within each other's support radius, \ie very closely. In SPH, extreme proximity gives rise to a serious instability issue known as \emph{tensile instability} \Cref{sec:INSTABILITY}.}
+where we have adopted the notation $\Phi_{\beta} \coloneq \Phi\left(t, \vb{x}_{\beta}\right),$ $w_{\alpha \beta} \coloneq w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)$. The quantity $\Phi_{\beta}$ can be naturally interpreted as the quantity $\Phi$, \ie density, of the particle $\vb{x}_{\beta}$. Note that $\Phi_{\beta} = \Phi_{\beta}(t)$ remains a function of time.
+Notice also that since the kernel $w_h$ has a compact support, in practice the sum in \Cref{eq:DISC-INTERPOLATION} typically does \emph{not} consist of $N$ summands.
 
-Having introduced the \emph(discrete) interpolation, we deploy it to approximate the \emph{continuous} interpolation
+Having introduced the \emph{discrete} interpolation, we deploy it to approximate the \emph{continuous} interpolation
 
 \begin{equations}[single,*]
 	\sphc{\Phi}\left(t, \vb{x}_{\alpha}\right) \approx \sphd{\Phi}\left(t, \vb{x}_{\alpha}\right),
 \end{equations}
 
-and one would immediately be interested in the quality of the approximation. It turns out that an involved discrete approximation error is a complicated \emph{open} problem \autocite[p.~3]{vacondioGrandChallengesSmoothed2021a}\autocite{quinlanTruncationErrorMeshfree2006}. The main difficulty lies in the fact that the error analysis depends on the particle positions \textcolor{gray}(that change in time). 
+and one would immediately be interested in the quality of the approximation. A rigorous analysis of the discrete approximation error is a complicated \emph{open} problem \autocite[p.~3]{vacondioGrandChallengesSmoothed2021a}\autocite{quinlanTruncationErrorMeshfree2006}. The main difficulty lies in the fact that the error analysis depends on the particle positions \textcolor{gray}{that change in time}. 
 If one considers particles evenly arranged in a Cartesian grid (which is a substantial simplification), it can be shown\sidenote{Deploying techniques from Fourier analysis and the Euler-MacLaurin formula.} that for the Wendland quintic kernel it holds
 
 \begin{equations}[single,!,numberline=all]
@@ -164,10 +163,10 @@ There are two sources of errors in the SPH discretisation: \begin{inparaenum} \i
 \end{equations}
 
 This relation shows that the SPH method is \emph{at least first order}. We say \enquote{at least} because for particular combinations of kernel, geometry and particle arrangement, the observed order can be higher \autocite{quinlanTruncationErrorMeshfree2006}. 
-Moreover, the error decreases when both $h \to 0^+$ and $\dd{r}/h \to 0^+$, equivalently $h/\dd{r} \to \infty$. This reveals an interesting relationship between the smoothing length $h$ and the particle size $\dd{r}$: to improve accuracy, both must vanish\sidenote{This matches physical intuition: as the particles shrink and their number grows, the discrete particle system approaches continuum.}, but \emph{not independently} --- $\dd{r}$ must decay faster than $h$. The precise interplay of these two parameters remains an active area of analysis \autocite{quinlanTruncationErrorMeshfree2006}.
+Moreover, the error decreases when both $h \to 0^+$ and $\dd{r}/h \to 0^+$, equivalently $h/\dd{r} \to \infty$. This reveals an interesting relationship between the smoothing length $h$ and the particle size $\dd{r}$: to improve accuracy, both must vanish\sidenote{This matches physical intuition: as the particles shrink and their number grows, the discrete particle system approaches the continuum.}, but \emph{not independently} --- $\dd{r}$ must decay faster than $h$. The precise interplay of these two parameters remains an active area of analysis \autocite{quinlanTruncationErrorMeshfree2006}.
 
 
-Let us summarize the presented properties and situate SPH within the broader landscape of numerical methods for continuum mechanics. Mesh-based Eulerian methods such as the finite volume method and, in particular, the discontinuous Galerkin method can be constructed to achieve arbitrarily high order of convergence, at least in \emph{smooth regions of the solution}.\sidenote{Phenomena like shocks and other contact discontinuities decrease the order of convergence.} In this comparison, SPH --- which is often merely first order in practice --- is clearly less competitive.
+Let us summarise the presented properties and situate SPH within the broader landscape of numerical methods for continuum mechanics. Mesh-based Eulerian methods such as the finite volume method and, in particular, the discontinuous Galerkin method can be constructed to achieve arbitrarily high order of convergence, at least in \emph{smooth regions of the solution}.\sidenote{Phenomena like shocks and other contact discontinuities decrease the order of convergence.} In this comparison, SPH --- which is often merely first order in practice --- is clearly less competitive.
 
 However, accuracy should not be the only criterion. The mesh-free nature of SPH allows us to tackle problems that are notoriously difficult for mesh schemes: free-surface flows, large deformations, plasticity, flows in complex or evolving geometries. No meshing routines are required. The method is also remarkably simple to implement.
 
@@ -176,12 +175,12 @@ In summary, SPH trades numerical accuracy for flexibility and implementational s
 \subsection{Differential operators}
 \label{sec:DIFF_OPS}
 
-This section employs the presented particle approximation framework to discretise differential operators appearing in the governing equations of fluid dynamics. Even though we have, up to this point, assumed only scalar fields, the generalization to vector and tensor fields is straightforward.
+This section uses the particle approximation framework to discretise differential operators appearing in the governing equations of fluid dynamics. Even though we have, up to this point, assumed only scalar fields, the generalization to vector and tensor fields is straightforward.
 
 \subsubsection{Gradient of a scalar field}
 \label{sec:GRADIENT}
 
-The gradient of a differentiable scalar field $\Phi\left(t, \vb{x}\right)$ at particle $\vb{x}_{\alpha}$ can be in the nature of \Cref{eq:DISC-INTERPOLATION} approximated as
+The gradient of a differentiable scalar field $\Phi\left(t, \vb{x}\right)$ at particle $\vb{x}_{\alpha}$ can be approximated, in the spirit of \Cref{eq:DISC-INTERPOLATION}, as
 
 \begin{equations}[columns]
 	\grad_{\alpha} \Phi\left(t, \vb{x}_{\alpha}\right) &\approx \sphd{\grad_{\alpha} \Phi}\left(t, \vb{x}_{\alpha}\right) = \sum_{\beta=1}^N \grad_{\alpha}\left(\Phi\left(t, \vb{x}_{\beta}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)\right)V_{\beta} =\\
@@ -189,7 +188,7 @@ The gradient of a differentiable scalar field $\Phi\left(t, \vb{x}\right)$ at pa
 						    &=\sum_{\beta=1}^N \Phi_{\beta} \grad_{\alpha} w_{\alpha \beta} V_{\beta},\label{eq:GRAD}
 \end{equations}
 
-since $\Phi\left(t, \vb{x}_{\beta}\right)$ is independent of $\vb{x}_{\alpha}$,
+since $\Phi\left(t, \vb{x}_{\beta}\right)$ is independent of $\vb{x}_{\alpha}$.
 
 \subsubsection{Divergence of a vector field}
 \label{sec:DIVERGENCE}
@@ -212,7 +211,7 @@ In this and the following sections, we will focus on different ways to discretis
 \subsection{Improved discretisation}
 \label{sec:IMPROVED-DIFF-OPS}
 
-In the previous, we have derived discrete versions of the $\gradop$ and $\div$ operators 
+Previously, we have derived discrete versions of the $\gradop$ and $\div$ operators 
 
 \begin{equations}[columns,!,numberline=all]
 \grad \Phi\left(t, \vb{x}_{\alpha}\right) &\approx \sum_{\beta=1}^N \Phi_{\beta} \grad_{\alpha} w_{\alpha\beta}V_{\beta},\label{eq:NAIVE-GRAD} \\
@@ -226,7 +225,7 @@ However, this is not a unique way to discretise the differential operators --- a
 	\grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) = 0 &\neq \sum_{\beta=1}^N \vb{F}_{\beta} \cdot \grad_{\alpha} w_{\alpha\beta}V_{\beta} = \sum_{\beta=1}^N \vb{e}_x \cdot \grad_{\alpha} w_{\alpha\beta}V_{\beta}.
 \end{equations}
 
-The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To refine the approach, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
+The naive discretisations \Cref{eq:NAIVE-GRAD} and \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To refine the approach, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:IDENTITIES}
@@ -234,7 +233,7 @@ The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to appr
 \divergence{\vb{F}} &= \frac{1}{\phi}\divergence{\left(\phi \vb{F}\right)} - \frac{1}{\phi}\vb{F} \cdot \grad \phi,
 \end{equations}
 
-valid for a nonzero continuously differentiable function $\phi$.\sidenote{In what follows, $\phi$ will be the density $\rho$.} We can improve our approximation by discretising in the following manner
+valid for a continuously differentiable non-vanishing function $\phi$.\sidenote{In what follows, $\phi$ will be the density $\rho$.} We can improve our approximation by discretising in the following manner
 
 \begin{equations}[columns,*]
 	\grad_{\alpha} \Phi_{\alpha} &= \phi_{\alpha} \grad_{\alpha} \left(\frac{\Phi_{\alpha}}{\phi_{\alpha}}\right) + \frac{\Phi_{\alpha}}{\phi_{\alpha}} \grad_{\alpha}\left(\phi_{\alpha}\right) \approx \\
@@ -251,12 +250,12 @@ and
 		       &= \frac{1}{\phi_{\alpha}} \sum_{\beta=1}^N \left(\vb{F}_{\beta} - \vb{F}_{\alpha}\right)  \cdot \grad_{\alpha} w_{\alpha\beta} \phi_{\beta} V_{\beta}.
 \end{equations}
 
-Thanks to the $\vb{F}_{\beta} - \vb{F}_{\alpha}$ term in the approximate divergence operator, we see that the discretised divergence operator correctly vanishes for constant fields. The alternate discretised gradient operator does \emph{not vanish} for constant fields, however, it possesses a symmetric property in the summands, which will prove useful in what follows.
+Thanks to the $\vb{F}_{\beta} - \vb{F}_{\alpha}$ term in the approximate divergence operator, we see that the discretised divergence operator correctly vanishes for constant fields. The alternate discretised gradient operator does \emph{not vanish} for constant fields, however, summands are symmetric in the $\alpha, \beta$ indices, which will prove crucial for momentum conservation.
 
 All in all, the discretisation
 
 \begin{equations}[columns,!,numberline=all]
-\grad_{\alpha} \Phi\left(t, \vb{x}_{\alpha}\right) &\approx \phi_{\alpha} \sum_{\beta=1}^N \left(\frac{\Phi_{\alpha}}{\phi_{\alpha}^{2}} + \frac{\Phi_{\beta}}{\phi_{\beta}^{2}}\right)\phi_{\beta}\grad_{\alpha} w_{\alpha\beta}\phi_{\beta}V_{\beta}, \label{eq:IMPROVED-GRAD} \\
+\grad_{\alpha} \Phi\left(t, \vb{x}_{\alpha}\right) &\approx \phi_{\alpha} \sum_{\beta=1}^N \left(\frac{\Phi_{\alpha}}{\phi_{\alpha}^{2}} + \frac{\Phi_{\beta}}{\phi_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta}\phi_{\beta}V_{\beta}, \label{eq:IMPROVED-GRAD} \\
 \grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) &\approx \frac{1}{\phi_{\alpha}}\sum_{\beta=1}^N \left(\vb{F}_{\beta} - \vb{F}_{\alpha} \right) \cdot \grad_{\alpha} w_{\alpha\beta} \phi_{\beta} V_{\beta}, \label{eq:IMPROVED-DIV}
 \end{equations}
 
@@ -292,14 +291,14 @@ This is not the only way we can obtain the densities. An \emph{alternative} form
 \rho_{\alpha} = \sum_{\beta=1}^N m_{\beta} w_{\alpha\beta},
 \end{equations}
 
-as a \emph{weighted average} of the particle masses.\sidenote{The closer the particles are to the particle $\vb{x}_{\alpha}$, the larger the weight.} With this approach, we replace the need to \textcolor{gray}{numerically} solve the ODEs \Cref{eq:DISCR-MASS} by a summation procedure.\sidenote{Recall again that in practice, sums including an interpolation kernel \emph{do not} have $N$ nonzero summands, as $w_h$ is compactly supported.} This approach becomes particularly useful in formulations where the density field is not the primary quantity of interest; for diagnostic purposes, one can recover the densities at an arbitrary integration step with a single sum rather than solving for the densities all along. Moreover, in section \Cref{sec:HAMILTONIAN-SYSTEM} we will show that the classical SPH with this choice of density is a symplectic system of ODEs. Moreover,  \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable integrator, numerical simulations of isentropic flows in this formulation are \emph{time-reversible}.
+as a \emph{weighted average} of the particle masses.\sidenote{The closer the particles are to the particle $\vb{x}_{\alpha}$, the larger the weight.} With this approach, we replace the need to \textcolor{gray}{numerically} solve the ODEs \Cref{eq:DISCR-MASS} by a summation procedure.\sidenote{Recall again that in practice, sums including an interpolation kernel \emph{do not} have $N$ nonzero summands, as $w_h$ is compactly supported.} This approach becomes particularly useful in formulations where the density field is not the primary quantity of interest; for diagnostic purposes, one can recover the densities at an arbitrary integration step with a single sum rather than solving for the densities all along. Moreover, in section \Cref{sec:HAMILTONIAN-SYSTEM} we will show that the classical SPH with this choice of density is a symplectic system of ODEs. Furthermore,  \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable integrator, numerical simulations of isentropic flows in this formulation are \emph{time-reversible}.
 
 Note that the two presented formulations are \emph{not equivalent} --- in general, they result in different densities.
 
 \subsection{Discrete balance of linear momentum}
 \label{sec:MOMENTUM}
 
-Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:IMPROVED-GRAD} operator  and choose again the auxiliary field $\phi$ as the density $\rho$. Then the balance of momentum
+Let us apply the \emph{improved} discrete gradient \Cref{eq:IMPROVED-GRAD} operator, again with $\phi = \rho$ to the balance of momentum
 
 \begin{equations}[single,*]
 	\tdot{\vb{v}} = - \frac{1}{\rho}\grad p + \vb{g}, 
@@ -308,8 +307,8 @@ Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:I
 can be recast to the form
 
 \begin{equations}[columns,*]
-	\dv{\vb{v_{\alpha}}}{t} &= -\frac{1}{\rho_{\alpha}} \rho_{\alpha} \sum_{\beta=1}^N\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}}^{2}\right)\rho_{\beta} V_{\beta} \grad_{\alpha} w_{\alpha\beta} =\\
-				&= \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}}^{2} + \frac{p_{\beta}}{\rho_{\beta}}^{2}\right)\grad_{\alpha} w_{\alpha\beta},
+	\dv{\vb{v_{\alpha}}}{t} &= -\frac{1}{\rho_{\alpha}} \rho_{\alpha} \sum_{\beta=1}^N\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\rho_{\beta} V_{\beta} \grad_{\alpha} w_{\alpha\beta} =\\
+				&= \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta},
 \end{equations}
 
 where we have used the fact $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. Since $\rho_{\alpha} = \rho_{\alpha}(t)$ is a function of time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_{\alpha}(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_{\alpha}\right)$ at a fixed \emph{material} point $\vb{x}_{\alpha}$.}
@@ -358,11 +357,11 @@ therefore, the total momentum is conserved.} This conservation property would \e
 \subsection{Complete system}
 \label{sec:CLASSIC-COMPLETE}
 
-To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we deploy the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_{\alpha}} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
+To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we use the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_{\alpha}} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:CLASSICAL-SPH}
-\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\alpha}^{2}}\right) + \vb{g}, \\
+\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha \beta} + \vb{g}, \\
 p_{\alpha}\left(\rho_{\alpha}, T_{\alpha}\right) &= R \rho_{\alpha} T_{\alpha}, \\
 \theta_{\alpha} &= \, \text{const},
 \end{equations}
@@ -450,7 +449,7 @@ In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^
 \end{equations}
 
 
-We briefly summarize the structure of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} To obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. The SPH bracket and energy are obtained by reduction and approximation of their continuum counterparts respectively.
+We briefly summarise the structure of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} To obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. The SPH bracket and energy are obtained by reduction and approximation of their continuum counterparts respectively.
 
 \subsection{SPH discretisation}
 \label{sec:SPH-discretisation}
@@ -640,7 +639,7 @@ and so if we use the chain rule and $\vb{M}_{\alpha} = m_{\alpha} \vb{v}_{\alpha
 
 which is exactly the classical discretisation of the continuity equation \Cref{eq:DISCR-MASS}.
 
-Using the framework of Hamiltonian continuum mechanics, we were thus able to derive the same classical SPH equations as in section \Cref{sec:CLASSIC-COMPLETE}. Moreover, we have been able to show that the system \Cref{eq:CLASSICAL-SPH} with the kernel sum density \Cref{eq:SPH-density-sum} is symplectic, as it represents the Hamilton equations generated by a canonical Poisson bracket \Cref{eq:SPH-bracket}. Notice that we \emph{did not} prove the symplecticity of the system \Cref{eq:CLASSICAL-SPH} with the discrete continuity equation \Cref{eq:DISCR-MASS}, as the Poisson bracket is \Cref{eq:SPH-bracket} is canonical in the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$, \emph{not} including $\rho_{\alpha}$. It is possible to show that the referred system is \emph{not symplectic}, but it is Hamiltonian, as it is generated by the \emph{non-canonical} Poisson bracket\autocite[p.~9]{pavelkaApproachesConservativeSmoothed2025} 
+Using the framework of Hamiltonian continuum mechanics, we were thus able to derive the same classical SPH equations as in \Cref{sec:CLASSIC-COMPLETE}. Moreover, we have been able to show that the system \Cref{eq:CLASSICAL-SPH} with the kernel sum density \Cref{eq:SPH-density-sum} is symplectic, as it represents the Hamilton equations generated by a canonical Poisson bracket \Cref{eq:SPH-bracket}. Notice that we \emph{did not} prove the symplecticity of the system \Cref{eq:CLASSICAL-SPH} with the discrete continuity equation \Cref{eq:DISCR-MASS}, as the Poisson bracket is \Cref{eq:SPH-bracket} is canonical in the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$, \emph{not} including $\rho_{\alpha}$. It is possible to show that the referred system is \emph{not symplectic}, but it is Hamiltonian, as it is generated by the \emph{non-canonical} Poisson bracket\autocite[p.~9]{pavelkaApproachesConservativeSmoothed2025} 
 
 \begin{equations}[columns,*]
 	\pbr[SPH]{F}{G} &= \pbr[SPH]{F}{G} + \\ 
@@ -656,12 +655,12 @@ e^i_{\alpha \beta} = \frac{x^i_{\alpha} - x^i_{\beta}}{\abs{\vb{x}_{\alpha} - \v
 \subsection{Symplectic integrators}
 \label{sec:INTEGRATORS}
 
-Symplectic systems are of interest because they admit specialised  numerical methods --- \emph{symplectic integrators} --- with favourable long-term conservation properties. In particular, the energy error of a symplectic integrator of order $p$ remains bounded by $O(h^p)$ over exponentially long simulation times \autocite{hairerGeometricNumericalIntegration2006, leimkuhlerSimulatingHamiltonianDynamics2004}. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable symplectic integrator and a correction to the initial conditions, the resulting numerical simulation is \emph{time-reversible}.
+Symplectic systems are of interest because they admit specialised  numerical methods --- \emph{symplectic integrators} --- with favourable long-term conservation properties. In particular, the energy error of a symplectic integrator of order $p$ remains bounded by $\bigO{h^p}$ over exponentially long simulation times \autocite{hairerGeometricNumericalIntegration2006, leimkuhlerSimulatingHamiltonianDynamics2004}. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable symplectic integrator and a correction to the initial conditions, the resulting numerical simulation is \emph{time-reversible}.
 
 In our simulations, we use the \emph{Störmer--Verlet} method. The Störmer--Verlet method approximates the solution of the system 
 \begin{equations}[columns,*]
-	\dot{\vb{q}} &= \vb{v}, \\
-	\dot{\vb{v}} &= \vb{f}(\vb{q}),
+	\tdot{\vb{q}} &= \vb{v}, \\
+	\tdot{\vb{v}} &= \vb{f}(\vb{q}),
 \end{equations}
 by the one-step procedure $(\vb{q}_n, \vb{v}_n) \mapsto (\vb{q}_{n+1}, \vb{v}_{n+1})$  defined as
 
