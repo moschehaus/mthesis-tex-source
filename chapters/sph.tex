@@ -1,4 +1,5 @@
-\documentclass[../main.tex]{subfiles} \begin{document}
+\documentclass[../main.tex]{subfiles}
+\begin{document}
 
 \chapter{Smoothed Particle Hydrodynamics}
 \label{chap:SPH}
@@ -526,6 +527,8 @@ It is hence natural to define the \emph{SPH bracket} for any two functionals $F\
 
 The SPH bracket is the restriction of the \emph{continuum bracket} to the subspace of functionals depending on the continuum fields \emph{only through} their SPH averages \Cref{eq:SPH-momentum} and \Cref{eq:SPH-position}.
 
+% TODO: ADD why it is canonical
+
 \subsubsection{SPH energy functional}
 \label{sec:SPH-functional}
 
@@ -666,7 +669,7 @@ We will not pursue this here.
 \subsection{Symplectic integrators}
 \label{sec:INTEGRATORS}
 
-Having established the Hamiltonian/symplectic structure of SPH, we now describe the time integrator used in our simulations. Symplectic systems are of interest because they admit specialised numerical methods --- \emph{symplectic integrators} --- with favourable long-term conservation properties. In particular, the energy error of a symplectic integrator of order $p$ with time step $\Delta t$ remains bounded by $\bigO{\delta t^p}$ over exponentially long simulation times \autocite{hairerGeometricNumericalIntegration2006, leimkuhlerSimulatingHamiltonianDynamics2004}. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable symplectic integrator and a correction to the initial conditions, the resulting numerical simulation is \emph{time-reversible}.
+Having established the Hamiltonian/symplectic structure of SPH, we now describe the time integrator used in our simulations. Symplectic systems are of interest because they admit specialised numerical methods --- \emph{symplectic integrators} --- with favourable long-term conservation properties. In particular, the energy error of a symplectic integrator of order $p$ with time step $\Delta t$ remains bounded by $\bigO{\Delta t^p}$ over exponentially long simulation times \autocite{hairerGeometricNumericalIntegration2006, leimkuhlerSimulatingHamiltonianDynamics2004}. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable symplectic integrator and a correction to the initial conditions, the resulting numerical simulation is \emph{time-reversible}.
 
 In our simulations, we use the \emph{Störmer--Verlet} method, which approximates the solution of the system 
 \begin{equations}[columns,*]
@@ -685,11 +688,21 @@ where $\Delta t$ denotes the time step. The method is explicit, of second order,
 
 	In the context of SPH, the role of $\vb{q}$ is identified with the particle positions $\{\vb{x}_{\alpha}\}_{\alpha=1}^N$, $\vb{v}$ with the velocities $\{\vb{v}_{\alpha}\}_{\alpha=1}^N$, and $\vb{f}$ by the right-hand side of the discrete momentum equation \Cref{eq:HAMILTON-SYSTEM}. 
 	This integrator is used throughout the numerical experiments in \Cref{chap:EXPERIMENTS}.
-\section{Density-free formulations}
-\label{sec:HOPKINS}
+
+\section{Density-independent formulations}
+\label{sec:DENSITY-FREE}
+
+We have introduced the classical SPH formulation \Cref{sec:CLASSIC-COMPLETE} and decided to use the kernel-summed density \Cref{eq:SPH-density-sum}, which yielded a symplectic system \Cref{eq:HAMILTON-SYSTEM} in the Hamiltonian formulation. However, the use of the kernel-summed density becomes problematic in situations relevant to stratified atmospheric flows.
+
+The first complication arises with the need for \emph{adaptive smoothing lengths.} We have mentioned in \Cref{sec:ADAPTIVE-NEED} how in a stratified atmosphere, the background density varies by an order of magnitude across the simulation domain. By using a fixed smoothing length $h$, we either over-resolve regions of high density or under-resolve regions of low density --- adaptive $h$ is hence essential for correctly resolving the background and for efficient computation.
+However, naive implementations with adaptive $h$ \emph{break the conservative properties} of standard SPH \autocite{hernquistCautionaryRemarksSmoothed1993,nelsonVariableSmoothingLengths1994}. Conservation properties are among the most valuable advantages of SPH, and they are particularly important for our target application---\emph{isentropic flows}. An adaptive-$h$ conservative formulation is therefore needed. There are ways to account for the spatial changes of $h$ by adding the so-called $\grad h$ terms to the classical SPH system that restore conservation \autocite{nelsonThreedimensionalHydrodynamicSimulations1993,nelsonVariableSmoothingLengths1994}. The resulting system is however cumbersome and is rarely used in practice \autocite[p.~4]{springelCosmologicalSPHSimulations2002}. The density-independent formulation we present below \emph{incorporates adaptive smoothing lengths naturally}, without requiring explicit $\grad h$ correction terms.
+
+The second complication lies within the kernel-summed density \emph{itself.} In problems where the density varies strongly, \eg at shocks or contact discontinuities, the kernel-summed approach suffers from \emph{artificial surface tension}, a boundary-like artifact \autocite{hopkinsGeneralClassLagrangian2013a}. Even though the density field of mountain waves is smooth, the strong background stratification produces qualitatively similar artefacts.
+
+The class of \emph{density-independent} formulations \autocite{saitohDensityindependentFormulation2013,hopkinsGeneralClass2013} addresses both difficulties by replacing the kernel-summed density with an \emph{alternative volume estimator}. In what follows, we briefly review the original formulation and then present the $\theta$-reformulation developed in this work \Cref{sec:DI-THETA}.
 
 \subsubsection{Pressure-entropy}
-\label{sec:HOPKINS_PE}
+\label{sec:DI-pressure}
 Recall that the entropy of an isentropic flow of an ideal gas has the form\sidenote{This is a test side note.}
 
 \begin{equations}[single,*]
@@ -733,7 +746,7 @@ with
 \end{equations}
 
 \subsubsection{Pressure-potential temperature}
-\label{sec:HOPKINS_theta}
+\label{sec:DI-theta}
 
 
 Recall the \emph{potential temperature} $\theta$
@@ -801,6 +814,13 @@ with \ref{eq:f_PE} unchanged
 	f_{\alpha} =  \left(1 + \frac{h_{\alpha}}{2 n_{\alpha}} \pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1}.
 \end{equations}
 
+\subsection{Well-balanced SPH}
+\label{sec:WELL-BALANCED-SPH}
+- failure of hydrostatic balance
+- fix standard SPH
+- fix hopkins
+- fix my hopkins
+
 \section{Implementation specifics}
 \label{sec:IMPLEMENTATION}
 
@@ -808,13 +828,13 @@ with \ref{eq:f_PE} unchanged
 \label{sec:SPH-BC}
 
 \subsubsection{Inflow \& Outflow}
-\label{sec:INFLOW-OUTFLOW}
+\label{sec:EBC-INFLOW-OUTFLOW}
 
 \subsubsection{Free-slip}
-\label{sec:FREE-SLIP}
+\label{sec:EBC-FREE-SLIP}
 
 \subsection{Adaptive smoothing length}
-\label{sec:ADAPTIVE_SMOOTHING}
+\label{sec:ADAPTIVE-SMOOTHING}
 Newton iterations
 
 \subsection{Particle placement}
