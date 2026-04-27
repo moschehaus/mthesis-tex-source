@@ -699,7 +699,71 @@ However, naive implementations with adaptive $h$ \emph{break the conservative pr
 
 The second complication lies within the kernel-summed density \emph{itself.} In problems where the density varies strongly, \eg at shocks or contact discontinuities, the kernel-summed approach suffers from \emph{artificial surface tension}, a boundary-like artifact \autocite{hopkinsGeneralClassLagrangian2013a}. Even though the density field of mountain waves is smooth, the strong background stratification produces qualitatively similar artefacts.
 
-The class of \emph{density-independent} formulations \autocite{saitohDensityindependentFormulation2013,hopkinsGeneralClass2013} addresses both difficulties by replacing the kernel-summed density with an \emph{alternative volume estimator}. In what follows, we briefly review the original formulation and then present the $\theta$-reformulation developed in this work \Cref{sec:DI-THETA}.
+The class of \emph{density-independent} formulations \autocite{saitohDensityIndependentFormulation2013,hopkinsGeneralClassLagrangian2013a} addresses both difficulties by removing the kernel-summed density from the formulation entirely, replacing it with an \emph{alternative volume estimator}. In what follows, we briefly review the original formulation and then present the $\theta$-reformulation developed in this work. 
+
+\subsection{A general class of Lagrangian SPH methods}
+\label{sec:GENERAL-CLASS}
+In this section, we derive the SPH equations for an arbitrary choice of particle volume. In the following sections, we will obtain specific formulations---including the classical and density-independent variants---by selecting particular volume estimators.
+
+A consistent and elegant way to derive \emph{conservative schemes} is to invoke the underlying structure. Previously we used the Hamiltonian framework; now we use the \emph{Lagrangian formulation} of classical mechanics, as it will easily allow us to treat the constraints we will impose on the smoothing lengths $\{h_{\alpha}\}$.
+
+As opposed to fixed $h$, variable smoothing lengths must be treated as \emph{independent variables.} Denote $\{h_{\alpha}\}_{\alpha=1}^N \subset \Rplus$ the smoothing lengths of particles at positions $\{\vb{x}_{\alpha}\}_{\alpha=1}^N$. Our generalized coordinates therefore are $\left(\vb{x}_{1}, \dots, \vb{x}_N, h_1, \dots, h_N\right)\in \R^{N(d+1)}$. The SPH Lagrangian reads \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a}\autocite[p.~4]{springelCosmologicalSPHSimulations2002} 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-LAGRANGIAN}
+L\left(\vb{x}_1, \dots, \vb{x}_N, h_1, \dots, h_N\right) = \frac{1}{2} \sum_{\beta=1}^N m_{\beta} \abs{\vb{v}_{\beta}}^{2} - \sum_{\beta=1}^N m_{\beta} e_{\beta},
+\end{equations}
+
+with $e_{\beta}$ being the internal energy per unit mass of the particle $\beta$. The evolution of the system is given by the Lagrange equations
+
+\begin{equations}[columns,*]
+	\dv{t} \pdv{L}{\dot{x}^i_{\alpha}} - \pdv{L}{x^i_{\alpha}} = 0, \alpha \in \{1, \dots, N\}, i \in \{1, \dots, d\}.
+\dv{t} \pdv{L}{\dot{h}_{\alpha}} - \pdv{L}{h_{\alpha}} = 0, 
+\end{equations}
+Now if $h_{\alpha}$ vary, the derivatives of the Lagrangian w.r.t to $h_{\alpha}$ need to be evaluated---we need to describe how the smoothing lengths change. It is common \autocite{hopkinsGeneralClassLagrangian2013a,saitohDensityIndependentFormulation2013,springelCosmologicalSPHSimulations2002} to describe the smoothing lengths implicitly by imposing the holonomic constraint on the \emph{effective neighbour number}\sidenote{This constraint couples the smoothing length to the particle distribution.}
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:CONSTRAINT}
+\Phi_{\alpha}\left(\vb{x}_1, \dots, \vb{x}_{\alpha}, h_1, \dots, h_N\right) \coloneq \frac{\abs{B\left(h_{\alpha}\right)}}{\tilde{V}_{\alpha}} - N_{\, \text{ngb} \,} = 0, \alpha \in \{1, \dots, N\},
+\end{equations}
+
+where $\abs{B\left(h_{\alpha}\right)}$ is the volume of the $d$-dimensional ball of radius $h_{\alpha}$, $\tilde{V}_{\alpha}$ is \emph{some} estimator of the particle volume and $N_{\, \text{ngb} \,}$ is the chosen constant neighbor number. This constraint determines $h_{\alpha}$ implicitly given the particle distribution $\{\vb{x}_{\alpha}\}$, by requiring that the kernel ball $B\left(h_i\right)$ contain a fixed effective neighbour count $N_{\, \text{ngb} \,}$.
+
+Introducing $N$ Lagrange multipliers $\{\lambda_{\alpha}\}_{\alpha=1}^N$ the system of governing equations thus reads
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:LAGRANGE-EQUATIONS}
+\dv{t} \pdv{L}{\dot{x}^i_{\alpha}} - \pdv{L}{x^i_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta=1} \pdv{\Phi_{\beta}}{x^i_{\alpha}}, \alpha \in \{1, \dots, N\}, i \in \{1, \dots, d\}, \\
+\dv{t} \pdv{L}{\dot{h}_{\alpha}} - \pdv{L}{h_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta=1} \pdv{\Phi_{\beta}}{h_{\alpha}}, \alpha \in \{1, \dots, N\}, i \in \{1, \dots, d\}, \\
+\end{equations}
+
+To compute the derivatives of the Lagrangian \Cref{eq:SPH-LAGRANGIAN}, we require the knowledge of the derivatives of the internal energy $e$ w.r.t $\vb{x}_{\alpha}, h_{\alpha}$. Using the first law of thermodynamics
+
+\begin{equations}[single,*]
+	m\dd{e} = \delta q + \delta w,
+\end{equations}
+
+with $\delta q$ and $\delta w$ being the exchanged heat and work respectively. For an isentropic process\sidenote{Recall that all isentropic processess are adiabatic processes.} of an ideal gas yields $\delta q = 0, \delta w = -p \dd{V}$, and so 
+
+\begin{equations}[single,*]
+	\dd{e} = - \frac{p}{m} \dd{V}.
+\end{equations}
+
+Therefore, the derivative of $e_{\alpha}$ w.r.t $q^i$ is \autocite[p.~2]{hopkinsGeneralClassLagrangian2013a} 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:E-DERIVATIVE}
+\pdv{e_{\alpha}}{q^i} = - \frac{p_{\alpha}}{m_{\alpha}} \pdv{V_{\alpha}}{q^i},
+\end{equations}
+
+with $V_{\alpha}$ being \emph{some} particle volume estimator.
+
+
+
+
+
+
+
 
 \subsubsection{Pressure-entropy}
 \label{sec:DI-pressure}
