@@ -38,9 +38,9 @@
 \contentsline {subsection}{Complete system}{34}{subsection*.42}%
 \contentsline {section}{\numberline {3.4}Hamiltonian formulation}{35}{section*.43}%
 \contentsline {subsection}{Poisson brackets}{35}{subsection*.44}%
-\contentsline {subsection}{SPH discretisation}{37}{subsection*.45}%
+\contentsline {subsection}{SPH discretisation}{38}{subsection*.45}%
 \contentsline {subsubsection}{SPH bracket}{38}{equation.3.31}%
-\contentsline {subsubsection}{SPH energy functional}{39}{equation.3.35}%
+\contentsline {subsubsection}{SPH energy functional}{40}{equation.3.35}%
 \contentsline {subsection}{Classical SPH as a Hamiltonian system}{40}{subsection*.46}%
 \contentsline {subsection}{Symplectic integrators}{43}{subsection*.47}%
 \contentsline {section}{\numberline {3.5}Density-free formulations}{44}{section*.48}%

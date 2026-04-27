@@ -571,8 +571,6 @@ INPUT ./chapters/sph.tex
 INPUT ./figures/sph/kernel.pdf
 INPUT ./figures/sph/kernel.pdf
 INPUT ./figures/sph/kernel.pdf
-INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-italic.luc
-INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-italic.luc
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/voronoi.tex

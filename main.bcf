@@ -2504,12 +2504,13 @@
     <bcf:citekey order="72" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
     <bcf:citekey order="73" intorder="1">callenThermodynamicsIntroductionThermostatistics1985</bcf:citekey>
     <bcf:citekey order="74" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
-    <bcf:citekey order="75" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
-    <bcf:citekey order="76" intorder="1">hairerGeometricNumericalIntegration2006</bcf:citekey>
-    <bcf:citekey order="76" intorder="2">leimkuhlerSimulatingHamiltonianDynamics2004</bcf:citekey>
-    <bcf:citekey order="77" intorder="1">kinclGloballyTimereversibleFluid2023a</bcf:citekey>
-    <bcf:citekey order="78" intorder="1">Hairer_2003</bcf:citekey>
-    <bcf:citekey order="79" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">kinclGloballyTimereversibleFluid2023a</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">hairerGeometricNumericalIntegration2006</bcf:citekey>
+    <bcf:citekey order="77" intorder="2">leimkuhlerSimulatingHamiltonianDynamics2004</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">kinclGloballyTimereversibleFluid2023a</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">Hairer_2003</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
