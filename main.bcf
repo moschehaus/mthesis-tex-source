@@ -2524,7 +2524,8 @@
     <bcf:citekey order="87" intorder="2">saitohDensityIndependentFormulation2013</bcf:citekey>
     <bcf:citekey order="87" intorder="3">springelCosmologicalSPHSimulations2002</bcf:citekey>
     <bcf:citekey order="88" intorder="1">hopkinsGeneralClassLagrangian2013a</bcf:citekey>
-    <bcf:citekey order="89" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="89" intorder="1">hopkinsGeneralClassLagrangian2013a</bcf:citekey>
+    <bcf:citekey order="90" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -47,20 +47,20 @@
 \contentsline {subsection}{Symplectic integrators}{43}{subsection*.49}%
 \contentsline {section}{\numberline {3.5}Density-independent formulations}{44}{section*.50}%
 \contentsline {subsection}{A general class of Lagrangian SPH methods}{45}{subsection*.51}%
-\contentsline {subsubsection}{Pressure-entropy}{47}{equation.3.51}%
-\contentsline {subsubsection}{Pressure-potential temperature}{48}{equation.3.54}%
+\contentsline {subsubsection}{Pressure-entropy}{47}{equation.3.52}%
+\contentsline {subsubsection}{Pressure-potential temperature}{48}{equation.3.55}%
 \contentsline {subsection}{Well-balanced SPH}{49}{subsection*.52}%
 \contentsline {section}{\numberline {3.6}Implementation specifics}{49}{section*.53}%
 \contentsline {subsection}{Extrapolating boundary conditions}{49}{subsection*.54}%
 \contentsline {subsubsection}{Inflow \& Outflow}{49}{subsection*.54}%
 \contentsline {subsubsection}{Free-slip}{49}{subsection*.54}%
 \contentsline {subsection}{Adaptive smoothing length}{49}{subsection*.55}%
-\contentsline {subsection}{Particle placement}{49}{subsection*.56}%
-\contentsline {chapter}{\numberline {4}Experiments}{50}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{50}{section*.57}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{50}{section*.58}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{50}{section*.59}%
-\contentsline {chapter}{\numberline {5}Voronoi}{51}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{52}{chapter*.60}%
-\contentsline {chapter}{References}{53}{appendix*.61}%
+\contentsline {subsection}{Particle placement}{50}{subsection*.56}%
+\contentsline {chapter}{\numberline {4}Experiments}{51}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{51}{section*.57}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{51}{section*.58}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{51}{section*.59}%
+\contentsline {chapter}{\numberline {5}Voronoi}{52}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{53}{chapter*.60}%
+\contentsline {chapter}{References}{54}{appendix*.61}%
 \contentsfinish 
