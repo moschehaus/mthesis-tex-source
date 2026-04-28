@@ -9,11 +9,19 @@
 %% `clearempty` option removes page numbers from empty pages when using `\cleardoublepage`
 \usepackage[newparttoc, clearempty]{titlesec}
 
-%% NOTE: also include `\phantomsection` so that hyperlink anchors are properly placed 
+%% NOTE: also include `\phantomsection` so that hyperlink anchors are properly placed
 %%         (or modern `\MakeLinkTarget`)          (even for non-numbered subsections)
-\titleformat{\section}   {\MakeLinkTarget[section]{}\Large\sffamily\bfseries}{\thesection}   {0.8em}{}
-\titleformat{\subsection}{\MakeLinkTarget[subsection]{}\large\sffamily\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\section}      {\MakeLinkTarget[section]{}\Large\sffamily\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}   {\MakeLinkTarget[subsection]{}\large\sffamily\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\MakeLinkTarget[subsubsection]{}\normalsize\sffamily\bfseries}{\thesubsubsection}{0.8em}{}
 \titleformat{\paragraph}[runin]{\MakeLinkTarget[paragraph]{}\normalsize\sffamily\bfseries}{\theparagraph}{0em}{}
+
+%% FIX: zref-clever recognises the reference type from \refstepcounter, but for
+%%   unnumbered sectioning levels (secnumdepth < level) \refstepcounter is skipped.
+%%   This causes zref to inherit the type from the last stepped counter (e.g. sidenote).
+%%   The \titleformat before-code runs inside titlesec's \begingroup, so we use \gdef
+%%   to globally set the zref internal `zc@type` property to the correct sectioning type.
+%%   For numbered levels, \refstepcounter will overwrite this with the same value anyway.
 
 %% Part title (page) formatting
 \titleformat{\part}[display]

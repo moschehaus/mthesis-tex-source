@@ -12,6 +12,9 @@ This chapter presents the main numerical method used --- the \emph{Smoothed Part
 	\item section
 \end{compactitem}
 
+%WARNING: YOU HAVE FORGOTTEN ABOUT GRAVITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+%WARNING: SAY THAT YOU DONT WRITE \alpha = 1, \dots, N
+
 \section{Method overview}
 \label{sec:SPH_OVERVIEW}
 
@@ -1209,12 +1212,80 @@ f_{\alpha\beta} &= 1 - \frac{1}{m_{\beta} \theta_{\beta}}\left(\frac{h_{\alpha}}
 \tilde{n}_{\alpha} &= \sum_{\beta=1}^N w_{\alpha\beta}(h_{\alpha}).
 \end{equations}
 
-\subsection{Well-balanced SPH}
+\section{Well-balanced SPH}
 \label{sec:WELL-BALANCED-SPH}
-- failure of hydrostatic balance
-- fix standard SPH
-- fix hopkins
-- fix my hopkins
+
+The concept of well-balanced numerical methods was introduced in \Cref{sec:WELL-BALANCED}. In this section, we develop well-balanced formulations for the three SPH variants presented earlier: classical SPH \Cref{sec:CLASSIC-COMPLETE}, the density-independent pressure-entropy formulation \Cref{sec:DI-pressure-entropy}, and the pressure-potential-temperature formulation \Cref{sec:DI-pressure-theta}. To our knowledge, no well-balanced SPH scheme has been previously developed for any of these formulations in the context of stratified atmospheric flow; the constructions presented here are the central methodological contribution of this thesis.
+
+\subsection{Failure of hydrostatic balance}
+\label{sec:SPH-FAILURE}
+
+Let us first demonstrate why standard SPH formulations fail to preserve the \emph{discrete} hydrostatic balance in a \emph{stratified atmosphere}. Notice that a general SPH discretisation of the balance of momentum \Cref{eq:MOMENTUM-BALANCE} approximates the $\grad p$ term through kernel interpolation, take the classical SPH \Cref{eq:CLASSICAL-SPH} for instance: 
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:MOMENTUM-FAILURE}
+	\dv{\vb{v}_{\alpha}}{t} = - \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha \beta} + \vb{g}
+\end{equations}
+
+Suppose the simulation is initialised as an isothermal atmosphere in hydrostatic balance.\sidenote{This initial condition is used in our numerical experiments presented in \Cref{chap:EXPERIMENTS}.} The density, pressure and potential temperature are hence given as \Cref{eq:HYDROSTATIC}
+
+\begin{equations}[columns,*]
+\rho(z) &= \rho_0 \exp\left(- \frac{z}{H_s}\right),\\
+p(z) &= p_0 \exp\left(- \frac{z}{H_s} \right),\\
+\theta(z) &= T \exp\left(\frac{R}{c_p}\frac{z}{H_s}\right),\\
+T &= \, \text{const},\\
+\vb{v} &= \vb{0}.
+\end{equations}
+
+During initial force evaluation at $t = 0$, the pressure entering \Cref{eq:MOMENTUM-FAILURE} is proportional to the \emph{exponential of the particle's altitude.} Because the pressure drops exponentially, it varies non-linearly across a single smoothing length $h$. The kernel summation approximates $\grad p$ by evaluating the pressure over a discrete, finite set of neighbours, which \emph{inherently} introduces a truncation error $\vb{E}_{\alpha}$. While analytically the pressure gradient and gravitational acceleration cancel \emph{exactly}\sidenote{This is the \emph{definition} of hydrostatic balance: $\grad p = \rho \vb{g}$.}, the discrete SPH approximation yields a non-zero residual \emph{spurious force}. Consequently, at $t = 0$ the momentum balance evaluates to
+
+\begin{equations}[single,*]
+\dv{\vb{v}_{\alpha}}{t} = - \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha \beta} + \vb{g} = \vb{E}_{\alpha} \neq \vb{0}.
+\end{equations}
+
+This artificial residual acceleration $\vb{E}_{\alpha}$ immediately induces spurious velocities, displacing particles from their equilibrium positions. Once the particles shift, the system is \emph{no longer} in \emph{analytical} hydrostatic balance---hence the gradient of pressure evaluated at these new, incorrect altitudes fundamentally \emph{cannot balance gravity}. This creates a destructive feedback loop: the initial truncation error causes particle disorder, which in turn amplifies the gradient errors. Within a few integration steps, this fundamental instability completely destroys the stratified hydrostatic background.
+
+\subsection{Well-balanced classical SPH}
+\label{sec:WB-CLASSICAL-SPH}
+
+As established in \Cref{sec:CLASSIC-COMPLETE}, the classical SPH discretisation of the balance of linear momentum for an inviscid fluid in gravitational field
+
+\begin{equations}[single,*]
+	\tdot{\vb{v}} = - \frac{1}{\rho} \grad p + \vb{g},
+\end{equations}
+
+reads 
+
+\begin{equations}[columns,*]
+	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right) + \vb{g}. \\
+\end{equations}
+
+Assume now, in correspondence to \Cref{sec:MTN-WVS}, that the density and pressure field have the form\sidenote{In the chapter \Cref{chap:FLOWS} we used the subscript zero and one for the background state and the perturbation respectively. Since we index particle-carried quantities with a lower index also, we switch to the bar and apostrophe notation.}
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:WB-SPH-SPLIT}
+\rho\left(t, \vb{x}\right) &= \overline{\rho}(z) + \rho'\left(t, \vb{x}\right), \\
+p\left(t, \vb{x}\right) &= \overline{p}(z) + p'\left(t, \vb{x}\right), \\
+\end{equations}
+
+where $\overline{\rho}(z), \overline{p}(z)$ are background density and pressure that \emph{solve the hydrostatic balance} $\grad \overline{p} = \overline{\rho} \vb{g}$. Then the balance of linear momentum becomes
+
+\begin{equations}[single,*]
+	\left(\overline{\rho} + \rho'\left)\tdot{\vb{v}} = - \grad \overline{p} - \grad p' + \overline{\rho} \vb{g} + \rho' \vb{g} = - \grad p' + \rho' \vb{g},
+\end{equations}
+
+and so 
+
+
+
+
+
+\subsection{Well-balanced pressure-entropy formulation}
+\label{sec:WB-DI-PA}
+
+\subsection{Well-balanced pressure-potential temperature formulation}
+\label{sec:WB-DI-PTH}
+
 
 $\theta$ use \autocite{artianoStructurePreservingHighOrderMethods2025,chertockWellbalancedNumericalMethod2023} 
 
