@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 02:18
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 02:21
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2515,7 +2515,7 @@ Underfull \hbox (badness 1874) in paragraph at lines 30--30
 
 ] (./chapters/oro_flows.tex
 Chapter 1.
-<./figures/oro_flows/clouds.pdf, id=350, 1110.0672pt x 832.5504pt>
+<./figures/oro_flows/clouds.pdf, id=363, 1110.0672pt x 832.5504pt>
 File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/clouds.pdf>
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
@@ -2529,7 +2529,7 @@ Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
 ]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 40.
-<./figures/oro_flows/fohn.pdf, id=376, 3886.52pt x 2601.72pt>
+<./figures/oro_flows/fohn.pdf, id=389, 3886.52pt x 2601.72pt>
 File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/fohn.pdf>
 Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 46.
@@ -2737,7 +2737,7 @@ Overfull \hbox (30.80154pt too wide) detected at line 739
 
 
 [21]
-<./figures/oro_flows/wave.pdf, id=687, 677.53125pt x 376.40625pt>
+<./figures/oro_flows/wave.pdf, id=700, 677.53125pt x 376.40625pt>
 File: ./figures/oro_flows/wave.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/wave.pdf>
 Package luatex.def Info: ./figures/oro_flows/wave.pdf  used on input line 757.
@@ -2801,7 +2801,7 @@ Underfull \hbox (badness 1748) in paragraph at lines 88--88
 \TU/lmr/m/n/12 smooth-ness and di-men-sion, the
  []
 
-<./figures/sph/kernel.pdf, id=803, 1053.9375pt x 451.6875pt>
+<./figures/sph/kernel.pdf, id=816, 1053.9375pt x 451.6875pt>
 File: ./figures/sph/kernel.pdf Graphic file (type pdf)
 <use ./figures/sph/kernel.pdf>
 Package luatex.def Info: ./figures/sph/kernel.pdf  used on input line 100.
@@ -3133,22 +3133,22 @@ Overfull \hbox (2.36586pt too wide) detected at line 968
 
 
 LaTeX Warning: Citation 'hopkinsGeneralClassLagrangian2013' on page 52 undefine
-d on input line 987.
+d on input line 982.
 
 
-Overfull \hbox (160.30472pt too wide) in paragraph at lines 986--988
+Overfull \hbox (160.30472pt too wide) in paragraph at lines 981--983
 \TU/lmr/m/n/12 and $\OML/lmm/m/it/12  \OT1/lmr/m/n/12 =  [] \OML/lmm/m/it/12 :$ \TU/lmr/m/n/12 We see that the quan-tity $\OML/lmm/m/it/12 A$ \TU/lmr/m/n/12 de-fined as [] |
  []
 
 
 
 [52]
-Overfull \hbox (17.23523pt too wide) detected at line 1016
+Overfull \hbox (17.23523pt too wide) detected at line 1011
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[][][][][][];$ |
  []
 
 
-Overfull \hbox (3.4041pt too wide) detected at line 1049
+Overfull \hbox (3.4041pt too wide) detected at line 1043
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
@@ -3156,13 +3156,13 @@ Overfull \hbox (3.4041pt too wide) detected at line 1049
 
 
 [53]
-Overfull \hbox (0.63048pt too wide) detected at line 1085
+Overfull \hbox (0.63048pt too wide) detected at line 1079
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[] [] [][];$ 
 |
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 54 undefined on input line 1087.
+LaTeX Warning: Reference `eq:f_PE' on page 54 undefined on input line 1081.
 
 
 
@@ -3249,7 +3249,7 @@ See the caption package documentation for explanation.
 
 
 [64]
-runsystem(latexminted cleantemp  --timestamp 20260428021807Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260428022104Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3266,17 +3266,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 68014 strings out of 475512
- 244360,3417909 words of node,token memory allocated
- 81728 words of node memory still in use:
+ 68022 strings out of 475512
+ 244401,3417909 words of node,token memory allocated
+ 81738 words of node memory still in use:
    938 hlist, 119 vlist, 42 rule, 448 disc, 46 local_par, 226 math, 1588 glue, 5
-24 kern, 193 penalty, 161 margin_kern, 5300 glyph, 2530 attribute, 115 glue_spec
-, 2530 attribute_list, 9 write, 562 pdf_literal, 6 pdf_start_link, 6 pdf_end_lin
-k, 3 pdf_dest, 11 pdf_action, 86 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 
+24 kern, 193 penalty, 161 margin_kern, 5300 glyph, 2531 attribute, 115 glue_spec
+, 2531 attribute_list, 9 write, 562 pdf_literal, 6 pdf_start_link, 6 pdf_end_lin
+k, 3 pdf_dest, 12 pdf_action, 86 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 
 pdf_restore nodes
-   avail lists: 1:20,2:7665,3:5014,4:612,5:838,6:211,7:8029,8:114,9:2745,10:43,1
+   avail lists: 1:13,2:7665,3:5014,4:612,5:838,6:215,7:8029,8:114,9:2745,10:43,1
 1:525,12:12
- 88602 multiletter control sequences out of 65536+600000
+ 88607 multiletter control sequences out of 65536+600000
  147 fonts using 11563911 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3318,10 +3318,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (71 pages, 10868655 bytes).
+Output written on main.pdf (71 pages, 10869736 bytes).
 
-PDF statistics: 1796 PDF objects out of 2073 (max. 8388607)
- 1154 compressed objects within 12 object streams
- 406 named destinations out of 1000 (max. 131072)
- 670 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1818 PDF objects out of 2073 (max. 8388607)
+ 1164 compressed objects within 12 object streams
+ 409 named destinations out of 1000 (max. 131072)
+ 694 words of extra memory for PDF output out of 10000 (max. 100000000)
 
