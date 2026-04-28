@@ -1003,7 +1003,8 @@ Choosing $x_{\alpha} = \tilde{x}_{\alpha} = m_{\alpha}$ as the kernel-sum weight
 
 and so $V_{\alpha} = \tilde{V}_{\alpha} = \frac{\rho_{\alpha}}{m_{\alpha}}$. Since we have chosen the weights $x_{\alpha}, \tilde{x}_{\alpha}$ to equal, the $\grad h$ correction term \Cref{eq:KERNEL-SUM-CORRECTION} reads as
 
-\begin{equations}[single,*]
+\begin{equations}[single,!,numberline=all]
+	\label{eq:DENSITY-ENTROPY-CORRECTION}
 	f_{\alpha \beta} = 1 - \frac{m_{\beta}}{m_{\beta}}\left(\frac{h_{\alpha}}{2\rho_{\alpha}} \pdv{\rho_{\alpha}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 \rho_{\alpha}} \pdv{\rho_{\alpha}}{h_{\alpha}}\right)^{-1} = \left(1 + \frac{h_{\alpha}}{2 \rho_{\alpha}}\pdv{\rho_{\alpha}}{h_{\alpha}}\right)^{-1} \equiv f_{\alpha}
 \end{equations}
 
@@ -1039,12 +1040,12 @@ p_{\alpha} = A_{\alpha} \rho_{\alpha}^\gamma,
 
 and formally substitute $\rho_{\alpha} = m_{\alpha} / V_{\alpha}$, we obtain
 
-\begin{equations}[single,*]
-	\label{eq:V-ALPHA1}
-	p_{\alpha} = A_{\alpha} \left(\frac{m_{\alpha}}{V_{\alpha}}\right)^{\gamma} = \left(\frac{m_{\alpha} A_{\alpha}^{1/\gamma}}{V_{\alpha}}\right)^{\gamma}, \, \text{ie} \, V_{\alpha}^{\gamma} = \frac{m_{\alpha}A_{\alpha}^{1/\gamma}}{p_{\alpha}},
+\begin{equations}[single,!,numberline=all]
+	\label{eq:V-ALPHA-1}
+	p_{\alpha} = A_{\alpha} \left(\frac{m_{\alpha}}{V_{\alpha}}\right)^{\gamma} = \left(\frac{m_{\alpha} A_{\alpha}^{1/\gamma}}{V_{\alpha}}\right)^{\gamma}, \, \text{\ie} \, V_{\alpha} = \frac{m_{\alpha}A_{\alpha}^{1/\gamma}}{p^{1/ \gamma}_{\alpha}}.
 \end{equations}
 
-and so we see that if we choose the weights $x_{\alpha}$ as
+If we choose the weights $x_{\alpha}$ as
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:x_PE}
@@ -1075,21 +1076,16 @@ With these choices, the system of governing equations \Cref{eq:KERNEL-SUM-MOMENT
 
 \begin{equations}[columns,!,numberline=all]
 	\label{eq:PRESSURE-ENTROPY-TOTAL}
-	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{\frac{1}{\gamma}}\left(\frac{f_{\alpha}p_{\alpha}}{p_{\alpha}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}p_{\beta}}{p^{\frac{2}{\gamma}}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right), \\
-	f_{\alpha \beta} &=
-	p_{\alpha} &= 
-\end{equations}
-with
-
-\begin{equations}[single,*]
-	\label{eq:f_PE}
-	f_{\alpha} =  \left(1 + \frac{h_{\alpha}}{2 n_{\alpha}} \pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1}
+	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{1/\gamma}\left(\frac{f_{\alpha}p_{\alpha}}{p_{\alpha}^{2/\gamma}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}p_{\beta}}{p^{2/\gamma}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right), \\
+	f_{\alpha \beta} &= 1 - \left(\frac{h_{\alpha}}{2 A_{\alpha}^{1/\gamma}m_{\alpha} \tilde{n}_{\alpha}}\pdv{p_{\alpha}^{1/\gamma}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 \tilde{n}_{\alpha}}\pdv{\tilde{n}_{\alpha}}{h_{\alpha}}\right)^{-1}, \\
+	p_{\alpha} &= \left(\sum_{\beta=1}^N m_{\beta}A_{\beta}^{1/\gamma}w_{\alpha \beta}\left(h_{\alpha}\right)\right)^{\gamma}, \\
+	\tilde{n}_{\alpha} &= \sum_{\beta=1}^N w_{\alpha \beta}\left(h_{\alpha}\right).
 \end{equations}
 
 \subsection{Pressure-potential temperature}
 \label{sec:DI-pressure-theta}
 
-Recall the \emph{potential temperature} $\theta$
+Recall the \emph{potential temperature} $\theta$ \Cref{eq:POTENTIAL}
 
 \begin{equations}[single,*]
 \theta = T \left(\frac{P_0}{P}\right)^{\frac{R}{c_p}},
@@ -1176,6 +1172,12 @@ with \ref{eq:f_PE} unchanged
 \subsection{Adaptive smoothing length}
 \label{sec:ADAPTIVE-SMOOTHING}
 Newton iterations
+
+\begin{equations}[single,*]
+	\label{eq:f_PE}
+	f_{\alpha} =  \left(1 + \frac{h_{\alpha}}{2 n_{\alpha}} \pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1}
+\end{equations}
+
 
 \subsection{Particle placement}
 \label{sec:PLACEMENT}
