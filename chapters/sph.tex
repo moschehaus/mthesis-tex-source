@@ -897,7 +897,7 @@ The general Lagrangian formulation of SPH \Cref{eq:DI-MOMENTUM}, \Cref{eq:GRAD-H
 y_{\alpha} = \sum_{\beta=1}^N x_{\beta} w_{\alpha \beta}\left(h_{\alpha}\right),
 \end{equations}
 
-with the notation $w_{\alpha \beta}\left(h_{\alpha}\right) = w\left(\frac{\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}}{h_{\alpha}}\right)$. The volume estimator corresponding to the $x_{\alpha}$-weighted sum is then \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a} 
+with the notation $w_{\alpha \beta}\left(h_{\alpha}\right) = w_{h_{\alpha}}\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)$. The volume estimator corresponding to the $x_{\alpha}$-weighted sum is then \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a} 
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:KERNEL-SUM-VOLUME}
@@ -912,20 +912,17 @@ The derivatives of \Cref{eq:KERNEL-SUM-VOLUME} can be computed directly. Since $
 	\pdv{V_{\alpha}}{h_{\alpha}} = - \frac{x_{\alpha}}{y_{\alpha}^{2}} \pdv{y_{\alpha}}{h_{\alpha}},
 \end{equations}
 
-To express the derivative of $y_\alpha$ we require the derivative of the kernel with respect to its smoothing length. With
-
-\begin{equations}[single,*]
-	w_{\alpha\beta}(h_\alpha) = \frac{1}{h_\alpha^{d}} \tilde{w}\left(\frac{\abs{\vb{x}_\alpha - \vb{x}_\beta}}{h_\alpha}\right),
+To express the derivative of $y_\alpha$ we require the derivative of the kernel with respect to its smoothing length. A direct computation using the chain rule yields\sidenote{We utilize \begin{equations}[single,*]
+w_{\alpha \beta}\left(h_{\alpha}\right) = \frac{1}{h^d} \tilde{w}\left(\frac{\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}}{h_{\alpha}}\right),
 \end{equations}
-
-where $\tilde w$ denotes the kernel shape, a direct computation using the chain rule yields
+with $\tilde{w}(q_{\alpha \beta}), q_{\alpha \beta} = \frac{\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}}{h_{\alpha}}$ being the dimensionless kernel shape, see \eg \Cref{eq:WENDLAND-KERNEL}.}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:KERNEL-H-DERIVATIVE}
 \pdv{w_{\alpha\beta}(h_\alpha)}{h_\alpha} = -\frac{1}{h_\alpha}\left(d\, w_{\alpha\beta}(h_\alpha) + q_{\alpha\beta} \pdv{w_{\alpha\beta}(h_\alpha)}{q_{\alpha\beta}}\right),
 \end{equations}
 
-where $q_{\alpha\beta} = \abs{\vb{x}_\alpha - \vb{x}_\beta} / h_\alpha$. 
+where $q_{\alpha\beta} = \abs{\vb{x}_\alpha - \vb{x}_\beta} / h_\alpha$. Note that the derivative $\pdv{w_{\alpha \beta}\left(h_{\alpha}\right)}{q_{\alpha \beta}}$ on the right-hand side is taken at constant $h_{\alpha}$.
 
 Therefore,
 
@@ -967,7 +964,7 @@ m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= -\sum_{\beta=1}^N x_\alpha x_\beta \left[\
 f_{\alpha\beta} &\coloneq 1 - \frac{\tilde x_\beta}{x_\beta}\left(\frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{y_\alpha}{h_\alpha}\right)\left[1 + \frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{\tilde y_\alpha}{h_\alpha}\right]^{-1}.
 \end{equations}
 
-The factor $2$ in $f_{\alpha\beta}$ replaces the $3$ that appears in Hopkins's three-dimensional formulation, reflecting our two-dimensional setting. The system \Cref{eq:KERNEL-SUM-MOMENTUM} is the starting point for the following subsections, where we make specific choices of the weighting variables $x_\alpha, \tilde x_\alpha$.
+The factor $2$ in $f_{\alpha\beta}$ replaces the $3$ that appears in Hopkins's three-dimensional formulation \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a}, reflecting our two-dimensional setting. The system \Cref{eq:KERNEL-SUM-MOMENTUM} is the starting point for the following subsections, where we make specific choices of the weights $x_\alpha, \tilde{x_\alpha}$.
 
 \subsection{Density-entropy}
 \label{sec:DI-density-entropy}
