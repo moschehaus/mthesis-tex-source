@@ -41,3 +41,6 @@
 - vysledky se zpracovavaji vzhledem k nejakemu nondim cislu - inverzni Froudovo
 - *umi dodat mnoho dat pro srovnani*
 
+# AI acknowledgment
+
+AI writing and language tools — specifically Writefull and Claude (Anthropic) — were used for auxiliary tasks including proofreading, prose checking, and code and TeX debugging, as well as for the preparation of figures in Makie.jl and TikZ. All scientific content, numerical implementations, and analytical conclusions are the author's own work.
