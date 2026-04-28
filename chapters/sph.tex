@@ -972,7 +972,7 @@ The factor $2$ in $f_{\alpha\beta}$ replaces the $3$ that appears in Hopkins's t
 \subsection{Density-entropy}
 \label{sec:DI-density-entropy}
 
-Recall the thermodynamics of an ideal gas in an isentropic process. The specific entropy density is given as \Cref{eq:ENTROPY}
+Recall the thermodynamics of an ideal gas in an isentropic process. The specific entropy is given as \Cref{eq:ENTROPY}
 
 \begin{equations}[single,*]
 \eta = \eta_{\text{ref}} + c_V \log\left(\frac{RT}{\rho^{\gamma -1}}\right) = \eta_{\text{ref}} + c_V \log\left(\frac{p}{\rho^{\gamma}}\right),
@@ -1001,7 +1001,7 @@ Choosing $x_{\alpha} = \tilde{x}_{\alpha} = m_{\alpha}$ as the kernel-sum weight
 	y_{\alpha} = \sum_{\beta=1}^N m_{\beta} w_{\alpha \beta}\left(h_{\alpha}\right),
 \end{equations}
 
-and so $V_{\alpha} = \tilde{V}_{\alpha} = \frac{\rho_{\alpha}}{m_{\alpha}}$. Since we have chosen the weights $x_{\alpha}, \tilde{x}_{\alpha}$ to equal, the $\grad h$ correction term \Cref{eq:KERNEL-SUM-CORRECTION} reads as
+and so $V_{\alpha} = \tilde{V}_{\alpha} = \frac{\rho_{\alpha}}{m_{\alpha}}$. Since we have chosen the weights $x_{\alpha}, \tilde{x}_{\alpha}$ equal to each other, the $\grad h$ correction term \Cref{eq:KERNEL-SUM-CORRECTION} reads as
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:DENSITY-ENTROPY-CORRECTION}
@@ -1019,7 +1019,7 @@ Together with \Cref{eq:DENSITY-ENTROPY-PRESSURE}, the governing equations \Cref{
 f_{\alpha} &= \left(1 + \frac{h_{\alpha}}{2 \rho_{\alpha}}\pdv{\rho_{\alpha}}{h_{\alpha}}\right)^{-1}. 
 \end{equations}
 
-The system \Cref{eq:DENSITY-ENTROPY-TOTAL} is a \emph{generalization} of the \emph{classical SPH} system \Cref{eq:CLASSICAL-SPH} where the smoothing length $h$ is allowed to vary, \ie with the $\grad h$ terms $f_{\alpha}$ included. This realisation will serve only as a consistency check with the previous chapters; due to the reasons mentioned in the introduction to \Cref{sec:DENSITY-FREE}, our goal is to avoid using density.
+The system \Cref{eq:DENSITY-ENTROPY-TOTAL} is a \emph{generalization} of the \emph{classical SPH} system \Cref{eq:CLASSICAL-SPH} where the smoothing length $h$ is allowed to vary, \ie with the $\grad h$ terms $f_{\alpha}$ included. This observation serves only as a consistency check with the previous chapters; for to the reasons mentioned in the introduction to \Cref{sec:DENSITY-FREE}, our goal is to avoid using density.
 
 \subsection{Pressure-entropy}
 \label{sec:DI-pressure-entropy}
@@ -1031,8 +1031,8 @@ Let us now choose $\tilde{x}_{\alpha} = 1$, yielding
 \tilde{y}_{\alpha} = \tilde{n}_{\alpha} \coloneq \sum_{\beta=1}^N w_{\alpha \beta}\left(h_{\alpha}\right).
 \end{equations}
 
-The physical interpretation of this quantity is \emph{particle number density}, and as such it will be denoted $\tilde{n}_{\alpha}$.
-We aim to formulate the governing equations using $A$ as the thermodynamic variable with also avoiding the density. If we take the equation for pressure \Cref{eq:DENSITY-ENTROPY-PRESSURE}
+This quantity has the physical interpretation of \emph{particle number density}, and as such it will be denoted $\tilde{n}_{\alpha}$.
+We aim to formulate the governing equations using $A$ as the thermodynamic variable while also avoiding the density. If we take the equation for pressure \Cref{eq:DENSITY-ENTROPY-PRESSURE}
 
 \begin{equations}[single,*]
 p_{\alpha} = A_{\alpha} \rho_{\alpha}^\gamma,
@@ -1048,36 +1048,38 @@ and formally substitute $\rho_{\alpha} = m_{\alpha} / V_{\alpha}$, we obtain
 If we choose the weights $x_{\alpha}$ as
 
 \begin{equations}[single,!,numberline=all]
-	\label{eq:x_PE}
+	\label{eq:x-PE}
 	x_{\alpha} = m_{\alpha} A_{\alpha}^{\frac{1}{\gamma}},
 \end{equations}
 
 we obtain 
 
 \begin{equations}[single,*]
-y_{\alpha} = \sum_{\beta=1}^N m_{\alpha} A_{\alpha}^{\frac{1}{\gamma}},
+y_{\alpha} = \sum_{\beta=1}^N m_{\beta} A_{\beta}^{\frac{1}{\gamma}}w_{\alpha \beta}\left(h_{\alpha}\right),
 \end{equations}
 
 and so 
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:V-ALPHA-2}
-V_{\alpha} = \frac{x_{\alpha}}{y_{\alpha}} = \frac{m A_{\alpha}^{1/\gamma}}{\sum_{\beta=1}^N m_{\alpha} A_{\alpha}^{\frac{1}{\gamma}}}.
+	V_{\alpha} = \frac{x_{\alpha}}{y_{\alpha}} = \frac{m A_{\alpha}^{1/\gamma}}{\sum_{\beta=1}^N m_{\beta} A_{\beta}^{\frac{1}{\gamma}}w_{\alpha \beta}\left(h_{\alpha}\right)}.
 \end{equations}
 
 Comparing \Cref{eq:V-ALPHA-1} and \Cref{eq:V-ALPHA-2} we conclude
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:PRESSURE-ENTROPY-PRESSURE}
-	P_{\alpha} = \left(\sum_{\beta=1}^N m_{\beta} A_{\beta}^{\frac{1}{\gamma}} w_{\alpha\beta}(h_{\alpha})\right)^{\gamma}.
+	p_{\alpha} = \left(\sum_{\beta=1}^N m_{\beta} A_{\beta}^{\frac{1}{\gamma}} w_{\alpha\beta}(h_{\alpha})\right)^{\gamma}.
 \end{equations}
+
+The key insight here is that with our choice of $x_{\alpha}$, we are able to completely \emph{replace density}.
 
 With these choices, the system of governing equations \Cref{eq:KERNEL-SUM-MOMENTUM}, \Cref{eq:KERNEL-SUM-CORRECTION} reads as
 
 \begin{equations}[columns,!,numberline=all]
 	\label{eq:PRESSURE-ENTROPY-TOTAL}
-	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{1/\gamma}\left(\frac{f_{\alpha}p_{\alpha}}{p_{\alpha}^{2/\gamma}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}p_{\beta}}{p^{2/\gamma}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right), \\
-	f_{\alpha \beta} &= 1 - \left(\frac{h_{\alpha}}{2 A_{\alpha}^{1/\gamma}m_{\alpha} \tilde{n}_{\alpha}}\pdv{p_{\alpha}^{1/\gamma}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 \tilde{n}_{\alpha}}\pdv{\tilde{n}_{\alpha}}{h_{\alpha}}\right)^{-1}, \\
+	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{1/\gamma}\left(\frac{f_{\alpha \beta}p_{\alpha}}{p_{\alpha}^{2/\gamma}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta \alpha}p_{\beta}}{p^{2/\gamma}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right), \\
+	f_{\alpha \beta} &= 1 - \left(\frac{h_{\alpha}}{2 A_{\beta}^{1/\gamma}m_{\beta} \tilde{n}_{\alpha}}\pdv{p_{\alpha}^{1/\gamma}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 \tilde{n}_{\alpha}}\pdv{\tilde{n}_{\alpha}}{h_{\alpha}}\right)^{-1}, \\
 	p_{\alpha} &= \left(\sum_{\beta=1}^N m_{\beta}A_{\beta}^{1/\gamma}w_{\alpha \beta}\left(h_{\alpha}\right)\right)^{\gamma}, \\
 	\tilde{n}_{\alpha} &= \sum_{\beta=1}^N w_{\alpha \beta}\left(h_{\alpha}\right).
 \end{equations}
@@ -1085,17 +1087,18 @@ With these choices, the system of governing equations \Cref{eq:KERNEL-SUM-MOMENT
 \subsection{Pressure-potential temperature}
 \label{sec:DI-pressure-theta}
 
-Recall the \emph{potential temperature} $\theta$ \Cref{eq:POTENTIAL}
+The pressure-entropy formulation \Cref{sec:DI-pressure-entropy} uses the entropy-like variable $A$ as its main thermodynamic quantity. This quantity is useful in astrophysical applications, where \autocite{hopkinsGeneralClassLagrangian2013a} originally developed the approach, but in atmospheric sciences, the universally used quantity is the \emph{potential temperature}. Recall we have introduced it in \Cref{sec:POTENTIAL_TEMP} as \Cref{eq:POTENTIAL}
 
 \begin{equations}[single,*]
-\theta = T \left(\frac{P_0}{P}\right)^{\frac{R}{c_p}},
+\theta = T \left(\frac{p_0}{p}\right)^{\frac{R}{c_p}},
 \end{equations}
 
-where $T$ is the gas's \textcolor{gray}{thermodynamic} temperature, and $P_0$ is the reference pressure. \sidenote{Potential temperature is the thermodynamic temperature the air parcel would possess if \emph{adiabatically} moved from the thermodynamic state $\left(T, P\right)$ to the state $\left(\theta, P_0\right)$.} Using the thermal state equation
+where $T$ is the thermodynamic temperature, and $p_0$ is the reference pressure. As discussed in \Cref{sec:POTENTIAL_TEMP} $\theta$ remains constant for isentropic flows---the same as for the entropy-like variable $A$ \Cref{eq:A-ENTROPY}. Using the thermal state equation \Cref{eq:THERMAL}
 
 \begin{equations}[single,*]
-P = R \rho T,
+p = R \rho T,
 \end{equations}
+
 together with the fact 
 
 \begin{equations}[single,*]
@@ -1105,49 +1108,105 @@ together with the fact
 we obtain
 
 \begin{equations}[single,*]
-\theta = \frac{P}{\rho R} P_0^{\frac{\gamma - 1}{\gamma}} P^{\frac{1 - \gamma}{\gamma}} = \frac{P_0^{\frac{\gamma - 1}{\gamma}}}{R}\left(\frac{P^{\frac{1}{\gamma}}}{\rho}\right) = \frac{P_0^{\frac{\gamma - 1}{\gamma}}}{R}\left(\frac{P}{\rho^{\gamma}}\right)^{\frac{1}{\gamma}} = \frac{P_{0}^{\frac{\gamma - 1}{\gamma}}}{R} A^{\frac{1}{\gamma}},
+\theta = \frac{P}{\rho R} p_0^{\frac{\gamma - 1}{\gamma}} p^{\frac{1 - \gamma}{\gamma}} = \frac{p_0^{\frac{\gamma - 1}{\gamma}}}{R}\left(\frac{p^{\frac{1}{\gamma}}}{\rho}\right) = \frac{p_0^{\frac{\gamma - 1}{\gamma}}}{R}\left(\frac{p}{\rho^{\gamma}}\right)^{\frac{1}{\gamma}} = \frac{p_{0}^{\frac{\gamma - 1}{\gamma}}}{R} A^{\frac{1}{\gamma}},
 \end{equations}
 
 so setting 
 
 \begin{equations}[single,*]
-\tilde{\theta}_0 \coloneq \frac{P_0^{\frac{\gamma - 1}{\gamma}}}{R}
+C_{\theta A} \coloneq \frac{p_0^{\frac{\gamma - 1}{\gamma}}}{R}
 \end{equations}
 
 we obtain
 
-\begin{equations}[single, !,numberline=all]
-	\label{eq:theta_A}
-	\theta = \tilde{\theta}_0 A^{\frac{1}{\gamma}}.
+\begin{equations}[single,!,numberline=all]
+	\label{eq:theta-A}
+	\theta = C_{\theta A} A^{\frac{1}{\gamma}}.
 \end{equations}
 
-This implies the potential temperature $\theta$ is also \emph{an entropy-like} variable - it is \emph{conserved} under isentropic flows.
+We see there exists a \emph{monotonic transformation} between the potential temperature $\theta$ and the entropy-like variable $A$---our adaptation is therefore \emph{mathematically equivalent} to the pressure-entropy formulation, it does not introduce any new physics.
 
-Rewriting \ref{eq:x_PE} using \ref{eq:theta_A} we obtain
+In this section, we adapt the pressure-entropy formulation \Cref{sec:DI-pressure-entropy} to use $\theta$ instead of $A$. The reformulation is straightforward, but arguably has practical advantages in atmospheric applications---$\theta$ is the standard thermodynamic variable in literature on atmospheric dynamics \autocite{holtonIntroductionDynamicMeteorology2013}, so comparisons between atmospheric simulations become direct.
+To our best knowledge, this is the first formulation of density-independent SPH using potential temperature as the thermodynamic variable.
+
+Rewriting the weights \Cref{eq:x-PE} using \Cref{eq:theta-A}, \ie setting
 
 \begin{equations}[single,!,numberline=all]
-\label{eq:x_Ptheta}
-x_{\alpha} = \frac{m_{\alpha}}{\tilde{\theta}_0} \theta_{\alpha}.
+\label{eq:PRESSURE-THETA-WEIGHTS}
+x_{\alpha} = \frac{m_{\alpha}\theta_{\alpha}}{C_{\theta A}},
 \end{equations}
 
-Using this quantity the pressure \ref{eq:P_PE} can then be expressed as
+the pressure \Cref{eq:DENSITY-ENTROPY-PRESSURE} becomes
 
 \begin{equations}[single,!,numberline=all]
-\label{eq:P_Ptheta}
-P_{\alpha} = \left(\sum_{\beta=1}^N \frac{m_{\beta}}{\tilde{\theta_0}} \theta_{\beta} w_{\alpha\beta}\left(h_{\alpha}\right)\right)^{\gamma}.
+\label{eq:PRESSURE-THETA-PRESSURE}
+p_{\alpha} = \sum_{\beta=1}^N\left(\frac{m_{\beta} \theta_{\beta}}{C_{\theta A}}w_{\alpha \beta}\left(h_{\alpha}\right)\right)^{\gamma} = \frac{1}{C_{\theta A}^{\gamma}}\left(\sum_{\beta=1}^N m_{\beta} \theta_{\beta} w_{\alpha \beta}\left(h_{\alpha}\right)\right)^{\gamma},
 \end{equations}
 
-From \ref{eq:v_PE} we obtain
+the correction terms \Cref{eq:DENSITY-ENTROPY-CORRECTION} read
 
 \begin{equations}[single,!,numberline=all]
-\label{eq:v_Ptheta}
-\dv{\vb{v}_{\alpha}}{t} = - \sum_{\beta=1}^N m_{\beta} \frac{\theta_{\alpha} \theta_{\beta}}{\tilde{\theta}_0^{2}}\left(\frac{f_{\alpha}P_{\alpha}}{P_{\alpha}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}P_{\beta}}{P_{\beta}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right),
+\label{eq:PRESSURE-THETA-CORRECTION}
+f_{\alpha \beta} = 1 - \left(\frac{C_{\theta A}h_{\alpha}}{2 \theta_{\beta} m_{\beta} n_{\alpha}}\pdv{p_{\alpha}^{1/\gamma}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 n_{\alpha}}\pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1},
 \end{equations}
 
-with \ref{eq:f_PE} unchanged
+and the momentum equation \Cref{eq:DENSITY-ENTROPY-TOTAL} is
+
 \begin{equations}[single,!,numberline=all]
-\label{eq:f_Ptheta}
-	f_{\alpha} =  \left(1 + \frac{h_{\alpha}}{2 n_{\alpha}} \pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1}.
+\label{eq:PRESSURE-THETA-MOMENTUM}
+\dv{\vb{v}_{\alpha}}{t} = - \frac{1}{C_{\theta A}^{2}}\sum_{\beta=1}^N m_{\beta} \theta_{\alpha} \theta_{\beta}\left(\frac{f_{\alpha \beta}p_{\alpha}}{p_{\alpha}^{2/\gamma}}\grad_{\alpha} w_{\alpha \beta}\left(h_{\alpha}\right) + \frac{f_{\beta \alpha}p_{\beta}}{p_{\beta}^{2/\gamma}}\grad_{\alpha}w_{\alpha \beta}\left(h_{\beta}\right)\right).
+\end{equations}
+
+The system \Cref{eq:PRESSURE-THETA-PRESSURE,eq:PRESSURE-THETA-CORRECTION,eq:PRESSURE-THETA-MOMENTUM} is the pressure-potential-temperature formulation of density-independent SPH developed in this work. Notice the potential temperature enters directly rather than through the fractional power $A^{1/\gamma}$, which is convenient in applications. We validate this formulation in \Cref{chap:EXPERIMENTS}.
+
+\subsection{Exner-potential temperature}
+\label{sec:DI-EXNER-THETA}
+
+In a brief exposition, we introduce yet another \emph{reformulation} of the pressure-entropy formulation. As mentioned before, we are not introducing any new physics; our goal is to provide a reformulation in variables native to atmospheric sciences. 
+
+The pressure expression \Cref{eq:PRESSURE-THETA-PRESSURE} suggests defining the kernel-summed quantity
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:POTENTIAL-DENSITY}
+\hat{\rho}_{\alpha} \coloneq \sum_{\beta=1}^N m_{\beta} \theta_{\beta} w_{\alpha\beta}(h_{\alpha}),
+\end{equations}
+
+
+which is the kernel-sum estimator for the \enquote{potential-temperature density} $\rho \theta$. With this notation, the pressure reads
+
+\begin{equations}[single,*]
+p_{\alpha} = \frac{\hat{\rho}_{\alpha}^{\gamma}}{C_{\theta A}^{\gamma}}.
+\end{equations}
+
+Substituting this into the momentum equation \Cref{eq:PRESSURE-THETA-MOMENTUM}, the constants combine to a prefactor 
+
+\begin{equations}[single,*]
+1/C_{\theta A}^{\gamma} = R^\gamma / p_{\text{ref}}^{\gamma-1}.
+\end{equations}
+
+Aiming to recognize another standard atmospheric variables, we introduce the \emph{Exner function} 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:EXNER}
+\Pi \coloneq (p/p_{\text{ref}})^{(\gamma-1)/\gamma}.
+\end{equations}
+
+A direct computation using \Cref{eq:POTENTIAL-DENSITY} gives
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:EXNER-CONNECTION}
+\Pi_{\alpha} = \left(\frac{R\, \hat{\rho}_{\alpha}}{p_{\text{ref}}}\right)^{\gamma-1}.
+\end{equations}
+
+By rewriting the momentum equation in terms of this Exner function \Cref{eq:EXNER}, the terms containing $\hat{\rho}_{\alpha}$ are replaced, and the constants simplify further. Substituting $\hat{\rho}_{\alpha} = (p_{\text{ref}}/R) \Pi_{\alpha}^{1/(\gamma-1)}$ into the momentum equation \Cref{eq:PRESSURE-THETA-MOMENTUM} yields the final \emph{Exner-potential temperature} formulation:
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:EXNER-THETA}
+\dv{\vb{v}_{\alpha}}{t} &= - \frac{R^2}{p_{\text{ref}}} \sum_{\beta=1}^N m_{\beta} \theta_{\alpha} \theta_{\beta} \left[f_{\alpha\beta}\, \Pi_{\alpha}^{\frac{\gamma-2}{\gamma-1}}\, \grad_{\alpha} w_{\alpha\beta}(h_{\alpha}) + f_{\beta\alpha}\, \Pi_{\beta}^{\frac{\gamma-2}{\gamma-1}}\, \grad_{\alpha} w_{\alpha\beta}(h_{\beta})\right], \\
+f_{\alpha\beta} &= 1 - \frac{1}{m_{\beta} \theta_{\beta}}\left(\frac{h_{\alpha}}{2 \tilde{n}_{\alpha}}\pdv{\hat{\rho}_{\alpha}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 \tilde{n}_{\alpha}}\pdv{\tilde{n}_{\alpha}}{h_{\alpha}}\right)^{-1}, \\
+\Pi_{\alpha} &= \left(\frac{R\, \hat{\rho}_{\alpha}}{p_{\text{ref}}}\right)^{\gamma-1}, \\
+\hat{\rho}_{\alpha} &= \sum_{\beta=1}^N m_{\beta} \theta_{\beta} w_{\alpha\beta}(h_{\alpha}), \\
+\tilde{n}_{\alpha} &= \sum_{\beta=1}^N w_{\alpha\beta}(h_{\alpha}).
 \end{equations}
 
 \subsection{Well-balanced SPH}
