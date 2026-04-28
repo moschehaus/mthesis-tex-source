@@ -725,17 +725,17 @@ Now if $h_{\alpha}$ vary, the derivatives of the Lagrangian w.r.t to $h_{\alpha}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:CONSTRAINT}
-\Phi_{\alpha}\left(\vb{x}_1, \dots, \vb{x}_{\alpha}, h_1, \dots, h_N\right) \coloneq \frac{\abs{B\left(h_{\alpha}\right)}}{\tilde{V}_{\alpha}} - N_{\, \text{ngb} \,} = 0, \alpha \in \{1, \dots, N\},
+\Phi_{\alpha}\left(\vb{x}_1, \dots, \vb{x}_{\alpha}, h_1, \dots, h_N\right) \coloneq \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}} - N_{\, \text{ngb} \,} = 0, \alpha \in \{1, \dots, N\},
 \end{equations}
 
-where $\abs{B\left(h_{\alpha}\right)}$ is the volume of the $d$-dimensional ball of radius $h_{\alpha}$, $\tilde{V}_{\alpha}$ is \emph{some} estimator of the particle volume and $N_{\, \text{ngb} \,}$ is the chosen constant neighbor number. This constraint determines $h_{\alpha}$ implicitly given the particle distribution $\{\vb{x}_{\alpha}\}$, by requiring that the kernel ball $B\left(h_i\right)$ contains a fixed effective neighbour count $N_{\, \text{ngb} \,}$.
+where $\abs{B\left(R_{\alpha}\right)}$ is the $d-$ dimensional volume of the kernel support ball, $\tilde{V}_{\alpha}$ is \emph{some} estimator of the particle volume and $N_{\, \text{ngb} \,}$ is the chosen constant neighbor number. The kernel ball has radius $R_{\alpha} = \kappa h_{\alpha}$, with $\kappa$ being kernel dependent such that $2 \kappa h_{\alpha} = \diam \supp w_{h_{\alpha}}$, see \Cref{sec:INTERPOLATION}. This constraint determines $h_{\alpha}$ implicitly given the particle distribution $\{\vb{x}_{\alpha}\}$, by requiring that the kernel ball $B\left(R_{\alpha}\right)$ contains a fixed effective neighbour count $N_{\, \text{ngb} \,}$.
 
 Introducing $N$ Lagrange multipliers $\{\lambda_{\alpha}\}_{\alpha=1}^N$ the system of governing equations thus reads
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:LAGRANGE-EQUATIONS}
-\dv{t} \pdv{L}{\dot{x}^i_{\alpha}} - \pdv{L}{x^i_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta=1} \pdv{\Phi_{\beta}}{x^i_{\alpha}}, \\
-\dv{t} \pdv{L}{\dot{h}_{\alpha}} - \pdv{L}{h_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta=1} \pdv{\Phi_{\beta}}{h_{\alpha}}, \alpha \in \{1, \dots, N\}, i \in \{1, \dots, d\}. \\
+\dv{t} \pdv{L}{\dot{x}^i_{\alpha}} - \pdv{L}{x^i_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta} \pdv{\Phi_{\beta}}{x^i_{\alpha}}, \\
+\dv{t} \pdv{L}{\dot{h}_{\alpha}} - \pdv{L}{h_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta} \pdv{\Phi_{\beta}}{h_{\alpha}}, \alpha \in \{1, \dots, N\}, i \in \{1, \dots, d\}. \\
 \end{equations}
 
 To compute the derivatives of the Lagrangian \Cref{eq:SPH-LAGRANGIAN}, we require the knowledge of the derivatives of the internal energy $e$ w.r.t $\vb{x}_{\alpha}, h_{\alpha}$. Using the first law of thermodynamics
@@ -774,6 +774,79 @@ and with respect to $h_{\alpha}$ the derivative is
 \end{equations}
 
 with $V_{\alpha}$ being \emph{some} particle volume estimator. Notice that $V_{\alpha}$ and $\tilde{V}_{\alpha}$ can in general be different \autocite{hopkinsGeneralClassLagrangian2013a}; $V_{\alpha}$ enters the thermodynamics through \Cref{eq:E-X-DERIVATIVE} and \Cref{eq:E-H-DERIVATIVE}, whereas $\tilde{V}_{\alpha}$ enters the constraint \Cref{eq:CONSTRAINT}.
+
+First we solve for the Lagrange multipliers $\lambda_{\alpha}$. Since the Lagrangian \Cref{eq:SPH-LAGRANGIAN} does not depend on $\tdot{h_{\alpha}}$, the second set of the Lagrange equations \Cref{eq:LAGRANGE-EQUATIONS} read as
+
+\begin{equations}[single,*]
+	- \pdv{L}{h_{\alpha}} = \sum_{\beta=1}^N \lambda_{\beta} \pdv{\Phi_{\beta}}{h_{\alpha}}.
+\end{equations}
+
+The left-hand side is
+
+\begin{equations}[columns,*]
+	- \pdv{L}{h_{\alpha}} &= - \pdv{h_{\alpha}}\left(\frac{1}{2} \sum_{\beta=1}^N m_{\beta} \abs{\vb{v}_{\beta}}^{2} - \sum_{\beta=1}^N m_{\beta} e_{\beta}\right) = \\
+			      &= + \sum_{\beta=1}^N m_{\beta} \pdv{e_{\beta}}{h_{\alpha}} = \sum_{\beta=1}^N m_{\beta} \pdv{e_{\beta}}{h_{\beta}} \underbrace{\pdv{h_{\beta}}{h_{\alpha}}}_{= \delta_{\beta \alpha}} = \\
+	&= - m_{\alpha}\frac{p_{\alpha}}{m_{\alpha}} \pdv{V_{\alpha}}{h_{\alpha}} = -p_{\alpha} \pdv{V_{\alpha}}{h_{\alpha}},
+\end{equations}
+
+where we used \Cref{eq:E-H-DERIVATIVE}. The right-hand side reads
+
+\begin{equations}[columns,*]
+	\sum_{\beta=1}^N \lambda_{\beta}\pdv{\Phi_{\beta}}{h_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta} \pdv{h_{\alpha}}\left(\frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}} - N_{\, \text{ngb} \,}\right) = \\
+							&= \sum_{\beta=1}^N \lambda_{\beta}\left(\frac{1}{\tilde{V}_{\beta}} \pdv{\abs{B\left(R_{\beta}\right)}}{h_{\alpha}} - \frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}^{2}} \pdv{\tilde{V}_{\beta}}{h_{\alpha}}\right) = \\
+							&=\sum_{\beta=1}^N \lambda_{\beta}\left(\frac{\kappa}{\tilde{V}_{\beta}}\delta_{\beta \alpha}\eval{\pdv{\abs{B(R)}}{h_{\beta}}}_{R = R_{\beta}} - \frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}^{2}} \delta_{\beta \alpha} \pdv{\tilde{V}_{\beta}}{h_{\beta}}\right) = \\
+							&= \lambda_{\alpha}\left(\frac{\kappa}{\tilde{V}_{\alpha}} \eval{\pdv{\abs{B(R)}}{h_{\alpha}}}_{R = R_{\alpha}} - \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right),
+\end{equations}
+
+thanks to the chain rule $\pdv{\abs{B\left(\kappa h_{\alpha}\right)}}{h_{\alpha}} = \kappa \eval{\pdv{\abs{B\left(R\right)}}{h_{\alpha}}}_{R = \kappa h_{\alpha}}$. The multiplier $\lambda_{\alpha}$ thus reads as
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:MULTIPLIER}
+\lambda_{\alpha} = - p_{\alpha} \pdv{V_{\alpha}}{h_{\alpha}}\left(\frac{\kappa}{\tilde{V}_{\alpha}} \eval{\pdv{\abs{B(R)}}{h_{\alpha}}}_{R = R_{\alpha}} - \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right)^{-1}.
+\end{equations}
+
+We now deal with the first set of equations \Cref{eq:LAGRANGE-EQUATIONS}. The left-hand consists of the terms
+
+
+\begin{equations}[columns,*]
+	\dv{t} \pdv{L}{\tdot{x}^i_{\alpha}} &=\dv{t} \pdv{v^i_{\alpha}}\left(\sum_{\beta=1}^N \left( \frac{1}{2} m_{\beta}\abs{\vb{v}_{\beta}}^{2} - m_{\beta} e_{\beta}\right) \right) = \dv{t} \left(m_{\alpha} v_{\alpha}^i \right),
+\end{equations}
+
+and
+
+\begin{equations}[columns,*]
+	- \pdv{L}{x^i_{\alpha}} &= - \pdv{x^i_{\alpha}} \left(\sum_{\beta=1}^N \left( \frac{1}{2} m_{\beta}\abs{\vb{v}_{\beta}}^{2} - m_{\beta} e_{\beta}\right) \right) = \\
+				&= + \sum_{\beta=1}^N m_{\beta} \pdv{e_{\beta}}{x^i_{\alpha}} = - p_{\alpha} \pdv{V_{\alpha}}{x^{i}_{\alpha}},
+\end{equations}
+
+using \Cref{eq:E-X-DERIVATIVE}. In total, the left-hand side reads
+
+\begin{equations}[single,*]
+	\dv{t} \pdv{L}{\tdot{x}^i_{\alpha}} - \pdv{L}{x^i_{\alpha}} = m_{\alpha} \dv{v_{\alpha}^i}{t} - p_{\alpha} \pdv{V_{\alpha}}{x^i_{\alpha}},
+\end{equations}
+
+whereas the right-hand side is
+
+\begin{equations}[columns,*]
+	\sum_{\beta=1}^N \lambda_{\beta} \pdv{\Phi_{\beta}}{x^i_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta}\pdv{x^i_{\alpha}}\left(\frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}} - N_{\, \text{ngb} \,}\right) = \\
+									  &= \sum_{\beta=1}\lambda_{\beta}\left(- \frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}^{2}}\pdv{\tilde{V}_{\beta}}{x^i_{\alpha}} \right) = - \lambda_{\alpha}\frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}}\pdv{\tilde{V}_{\alpha}}{x^i_{\alpha}}.
+\end{equations}
+
+Thus the first set of the Lagrange equations \Cref{eq:LAGRANGE-EQUATIONS} yields
+
+\begin{equations}[single,*]
+m_{\alpha} \dv{v_{\alpha}^i}{t} - p_{\alpha}\pdv{V_{\alpha}}{x^i_{\alpha}} = - \lambda_{\alpha} \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}}\pdv{\tilde{V}_{\alpha}}{x^i_{\alpha}},
+\end{equations}
+so upon rearranging we arrive at
+
+\begin{equations}[columns,*]
+	m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= p_{\alpha} \grad_{\alpha} V_{\alpha} - \lambda_{\alpha} \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}} \grad_{\alpha} \tilde{V}_{\alpha}, \\
+	\lambda_{\alpha} &=  - p_{\alpha} \pdv{V_{\alpha}}{h_{\alpha}}\left(\frac{\kappa}{\tilde{V}_{\alpha}} \eval{\pdv{\abs{B(R)}}{h_{\alpha}}}_{R = R_{\alpha}} - \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right)^{-1}.
+\end{equations}
+
+
+
+
 
 
 
