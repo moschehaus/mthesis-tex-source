@@ -50,20 +50,20 @@
 \contentsline {paragraph}{Specialisation to two dimensions and the Wendland quintic kernel.}{49}{paragraph*.52}%
 \contentsline {subsection}{Kernel-sum volume estimators}{50}{subsection*.53}%
 \contentsline {subsection}{Density-entropy}{52}{subsection*.54}%
-\contentsline {subsection}{Pressure-entropy}{52}{subsection*.55}%
-\contentsline {subsection}{Pressure-potential temperature}{53}{subsection*.56}%
-\contentsline {subsection}{Well-balanced SPH}{54}{subsection*.57}%
-\contentsline {section}{\numberline {3.6}Implementation specifics}{55}{section*.58}%
-\contentsline {subsection}{Extrapolating boundary conditions}{55}{subsection*.59}%
-\contentsline {subsubsection}{Inflow \& Outflow}{55}{subsection*.59}%
-\contentsline {subsubsection}{Free-slip}{55}{subsection*.59}%
-\contentsline {subsection}{Adaptive smoothing length}{55}{subsection*.60}%
-\contentsline {subsection}{Particle placement}{55}{subsection*.61}%
-\contentsline {chapter}{\numberline {4}Experiments}{56}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{56}{section*.62}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{56}{section*.63}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{56}{section*.64}%
-\contentsline {chapter}{\numberline {5}Voronoi}{57}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{58}{chapter*.65}%
-\contentsline {chapter}{References}{59}{appendix*.66}%
+\contentsline {subsection}{Pressure-entropy}{53}{subsection*.55}%
+\contentsline {subsection}{Pressure-potential temperature}{54}{subsection*.56}%
+\contentsline {subsection}{Well-balanced SPH}{55}{subsection*.57}%
+\contentsline {section}{\numberline {3.6}Implementation specifics}{56}{section*.58}%
+\contentsline {subsection}{Extrapolating boundary conditions}{56}{subsection*.59}%
+\contentsline {subsubsection}{Inflow \& Outflow}{56}{subsection*.59}%
+\contentsline {subsubsection}{Free-slip}{56}{subsection*.59}%
+\contentsline {subsection}{Adaptive smoothing length}{56}{subsection*.60}%
+\contentsline {subsection}{Particle placement}{56}{subsection*.61}%
+\contentsline {chapter}{\numberline {4}Experiments}{57}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{57}{section*.62}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{57}{section*.63}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{57}{section*.64}%
+\contentsline {chapter}{\numberline {5}Voronoi}{58}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{59}{chapter*.65}%
+\contentsline {chapter}{References}{60}{appendix*.66}%
 \contentsfinish 

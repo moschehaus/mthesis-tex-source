@@ -354,7 +354,7 @@ INPUT /opt/texlive/texdir/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/scalerel/scalerel.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/amssymb.sty
-INPUT /opt/texlive/texdir/texmf-dist/tex/latex/jknapltx/mathbbol.sty
+INPUT /opt/texlive/texdir/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/tools/bm.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/tensind/tensind.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/mathfixs/mathfixs.sty
@@ -403,10 +403,6 @@ INPUT /opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /opt/texlive/texdir/texmf-dist/tex/latex/bbold/Ubbold.fd
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold12.tfm
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold8.tfm
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold6.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
@@ -476,8 +472,6 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tf
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold17.tfm
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold10.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
@@ -501,8 +495,6 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tf
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold12.tfm
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold7.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx7.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
@@ -542,7 +534,6 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/bbold/bbold5.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/lmmib5.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
@@ -558,9 +549,27 @@ INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmsans8-regul
 INPUT ./figures/oro_flows/fohn.pdf
 INPUT ./figures/oro_flows/fohn.pdf
 INPUT ./figures/oro_flows/fohn.pdf
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
 INPUT ./figures/oro_flows/wave.pdf
 INPUT ./figures/oro_flows/wave.pdf
 INPUT ./figures/oro_flows/wave.pdf
@@ -583,7 +592,6 @@ INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10
 INPUT ./build/main.aux
 INPUT ./build/main.run.xml
 OUTPUT build/main.run.xml
-INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbsy7.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmbx8.pfb
@@ -603,3 +611,4 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb
+INPUT /opt/texlive/texdir/texmf-dist/fonts/type1/public/boondox/zxxrl8a.pfb
