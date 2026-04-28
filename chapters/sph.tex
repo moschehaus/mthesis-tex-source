@@ -775,7 +775,7 @@ and with respect to $h_{\alpha}$ the derivative is
 \pdv{e_{\alpha}}{h_{\alpha}} = - \frac{p_{\alpha}}{m_{\alpha}} \pdv{V_{\alpha}}{h_{\alpha}}.
 \end{equations}
 
-with $V_{\alpha}$ being \emph{some} particle volume estimator. Notice that $V_{\alpha}$ and $\tilde{V}_{\alpha}$ can in general be different \autocite{hopkinsGeneralClassLagrangian2013a}; $V_{\alpha}$ enters the thermodynamics through \Cref{eq:E-X-DERIVATIVE} and \Cref{eq:E-H-DERIVATIVE}, whereas $\tilde{V}_{\alpha}$ enters the constraint \Cref{eq:CONSTRAINT}.
+with $V_{\alpha}$ being \emph{some} particle volume estimator. Notice that $V_{\alpha}$ and $\tilde{V}_{\alpha}$ can in general be different \autocite{hopkinsGeneralClassLagrangian2013a}; $V_{\alpha}$ enters the thermodynamics through \Cref{eq:E-X-DERIVATIVE} and \Cref{eq:E-H-DERIVATIVE}, whereas $\tilde{V}_{\alpha}$ enters the constraint \Cref{eq:CONSTRAINT}. Impacts of the choice $V_{\alpha} = \tilde{V}_{\alpha}$ are further discussed in \eg \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a}.
 
 First we solve for the Lagrange multipliers $\lambda_{\alpha}$. Since the Lagrangian \Cref{eq:SPH-LAGRANGIAN} does not depend on $\tdot{h_{\alpha}}$, the second set of the Lagrange equations \Cref{eq:LAGRANGE-EQUATIONS} read as
 
@@ -887,6 +887,8 @@ m_\alpha \dv{\vb{v}_\alpha}{t} &= \sum_{\beta=1}^N p_\beta \grad_\alpha V_\beta 
 f_{\alpha} &= \frac{\tilde{V}_{\alpha}}{h_{\alpha}}\left(2 - \frac{h_{\alpha}}{\tilde{V}_{\alpha}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right).
 \end{equations}
 
+Notice that in \Cref{eq:DI-2D}, and also in the previous equations, we have \emph{not yet specified} how to evaluate the particle pressure $p_{\alpha}$. The choice of thermodynamic variable, hence the pressure-computation rule, is \emph{free to choose}. We exploit this degree of freedom in the following subsections to derive the density-pressure formulation \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a}, the pressure-entropy formulation \autocite[p.~4]{hopkinsGeneralClassLagrangian2013a} and, as our main contribution, its pressure-potential temperature analogue.
+
 \subsection{Kernel-sum volume estimators}
 \label{sec:KERNEL-SUM-VOLUMES}
 
@@ -959,34 +961,70 @@ The derivatives $\pdv{\tilde{V}_{\alpha}}{h_{\alpha}}, \grad_{\alpha} \tilde{V}_
 The above results can then be substituted into \Cref{eq:DI-2D} and after a lengthy algebraic manipulation one arrives at \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a} 
 
 \begin{equations}[columns,!,numberline=all]
-\label{eq:KERNEL-SUM-MOMENTUM}
-m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= -\sum_{\beta=1}^N x_\alpha x_\beta \left[\frac{p_\alpha}{y_\alpha^2} f_{\alpha\beta}\,\grad_\alpha w_{\alpha\beta}(h_\alpha) + \frac{p_\beta}{y_\beta^2}f_{\beta\alpha}\grad_\alpha w_{\alpha\beta}(h_\beta)\right], \\
-f_{\alpha\beta} &\coloneq 1 - \frac{\tilde x_\beta}{x_\beta}\left(\frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{y_\alpha}{h_\alpha}\right)\left[1 + \frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{\tilde y_\alpha}{h_\alpha}\right]^{-1}.
+m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= -\sum_{\beta=1}^N x_\alpha x_\beta \left(\frac{p_\alpha}{y_\alpha^2} f_{\alpha\beta}\,\grad_\alpha w_{\alpha\beta}(h_\alpha) + \frac{p_\beta}{y_\beta^2}f_{\beta\alpha}\grad_\alpha w_{\alpha\beta}(h_\beta)\right), \label{eq:KERNEL-SUM-MOMENTUM} \\
+f_{\alpha\beta} &\coloneq 1 - \frac{\tilde x_\beta}{x_\beta}\left(\frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{y_\alpha}{h_\alpha}\right)\left(1 + \frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{\tilde y_\alpha}{h_\alpha}\right)^{-1}. \label{eq:KERNEL-SUM-CORRECTION}
 \end{equations}
 
 The factor $2$ in $f_{\alpha\beta}$ replaces the $3$ that appears in Hopkins's three-dimensional formulation \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a}, reflecting our two-dimensional setting. The system \Cref{eq:KERNEL-SUM-MOMENTUM} is the starting point for the following subsections, where we make specific choices of the weights $x_\alpha, \tilde{x_\alpha}$.
 
+% TODO: NOTE THAT THIS IS CONSERVVATIVE
+
 \subsection{Density-entropy}
 \label{sec:DI-density-entropy}
 
+Recall the thermodynamics of an ideal gas in an isentropic process. The specific entropy density is given as \Cref{eq:ENTROPY}
+
+\begin{equations}[single,*]
+\eta = \eta_{\text{ref}} + c_V \log\left(\frac{RT}{\rho^{\gamma -1}}\right) = \eta_{\text{ref}} + c_V \log\left(\frac{p}{\rho^{\gamma}}\right),
+\end{equations}
+
+so if $\eta = \, \text{const} \,$, then also the quantity
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:A-ENTROPY}
+A = \frac{p}{\rho^{\gamma}},
+\end{equations}
+
+is constant $A = \, \text{const} \,$. This property motivates us to call $A$ an \emph{entropy-like} variable. 
+We can \emph{choose} $A$ as our main thermodynamic variable used to express the particle pressure as
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:DENSITY-ENTROPY-PRESSURE}
+p_{\alpha} = A_{\alpha} \rho_{\alpha}^{\gamma},
+\end{equations}
+
+with $A_{\alpha}$ being the entropy-like variable carried by the particle $\alpha$; since the flow is isentropic, $A_{\alpha}$ \emph{does not change in time.}
+
+Choosing $x_{\alpha} = \tilde{x}_{\alpha} = m_{\alpha}$ as the kernel-sum weights in \Cref{eq:KERNEL-SUM}, we obtain
+
+\begin{equations}[single,*]
+	y_{\alpha} = \sum_{\beta=1}^N m_{\beta} w_{\alpha \beta}\left(h_{\alpha}\right),
+\end{equations}
+
+and so $V_{\alpha} = \tilde{V}_{\alpha} = \frac{\rho_{\alpha}}{m_{\alpha}}$. Since we have chosen the weights $x_{\alpha}, \tilde{x}_{\alpha}$ to equal, the $\grad h$ correction term \Cref{eq:KERNEL-SUM-CORRECTION} reads as
+
+\begin{equations}[single,*]
+	f_{\alpha \beta} = 1 - \frac{m_{\beta}}{m_{\beta}}\left(\frac{h_{\alpha}}{2\rho_{\alpha}} \pdv{\rho_{\alpha}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 \rho_{\alpha}} \pdv{\rho_{\alpha}}{h_{\alpha}}\right)^{-1} = \left(1 + \frac{h_{\alpha}}{2 \rho_{\alpha}}\pdv{\rho_{\alpha}}{h_{\alpha}}\right)^{-1} \equiv f_{\alpha}
+\end{equations}
+
+and since it is in fact independent of $\beta$ we refer to it as just $f_{\alpha}$.
+
+Together with \Cref{eq:DENSITY-ENTROPY-PRESSURE}, the governing equations \Cref{eq:KERNEL-SUM-MOMENTUM}, \Cref{eq:KERNEL-SUM-CORRECTION} read as
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:DENSITY-ENTROPY-TOTAL}
+\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta}\left(f_{\alpha} A_{\alpha} \rho_{\alpha}^{\gamma-2} \grad_{\alpha} w_{\alpha \beta}\left(h_{\alpha}\right) + f_{\beta} A_{\beta}\rho_{\beta}^{\gamma- 2} \grad_{\alpha}w_{\alpha \beta}\left(h_{\beta}\right)\right), \\
+			&= - \sum_{\beta=1}^N m_{\beta}\left(\frac{f_{\alpha} p_{\alpha}}{\rho_{\alpha}^{2}} \grad_{\alpha} w_{\alpha \beta}\left(h_{\alpha}\right) + \frac{f_{\beta} p_{\beta}}{\rho_{\beta}^{2}} \grad_{\alpha}w_{\alpha \beta}\left(h_{\beta}\right)\right), \\
+f_{\alpha} &= \left(1 + \frac{h_{\alpha}}{2 \rho_{\alpha}}\pdv{\rho_{\alpha}}{h_{\alpha}}\right)^{-1}. 
+\end{equations}
+
+The system \Cref{eq:DENSITY-ENTROPY-TOTAL} is a \emph{generalization} of the \emph{classical SPH} system \Cref{eq:CLASSICAL-SPH} where the smoothing length $h$ is allowed to vary, \ie with the $\grad h$ terms $f_{\alpha}$ included. This realisation will serve only as a consistency check with the previous chapters; due to the reasons mentioned in the introduction to \Cref{sec:DENSITY-FREE}, our goal is to avoid using density.
+
 \subsection{Pressure-entropy}
 \label{sec:DI-pressure-entropy}
-Recall that the entropy of an isentropic flow of an ideal gas has the form\sidenote{This is a test side note.}
 
-\begin{equations}[single,*]
-\eta = \eta_0 + c_v \log\left(\frac{P}{\rho^{\gamma}}\right)
-\end{equations}
-and $\eta = \, \text{const} \,.$ We see that the quantity $A$ defined as \autocite{hopkinsGeneralClassLagrangian2013}
 
-\begin{equations}[single,*]
-A = \frac{P}{\rho^{\gamma}},
-\end{equations}
-is in fact equal to
 
-\begin{equations}[single,*]
-A = \exp\left(\frac{\eta - \eta_0}{c_v}\right),
-\end{equations}
-meaning that the flow is \emph{isentropic,} if and only if the quantity $A$ is \emph{conserved} under the flow. Thus $A$ is an \emph{entropy-like} variable: conserved under isentropic flows.
 
 The choice
 
