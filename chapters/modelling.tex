@@ -51,33 +51,31 @@ Suppose now we wish to \emph{numerically} solve the \emph{non-stationary} isentr
 \partial_t \theta + \div\left(\theta \vb{v}\right) &= 0,
 \vb{v}\left(0, \vb{x}\right) = \vb{0}, \theta\left(0, \vb{v}\right) &= \theta_0\left(\vb{x}\right), \rho\left(0, \vb{x}\right) = \rho_0\exp\left(- \frac{z}{H_s}\right),
 \end{equations}
+
 together with $p = p\left(\theta, \rho\right)$ given and some boundary conditions.\sidenote{A rigorous numerical treatment of the boundary conditions is complicated, see \eg \autocite[p.~59]{levequeFiniteVolumeMethods2002}.} \emph{Mathematically} speaking, since at time $t=0$ the system is in hydrostatic equilibrium, the right-hand side of the momentum equation as well as the convective term vanish and the system \emph{remains} in the hydrostatic equilibrium. Yet, in a numerical simulation, generally the hydrostatic equilibrium is \emph{not preserved},
 
 \begin{equations}[single,*]
 \grad p_{i} - \rho_i \vb{g} \neq 0,
 \end{equations}
 
-where $p_i, \rho_i$ are some approximations of the solution \enquote{at time $i$}.
+where $p_i, \rho_i$ are some approximations of the solution \enquote{at time $i$} obtained by the numerical method. Since the right-hand side of \Cref{eq:NONSTAT-EULER} does not vanish on the \emph{discrete level}, a spurious non-physical force is introduced and the gas moves with \emph{nonzero velocity.}
 
 \subsection{Residual forces \& Waves}
 \label{sec:WB-WAVES}
 
+The failure to preserve hydrostatic balance is particularly damaging for simulations of internal gravity waves. As mentioned throughout the text, internal gravity waves are small perturbations of the \emph{background state.} When the hydrostatic balance is inexact, the spurious forces influence the simulation and affect the flow field. 
+
+In \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} it is shown that, with the used numerical method, for small perturbations of the velocity field\sidenote{The authors used a sine perturbation of the form \begin{equations}[single,*]
+\delta v = \sin\left(\omega t\right),
+\end{equations}
+with A = \num{10e-8}.}
+the effect of the spurious forces is considerable. For large-amplitude flows, in \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} it is shown that the effect is not critical. At least in the case of small-amplitude wave dynamics, the preservation of hydrostatic balance remains an important property. 
+
 \subsection{Well-balanced schemes}
 \label{sec:WB-SCHEMES}
 
-FOUNDATION:\autocite{greenbergWellBalancedSchemeNumerical1996} for shallow water equations and the Godunov scheme\autocite[p.~227]{levequeFiniteVolumeMethods2002}.
-
-\begin{compactitem}
-	\item foundational through\autocite{kappeliWellbalancedFiniteVolume2016a} 
-	\item FVM example \autocite{kappeliWellbalancedMethodsComputational2022}\autocite{kappeliWellbalancedFiniteVolume2016a} 
-	\item $\theta$ use \autocite{artianoStructurePreservingHighOrderMethods2025} \autocite{chertockWellbalancedNumericalMethod2023} 
-\end{compactitem}
-
-HYDROSTATIC ATMOSPHERE: \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} 
-WAVES: \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} 
-- isenetropic
-- for small amplitudes, WB is superiour, for large, it doesnt really matter
-
+Numerical methods that preserve the \emph{analytic} steady solutions on the \emph{discrete} level are called \emph{well-balanced}\autocite{cargoSchemaEquilibreAdapte1994,greenbergWellBalancedSchemeNumerical1996}. The methods had been first used for shallow water equations \autocite{greenbergWellBalancedSchemeNumerical1996} and is nowadays standard in many areas where numerical solution of \emph{hyperbolic} PDEs is required, \eg atmospheric flows\autocite{kappeliWellbalancedFiniteVolume2016a,chertockWellbalancedNumericalMethod2023,berthonFullyWellbalancedEntropystable2025} and astrophysics \autocite{kappeliWellbalancedMethodsComputational2022}. 
+In those applications, \emph{grid methods} like FVM or DG are used. In \Cref{sec:WELL-BALANCED-SPH} we derive \emph{well-balanced} formulations of SPH suitable for an isentropic atmospheric flow.
 
 
 
