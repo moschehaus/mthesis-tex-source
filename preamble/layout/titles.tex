@@ -9,19 +9,22 @@
 %% `clearempty` option removes page numbers from empty pages when using `\cleardoublepage`
 \usepackage[newparttoc, clearempty]{titlesec}
 
+%% FIX: zref-clever recognises the reference type from \refstepcounter, but titlesec
+%%   runs \refstepcounter inside a group, so the \@currentcounter assignment is local
+%%   and reverts once the group ends. For unnumbered levels, \refstepcounter is skipped
+%%   entirely. In both cases, \label then inherits the type of the last globally stepped
+%%   counter (e.g. sidenote). We fix this by globally setting \@currentcounter in the
+%%   before-code of each \titleformat. For numbered levels, this is harmless (same value).
+\makeatletter
+\NewDocumentCommand{\fixzreftype}{m}{\gdef\@currentcounter{#1}}
+\makeatother
+
 %% NOTE: also include `\phantomsection` so that hyperlink anchors are properly placed
 %%         (or modern `\MakeLinkTarget`)          (even for non-numbered subsections)
-\titleformat{\section}      {\MakeLinkTarget[section]{}\Large\sffamily\bfseries}{\thesection}{0.8em}{}
-\titleformat{\subsection}   {\MakeLinkTarget[subsection]{}\large\sffamily\bfseries}{\thesubsection}{0.8em}{}
-\titleformat{\subsubsection}{\MakeLinkTarget[subsubsection]{}\normalsize\sffamily\bfseries}{\thesubsubsection}{0.8em}{}
-\titleformat{\paragraph}[runin]{\MakeLinkTarget[paragraph]{}\normalsize\sffamily\bfseries}{\theparagraph}{0em}{}
-
-%% FIX: zref-clever recognises the reference type from \refstepcounter, but for
-%%   unnumbered sectioning levels (secnumdepth < level) \refstepcounter is skipped.
-%%   This causes zref to inherit the type from the last stepped counter (e.g. sidenote).
-%%   The \titleformat before-code runs inside titlesec's \begingroup, so we use \gdef
-%%   to globally set the zref internal `zc@type` property to the correct sectioning type.
-%%   For numbered levels, \refstepcounter will overwrite this with the same value anyway.
+\titleformat{\section}      {\fixzreftype{section}\MakeLinkTarget[section]{}\Large\sffamily\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}   {\fixzreftype{subsection}\MakeLinkTarget[subsection]{}\large\sffamily\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\fixzreftype{subsubsection}\MakeLinkTarget[subsubsection]{}\normalsize\sffamily\bfseries}{\thesubsubsection}{0.8em}{}
+\titleformat{\paragraph}[runin]{\fixzreftype{paragraph}\MakeLinkTarget[paragraph]{}\normalsize\sffamily\bfseries}{\theparagraph}{0em}{}
 
 %% Part title (page) formatting
 \titleformat{\part}[display]

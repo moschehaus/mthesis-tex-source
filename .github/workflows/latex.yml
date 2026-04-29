@@ -20,29 +20,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Create build directories
-        run: |
-          mkdir -p build/chapters/dodatky
-          mkdir -p build/preamble/{debug,environments,general,hacks,layout,math,misc,references,user}
-      
-      - name: Create .latexmkrc
-        run: |
-          cat > .latexmkrc << 'EOF'
-          $pdflatex = 'lualatex -synctex=1 -interaction=nonstopmode -shell-escape %O %S';
-          $pdf_mode = 1;
-          $out_dir = 'build';
-          $bibtex = 'biber %O %B';
-          $max_repeat = 5;
-          $continuous = 0;
-          EOF
-      
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           texlive_version: 2024
           compiler: latexmk
-          args: -pdf
+          args: -lualatex -shell-escape
           working_directory: .
       
       - name: Upload PDF artifact
