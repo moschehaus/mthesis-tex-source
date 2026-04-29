@@ -1,16 +1,16 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'build/main.blg'
-[50] biber:342> INFO - === Wed Apr 29, 2026, 19:58:03
+[50] biber:342> INFO - === Wed Apr 29, 2026, 21:16:52
 [63] Biber.pm:421> INFO - Reading 'build/main.bcf'
-[132] Biber.pm:1002> INFO - Found 63 citekeys in bib section 0
-[142] Biber.pm:4487> INFO - Processing section 0
+[133] Biber.pm:1002> INFO - Found 63 citekeys in bib section 0
+[143] Biber.pm:4487> INFO - Processing section 0
 [150] Biber.pm:4678> INFO - Looking for bibtex file 'preamble/bibliography.bib' for section 0
 [156] bibtex.pm:1713> INFO - LaTeX decoding ...
-[280] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
-[679] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[679] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[679] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[679] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[279] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
+[680] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[680] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[680] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[680] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
 [710] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
 [734] bbl.pm:779> INFO - Output to build/main.bbl
 [735] Biber.pm:132> WARN - ISBN '978-0-511-78031-8 978-1-316-18472-1' in entry 'sutherlandInternalGravityWaves2010' is invalid - run biber with '--validate_datamodel' for details.

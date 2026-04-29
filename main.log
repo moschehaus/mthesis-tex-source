@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 19:58
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 21:17
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2798,7 +2798,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (97.74684pt too wide) in paragraph at lines 39--48
+Overfull \hbox (21.30305pt too wide) in paragraph at lines 39--48
  [][] |
  []
 
@@ -2860,17 +2860,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./chapters/introduction.tex
-Underfull \hbox (badness 1874) in paragraph at lines 30--30
+ (./chapters/introduction.tex [7
+
+
+]
+Underfull \hbox (badness 1874) in paragraph at lines 35--35
 []$[][]$ \TU/lmr/m/n/12 Note the dis-tinc-tion be-tween
  []
 
-) [7
-
-
-] (./chapters/oro_flows.tex
+) [8] (./chapters/oro_flows.tex
 Chapter 1.
-<./figures/oro_flows/clouds.pdf, id=125, 1110.0672pt x 832.5504pt>
+<./figures/oro_flows/clouds.pdf, id=133, 1110.0672pt x 832.5504pt>
 File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/clouds.pdf>
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
@@ -2880,9 +2880,7 @@ Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
 
 
 ]
-Package marginnote Info: Using workaround for absolute page number on input lin
-e 39.
-<./figures/oro_flows/fohn.pdf, id=155, 3886.52pt x 2601.72pt>
+<./figures/oro_flows/fohn.pdf, id=163, 3886.52pt x 2601.72pt>
 File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/fohn.pdf>
 Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 46.
@@ -3035,7 +3033,7 @@ Overfull \hbox (31.29565pt too wide) detected at line 739
  []
 
 [21]
-<./figures/oro_flows/wave.pdf, id=503, 677.53125pt x 376.40625pt>
+<./figures/oro_flows/wave.pdf, id=510, 677.53125pt x 376.40625pt>
 File: ./figures/oro_flows/wave.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/wave.pdf>
 Package luatex.def Info: ./figures/oro_flows/wave.pdf  used on input line 757.
@@ -3096,7 +3094,7 @@ Underfull \hbox (badness 1748) in paragraph at lines 91--91
 \TU/lmr/m/n/12 smooth-ness and di-men-sion, the
  []
 
-<./figures/sph/kernel.pdf, id=663, 1053.9375pt x 451.6875pt>
+<./figures/sph/kernel.pdf, id=670, 1053.9375pt x 451.6875pt>
 File: ./figures/sph/kernel.pdf Graphic file (type pdf)
 <use ./figures/sph/kernel.pdf>
 Package luatex.def Info: ./figures/sph/kernel.pdf  used on input line 103.
@@ -3514,14 +3512,14 @@ on input line 1428.
 
 ) (./chapters/experiments.tex [66] [67]
 Chapter 4.
-<./figures/experiments/stationary_norms_SPH.pdf, id=1312, 677.53125pt x 376.406
+<./figures/experiments/stationary_norms_SPH.pdf, id=1318, 677.53125pt x 376.406
 25pt>
 File: ./figures/experiments/stationary_norms_SPH.pdf Graphic file (type pdf)
 <use ./figures/experiments/stationary_norms_SPH.pdf>
 Package luatex.def Info: ./figures/experiments/stationary_norms_SPH.pdf  used o
 n input line 35.
 (luatex.def)             Requested size: 320.0pt x 177.78397pt.
-<./figures/experiments/stationary_norms_PTH.pdf, id=1313, 677.53125pt x 376.406
+<./figures/experiments/stationary_norms_PTH.pdf, id=1319, 677.53125pt x 376.406
 25pt>
 File: ./figures/experiments/stationary_norms_PTH.pdf Graphic file (type pdf)
 <use ./figures/experiments/stationary_norms_PTH.pdf>
@@ -3532,13 +3530,13 @@ n input line 44.
 
 ] [69<./figures/experiments/stationary_norms_SPH.pdf><./figures/experiments/stat
 ionary_norms_PTH.pdf>]
-<./figures/experiments/standard_SPH.pdf, id=1385, 752.8125pt x 262.9825pt>
+<./figures/experiments/standard_SPH.pdf, id=1391, 752.8125pt x 262.9825pt>
 File: ./figures/experiments/standard_SPH.pdf Graphic file (type pdf)
 <use ./figures/experiments/standard_SPH.pdf>
 Package luatex.def Info: ./figures/experiments/standard_SPH.pdf  used on input 
 line 62.
 (luatex.def)             Requested size: 320.0pt x 111.78815pt.
-<./figures/experiments/standard_PTH.pdf, id=1386, 752.8125pt x 262.9825pt>
+<./figures/experiments/standard_PTH.pdf, id=1392, 752.8125pt x 262.9825pt>
 File: ./figures/experiments/standard_PTH.pdf Graphic file (type pdf)
 <use ./figures/experiments/standard_PTH.pdf>
 Package luatex.def Info: ./figures/experiments/standard_PTH.pdf  used on input 
@@ -3551,14 +3549,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70]
-<./figures/experiments/well_balanced_SPH.pdf, id=1395, 752.8125pt x 262.9825pt>
+<./figures/experiments/well_balanced_SPH.pdf, id=1401, 752.8125pt x 262.9825pt>
 
 File: ./figures/experiments/well_balanced_SPH.pdf Graphic file (type pdf)
 <use ./figures/experiments/well_balanced_SPH.pdf>
 Package luatex.def Info: ./figures/experiments/well_balanced_SPH.pdf  used on i
 nput line 84.
 (luatex.def)             Requested size: 320.0pt x 111.78815pt.
-<./figures/experiments/well_balanced_PTH.pdf, id=1396, 752.8125pt x 262.9825pt>
+<./figures/experiments/well_balanced_PTH.pdf, id=1402, 752.8125pt x 262.9825pt>
 
 File: ./figures/experiments/well_balanced_PTH.pdf Graphic file (type pdf)
 <use ./figures/experiments/well_balanced_PTH.pdf>
@@ -3573,37 +3571,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [71<./figures/experiments/standard_SPH.pdf><./figures/experiments/standard_PTH.
 pdf>]
-<./figures/experiments/wave_PTH_0035.pdf, id=1434, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_PTH_0035.pdf, id=1440, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_PTH_0035.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0035.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0035.pdf  used on input
  line 115.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0040.pdf, id=1435, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_PTH_0040.pdf, id=1441, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_PTH_0040.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0040.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0040.pdf  used on input
  line 121.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0045.pdf, id=1436, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_PTH_0045.pdf, id=1442, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_PTH_0045.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0045.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0045.pdf  used on input
  line 130.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0050.pdf, id=1437, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_PTH_0050.pdf, id=1443, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_PTH_0050.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0050.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0050.pdf  used on input
  line 136.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0055.pdf, id=1438, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_PTH_0055.pdf, id=1444, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_PTH_0055.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0055.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0055.pdf  used on input
  line 145.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0060.pdf, id=1439, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_PTH_0060.pdf, id=1445, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_PTH_0060.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0060.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0060.pdf  used on input
@@ -3612,37 +3610,37 @@ Package luatex.def Info: ./figures/experiments/wave_PTH_0060.pdf  used on input
 
 [72<./figures/experiments/well_balanced_SPH.pdf><./figures/experiments/well_bala
 nced_PTH.pdf>]
-<./figures/experiments/wave_SPH_0030.pdf, id=1499, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_SPH_0030.pdf, id=1505, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_SPH_0030.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0030.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0030.pdf  used on input
  line 169.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0035.pdf, id=1500, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_SPH_0035.pdf, id=1506, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_SPH_0035.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0035.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0035.pdf  used on input
  line 175.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0040.pdf, id=1501, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_SPH_0040.pdf, id=1507, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_SPH_0040.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0040.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0040.pdf  used on input
  line 184.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0045.pdf, id=1502, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_SPH_0045.pdf, id=1508, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_SPH_0045.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0045.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0045.pdf  used on input
  line 190.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0050.pdf, id=1503, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_SPH_0050.pdf, id=1509, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_SPH_0050.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0050.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0050.pdf  used on input
  line 199.
 (luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0055.pdf, id=1504, 752.8125pt x 339.2675pt>
+<./figures/experiments/wave_SPH_0055.pdf, id=1510, 752.8125pt x 339.2675pt>
 File: ./figures/experiments/wave_SPH_0055.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0055.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0055.pdf  used on input
@@ -3658,13 +3656,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 0.pdf><./figures/experiments/wave_PTH_0045.pdf><./figures/experiments/wave_PTH_0
 050.pdf><./figures/experiments/wave_PTH_0055.pdf><./figures/experiments/wave_PTH
 _0060.pdf>]
-<./figures/experiments/crash_SPH_0062.pdf, id=1621, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_SPH_0062.pdf, id=1628, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_SPH_0062.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_SPH_0062.pdf>
 Package luatex.def Info: ./figures/experiments/crash_SPH_0062.pdf  used on inpu
 t line 224.
 (luatex.def)             Requested size: 320.0pt x 133.3351pt.
-<./figures/experiments/crash_SPH_0064.pdf, id=1622, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_SPH_0064.pdf, id=1629, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_SPH_0064.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_SPH_0064.pdf>
 Package luatex.def Info: ./figures/experiments/crash_SPH_0064.pdf  used on inpu
@@ -3680,13 +3678,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 5.pdf><./figures/experiments/wave_SPH_0040.pdf><./figures/experiments/wave_SPH_0
 045.pdf><./figures/experiments/wave_SPH_0050.pdf><./figures/experiments/wave_SPH
 _0055.pdf>]
-<./figures/experiments/crash_PTH_0057.pdf, id=1741, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_PTH_0057.pdf, id=1747, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_PTH_0057.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_PTH_0057.pdf>
 Package luatex.def Info: ./figures/experiments/crash_PTH_0057.pdf  used on inpu
 t line 247.
 (luatex.def)             Requested size: 320.0pt x 133.3351pt.
-<./figures/experiments/crash_PTH_0060.pdf, id=1742, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_PTH_0060.pdf, id=1748, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_PTH_0060.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_PTH_0060.pdf>
 Package luatex.def Info: ./figures/experiments/crash_PTH_0060.pdf  used on inpu
@@ -3739,20 +3737,20 @@ Chapter 5.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./chapters/summary.tex) (./chapters/appendix.tex) [79
+ (./chapters/summary.tex) [79
 
 
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
+(biblatex)                Using fallback driver on input line 48.
 
 [80
 
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
+(biblatex)                Using fallback driver on input line 48.
 
 [81] [82] [83] [84] [85]
 
@@ -3760,7 +3758,7 @@ Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 [86]
-runsystem(latexminted cleantemp  --timestamp 20260429195851Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260429211739Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3777,7 +3775,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 76154 strings out of 475900
+ 76149 strings out of 475900
  244458,3417909 words of node,token memory allocated
  88570 words of node memory still in use:
    1106 hlist, 126 vlist, 48 rule, 449 disc, 49 local_par, 245 math, 1783 glue, 
@@ -3785,7 +3783,7 @@ Here is how much of LuaTeX's memory you used:
 c, 3219 attribute_list, 9 write, 932 pdf_literal, 11 pdf_start_link, 11 pdf_end_
 link, 3 pdf_dest, 11 pdf_action, 124 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save
 , 1 pdf_restore nodes
-   avail lists: 1:29,2:8165,3:5368,4:605,5:846,6:196,7:8247,8:92,9:2549,10:50,11
+   avail lists: 1:32,2:8165,3:5368,4:605,5:846,6:196,7:8247,8:92,9:2549,10:61,11
 :566,12:15
  95333 multiletter control sequences out of 65536+600000
  152 fonts using 11819183 bytes
@@ -3798,16 +3796,16 @@ ocal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
 e/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texm
 f-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2026/texmf-dist/font
 s/opentype/public/lm/lmsans8-regular.otf></usr/local/texlive/2026/texmf-dist/fon
-ts/opentype/public/lm/lmmono8-regular.otf></usr/local/texlive/2026/texmf-dist/fo
-nts/opentype/public/lm/lmroman8-regular.otf>{/usr/local/texlive/2026/texmf-dist/
+ts/opentype/public/lm/lmroman8-regular.otf></usr/local/texlive/2026/texmf-dist/f
+onts/opentype/public/lm/lmmono8-regular.otf>{/usr/local/texlive/2026/texmf-dist/
 fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/local/texlive/2026/texmf-dist/fonts/open
-type/public/lm/lmroman10-regular.otf></usr/local/texlive/2026/texmf-dist/fonts/o
-pentype/public/lm/lmsans10-regular.otf></usr/local/texlive/2026/texmf-dist/fonts
-/opentype/public/lm/lmromanslant12-regular.otf></usr/local/texlive/2026/texmf-di
-st/fonts/opentype/public/lm/lmmono12-regular.otf></usr/local/texlive/2026/texmf-
-dist/fonts/opentype/public/lm/lmsans12-oblique.otf></usr/local/texlive/2026/texm
-f-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/local/texlive/2026/texmf
--dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/local/texlive/2026/tex
+type/public/lm/lmsans10-regular.otf></usr/local/texlive/2026/texmf-dist/fonts/op
+entype/public/lm/lmromanslant12-regular.otf></usr/local/texlive/2026/texmf-dist/
+fonts/opentype/public/lm/lmmono12-regular.otf></usr/local/texlive/2026/texmf-dis
+t/fonts/opentype/public/lm/lmsans12-oblique.otf></usr/local/texlive/2026/texmf-d
+ist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/local/texlive/2026/texmf-di
+st/fonts/opentype/public/lm/lmmono10-regular.otf></usr/local/texlive/2026/texmf-
+dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2026/tex
 mf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/local/texlive/2026/
 texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></usr/local/texlive/202
 6/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/202
@@ -3827,10 +3825,10 @@ m/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 /texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb></usr/local/te
 xlive/2026/texmf-dist/fonts/type1/public/boondox/zxxrl8a.pfb>
-Output written on main.pdf (93 pages, 13105534 bytes).
+Output written on main.pdf (94 pages, 13113167 bytes).
 
-PDF statistics: 2547 PDF objects out of 2984 (max. 8388607)
- 2136 compressed objects within 22 object streams
- 602 named destinations out of 1000 (max. 1048576)
+PDF statistics: 2559 PDF objects out of 2984 (max. 8388607)
+ 2147 compressed objects within 22 object streams
+ 606 named destinations out of 1000 (max. 1048576)
  760 words of extra memory for PDF output out of 10000 (max. 100000000)
 

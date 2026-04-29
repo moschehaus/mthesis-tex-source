@@ -687,8 +687,6 @@ INPUT ./chapters/voronoi.tex
 INPUT ./chapters/voronoi.tex
 INPUT ./chapters/summary.tex
 INPUT ./chapters/summary.tex
-INPUT ./chapters/appendix.tex
-INPUT ./chapters/appendix.tex
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
