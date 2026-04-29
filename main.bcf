@@ -2544,6 +2544,8 @@
     <bcf:citekey order="102" intorder="1">bottaWellBalancedFinite2004</bcf:citekey>
     <bcf:citekey order="103" intorder="1">artianoStructurePreservingHighOrderMethods2025</bcf:citekey>
     <bcf:citekey order="103" intorder="2">chertockWellbalancedNumericalMethod2023</bcf:citekey>
+    <bcf:citekey order="104" intorder="1">zhangBoundaryConditionsWeaklycompressible2025</bcf:citekey>
+    <bcf:citekey order="104" intorder="2">adamiGeneralizedWallBoundary2012</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

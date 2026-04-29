@@ -2638,6 +2638,91 @@
       \endverb
       \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics,well-balanced}
     \endentry
+    \entry{zhangBoundaryConditionsWeaklycompressible2025}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=5c295c652b6151abcbf7c27c9cc82b72}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Shuoguo},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {TUM School of Engineering and Design der Technischen Universität München}%
+      }
+      \strng{namehash}{5c295c652b6151abcbf7c27c9cc82b72}
+      \strng{fullhash}{5c295c652b6151abcbf7c27c9cc82b72}
+      \strng{fullhashraw}{5c295c652b6151abcbf7c27c9cc82b72}
+      \strng{bibnamehash}{5c295c652b6151abcbf7c27c9cc82b72}
+      \strng{authorbibnamehash}{5c295c652b6151abcbf7c27c9cc82b72}
+      \strng{authornamehash}{5c295c652b6151abcbf7c27c9cc82b72}
+      \strng{authorfullhash}{5c295c652b6151abcbf7c27c9cc82b72}
+      \strng{authorfullhashraw}{5c295c652b6151abcbf7c27c9cc82b72}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{20}
+      \field{month}{2}
+      \field{title}{Boundary {{Conditions}} in {{Weakly-compressible Smoothed Particle Hydrodynamics}}}
+      \field{type}{disertation}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/1772885.pdf
+      \endverb
+      \keyw{sph techniques}
+    \endentry
+    \entry{adamiGeneralizedWallBoundary2012}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=0d4775fea8584fd7956c5b505c8108dd}{%
+           family={Adami},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0759110aae1a8818e2ece48dd7eaba54}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={X.\bibnamedelimi Y.},
+           giveni={X\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=e77df22f865b327edf41941aa19f4ca1}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={N.\bibnamedelimi A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \strng{fullhash}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \strng{fullhashraw}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \strng{bibnamehash}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \strng{authorbibnamehash}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \strng{authornamehash}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \strng{authorfullhash}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \strng{authorfullhashraw}{ebf3da8bfbea42f40b5a84143741ba7a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we present a new formulation of the boundary condition at static and moving solid walls in SPH simulations. Our general approach is both applicable to two and three dimensions and is very simple compared to previous wall boundary formulations. Based on a local force balance between wall and fluid particles we apply a pressure boundary condition on the solid particles to prevent wall penetration. This method can handle sharp corners and complex geometries as is demonstrated with several examples. A validation shows that we recover hydrostatic equilibrium conditions in a static tank, and a comparison of the classical dam break simulation with state-of-the-art results in literature shows good agreement. We simulate various problems such as the flow around a cylinder and the backward facing step at Re=100 to demonstrate the general applicability of this new method.}
+      \field{day}{30}
+      \field{issn}{0021-9991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{month}{8}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{A Generalized Wall Boundary Condition for Smoothed Particle Hydrodynamics}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2012.05.005
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/Adami et al. - 2012 - A generalized wall boundary condition for smoothed particle hydrodynamics 1.pdf;/home/moschehaus/Zotero/storage/IXJ5Q4BI/S002199911200229X.html
+      \endverb
+      \keyw{Boundary condition,Solid walls,SPH,sph techniques}
+    \endentry
   \enddatalist
   \missing{springelSimulationsFormationEvolution2005}
 \endrefsection

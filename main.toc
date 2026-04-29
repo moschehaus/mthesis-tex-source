@@ -68,9 +68,9 @@
 \contentsline {subsection}{Particle placement}{67}{subsection*.118}%
 \contentsline {chapter}{\numberline {4}Numerical experiments}{68}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Preservation of hydrostatic balance (stationary case)}{68}{section*.119}%
-\contentsline {section}{\numberline {4.2}Mountain waves (evolutionary case)}{71}{section*.123}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{71}{section*.124}%
-\contentsline {chapter}{\numberline {5}Voronoi}{72}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{73}{chapter*.125}%
-\contentsline {chapter}{References}{74}{chapter*.126}%
+\contentsline {section}{\numberline {4.2}Mountain waves (evolutionary case)}{72}{section*.123}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{74}{section*.126}%
+\contentsline {chapter}{\numberline {5}Voronoi}{75}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{76}{chapter*.127}%
+\contentsline {chapter}{References}{77}{chapter*.128}%
 \contentsfinish 
