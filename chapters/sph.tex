@@ -1208,7 +1208,7 @@ f_{\alpha\beta} &= 1 - \frac{1}{m_{\beta} \theta_{\beta}}\left(\frac{h_{\alpha}}
 
 % TODO: FIRST ONE IS NOT WELL BALANCED!!!!
 
-The concept of well-balanced numerical methods was introduced in \Cref{sec:WELL-BALANCED}. In this section, we develop well-balanced formulations for the three SPH variants presented earlier: classical SPH \Cref{sec:CLASSIC-COMPLETE}, the density-independent pressure-entropy formulation \Cref{sec:DI-pressure-entropy}, and the pressure-potential-temperature formulation \Cref{sec:DI-pressure-theta}. To our knowledge, no well-balanced SPH scheme has been previously developed for any of these formulations in the context of stratified atmospheric flow; the constructions presented here are the central methodological contribution of this thesis.
+The concept of well-balanced numerical methods was introduced in \Cref{chap:MODELLING}. In this section, we develop well-balanced formulations for the three SPH variants presented earlier: classical SPH \Cref{sec:CLASSIC-COMPLETE}, the density-independent pressure-entropy formulation \Cref{sec:DI-pressure-entropy}, and the pressure-potential-temperature formulation \Cref{sec:DI-pressure-theta}. To our knowledge, no well-balanced SPH scheme has been previously developed for any of these formulations in the context of stratified atmospheric flow; the constructions presented here are the central methodological contribution of this thesis.
 
 \subsection{Failure of hydrostatic balance}
 \label{sec:SPH-FAILURE}
@@ -1257,8 +1257,8 @@ reads
 
 Evidently, the kernel sum on the right-hand side approximates the $-\frac{1}{\rho} \grad p$ term, while the gravitational acceleration \enquote{approximates} $\vb{g}$ is a global source term. As discussed in \Cref{sec:SPH-FAILURE}, this discretisation does not preserve hydrostatic balance.
 
-A common approach in the FVM literature \autocite{bottaWellBalancedFinite2004} to resolve the truncation error is to subtract the background state \emph{before discretisation}. We stress that this procedure is \emph{not well-balancing} as discussed in \Cref{sec:WELL-BALANCED}---here the hydrostatic balance is preserved by a manipulation on the \emph{analytical level} and the discretisation is emph{standard}, whereas a well-balanced scheme solves the \emph{original system} but employs a \emph{special} discretisation.
-Assume now, in correspondence to \Cref{sec:MTN-WVS}, that the density and pressure field have the form\sidenote{In the chapter \Cref{chap:FLOWS} we used the subscript zero and one for the background state and the perturbation respectively. Since we index particle-carried quantities with lower indices also, we switch to the bar $\overline{\rho}$ and prime $\rho'$ notation.}
+A common approach in the FVM literature \autocite{bottaWellBalancedFinite2004} to resolve the truncation error is to subtract the background state \emph{before discretisation}. We stress that this procedure is \emph{not well-balancing} as discussed in \Cref{chap:MODELLING}---here the hydrostatic balance is preserved by a manipulation on the \emph{analytical level} and the discretisation is emph{standard}, whereas a well-balanced scheme solves the \emph{original system} but employs a \emph{special} discretisation.
+Assume now, in correspondence to \Cref{sec:MTN-WVS}, that the density and pressure field have the form\sidenote{In chapter \Cref{chap:FLOWS} we used the subscript zero and one for the background state and the perturbation respectively. Since we index particle-carried quantities with lower indices also, we switch to the bar $\overline{\rho}$ and prime $\rho'$ notation.}
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:WB-SPH-SPLIT}
@@ -1390,8 +1390,8 @@ The \emph{well-balanced} momentum equation is then obtained similarly as in \Cre
 \dv{\vb{v}_{\alpha}}{t} = \vb{F}_{\alpha}\left(\theta_{\alpha}, p_{\theta}\right) - \vb{F}_{\alpha}\left(\overline{\theta}_{\alpha}, p_{\alpha}\right).
 \end{equations}
 
-If the fluid parcel is in the stationary background state, \ie $\theta_{\alpha} = \overline{\theta}_{\alpha}, p_{\alpha} = \overline{p}_{\alpha},$ then also the discrete gradients \Cref{eq:WBTH-GRADIENT} are equal and so the resulting acceleration in \Cref{eq:WB-PTH-MOMENTUM} \emph{remains zero.}
+If the fluid parcel is in the stationary background state, \ie $\theta_{\alpha} = \overline{\theta}_{\alpha}, p_{\alpha} = \overline{p}_{\alpha}$, then also the discrete gradients \Cref{eq:WBTH-GRADIENT} are equal and so the resulting acceleration in \Cref{eq:WB-PTH-MOMENTUM} \emph{remains zero.}
 
-Note that there are well-balanced FVM formulations utilizing the conserved potential temperature $\theta $\autocite{artianoStructurePreservingHighOrderMethods2025,chertockWellbalancedNumericalMethod2023}.
+Note that there are well-balanced FVM formulations utilizing the conserved potential temperature $\theta$ \autocite{artianoStructurePreservingHighOrderMethods2025,chertockWellbalancedNumericalMethod2023}.
 
 \end{document}

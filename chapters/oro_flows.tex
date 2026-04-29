@@ -85,7 +85,7 @@ In \Cref{eq:MASS-BALANCE}, \Cref{eq:MOMENTUM-BALANCE} $\vb{v}$ is the velocity f
 \end{equations} 
 
 
-To close the system, a constitutive relation for the Cauchy stress tensor has to be provided.\sidenote{As well as boundary and initial conditions; these will be discussed in \Cref{sec:IBCONDITIONS}.} The fluid of our interest is \emph{air}, which is commonly modelled as an \emph{inviscid compressible Newtonian fluid}, for which\sidenote{In the class of compressible Newtonian fluids, a general constitutive closure for the Cauchy stress tensor reads as \begin{equations}[single,*]
+To close the system, a constitutive relation for the Cauchy stress tensor has to be provided.\sidenote{As well as boundary and initial conditions.} The fluid of our interest is \emph{air}, which is commonly modelled as an \emph{inviscid compressible Newtonian fluid}, for which\sidenote{In the class of compressible Newtonian fluids, a general constitutive closure for the Cauchy stress tensor reads as \begin{equations}[single,*]
 \cstress = -p \identityM + \lambda \left(\div \vb{v}\right)\identityM + 2 \mu \symvgrad,
 \end{equations}
 where $\symvgrad = \sym \grad \vb{v}$ and $\lambda, \mu$ being the viscosity coefficients. More precisely, $\mu$ is the \emph{shear viscosity} and $\lambda$ contributes to the \emph{bulk viscosity} $\zeta = \frac{3 \lambda + 2 \mu}{3}$. For an \emph{inviscid} fluid, we put $\mu = 0 = \zeta$, \ie the fluid does not pose any resistance to shear deformation nor compression/expansion.}
@@ -149,7 +149,7 @@ The description of these cases would benefit from \emph{conservative} thermodyna
 Consider a fluid in a thermodynamic state $(T, p)$ described by temperature $T$ and pressure $p$ that undergoes isentropic evolution to the state $(\theta, p_0).$ Then from \Cref{eq:ENTROPY} it follows
 
 \begin{equations}[single,*]
-\eta_{\text{ref}} + c_V \log\left(\frac{R T}{\rho^{\gamma - 1}}\right) = \eta_{\text{ref}} + c_V \log\left(\frac{R \theta}{\rho_0^{\gamma-1}}\right),
+\eta_{\text{ref}} + c_V \log\left(\frac{R T}{\rho^{\gamma - 1}}\right) = \eta_{\text{ref}} + c_V \log\left(\frac{R \theta}{\rho^{\gamma-1}}\right),
 \end{equations}
 
 and so
@@ -399,7 +399,7 @@ In the Boussinesq approximation, we have reasoned that $c = \infty$, and so we a
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:POT-TEMP-BOUSSINESQ}
-\frac{1}{\theta_0} \partial_{\theta_0}z = - \frac{1}{\rho_0} \partial_{z}\rho_0.
+\frac{1}{\theta_0} \partial_z \theta_0 = - \frac{1}{\rho_0} \partial_{z}\rho_0.
 \end{equations}
 
 This simple relation will prove useful to us in the next section \Cref{sec:STRAT}. 
@@ -417,12 +417,10 @@ We remind the reader that the goal of this thesis lies in the development \emph{
 	\item assumption of adiabaticity of all processes.
 \end{compactitem}}
 
-and to motivate the use of some techniques used in \Cref{sec:EXTRA}.
-
 \subsection{Stratification and the Brunt–Väisälä frequency}
 \label{sec:STRAT}
 
-Looking at the relations describing hydrostatic balance \Cref{eq:HYDROSTATIC}, we see that density, pressure, and potential temperature are functions of the \emph{altitude only}. In particular, they are constant on the horizontal planes. Physical quantities that depend on altitude are said to be \emph{stratified}.
+Looking at the relations describing hydrostatic balance, we see that density, pressure, and potential temperature are functions of the \emph{altitude only}. In particular, they are constant on the horizontal planes. Physical quantities that depend on altitude are said to be \emph{stratified}.
 
 In the case of isothermal hydrostatic balance, we moreover see
 
@@ -663,7 +661,7 @@ The general solution of \Cref{eq:T-G-surrogation} has the form
 \hat{w}(z; 0, k) = C_{+}\exp\left(\I m z\right) + C_{-}\exp\left(-\I m z\right),
 \end{equations}
 
-where $C_{+}, C_{-} \in \R$ are constants to be determined using the boundary conditions. If $C_{+}$ were nonzero, it would correspond to gravity waves propagating downward, \ie \emph{energy propagating downward}. Since the top of the domain can in principle extend to the whole outer atmosphere, a nonzero $C_{+}$ would amount to allowing energy to arrive from infinity\sidenote{This assumption consequently entails the absence of wave reflections at the upper boundary.} ---something we consider unphysical--- and thus we set $C_{+} \equiv 0$. \autocite[p.~97]{smithInfluenceMountainsAtmosphere1979} This \enquote{boundary condition} is known as the \emph{radiation condition.} \autocite[p.~62]{nappoIntroductionAtmosphericGravity2013}\autocite{klempUpperBoundaryCondition1983}. The numerical treatment of the radiation condition will be the main topic of section \todo{ADD}.
+where $C_{+}, C_{-} \in \R$ are constants to be determined using the boundary conditions. If $C_{+}$ were nonzero, it would correspond to gravity waves propagating downward, \ie \emph{energy propagating downward}. Since the top of the domain can in principle extend to the whole outer atmosphere, a nonzero $C_{+}$ would amount to allowing energy to arrive from infinity\sidenote{This assumption consequently entails the absence of wave reflections at the upper boundary.} ---something we consider unphysical--- and thus we set $C_{+} \equiv 0$. \autocite[p.~97]{smithInfluenceMountainsAtmosphere1979} This \enquote{boundary condition} is known as the \emph{radiation condition.} \autocite[p.~62]{nappoIntroductionAtmosphericGravity2013}\autocite{klempUpperBoundaryCondition1983}. 
 
 As for $C_{-}$, we see that 
 

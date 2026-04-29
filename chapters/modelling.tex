@@ -1,32 +1,12 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{Mathematical modelling of atmospheric flows}
+\chapter{Well-balanced methods}
 \label{chap:MODELLING}
 
-\begin{compactenum}
-	\item section \Cref{sec:IBCONDITIONS} discusses suitable boundary conditions the system needs to be accompanied by;
-	\item section \Cref{sec:WELL-BALANCED} is devoted to the \emph{well-balanced} property of certain discretisation schemes.
-\end{compactenum}
+This chapter provides an introduction to specialized numerical methods for the compressible Euler equations. The motivation for the use of such methods is presented in the first subsection, whereas our implementation is described in \Cref{sec:WELL-BALANCED-SPH}. Results obtained with the use of these methods are then presented in \Cref{chap:EXPERIMENTS}.
 
-\section{Initial and boundary conditions}
-\label{sec:IBCONDITIONS}
-
-\subsection{Radiation condition}
-\label{sec:RADIATION}
-
-\subsection{Terrain-following coordinates}
-\label{sec:SIGMA}
-
-\subsection{Inflow and outflow boundaries}
-\label{sec:INFLOW-OUTFLOW}
-
-\section{Well-balanced methods}
-\label{sec:WELL-BALANCED}
-
-This section provides an introduction to specialized numerical methods for the compressible Euler equations. The motivation for the use of such methods is presented in the first subsection, whereas our implementation is described in \Cref{sec:WELL-BALANCED-SPH}. Results obtained with the use of these methods are then presented in \Cref{chap:EXPERIMENTS}.
-
-\subsection{Preservation of the hydrostatic balance}
+\section{Preservation of the hydrostatic balance}
 \label{sec:INEXACT}
 
 Internal gravity waves can be considered perturbations of the background atmospheric state. It is standard to take the background atmospheric state as \emph{hydrostatic}\sidenote{As we did in the section \Cref{sec:MTN-WVS}.}: $\vb{v} = 0$ and the pressure $p$ and density $\rho$ solve the equation \Cref{eq:HYDROSTATIC-P}
@@ -52,7 +32,7 @@ together with given $p = p\left(\theta, \rho\right)$ and some boundary condition
 
 where $p_i, \rho_i$ are some approximations of the solution \enquote{at time $i$} obtained by the numerical method and $\grad_{h}$ is some discrete gradient operator. Since the right-hand side of the momentum balance \Cref{eq:NONSTAT-EULER} does not vanish on the \emph{discrete level}, a spurious non-physical force is introduced and the gas moves with \emph{nonzero velocity.}
 
-\subsection{Implications for wave simulations}
+\section{Implications for wave simulations}
 \label{sec:WB-WAVES}
 
 The failure to preserve hydrostatic balance is particularly damaging for simulations of internal gravity waves. As established earlier, internal gravity waves are small perturbations of the \emph{background state.} When the hydrostatic balance is inexact, the spurious forces influence the simulation and affect the flow field. 
@@ -64,14 +44,12 @@ with A = \num{e-8}.}
 spurious forces dominate the wave field. By contrast, well-balanced schemes give qualitatively correct wave dynamics. For large-amplitude flows, in \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} it is shown that the effect is not critical. 
 For small-amplitude wave dynamics---relevant to internal gravity waves---exact discrete hydrostatic balance is therefore essential.
 
-\subsection{Well-balanced schemes}
+\section{Well-balanced schemes}
 \label{sec:WB-SCHEMES}
 
 Numerical methods that preserve the \emph{analytic} steady solutions on the \emph{discrete} level are called \emph{well-balanced} \autocite{cargoSchemaEquilibreAdapte1994,greenbergWellBalancedSchemeNumerical1996}. The methods had been first used for shallow water equations \autocite{greenbergWellBalancedSchemeNumerical1996} and are nowadays standard in many areas where a numerical solution of \emph{hyperbolic} PDEs is required, \eg atmospheric flows \autocite{kappeliWellbalancedFiniteVolume2016a,chertockWellbalancedNumericalMethod2023,berthonFullyWellbalancedEntropystable2025} and astrophysics \autocite{kappeliWellbalancedMethodsComputational2022}. 
 
 While well-balanced finite-volume and DG schemes are now standard for atmospheric and astrophysical applications, well-balanced SPH formulations remain underdeveloped. This thesis aims to contribute to that gap. In \Cref{sec:WELL-BALANCED-SPH} we derive well-balanced formulations of SPH suitable for isentropic atmospheric flow --- the central contribution of this thesis.
-
-
 
 
 \end{document}

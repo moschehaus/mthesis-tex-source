@@ -9,7 +9,7 @@ All numerical experiments presented in this work were conducted using \href{http
 
 Advanced SPH numerical techniques had to be implemented, namely
 \begin{compactitem}
-	\item the terrain-following coordinate transformation \autocite{clarkSmallscaleDynamicModel1977gal-chenUseCoordinateTransformation1975};
+	\item the terrain-following coordinate transformation \autocite{clarkSmallscaleDynamicModel1977,gal-chenUseCoordinateTransformation1975};
 	\item the Extrapolating Boundary Conditions method (EBC) \autocite{vacondioGrandChallengesSmoothed2021a} 
 	\item the adaptive smoothing length apparatus had to be incorporated into the SmoothedParticles.jl codebase.
 \end{compactitem}
@@ -27,7 +27,7 @@ These contributions to the codebase of \texttt{SmoothedParticles.jl} are availab
         \toprule
         Parameter & Stationary Case & Evolutionary Case \\
         \midrule
-        Spatial resolution $\Delta r$ [\qty{}{\metre}] & 520.0 (346.0 for WB) & 520.0 \\
+        Spatial resolution $\Delta r$ [\qty{}{\metre}] & 520.0 & 520.0 \\
         Relative time step $\Delta t_{rel}$ & 0.1 & 0.1 \\
         End time $t_{end}$ [\qty{}{\second}] & 100.0 & 1200.0 \\
         Initial velocity $v_{initial}$ [\qty{}{\metre\per\second}] & 20.0 & 20.0 \\
