@@ -215,6 +215,54 @@ We hypothesize that the reason lies in poor conservative properties of the pertu
 \section{Tensile instability}
 \label{sec:INSTABILITY}
 
-The phenomenon observed in our simulation of mountain waves that lead to a complete numerical breakdown is well-known in the SPH community and is referred to as \emph{tensile instability} \autocite{morrisStudyStabilityProperties1996,schuesslerCommentsSmoothedParticle1981,phillipsNumericalMethodThreedimensional1985,sunDeltaALESPHModelImproved2017,priceSmoothedParticleHydrodynamics2012a}.
+The phenomenon observed in our simulation of mountain waves that led to a complete numerical breakdown is well-known in the SPH community and is referred to as \emph{tensile instability} \autocite{morrisStudyStabilityProperties1996,schuesslerCommentsSmoothedParticle1981,phillipsNumericalMethodThreedimensional1985,sunDeltaALESPHModelImproved2017,priceSmoothedParticleHydrodynamics2012a}. Tensile instability is a \emph{geometric instability} that arises when the interaction between particles causes them to \emph{artificially} attract rather than repel, leading into unphysical clumps separated by empty void being created \autocite{morrisStudyStabilityProperties1996}. In our simulations presented in the previous section, the particles lost their regular spacing, introducing yet another spurious unphysical effect that escalated into a total divergence of the velocity field. 
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{crash_SPH_0062}
+		\caption{Perturbation SPH formulation, $t = \qty{750}{\second}$.}
+		\label{fig:SPH-CRASH-750}
+	\end{subfigure}
+
+	\vspace{0.5cm} 
+
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{crash_SPH_0064}
+		\caption{Perturbation SPH formulation, $t = \qty{770}{\second}$. }
+		\label{fig:SPH-CRASH-770}
+	\end{subfigure}
+	\caption{\caption{Snapshots displaying the tensile instability in the perturbation SPH formulation. Even though this formulation was unable to capture the mountain wave dynamics, the terrain arguably introduces an irregularity in the flow. This loss of regularity might trigger the tensile instability, as visible in the particle clumping (left). The clumping triggers a sudden, explosion-like divergence in the maximum velocity (right).}}
+	\label{fig:SPH-CRASH}
+\end{figure}
+
+From the figures \Cref{fig:PTH-CRASH} one gets the impression that the irregular configuration of the particles is caused by the \emph{emerged mountain wave}.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{crash_PTH_0057}
+		\caption{Well-balanced pressure-potential temperature formulation, $t = \qty{690}{\second}$.}
+		\label{fig:PTH-CRASH-690}
+	\end{subfigure}
+
+	\vspace{0.5cm} 
+
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{crash_PTH_0060}
+		\caption{Well-balanced pressure-potential temperature formulation, $t = \qty{725}{\second}$. }
+		\label{fig:PTH-CRASH-725}
+	\end{subfigure}
+	\caption{}
+	\label{fig:PTH-CRASH}
+\end{figure}
+
+To suppress this instability, a standard remedy is the $\delta$-SPH formulation \autocite{sunDeltaALESPHModelImproved2017}. The core of $\delta$-SPH lies in introducing an \emph{artificial diffusion} term in the evolution equations that acts against the forming of clumps, \ie acts repulsively. This procedure regularizes the density distribution, improves the particle distribution and helps in preventing the breakdown.
+
+
 
 \end{document}
