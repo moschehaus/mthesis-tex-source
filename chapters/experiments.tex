@@ -159,7 +159,7 @@ The panels in \Cref{fig:WAVE-EMERGENCE-PTH} illustrate the emergence and early u
 
 As shown in \Cref{fig:WAVE-EMERGENCE-SPH}, in our experiments, the perturbation SPH method fails to capture the mountain wave dynamics. While the well-balanced pressure-potential temperature formulation successfully propagated the wave upward, the perturbation method yields a noisy unstructured flow field. 
 
-We hypothesize that the reason lies in poor conservative properties of the perturbation SPH method. As we mentioned in \Cref{sec:GENERAL-CLASS}, a consistent use of \emph{adaptive smoothing lengths} requires the $\grad h$ to be be present in the momentum equation. In our case, as described in \Cref{sec:ADAPTIVE-SMOOTHING}, a simpler approach to $h-$adaptivity has been used together with the perturbation SPH method---in particular no $\grad h$ terms has been included in the formulation.\sidenote{It is also not straightforward how the terms could be included. Recall that they appeared naturally when deriving the SPH equations from the discrete Lagrangian in \Cref{sec:GENERAL-CLASS}, on contrary, the standard derivation presented in \Cref{sec:CORNERSTONES}  does \emph{not account} for variable $h$ at all.}
+We hypothesize that the reason lies in poor conservative properties of the perturbation SPH method. As we mentioned in \Cref{sec:GENERAL-CLASS}, a consistent use of \emph{adaptive smoothing lengths} requires the $\grad h$ to be be present in the momentum equation. In our case, as described in \Cref{sec:ADAPTIVE-SMOOTHING}, a simpler approach to $h-$adaptivity has been used together with the perturbation SPH method---in particular no $\grad h$ terms has been included in the formulation.\sidenote{It is also not straightforward how the terms could be included. Recall that they appeared naturally when deriving the SPH equations from the discrete Lagrangian in \Cref{sec:GENERAL-CLASS}. However, the standard derivation presented in \Cref{sec:CORNERSTONES} does \emph{not account} for variable $h$ at all.}
 
 \begin{figure}[H]
     \centering
@@ -215,7 +215,7 @@ We hypothesize that the reason lies in poor conservative properties of the pertu
 \section{Tensile instability}
 \label{sec:INSTABILITY}
 
-The phenomenon observed in our simulation of mountain waves that led to a complete numerical breakdown is well-known in the SPH community and is referred to as \emph{tensile instability} \autocite{morrisStudyStabilityProperties1996,schuesslerCommentsSmoothedParticle1981,phillipsNumericalMethodThreedimensional1985,sunDeltaALESPHModelImproved2017,priceSmoothedParticleHydrodynamics2012a}. Tensile instability is a \emph{geometric instability} that arises when the interaction between particles causes them to \emph{artificially} attract rather than repel, leading into unphysical clumps separated by empty void being created \autocite{morrisStudyStabilityProperties1996}. In our simulations presented in the previous section, the particles lost their regular spacing, introducing yet another spurious unphysical effect that escalated into a total divergence of the velocity field. 
+The phenomenon observed in our simulation of mountain waves that led to a complete numerical breakdown is well-known in the SPH community and is called \emph{tensile instability} \autocite{morrisStudyStabilityProperties1996,schuesslerCommentsSmoothedParticle1981,phillipsNumericalMethodThreedimensional1985,sunDeltaALESPHModelImproved2017,priceSmoothedParticleHydrodynamics2012a}. Tensile instability is a \emph{geometric instability} that arises when the interaction between particles causes them to \emph{artificially} attract rather than repel, leading into unphysical particle clumps separated by empty void \autocite{morrisStudyStabilityProperties1996}. In our simulations, the particles lost their regular spacing, introducing yet another spurious unphysical effect that escalated into a total divergence of the velocity field. 
 
 \begin{figure}[H]
 	\centering
@@ -234,11 +234,11 @@ The phenomenon observed in our simulation of mountain waves that led to a comple
 		\caption{Perturbation SPH formulation, $t = \qty{770}{\second}$. }
 		\label{fig:SPH-CRASH-770}
 	\end{subfigure}
-	\caption{\caption{Snapshots displaying the tensile instability in the perturbation SPH formulation. Even though this formulation was unable to capture the mountain wave dynamics, the terrain arguably introduces an irregularity in the flow. This loss of regularity might trigger the tensile instability, as visible in the particle clumping (left). The clumping triggers a sudden, explosion-like divergence in the maximum velocity (right).}}
+	\caption{Snapshots displaying the tensile instability in the perturbation SPH formulation. Even though this formulation was unable to capture the mountain wave dynamics, the terrain arguably introduces an irregularity in the flow. This loss of regularity might trigger the tensile instability, as visible in the particle clumping (left). The clumping triggers a sudden, explosion-like divergence in the maximum velocity (right).}
 	\label{fig:SPH-CRASH}
 \end{figure}
 
-From the figures \Cref{fig:PTH-CRASH} one gets the impression that the irregular configuration of the particles is caused by the \emph{emerged mountain wave}.
+As seen in \Cref{fig:PTH-CRASH}, the onset of the instability in the well-balanced PTH formulation is \emph{fundamentally different} from standard SPH case. Here, one gets the impression that the irregular configuration of the particles is \emph{triggered} directly by the \emph{emerged mountain wave}. The \emph{physical} density and pressure gradients introduced by the upward-propagating wave distort the particle configuration in the upper atmosphere, eventually creating clumps. Conversely, in the perturbation SPH formulation, as shown in \Cref{fig:SPH-CRASH}, the instability is triggered by the accumulation of spurious background errors.
 
 \begin{figure}[H]
 	\centering
@@ -257,7 +257,7 @@ From the figures \Cref{fig:PTH-CRASH} one gets the impression that the irregular
 		\caption{Well-balanced pressure-potential temperature formulation, $t = \qty{725}{\second}$. }
 		\label{fig:PTH-CRASH-725}
 	\end{subfigure}
-	\caption{}
+	\caption{Snapshots of the tensile instability in the well-balanced PTH formulation. Unlike the perturbation SPH case, the instability is triggered locally near the mountain by the physical perturbations in pressure and density caused by the propagating mountain wave. The oscillatory movements distort the particle distribution and lead to a rapid explosion-like divergence.}
 	\label{fig:PTH-CRASH}
 \end{figure}
 
