@@ -1,13 +1,85 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{Experiments}
+\chapter{Numerical experiments}
 \label{chap:EXPERIMENTS}
+This chapter consists of numerical experiments using the methods described in the previous chapters. Namely, we compare the classical SPH method \Cref{sec:CLASSIC-COMPLETE} and the pressure-potential temperature density-free formulation \Cref{sec:DI-pressure-theta} with their perturbation/well-balanced variants \Cref{sec:PERTURBATION-CLASSICAL-SPH} and \Cref{sec:WB-DI-PTH} respectively.
 
-\section{Stationary problems}
+\section{Preservation of hydrostatic balance (stationary case)}
 \label{sec:STATIONARY}
 
-\section{Evolutionary problems}
+As established in \Cref{sec:WB-WAVES}, the preservation of the hydrostatic balance on \emph{the discrete level} is essential in simulations of internal gravity waves. In this section, we compare the ability of the used formulations to preserve the initial hydrostatic state.
+
+\subsection{Classical SPH}
+\label{sec:EXP-STAT-CLASSICAL}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiments/stationary_norms_SPH}
+		\caption{Classical SPH formulation.}
+		\label{fig:STATIONARY-NORMS-SPH}
+	\end{subfigure}
+
+	\vspace{0.5cm} 
+
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiments/stationary_norms_PTH}
+		\caption{Pressure-potential temperature formulation.}
+		\label{fig:STATIONARY-NORMS-PTH}
+	\end{subfigure}
+	\caption{Time evolution of the spurious velocity field for the stationary hydrostatic balance using the standard SPH formulation, vertical axis is logarithmic. The maximum and root-mean-square velocities exhibit serious growth, sitting at approximately $\qty{10}{\metre\per\second} - \qty{15}{\metre\per\second}$ at $t < \qty{50}{\second}$ and diverging rapidly at $t \approx \qty{50}{\second}$. In contrast, the corresponding well-balanced (WB) variant maintains these norms at machine epsilon throughout the simulation.}
+	\label{fig:STATIONARY-NORMS}
+\end{figure}
+
+The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the instant the maximum particle velocity reaches about half the speed of sound (Mach number of $\text{M }\approx 0.5$), which is roughly $\abs{\vb{v}} \approx \qty{120}{\meter\per\second}$. This threshold is chosen such that we can clearly make a distinction between numerical noise in the simulation and a serious breakdown of the hydrostatic equilibrium.
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiments/standard_SPH}
+		\caption{Classical SPH formulation.}
+		\label{fig:STATIONARY-BLOWUP-SPH}
+	\end{subfigure}
+
+	\vspace{0.5cm} 
+
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiments/standard_PTH}
+		\caption{Standard pressure-potential temperature formulation.}
+		\label{fig:STATIONARY-BLOWUP-PTH}
+	\end{subfigure}
+	\caption{The flow field blowup at $t \approx \qty{13}{\second}$. The vectors show the emergence of non-physical motions caused by the failure to preserve the hydrostatic balance. The displacement of the particles further creates spurious forces, leading to breakdown.}
+	\label{fig:STATIONARY-BLOWUPS}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiments/well_balanced_SPH}
+		\caption{Perturbation SPH formulation.}
+		\label{fig:STATIONARY-STILNESS-SPH}
+	\end{subfigure}
+
+	\vspace{0.5cm} 
+
+	\begin{subfigure}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{experiments/well_balanced_PTH}
+		\caption{Well-balanced pressure-potential temperature formulation.}
+		\label{fig:STATIONARY-STILNESS-PTH}
+	\end{subfigure}
+	\caption{The atmosphere remains statici, \ie hydrostatic balance is exactly preserved.}
+	\label{fig:STATIONARY-STILNESS}
+\end{figure}
+
+
+\section{Mountain waves (evolutionary case)}
 \label{sec:EVOLUTIONARY}
 
 \section{Tensile instability}
