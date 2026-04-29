@@ -1,17 +1,11 @@
-\documentclass[../main.tex]{subfiles}
-\begin{document}
-%% NOTE: uncomment following line if you use parts in your document
-% \addtocontents{toc}{\vspace{2ex}}  % Add extra space after the last part in TOC
+\chapternotnumbered{Conclusion}
+\label{chap:Conclusion}
 
-\chapternotnumbered{Summary and Outlook}
+The primary goal of this thesis was to investigate the viability of Smoothed Particle Hydrodynamics (SPH) for predicting orographic flows. As outlined in \Cref{chap:FLOWS}, topography-driven flows are responsible for critical atmospheric phenomena, such as internal gravity waves, downslope windstorms, and clear-air turbulence. However, their complex dynamics make them notoriously difficult to model numerically. In \Cref{chap:MODELLING}, we established the mathematical requirements for capturing these flows, highlighting that any successful numerical method must strictly respect the stratified atmospheric background through a \emph{well-balanced} scheme. 
 
-In \Cref{chap:FLOWS}, we described the problem of our interest: flows over topography. Orographic flows influence internal gravity waves, clear-air turbulence and eg downlospe windstorms - they are important. But at the same time, they are tough to predict --- i wanted to help with that by using SPH.
+\Cref{chap:SPH} presented the theoretical background and the main novel contributions of this work. After systematically reviewing the classical, Hamiltonian, and Lagrangian derivations of SPH, we proposed a new density-independent formulation that uses potential temperature. Crucially, we then constructed a completely well-balanced discretisation for this framework, greatly upgrading the method's ability to simulate the emergence of mountain waves.
 
-In \Cref{chap:MODELLING} we discussed some specifics of these flows, for example the boundary conditions. Most importantly, well balanced schemse were introduced.
+The practical capabilities of these methods were showcased in \Cref{chap:EXPERIMENTS}. The proposed well-balanced formulation outperformed the standard SPH method. It successfully maintained the stationary background and captured the early states of emergence and upward propagation of mountain waves. However, the long-term success of these simulations was ultimately compromised by the onset of \emph{tensile instability}, a known SPH instability.
 
-\Cref{chap:SPH} is devoted to the presentation of the main method used. The governing equations have been derived classicaly, then Hamiltonian, then Lagrangian. a new density independent formulation has been proposed and an addition has been added -- THAT IS CONTRIBUTION. Morevoer, well balanced SPH methods have been dicusedd - THAT IS NEW
+Ultimately, this thesis demonstrates that SPH possesses potential for atmospheric modelling, but standard formulations are insufficient. Making SPH a reliable tool for atmospheric dynamics will require the development of advanced specialized techniques. Based on our findings, future work must focus on constructing a well-balanced, density-independent $\delta$-SPH formulation to suppress tensile instability without sacrificing the exact hydrostatic balance.
 
-\Cref{chap:EXPERIMENTS} showcased the methods. My WB method was the best. Some success with the simulations, but tensile instability ruined it.
-All in all, it seems SPH could be kind of useful, but it requires the deveolpment of serious new advanced techniques - eg well balanced density independent \delta sph formulation.
-
-\end{document}

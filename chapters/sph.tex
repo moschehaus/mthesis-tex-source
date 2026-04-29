@@ -4,16 +4,7 @@
 \chapter{Smoothed Particle Hydrodynamics}
 \label{chap:SPH}
 
-This chapter presents the main numerical method used --- the \emph{Smoothed Particle Method}. In particular,
-
-\begin{compactitem}
-	\item section
-	\item section
-	\item section
-\end{compactitem}
-
-%WARNING: YOU HAVE FORGOTTEN ABOUT GRAVITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-%WARNING: SAY THAT YOU DONT WRITE \alpha = 1, \dots, N
+This chapter presents the main numerical method used --- the \emph{Smoothed Particle Method}. 
 
 \section{Method overview}
 \label{sec:SPH_OVERVIEW}
@@ -1401,38 +1392,6 @@ The \emph{well-balanced} momentum equation is then obtained similarly as in \Cre
 
 If the fluid parcel is in the stationary background state, \ie $\theta_{\alpha} = \overline{\theta}_{\alpha}, p_{\alpha} = \overline{p}_{\alpha},$ then also the discrete gradients \Cref{eq:WBTH-GRADIENT} are equal and so the resulting acceleration in \Cref{eq:WB-PTH-MOMENTUM} \emph{remains zero.}
 
-
 Note that there are well-balanced FVM formulations utilizing the conserved potential temperature $\theta $\autocite{artianoStructurePreservingHighOrderMethods2025,chertockWellbalancedNumericalMethod2023}.
-
-%TODO: ADD THAT THERE ARE NONE SPH
-
-\section{Implementation specifics}
-\label{sec:IMPLEMENTATION}
-
-\subsection{Extrapolating boundary conditions}
-\label{sec:SPH-BC}
-
-\subsubsection{Inflow \& Outflow}
-\label{sec:EBC-INFLOW-OUTFLOW}
-
-\subsubsection{Free-slip}
-\label{sec:EBC-FREE-SLIP}
-
-\subsection{Adaptive smoothing length}
-\label{sec:ADAPTIVE-SMOOTHING}
-Newton iterations
-
-\begin{equations}[single,*]
-	\label{eq:f_PE}
-	f_{\alpha} =  \left(1 + \frac{h_{\alpha}}{2 n_{\alpha}} \pdv{n_{\alpha}}{h_{\alpha}}\right)^{-1}
-\end{equations}
-
-
-\subsection{Particle placement}
-\label{sec:PLACEMENT}
-WitchExpGrid
-
-
-
 
 \end{document}

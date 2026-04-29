@@ -5,6 +5,45 @@
 \label{chap:EXPERIMENTS}
 This chapter consists of numerical experiments using the methods described in the previous chapters. Namely, we compare the classical SPH method \Cref{sec:CLASSIC-COMPLETE} and the pressure-potential temperature density-free formulation \Cref{sec:DI-pressure-theta} with their perturbation/well-balanced variants \Cref{sec:PERTURBATION-CLASSICAL-SPH} and \Cref{sec:WB-DI-PTH} respectively.
 
+All numerical experiments presented in this work were conducted using \href{https://github.com/OndrejKincl/SmoothedParticles.jl}{\texttt{SmoothedParticles.jl}}, a numerical framework written in the Julia programming language. The complete simulation code and setup scripts developed for this thesis are publicly available in the \href{https://github.com/kamilbelan/sph-mountain-waves}{author's GitHub repository}.
+
+Advanced SPH numerical techniques had to be implemented, namely
+\begin{compactitem}
+	\item the terrain-following coordinate transformation \autocite{clarkSmallscaleDynamicModel1977gal-chenUseCoordinateTransformation1975};
+	\item the Extrapolating Boundary Conditions method (EBC) \autocite{vacondioGrandChallengesSmoothed2021a} 
+	\item the adaptive smoothing length apparatus had to be incorporated into the SmoothedParticles.jl codebase.
+\end{compactitem}
+
+These contributions to the codebase of \texttt{SmoothedParticles.jl} are available at the author's GitHub repository. The presented numerical results were created (and as such can be recreated) using the parameters included in the table \Cref{tab:SIM-PARAMS}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Simulation parameters for the stationary and evolutionary numerical experiments.}
+    \label{tab:SIM-PARAMS}
+    \begin{tblr}{
+        colspec = {lcc},
+        row{1} = {guard, font=\bfseries\sffamily},
+    }
+        \toprule
+        Parameter & Stationary Case & Evolutionary Case \\
+        \midrule
+        Spatial resolution $\Delta r$ [\qty{}{\metre}] & 520.0 (346.0 for WB) & 520.0 \\
+        Relative time step $\Delta t_{rel}$ & 0.1 & 0.1 \\
+        End time $t_{end}$ [\qty{}{\second}] & 100.0 & 1200.0 \\
+        Initial velocity $v_{initial}$ [\qty{}{\metre\per\second}] & 20.0 & 20.0 \\
+        Mountain height $h_m$ [\qty{}{\metre}] & 100.0 & 100.0 \\
+        Sponge layer height $z_\beta$ [\qty{}{\metre}] & 3000.0 & 3000.0 \\
+        Relative damping $\gamma_{r,rel}$ & 0.2 & 0.0 \\
+        Artificial viscosity $\alpha$ & 0.15 & 0.15 \\
+        Artificial viscosity $\beta$ & 0.3 & 0.3 \\
+        Smoothing length coeff. $\eta$ & 1.8 & 1.8 \\
+        XSPH coefficient $\epsilon$ & 0.01 & 0.01 \\
+        Density floor $\rho_{floor}$ & $10^{-6}$ & $10^{-6}$ \\
+        Pressure floor $P_{floor}$ & $10^{-10}$ & $10^{-10}$ \\
+        \bottomrule
+    \end{tblr}
+\end{table}
+
 \section{Preservation of hydrostatic balance (stationary case)}
 \label{sec:STATIONARY}
 
@@ -98,8 +137,6 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 	\label{fig:STATIONARY-STILNESS}
 \end{figure}
 
-% TODO: ADD PARAMETERS!
-
 \section{Mountain waves (evolutionary case)}
 \label{sec:EVOLUTIONARY}
 
@@ -159,7 +196,7 @@ The panels in \Cref{fig:WAVE-EMERGENCE-PTH} illustrate the emergence and early u
 
 As shown in \Cref{fig:WAVE-EMERGENCE-SPH}, in our experiments, the perturbation SPH method fails to capture the mountain wave dynamics. While the well-balanced pressure-potential temperature formulation successfully propagated the wave upward, the perturbation method yields a noisy unstructured flow field. 
 
-We hypothesize that the reason lies in poor conservative properties of the perturbation SPH method. As we mentioned in \Cref{sec:GENERAL-CLASS}, a consistent use of \emph{adaptive smoothing lengths} requires the $\grad h$ to be be present in the momentum equation. In our case, as described in \Cref{sec:ADAPTIVE-SMOOTHING}, a simpler approach to $h-$adaptivity has been used together with the perturbation SPH method---in particular no $\grad h$ terms has been included in the formulation.\sidenote{It is also not straightforward how the terms could be included. Recall that they appeared naturally when deriving the SPH equations from the discrete Lagrangian in \Cref{sec:GENERAL-CLASS}. However, the standard derivation presented in \Cref{sec:CORNERSTONES} does \emph{not account} for variable $h$ at all.}
+We hypothesize that the reason lies in poor conservative properties of the perturbation SPH method. As we mentioned in \Cref{sec:GENERAL-CLASS}, a consistent use of \emph{adaptive smoothing lengths} requires the $\grad h$ to be be present in the momentum equation. In our case, a simpler approach to $h-$adaptivity has been used together with the perturbation SPH method---the particle's smoothing length at each time step is updated proportionally to the particle's density. In particular no $\grad h$ terms has been included in the formulation.\sidenote{It is also not straightforward how the terms could be included. Recall that they appeared naturally when deriving the SPH equations from the discrete Lagrangian in \Cref{sec:GENERAL-CLASS}. However, the standard derivation presented in \Cref{sec:CORNERSTONES} does \emph{not account} for variable $h$ at all.}
 
 \begin{figure}[H]
     \centering
